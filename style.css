@@ -3491,33 +3491,14 @@ font-size: .9rem; color: var(--dark-text);
   align-items:center;
   justify-content:space-between;
   gap: 18px;
-  height: 80px;        /* keeps navbar slim */
+  height: 30px;        /* keeps navbar slim */
   align-items: flex-start; /* lets logo overflow */
-}
-
-
-
-.ps-nav-list {
-  padding: 8px 12px;
-  gap: 10px;
-}
-
-.ps-nav-link {
-  padding: 12px 20px;
-  font-size: 15px;
 }
 
 .ps-nav-link.active {
   box-shadow: 0 8px 18px rgba(37, 79, 183, 0.22);
 }
 
-.ps-contact-btn {
-  min-width: 155px;
-  height: 56px;
-  padding: 0 20px;
-  font-size: 16px;
-  gap: 10px;
-}
 
 .ps-contact-arrow {
   width: 34px;
@@ -3541,7 +3522,7 @@ body {
 /* LOGO BOX */
 .ps-logo-vertical{
   background:#ffffff;
-  padding:2px 10px;
+  padding:2px 1px;
 
   display:flex;
   flex-direction:Row;
@@ -3549,8 +3530,8 @@ body {
   justify-content:center;
   gap: 1px;
 
-  width:528px;
-  height:auto;                /* ✅ important */
+  width:400px;
+  height:100px;                /* ✅ important */
 
   border-radius:0 0 16px 16px;
   box-shadow:0 12px 30px rgba(0, 0, 0, 0.499);
@@ -3566,14 +3547,14 @@ body {
 /* ================= LOGO IMAGE ================= */
 /* IMAGE */
 .ps-logo-big{
-  height:100px;
+  height:70px;
   width:auto;
   display:block;      /* ✅ already good */
   margin-bottom:2px;  /* 🔥 controls gap */
 }
 /* TEXT */
 .ps-logo-text-new{
-  font-size:23px;
+  font-size:17px;
   font-weight:800;
   letter-spacing:1px;
   text-align:center;
@@ -3600,9 +3581,8 @@ body {
   gap: 18px;
   list-style: none;
   margin-top:7px ;
-  padding: 6px 16px;
-  background: #f4f5f7;
-  border: 1px solid #dfe3ea;
+  padding: 6px 16px 6px;
+ 
   border-radius: 999px;
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
 }
@@ -3737,14 +3717,14 @@ body {
 /* LEFT ITEMS */
 .ps-main-product-item {
   width: 100%;
-  padding: 7px 5px;
+  padding: 5px 4px;
   margin-bottom: 6px;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
 
   border-radius: 10px;
@@ -3797,8 +3777,8 @@ body {
   text-decoration: none;
   color: #1d2b44;
   border-radius: 18px;
- padding: 7px 5px;
-  font-size: 16px;
+ padding: 5px 5px;
+  font-size: 15px;
   font-weight: 600;
   transition: 0.25s ease;
 }
@@ -3851,9 +3831,9 @@ body {
 /* CONTACT BUTTON */
 .ps-contact-btn {
   min-width: 150px;
-   margin-top:7px ;
-  height: 65px;
-  padding: 3px 28px;
+   margin-top:10px ;
+  height: 50px;
+  padding: 3px 5px;
   border-radius: 999px;
   background: linear-gradient(180deg, #2f5fc6 0%, #244dac 100%);
   color: #fff;
@@ -3969,17 +3949,7 @@ body {
     display: block;
   }
 
-  .ps-nav-list {
-    width: 100%;
-    border-radius: 24px;
-    padding: 14px;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-    background: #ffffff;
-    border: 1px solid #e3e7ee;
-    box-shadow: 0 18px 40px rgba(25, 42, 88, 0.08);
-  }
+
 
   .ps-nav-link {
     width: 100%;
