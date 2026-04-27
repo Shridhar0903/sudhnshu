@@ -1,493 +1,2813 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sudhanshu Associates – Industrial Excellence Since 1974</title>
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="img/new logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;1,400&display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
+  <!-- AOS Animation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
-<body>
-    
-<body>
 <style>
-    /* ================= RESET ================= */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Segoe UI', sans-serif;
-}
+  :root {
+    /* LOGO THEME COLORS */
+    --primary: #2E2F78;
+    /* logo blue */
+    --primary-dark: #23245F;
+    --primary-mid: #3C3D8F;
 
-body{
-  background:#f4f6f9;
-}
+    --secondary: #66A83D;
+    /* logo green */
+    --secondary-dark: #4F8C2E;
+    --secondary-light: #8BCB63;
 
-/* ================= HEADER ================= */
-.ps-header{
-  width:100%;
-  background:#fff;
-  position:sticky;
-  top:0;
-  z-index:999;
-  box-shadow:0 5px 20px rgba(0,0,0,0.08);
-}
+    --primary-pale: #EEF0FF;
+    --secondary-pale: #EEF8E8;
 
-.ps-header-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 40px;
-}
+    --navy: #2E2F78;
+    --navy-mid: #3C3D8F;
+    --steel: #5E61A8;
+    --steel-light: #A9AFDF;
 
-/* ================= LOGO ================= */
-.ps-logo-wrap{
-  text-decoration:none;
-}
+    --white: #FFFFFF;
+    --off-white: #F8FAFC;
+    --light-gray: #EDF2F7;
+    --mid-gray: #6B7280;
+    --dark-text: #1C2240;
+    --body-text: #4B5563;
 
-.ps-logo-vertical{
-  background:linear-gradient(180deg,#0b5ed7,#198754);
-  padding:18px 22px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  border-radius:0 0 12px 12px;
-}
+    --accent: #66A83D;
+    --accent-2: #2E2F78;
 
-.ps-logo-big{
-  width:70px;
-  height:auto;
-}
+    --gold: #66A83D;
+    /* old gold mapped to green */
+    --gold-light: #8BCB63;
+    --gold-pale: #EEF8E8;
+    --accent-red: #2E2F78;
 
-.ps-logo-text-new{
-  color:#fff;
-  font-size:14px;
-  font-weight:700;
-  margin-top:8px;
-  letter-spacing:1px;
-  white-space:nowrap;
-}
+    --font-display: 'Oswald', sans-serif;
+    --font-body: 'Poppins', sans-serif;
+    --font-serif: 'Playfair Display', serif;
 
-/* ================= NAV ================= */
-.ps-nav{
-  flex:1;
-  margin-left:40px;
-}
+    --shadow-sm: 0 2px 8px rgba(46, 47, 120, .08);
+    --shadow-md: 0 8px 32px rgba(46, 47, 120, .12);
+    --shadow-lg: 0 20px 60px rgba(46, 47, 120, .18);
+    --shadow-xl: 0 32px 80px rgba(46, 47, 120, .22);
 
-.ps-nav-list{
-  display:flex;
-  align-items:center;
-  gap:30px;
-  list-style:none;
-}
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 32px;
+    --radius-xl: 60px;
+    --radius-full: 9999px;
 
-.ps-nav-link{
-  text-decoration:none;
-  color:#333;
-  font-weight:500;
-  font-size:15px;
-  position:relative;
-  transition:0.3s;
-}
-
-/* underline effect */
-.ps-nav-link::after{
-  content:'';
-  position:absolute;
-  left:0;
-  bottom:-6px;
-  width:0;
-  height:2px;
-  background:#0b5ed7;
-  transition:0.3s;
-}
-
-.ps-nav-link:hover{
-  color:#0b5ed7;
-}
-
-.ps-nav-link:hover::after{
-  width:100%;
-}
-
-/* ================= CTA ================= */
-.ps-contact-btn{
-  background:linear-gradient(90deg,#0b5ed7,#198754);
-  color:#fff;
-  padding:10px 22px;
-  border-radius:6px;
-  text-decoration:none;
-  font-weight:600;
-  transition:0.3s;
-}
-
-.ps-contact-btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 8px 20px rgba(0,0,0,0.15);
-}
-
-/* ================= DROPDOWN ================= */
-.ps-dropdown{
-  position:relative;
-}
-
-.ps-dropdown-stage{
-  position:absolute;
-  top:100%;
-  left:0;
-  width:900px;
-  background:#fff;
-  display:none;
-  box-shadow:0 15px 40px rgba(0,0,0,0.1);
-  border-radius:6px;
-  overflow:hidden;
-}
-
-/* show dropdown */
-.ps-dropdown:hover .ps-dropdown-stage{
-  display:flex;
-}
-
-/* LEFT PANEL */
-.ps-main-dropdown-box{
-  width:40%;
-  background:#f5f7fa;
-  padding:20px;
-  max-height:400px;
-  overflow-y:auto;
-}
-
-/* scrollbar */
-.ps-main-dropdown-box::-webkit-scrollbar{
-  width:5px;
-}
-.ps-main-dropdown-box::-webkit-scrollbar-thumb{
-  background:#ccc;
-}
-
-/* LEFT ITEMS */
-.ps-main-product-item{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  width:100%;
-  padding:10px 12px;
-  border:none;
-  background:none;
-  cursor:pointer;
-  font-size:14px;
-  color:#333;
-  transition:0.2s;
-}
-
-.ps-main-product-item:hover{
-  background:#e9f2ff;
-}
-
-.ps-main-product-item.active{
-  background:#0b5ed7;
-  color:#fff;
-  border-radius:4px;
-}
-
-/* RIGHT PANEL */
-.ps-sub-floating-box{
-  width:60%;
-  padding:20px 30px;
-}
-
-/* SUBMENU */
-.ps-submenu-panel{
-  display:none;
-}
-
-.ps-submenu-panel.active{
-  display:block;
-}
-
-.ps-submenu-panel a{
-  display:block;
-  padding:8px 0;
-  text-decoration:none;
-  color:#333;
-  font-size:14px;
-  transition:0.2s;
-}
-
-.ps-submenu-panel a:hover{
-  color:#198754;
-  transform:translateX(5px);
-}
-
-/* ================= MOBILE MENU ================= */
-.ps-menu-toggle{
-  display:none;
-  flex-direction:column;
-  cursor:pointer;
-}
-
-.ps-menu-toggle span{
-  height:3px;
-  width:25px;
-  background:#333;
-  margin:4px 0;
-  border-radius:2px;
-}
-
-/* ================= RESPONSIVE ================= */
-@media(max-width:992px){
-
-  .ps-header-inner{
-    padding:0 20px;
+    --transition: all 0.35s cubic-bezier(.4, 0, .2, 1);
+    --transition-slow: all 0.6s cubic-bezier(.4, 0, .2, 1);
   }
 
-  .ps-nav{
-    position:fixed;
-    top:0;
-    left:-100%;
-    width:260px;
-    height:100%;
-    background:#fff;
-    flex-direction:column;
-    padding:20px;
-    transition:0.3s;
-    box-shadow:0 0 20px rgba(0,0,0,0.1);
-  }
-
-  .ps-nav.active{
-    left:0;
-  }
-
-  .ps-nav-list{
-    flex-direction:column;
-    gap:15px;
-  }
-
-  .ps-menu-toggle{
-    display:flex;
-  }
-
-  .ps-contact-btn{
-    display:none;
-  }
-
-  /* DROPDOWN MOBILE */
-  .ps-dropdown-stage{
-    position:static;
-    width:100%;
-    flex-direction:column;
-    box-shadow:none;
-  }
-
-  .ps-main-dropdown-box{
-    width:100%;
-  }
-
-  .ps-sub-floating-box{
-    width:100%;
-  }
-}
-
-/* ================= SMALL MOBILE ================= */
-@media(max-width:600px){
-
-  .ps-logo-big{
-    width:55px;
-  }
-
-  .ps-logo-text-new{
-    font-size:12px;
-  }
-
-  .ps-header-inner{
-    padding:0 15px;
-  }
-}
 </style>
+<body>
+  <!-- ==============================navbar================================= -->
 
-<header class="ps-header">
-  <div class="ps-header-inner">
+  <style>
+    @media (max-width: 991px) {
 
-    <!-- LOGO -->
-    <a href="index.html" class="ps-logo-wrap">
-      <div class="ps-logo-vertical">
-        <img src="img/logobg.png" class="ps-logo-big">
-        <div class="ps-logo-text-new">SUDHANSHU ASSOCIATES</div>
-      </div>
-    </a>
+    .ps-header {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10050 !important;
+      background: rgba(255, 255, 255, 0.98) !important;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
 
-    <!-- TOGGLE -->
-    <div class="ps-menu-toggle" id="menuToggle">
-      <span></span><span></span><span></span>
-    </div>
+    .ps-header-inner {
+      min-height: 72px;
+      padding: 0 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 10051;
+    }
 
-    <!-- NAV -->
-    <nav class="ps-nav" id="navMenu">
-      <ul class="ps-nav-list">
+    .ps-logo-wrap,
+    .ps-logo-box,
+    .ps-logo-img,
+    .ps-logo-text {
+      position: relative;
+      z-index: 10052 !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
 
-        <li><a href="index.html" class="ps-nav-link active">Home</a></li>
-        <li><a href="about.html" class="ps-nav-link">About</a></li>
+    .ps-logo-img {
+      display: block !important;
+      width: 54px;
+      height: auto;
+      object-fit: contain;
+    }
 
-        <!-- MEGA MENU -->
-        <li class="ps-dropdown">
-          <a href="product.html" class="ps-nav-link">Product ▼</a>
+    .ps-logo-title {
+      color: #2E2F78 !important;
+    }
 
-          <div class="ps-dropdown-stage">
+    .ps-logo-sub {
+      color: #66A83D !important;
+    }
 
-            <!-- LEFT MENU -->
-            <div class="ps-main-dropdown-box">
+    .ps-menu-toggle {
+      display: flex !important;
+      width: 42px;
+      height: 42px;
+      padding: 0;
+      border: none;
+      background: transparent !important;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      z-index: 10053 !important;
+    }
 
-              <button class="ps-main-product-item active" data-target="m1">TIG Welding Filler Wires</button>
-              <button class="ps-main-product-item" data-target="m2">Electrodes</button>
-              <button class="ps-main-product-item" data-target="m3">Welding Accessories</button>
-              <button class="ps-main-product-item" data-target="m4">Safety Equipments</button>
-              <button class="ps-main-product-item" data-target="m5">TIG Welding Torch & Spares</button>
-              <button class="ps-main-product-item" data-target="m6">CO2 Welding Torch & Spares</button>
-              <button class="ps-main-product-item" data-target="m7">Gas Cutting & Brazing</button>
-              <button class="ps-main-product-item" data-target="m8">DP Testing Materials</button>
-              <button class="ps-main-product-item" data-target="m9">Pressure Regulators & Spares</button>
-              <button class="ps-main-product-item" data-target="m10">Welding Machines</button>
-              <button class="ps-main-product-item" data-target="m11">Air Drying Paint</button>
-              <button class="ps-main-product-item" data-target="m12">Polishing Machines</button>
-              <button class="ps-main-product-item" data-target="m13">Hand Tools</button>
-              <button class="ps-main-product-item" data-target="m14">Abrasives</button>
-              <button class="ps-main-product-item" data-target="m15">Cutting Tools</button>
-              <button class="ps-main-product-item" data-target="m16">Power Tools</button>
+    .ps-menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2.4px;
+      border-radius: 999px;
+      background: #1f2937 !important;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .ps-menu-toggle.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .ps-menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .ps-menu-toggle.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .ps-contact-btn {
+      display: none !important;
+    }
+
+    .ps-mobile-overlay {
+      display: block;
+      position: fixed;
+      top: 72px !important;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 72px) !important;
+      background: rgba(0, 0, 0, 0.18);
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.3s ease;
+      z-index: 10039 !important;
+    }
+
+    .ps-mobile-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .ps-nav {
+      position: fixed !important;
+      top: 72px !important;
+      left: 0;
+      width: min(80vw, 320px) !important;
+      height: calc(100vh - 72px) !important;
+      background: #f3f3f3 !important;
+      transform: translateX(-100%);
+      transition: transform 0.35s ease;
+      z-index: 10040 !important;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: 18px 22px 24px !important;
+      border-top-right-radius: 24px;
+      border-bottom-right-radius: 24px;
+      box-shadow: 14px 0 35px rgba(0, 0, 0, 0.10);
+    }
+
+    .ps-nav.active {
+      transform: translateX(0);
+    }
+
+    .ps-nav-list {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: stretch;
+      gap: 0;
+      list-style: none;
+      margin: 0 !important;
+      padding: 0 !important;
+      background: transparent !important;
+      border: none !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+    }
+
+    .ps-nav-list>li {
+      width: 100%;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+      background: transparent !important;
+    }
+
+    .ps-nav-list>li:last-child {
+      border-bottom: none;
+    }
+
+    .ps-nav-link,
+    .ps-dropdown-toggle,
+    .ps-nav-link.active,
+    .ps-nav-link:visited,
+    .ps-nav-link:focus {
+      width: 100%;
+      display: flex !important;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0 !important;
+      text-decoration: none;
+      color: #2E2F78 !important;
+      font-weight: 700 !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      opacity: 1 !important;
+      -webkit-text-fill-color: #2E2F78 !important;
+    }
+
+    .ps-drop-caret,
+    .ps-item-arrow {
+      color: #2E2F78 !important;
+    }
+
+    .ps-dropdown-stage {
+      display: none;
+      position: static !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      transform: none !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
+      margin-top: 4px;
+      padding: 0 !important;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+
+    .ps-dropdown.open .ps-dropdown-stage {
+      display: block;
+    }
+
+    .ps-main-dropdown-box,
+    .ps-sub-floating-box {
+      width: 100% !important;
+      max-width: 100% !important;
+      border-radius: 14px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      box-shadow: none !important;
+      overflow: hidden;
+      background: #ffffff !important;
+    }
+
+    .ps-main-products-scroll {
+      max-height: 220px;
+      overflow-y: auto;
+    }
+
+    .ps-main-product-item {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left;
+      border: none;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      background: #fff;
+      color: #2E2F78;
+      padding: 12px 14px;
+      cursor: pointer;
+    }
+
+    .ps-submenu-panel {
+      display: none;
+    }
+
+    .ps-submenu-panel.active {
+      display: block;
+    }
+
+    .ps-submenu-panel a {
+      display: block;
+      padding: 11px 14px;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      background: #fff;
+      color: #2E2F78 !important;
+    }
+
+    body.ps-menu-open {
+      overflow: hidden;
+    }
+  }
+
+  </style>
+   <header class="ps-header">
+    <div class="ps-header-inner">
+
+      <!-- Logo -->
+      <!-- <a href="index.html" class="ps-logo-wrap">
+        <div class="ps-logo-box">
+          <img src="img/logobg.png" alt="Sudhanshu Associates Logo" class="ps-logo-img">
+        </div>
+
+        <div class="ps-logo-text">
+          <span class="ps-logo-title">SUDHANSHU </span>
+          <span class="ps-logo-sub">ASSOCIATES</span>
+        </div>
+      </a> -->
+
+      <!-- LOGO -->
+      <a href="index.html" class="ps-logo-wrap">
+        <div class="ps-logo-vertical">
+          <img src="img/logobg.png" class="ps-logo-big">
+          <div class="ps-logo-text-new">SUDHANSHU <span>ASSOCIATES</span></div>
+        </div>
+      </a>
+
+      <!-- Menu Toggle -->
+      <button class="ps-menu-toggle" id="psMenuToggle" type="button" aria-label="Open Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Nav -->
+      <nav class="ps-nav" id="psNav">
+        <ul class="ps-nav-list">
+          <li><a href="index.html" class="ps-nav-link ">Home</a></li>
+          <li><a href="about.html" class="ps-nav-link active">About</a></li>
+          <li class="ps-dropdown ps-dropdown-mega" id="psProductsDropdown">
+            <a href="product.html" class="ps-nav-link ps-dropdown-toggle" id="psProductsToggle">
+              Product <span class="ps-drop-caret">▼</span>
+            </a>
+
+            <div class="ps-dropdown-stage">
+
+              <!-- LEFT MAIN PRODUCTS -->
+              <div class="ps-main-dropdown-box">
+                <div class="ps-main-products-scroll">
+
+                  <button class="ps-main-product-item active" data-target="ps-submenu-1" type="button">
+                    <span>TIG Welding Filler Wires</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-2" type="button">
+                    <span>Electrodes</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-3" type="button">
+                    <span>Welding Accessories</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-4" type="button">
+                    <span>Safety Equipments</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-5" type="button">
+                    <span>TIG Welding Torch &amp; Spares</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-6" type="button">
+                    <span>CO2 Welding Torch &amp; Spares</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-7" type="button">
+                    <span>Gas Cutting &amp; Brazing</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-8" type="button">
+                    <span>DP Testing Materials</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-9" type="button">
+                    <span>Pressure Regulators &amp; Spares</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-10" type="button">
+                    <span>Welding Machines</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-11" type="button">
+                    <span>Air Drying Paint</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-12" type="button">
+                    <span>Polishing Machines</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-13" type="button">
+                    <span>Hand Tools</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-14" type="button">
+                    <span>Abrasives</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-15" type="button">
+                    <span>Cutting Tools</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-16" type="button">
+                    <span>Power Tools</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                </div>
+              </div>
+
+              <!-- RIGHT SUBMENU -->
+              <div class="ps-sub-floating-box">
+                <div class="ps-submenu-panel active" id="ps-submenu-1">
+                  <a href="product.html#tig-filler-wires">SS TIG Wires</a>
+                  <a href="product.html#tig-filler-wires">MS TIG Wires</a>
+                  <a href="product.html#tig-filler-wires">Aluminium TIG Wires</a>
+                  <a href="product.html#tig-filler-wires">Copper Alloy TIG Wires</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-2">
+                  <a href="product.html#electrodes">MS Electrodes</a>
+                  <a href="product.html#electrodes">SS Electrodes</a>
+                  <a href="product.html#electrodes">Cast Iron Electrodes</a>
+                  <a href="product.html#electrodes">Hard Facing Electrodes</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-3">
+                  <a href="product.html#welding-accessories">Electrode Holders</a>
+                  <a href="product.html#welding-accessories">Earth Clamps</a>
+                  <a href="product.html#welding-accessories">Welding Cables</a>
+                  <a href="product.html#welding-accessories">Cable Connectors</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-4">
+                  <a href="product.html#safety-equipments">Safety Gloves</a>
+                  <a href="product.html#safety-equipments">Welding Helmets</a>
+                  <a href="product.html#safety-equipments">Face Shields</a>
+                  <a href="product.html#safety-equipments">Safety Shoes</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-5">
+                  <a href="product.html#tig-torch-spares">TIG Torches</a>
+                  <a href="product.html#tig-torch-spares">Collets</a>
+                  <a href="product.html#tig-torch-spares">Ceramic Cups</a>
+                  <a href="product.html#tig-torch-spares">Back Caps</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-6">
+                  <a href="product.html#co2-torch-spares">CO2 Torches</a>
+                  <a href="product.html#co2-torch-spares">Contact Tips</a>
+                  <a href="product.html#co2-torch-spares">Nozzles</a>
+                  <a href="product.html#co2-torch-spares">Torch Liners</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-7">
+                  <a href="product.html#gas-cutting-brazing">Cutting Nozzles</a>
+                  <a href="product.html#gas-cutting-brazing">Brazing Rods</a>
+                  <a href="product.html#gas-cutting-brazing">Gas Torches</a>
+                  <a href="product.html#gas-cutting-brazing">Flashback Arrestors</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-8">
+                  <a href="product.html#dp-testing-materials">Cleaner</a>
+                  <a href="product.html#dp-testing-materials">Penetrant</a>
+                  <a href="product.html#dp-testing-materials">Developer</a>
+                  <a href="product.html#dp-testing-materials">DP Test Kits</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-9">
+                  <a href="product.html#pressure-regulators">Oxygen Regulators</a>
+                  <a href="product.html#pressure-regulators">Acetylene Regulators</a>
+                  <a href="product.html#pressure-regulators">Argon Regulators</a>
+                  <a href="product.html#pressure-regulators">Regulator Spare Parts</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-10">
+                  <a href="product.html#welding-machines">ARC Welding Machines</a>
+                  <a href="product.html#welding-machines">MIG Welding Machines</a>
+                  <a href="product.html#welding-machines">TIG Welding Machines</a>
+                  <a href="product.html#welding-machines">Plasma Cutting Machines</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-11">
+                  <a href="product.html#air-drying-paint">Industrial Primer</a>
+                  <a href="product.html#air-drying-paint">Metal Paint</a>
+                  <a href="product.html#air-drying-paint">Protective Coatings</a>
+                  <a href="product.html#air-drying-paint">Touch-up Paints</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-12">
+                  <a href="product.html#polishing-machines">Angle Polishers</a>
+                  <a href="product.html#polishing-machines">Buffing Machines</a>
+                  <a href="product.html#polishing-machines">Pads</a>
+                  <a href="product.html#polishing-machines">Accessories</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-13">
+                  <a href="product.html#hand-tools">Spanners</a>
+                  <a href="product.html#hand-tools">Pliers</a>
+                  <a href="product.html#hand-tools">Screwdrivers</a>
+                  <a href="product.html#hand-tools">Hammers</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-14">
+                  <a href="product.html#abrasives">Cutting Wheels</a>
+                  <a href="product.html#abrasives">Grinding Wheels</a>
+                  <a href="product.html#abrasives">Flap Discs</a>
+                  <a href="product.html#abrasives">Sanding Discs</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-15">
+                  <a href="product.html#cutting-tools">Drill Bits</a>
+                  <a href="product.html#cutting-tools">Hole Saws</a>
+                  <a href="product.html#cutting-tools">Reamers</a>
+                  <a href="product.html#cutting-tools">Industrial Cutters</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-16">
+                  <a href="product.html#power-tools">Drilling Machines</a>
+                  <a href="product.html#power-tools">Angle Grinders</a>
+                  <a href="product.html#power-tools">Impact Tools</a>
+                  <a href="product.html#power-tools">Heavy Duty Tools</a>
+                </div>
+              </div>
 
             </div>
+          </li>
+          <li><a href="gallery.html" class="ps-nav-link">Gallery</a></li>
+          <li><a href="certificates.html" class="ps-nav-link">Certificates</a></li>
+        </ul>
+      </nav>
 
-            <!-- RIGHT SUBMENU -->
-            <div class="ps-sub-floating-box">
+      <!-- CTA -->
+      <a href="contact.html" class="ps-contact-btn">
+        <span>Contact</span>
+        <span class="ps-contact-arrow">→</span>
+      </a>
+    </div>
+  </header>
+  <div class="ps-mobile-overlay" id="psMobileOverlay"></div>
 
-              <div class="ps-submenu-panel active" id="m1">
-                <a href="#">SS TIG Wires</a>
-                <a href="#">MS TIG Wires</a>
-                <a href="#">Aluminium TIG Wires</a>
-                <a href="#">Copper Alloy TIG Wires</a>
+  <!-- ===================================Hero Section========================================== -->
+     <style>
+
+  .about-hero-simple {
+    position: relative;
+    min-height: 540px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 10px 0 90px;
+  }
+
+  /* ❌ REMOVE OVERLAY COMPLETELY */
+  .about-hero-bg::after {
+    display: none;
+  }
+
+  /* content */
+  .about-hero-content {
+    max-width: 980px;
+    text-align: center;
+    padding: 0 20px;
+
+  }
+
+  /* heading */
+  .about-hero-content h1 {
+    margin: 0 0 18px;
+    font-size: clamp(52px, 8vw, 88px);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -2px;
+    font-family: 'Sora', sans-serif;
+
+    text-shadow: none !important;
+    filter: none !important;
+  }
+
+  /* colored words */
+  .text-blue {
+    color: #66A83D;
+  }
+
+  .text-green {
+    color: #2E2F78;
+    margin-left: 10px;
+  }
+
+  /* paragraph */
+  .about-hero-content p {
+    margin: 0 auto;
+    max-width: 860px;
+    font-size: clamp(18px, 2.1vw, 30px);
+    line-height: 1.7;
+    font-weight: 500;
+
+    /* ✅ clean text */
+    color: #000 !important;
+    text-shadow: none;
+  }
+     </style>
+
+
+  <section class="about-hero-simple">
+    <!-- <div class="about-hero-bg"></div> -->
+    <div class="container">
+      <div class="about-hero-content">
+        <h1>
+          <span class="text-blue">About</span>
+          <span class="text-green">Us</span>
+        </h1>
+        <p>
+          Discover our legacy, values and industrial expertise built on trust,
+          quality and long-term customer relationships.
+        </p>
+      </div>
+    </div>
+  </section>
+
+   <!-- ===================================Hero Intro section========================================= -->
+  
+
+      <style>
+        
+  /* INTRO */
+  .about-intro {
+    margin-top: -80px;
+    /* 👈 pulls section upward */
+  }
+
+  .about-intro-grid,
+  .why-choose-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+  }
+
+  .about-intro-images {
+    display: grid;
+    gap: 18px;
+  }
+
+  .intro-img-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .intro-img-card {
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 16px 40px rgba(13, 27, 42, .10);
+  }
+
+  .intro-img-card.large {
+    min-height: 350px;
+  }
+
+  .intro-img-card.small {
+    min-height: 180px;
+  }
+
+  .intro-img-card img,
+  .journey-img img,
+  .supply-card img,
+  .why-image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+      </style>
+  <section class="about-intro">
+    <div class="container">
+      <div class="about-intro-grid">
+        <div class="about-intro-content reveal-left">
+          <span class="section-eyebrow">Company Introduction</span>
+          <h2 class="section-heading">Supplying Industry With <em>Trust & Consistency</em></h2>
+          <p>
+            Established in 1974 and reformed in 1999 as Sudhanshu Associates, we are a Pune-based
+            industrial supplier serving businesses with dependable product and dedicated service.
+          </p>
+          <p>
+            Our core supply range includes welding electrodes and accessories, non-destructive testing
+            equipment, safety product, abrasive materials and power tools.
+          </p>
+        </div>
+
+
+        <div class="about-intro-images reveal-right">
+          <div class="intro-img-card large">
+            <img src="img/main sudhan.webp" alt="Industrial supplies" />
+          </div>
+          <div class="intro-img-row">
+            <div class="intro-img-card small">
+              <img src="img/shope2.webp" alt="Welding tools" />
+            </div>
+            <div class="intro-img-card small">
+              <img src="img/top.jpg" alt="Safety equipment" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================journey================================================= -->
+  <style>
+    /* SECTION HEADER */
+    .section-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 60px;
+    }
+
+    /* OUR JOURNEY TEXT */
+    .section-eyebrow {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #2E2F78;
+      margin-bottom: 8px;
+    }
+
+    /* ❌ REMOVE LINE */
+    .section-eyebrow::after {
+      display: none;
+    }
+
+    /* optional line below eyebrow */
+    .section-eyebrow::after {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 2px;
+
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    /* MAIN HEADING */
+    .section-heading {
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 800;
+      line-height: 1.2;
+      color: #1c2240;
+      font-family: 'Sora', sans-serif;
+      letter-spacing: -0.5px;
+    }
+
+
+    /* SIMPLE GREEN TEXT */
+    .section-heading em {
+      font-style: normal;
+      color: #66A83D;
+    }
+
+    /* subtle underline effect */
+
+    .section-heading em::after {
+      display: none;
+    }
+
+    .timeline-pro {
+      padding: 120px 0;
+      background: #f5f7fa;
+      margin-top: 30px;
+    }
+
+    .timeline-wrap {
+      position: relative;
+      max-width: 1200px;
+      margin: 80px auto 0;
+    }
+
+    /* CENTER LINE */
+    .timeline-line {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 3px;
+      height: 0;
+      background: #2E2F78;
+      transform: translateX(-50%);
+      transition: height 1.2s ease;
+    }
+
+    /* ROW */
+    .timeline-row {
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin: 120px 0;
+    }
+
+    /* DOT */
+    .timeline-row::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      width: 16px;
+      height: 16px;
+      background: #fff;
+      border: 3px solid #2E2F78;
+      border-radius: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+    }
+
+    /* BIG YEAR */
+    .year-big {
+      position: absolute;
+      font-size: 180px;
+      font-weight: 900;
+      color: #dfe5ec;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* LEFT STYLE */
+    .timeline-row.left .year-big {
+      left: 0;
+    }
+
+    .timeline-row.left .timeline-content {
+      margin-left: auto;
+    }
+
+    /* RIGHT STYLE */
+    .timeline-row.right .year-big {
+      right: 0;
+      text-align: right;
+    }
+
+    .timeline-row.right .timeline-content {
+      margin-right: auto;
+    }
+
+    /* CONTENT BOX */
+    .timeline-content {
+      width: 420px;
+      background: #fff;
+      padding: 28px;
+      border-radius: 14px;
+      border: 1px solid #dbe3ec;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+      position: relative;
+      z-index: 2;
+
+      .timeline-content {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
+    /* TEXT */
+    .timeline-content span {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: #2E2F78;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .timeline-content p {
+      color: #4b5563;
+      line-height: 1.7;
+    }
+
+    /* ACTIVE */
+    .timeline-row.show .timeline-content {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:768px) {
+      .timeline-line {
+        left: 20px;
+      }
+
+      .timeline-row {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 40px;
+      }
+
+      .timeline-row::before {
+        left: 20px;
+      }
+
+      .year-big {
+        font-size: 80px;
+        position: relative;
+        margin-bottom: 10px;
+      }
+
+      .timeline-content {
+        width: 100%;
+      }
+    }
+  </style>
+
+  <section class="timeline-pro">
+    <div class="container reveal-left">
+
+      <div class="section-header">
+        <span class="section-eyebrow">Our Journey</span>
+        <h2 class="section-heading">A Legacy Built Across <em>Decades</em></h2>
+      </div>
+
+      <div class="timeline-wrap">
+
+        <!-- CENTER LINE -->
+        <div class="timeline-line"></div>
+
+        <!-- ITEM 1 -->
+        <div class="timeline-row left">
+          <div class="year-big reveal-left">1974</div>
+
+          <div class="timeline-content reveal-right">
+            <span>FOUNDATION</span>
+            <p>
+              Our story began in 1974, in a small 150 sq. ft. space in Kasarwadi, with just 50 valued clients and a
+              clear vision.
+              Initially serving only the PCMC region, we laid the foundation of our business on trust, consistency,
+              and a deep understanding of industry needs—values that continue to drive us today.
+            </p>
+          </div>
+        </div>
+
+        <!-- ITEM 2 -->
+        <div class="timeline-row right">
+          <div class="year-big reveal-right">1999</div>
+
+          <div class="timeline-content reveal-left">
+            <span>RESTRUCTURED</span>
+            <p>
+              A major turning point came in 1999, when we restructured and expanded into a 1500 sq. ft. space in
+              Yashwant Nagar.
+              This phase saw rapid growth, with our clientele rising to 350+ and our presence extending across
+              Maharashtra,
+              setting the stage for a more robust and scalable future.
+            </p>
+          </div>
+        </div>
+
+        <!-- ITEM 3 -->
+        <div class="timeline-row left reveal-left">
+          <div class="year-big">Today</div>
+
+          <div class="timeline-content reveal-">
+            <span>CURRENT</span>
+            <p>
+              Today, we operate from a 6000 sq. ft. facility in Bhosari, serving 1000+ clients with continued growth and
+              trust.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const rows = document.querySelectorAll(".timeline-row");
+    const line = document.querySelector(".timeline-line");
+
+    window.addEventListener("scroll", () => {
+
+      let trigger = window.innerHeight * 0.85;
+      let height = 0;
+
+      rows.forEach(row => {
+        const rect = row.getBoundingClientRect();
+
+        if (rect.top < trigger) {
+          row.classList.add("show");
+
+          let offset = row.offsetTop + 80;
+          if (offset > height) height = offset;
+        }
+      });
+
+      line.style.height = height + "px";
+    });
+  </script>
+
+  <!-- ============================Applications================================================= -->
+  <style>
+    /* smoother GPU animation */
+    .app-scroll-wrap {
+      will-change: scroll-position;
+    }
+
+    /* prevent jitter */
+    .app-scroll-track {
+      display: flex;
+      gap: 24px;
+      width: max-content;
+    }
+
+     .application-horizontal {
+    position: relative;
+    margin-top: -80px;
+   padding: 10px 0 40px;
+    background: linear-gradient(180deg, #f8fafc 0%, #eef3f8 100%);
+    overflow: hidden;
+  }
+
+  .application-horizontal-head {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 50px;
+  }
+
+  /* main scroll area */
+  .app-scroll-wrap {
+    position: relative;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 10px;
+
+    /* hide scrollbar */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
+  }
+
+  .app-scroll-wrap::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari */
+  }
+
+
+
+  /* track */
+  .app-scroll-track {
+    display: flex;
+    gap: 24px;
+    width: max-content;
+    padding: 0 32px 0 32px;
+  }
+
+  /* cards */
+  .app-panel {
+    position: relative;
+    width: 300px;
+    height: 420px;
+    flex: 0 0 auto;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 20px 48px rgba(46, 47, 120, 0.12);
+    transform: translateY(40px);
+    opacity: 0;
+    transition:
+      transform 0.85s cubic-bezier(.2, .8, .2, 1),
+      opacity 0.85s ease,
+      box-shadow 0.4s ease;
+  }
+
+  .app-panel.show {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .app-panel:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 28px 60px rgba(46, 47, 120, 0.18);
+  }
+
+  .app-panel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s ease;
+  }
+
+  .app-panel:hover img {
+    transform: scale(1.08);
+  }
+
+  .app-panel-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to top, rgba(8, 18, 30, .86) 0%, rgba(8, 18, 30, .28) 55%, rgba(8, 18, 30, .06) 100%),
+      linear-gradient(135deg, rgba(46, 47, 120, .22), rgba(102, 168, 61, .14) 60%, transparent 100%);
+  }
+
+  .app-panel-content {
+    position: absolute;
+    left: 26px;
+    right: 26px;
+    bottom: 24px;
+    z-index: 2;
+  }
+
+  .app-panel-content span {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: rgba(255, 255, 255, .72);
+    font-size: .85rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+  }
+
+  .app-panel-content h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .app-panel-content p {
+    color: rgba(255, 255, 255, .82);
+    font-size: 0.85rem;
+    line-height: 1.8;
+  }
+
+  /* bottom arrow bar */
+  .app-bottom-controls {
+    width: 100%;
+   margin-top: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .app-scroll-controls {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 14px 35px rgba(46, 47, 120, 0.12);
+    border: 1px solid rgba(46, 47, 120, 0.08);
+  }
+
+  .app-scroll-btn {
+    width: 54px;
+    height: 54px;
+    border: none;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #2E2F78;
+    box-shadow: 0 10px 25px rgba(46, 47, 120, 0.12);
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s ease;
+  }
+
+  .app-scroll-btn:hover {
+    background: #66A83D;
+    color: #fff;
+    transform: translateY(-3px) scale(1.05);
+  }
+
+  .app-scroll-btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+    background: #f3f4f6;
+    color: #9ca3af;
+    box-shadow: none;
+  }
+
+  /* responsive */
+  @media (max-width: 768px) {
+    .application-horizontal {
+      padding: 85px 0 80px;
+    }
+
+    .app-scroll-track {
+      gap: 18px;
+      padding: 0 18px;
+    }
+
+    .app-panel {
+      width: 290px;
+      height: 420px;
+      border-radius: 24px;
+    }
+
+    .app-panel-content {
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+    }
+
+    .app-panel-content h3 {
+      font-size: 1.2rem;
+    }
+
+    .app-panel-content p {
+      font-size: 0.88rem;
+      line-height: 1.7;
+    }
+
+    .app-scroll-wrap::before,
+    .app-scroll-wrap::after {
+      width: 42px;
+    }
+
+    .app-scroll-controls {
+      padding: 8px 12px;
+      gap: 10px;
+    }
+
+    .app-scroll-btn {
+      width: 44px;
+      height: 44px;
+      font-size: 18px;
+    }
+  }
+  </style>
+
+  <section class="application-horizontal" id="application-horizontal">
+    <div class="container">
+      <div class="application-horizontal-head reveal-up">
+        <!-- <span class="section-eyebrow">Areas Of Application</span> -->
+        <h2 class="section-heading">Industries Where Our product <em>Deliver Performance</em></h2>
+        <p class="section-sub">
+          We are one of the reputed suppliers of welding equipments and accessories appreciated
+          for high quality, durability and performance across diverse industrial sectors.
+        </p>
+      </div>
+    </div>
+
+    <div class="app-scroll-wrap reveal-up" id="appScrollWrap">
+      <div class="app-scroll-track reveal-up" id="appScrollTrack">
+
+        <div class="app-panel railways">
+          <img src="img/ral.webp" alt="Railways" loading="lazy">
+          <div class="app-panel-overlay"></div>
+          <div class="app-panel-content">
+            <span>01</span>
+            <h3>Railways</h3>
+            <p>Reliable welding and structural support for railway fabrication and maintenance environments.</p>
+          </div>
+        </div>
+
+        <div class="app-panel pressure">
+          <img src="img/presu.webp" alt="Pressure Vessel" loading="lazy">
+          <div class="app-panel-overlay"></div>
+          <div class="app-panel-content">
+            <span>02</span>
+            <h3>Pressure Vessel</h3>
+            <p>Suitable solutions for critical fabrication, inspection and performance-driven applications.</p>
+          </div>
+        </div>
+
+        <div class="app-panel boiler">
+          <img src="img/boiler.webp" alt="Boiler Industry" loading="lazy">
+          <div class="app-panel-overlay"></div>
+          <div class="app-panel-content">
+            <span>03</span>
+            <h3>Boiler Industry</h3>
+            <p>Dependable product for demanding thermal systems and industrial process applications.</p>
+          </div>
+        </div>
+
+        <div class="app-panel auto-component">
+          <img src="img/auto.webp" alt="Auto Component Industry" loading="lazy">
+          <div class="app-panel-overlay"></div>
+          <div class="app-panel-content">
+            <span>04</span>
+            <h3>Auto Component Industry</h3>
+            <p>Supporting production efficiency, precision and durability in component manufacturing.</p>
+          </div>
+        </div>
+
+        <div class="app-panel ship">
+          <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=1400&auto=format&fit=crop"
+            alt="Ship Building Industry" loading="lazy">
+          <div class="app-panel-overlay"></div>
+          <div class="app-panel-content">
+            <span>05</span>
+            <h3>Ship Building Industry</h3>
+            <p>Industrial-grade product support for marine structures and heavy fabrication environments.</p>
+          </div>
+        </div>
+
+        <div class="app-panel automotive">
+          <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1400&auto=format&fit=crop"
+            alt="Automotive Industry" loading="lazy">
+          <div class="app-panel-overlay"></div>
+          <div class="app-panel-content">
+            <span>06</span>
+            <h3>Automotive Industry</h3>
+            <p>Trusted for performance-focused industrial support in automotive production systems.</p>
+          </div>
+        </div>
+
+        <div class="app-panel agriculture">
+          <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1400&auto=format&fit=crop"
+            alt="Agricultural Equipment" loading="lazy">
+          <div class="app-panel-overlay"></div>
+          <div class="app-panel-content">
+            <span>07</span>
+            <h3>Agricultural Equipment</h3>
+            <p>Practical, durable and dependable supply support for fabrication and equipment upkeep.</p>
+          </div>
+        </div>
+
+        <div class="app-panel engineering">
+          <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1400&auto=format&fit=crop"
+            alt="General Engineering Industry" loading="lazy">
+          <div class="app-panel-overlay"></div>
+          <div class="app-panel-content">
+            <span>08</span>
+            <h3>General Engineering Industry</h3>
+            <p>Versatile product solutions suited for workshops, fabrication units and engineering operations.</p>
+          </div>
+        </div>
+
+        <div class="app-panel medical">
+          <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1400&auto=format&fit=crop"
+            alt="Medical Industry" loading="lazy">
+          <div class="app-panel-overlay"></div>
+          <div class="app-panel-content">
+            <span>09</span>
+            <h3>Medical Industry</h3>
+            <p>Reliable equipment and safety solutions designed for hospitals, laboratories and precision medical
+              environments.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom arrows -->
+    <div class="app-bottom-controls">
+      <div class="app-scroll-controls">
+        <button class="app-scroll-btn" id="appScrollLeft" aria-label="Scroll left">
+          &#8592;
+        </button>
+        <button class="app-scroll-btn" id="appScrollRight" aria-label="Scroll right">
+          &#8594;
+        </button>
+      </div>
+    </div>
+  </section>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const appScrollWrap = document.getElementById("appScrollWrap");
+        const appScrollLeft = document.getElementById("appScrollLeft");
+        const appScrollRight = document.getElementById("appScrollRight");
+        const appPanels = document.querySelectorAll(".app-panel");
+
+        if (!appScrollWrap || !appScrollLeft || !appScrollRight) {
+          console.error("Application scroll elements not found.");
+          return;
+        }
+
+        function updateAppButtons() {
+          const maxScroll = appScrollWrap.scrollWidth - appScrollWrap.clientWidth;
+
+          appScrollLeft.disabled = appScrollWrap.scrollLeft <= 5;
+          appScrollRight.disabled = appScrollWrap.scrollLeft >= maxScroll - 5;
+        }
+
+        function revealPanelsOnScroll() {
+          appPanels.forEach((panel) => {
+            const rect = panel.getBoundingClientRect();
+            if (rect.left < window.innerWidth - 60) {
+              panel.classList.add("show");
+            }
+          });
+        }
+
+        appScrollLeft.addEventListener("click", function () {
+          appScrollWrap.scrollBy({
+            left: -420,
+            behavior: "smooth"
+          });
+        });
+
+        appScrollRight.addEventListener("click", function () {
+          appScrollWrap.scrollBy({
+            left: 420,
+            behavior: "smooth"
+          });
+        });
+
+        appScrollWrap.addEventListener("scroll", function () {
+          updateAppButtons();
+          revealPanelsOnScroll();
+        });
+
+        window.addEventListener("load", function () {
+          updateAppButtons();
+          revealPanelsOnScroll();
+        });
+
+        window.addEventListener("resize", function () {
+          updateAppButtons();
+        });
+
+        updateAppButtons();
+        revealPanelsOnScroll();
+      });
+
+    </script>
+
+    <!-- ======================================Customer Section================================================= -->
+     <style>
+      /* =========================
+   OUR CUSTOMERS SECTION
+========================= */
+  .our-customers-section {
+    position: relative;
+    padding: 110px 0;
+    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+    overflow: hidden;
+  }
+
+  .our-customers-section::before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    top: -120px;
+    right: -120px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(111, 143, 175, .12), transparent 70%);
+    pointer-events: none;
+  }
+
+  .our-customers-section::after {
+    content: "";
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    bottom: -120px;
+    left: -120px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(200, 146, 42, .10), transparent 70%);
+    pointer-events: none;
+  }
+
+  .our-customers-wrap {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 54px;
+    align-items: start;
+  }
+
+  .our-customers-left {
+    position: sticky;
+    top: 110px;
+  }
+
+  .customers-intro {
+    font-size: 1rem;
+    line-height: 1.95;
+    color: var(--body-text);
+    margin-top: 18px;
+  }
+
+  .our-customers-right {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .customer-flow-card {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 30px 28px;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, .9);
+    border: 1px solid rgba(111, 143, 175, .10);
+    box-shadow: 0 16px 36px rgba(13, 27, 42, .07);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    overflow: hidden;
+  }
+
+  .customer-flow-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 22px;
+    bottom: 22px;
+    width: 4px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, var(--gold), var(--steel));
+  }
+
+  .customer-flow-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 50px rgba(13, 27, 42, .12);
+  }
+
+  .customer-flow-icon {
+    width: 62px;
+    height: 62px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+    color: var(--gold-light);
+    font-family: 'Sora', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    box-shadow: 0 12px 24px rgba(13, 27, 42, .18);
+  }
+
+  .customer-flow-content h3 {
+    font-size: 1.35rem;
+    color: var(--navy);
+    margin-bottom: 10px;
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+  }
+
+  .customer-flow-content p {
+    font-size: 0.98rem;
+    line-height: 1.9;
+    color: var(--body-text);
+  }
+
+  /* reveal animation */
+  .reveal-left,
+  .reveal-up {
+    opacity: 0;
+    transition: 0.9s ease;
+  }
+
+  .reveal-left {
+    transform: translateX(-50px);
+  }
+
+  .reveal-up {
+    transform: translateY(50px);
+  }
+
+  .reveal-left.active,
+  .reveal-up.active {
+    opacity: 1;
+    transform: none;
+  }
+
+  .delay-1 {
+    transition-delay: .15s;
+  }
+
+  .delay-2 {
+    transition-delay: .3s;
+  }
+
+  /* responsive */
+  @media (max-width: 991px) {
+    .our-customers-wrap {
+      grid-template-columns: 1fr;
+      gap: 34px;
+    }
+
+    .our-customers-left {
+      position: static;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .our-customers-section {
+      padding: 85px 0;
+    }
+
+    .customer-flow-card {
+      padding: 24px 20px;
+      border-radius: 22px;
+      gap: 16px;
+    }
+
+    .customer-flow-icon {
+      width: 52px;
+      height: 52px;
+      font-size: 0.9rem;
+    }
+
+    .customer-flow-content h3 {
+      font-size: 1.15rem;
+    }
+
+    .customer-flow-content p {
+      font-size: 0.92rem;
+      line-height: 1.8;
+    }
+  }
+
+
+  .customers-section {
+   padding:80px 8% 50px;
+    background: #f7f9fc;
+  }
+
+  .customers-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+  }
+
+  /* LEFT */
+  .customers-left {
+    flex: 1;
+  }
+
+  .customers-left .tag {
+    color: #2E2F78;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  .customers-left h2 {
+    font-size: 48px;
+    font-weight: 800;
+    color: #0d1b2a;
+  }
+
+  .customers-left h2 span {
+    color: #66A83D;
+  }
+
+  .customers-left p {
+    color: #5f6b7a;
+    margin-top: 15px;
+    line-height: 1.6;
+  }
+
+  /* RIGHT */
+  .customers-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  /* IMAGE */
+  .customer-image img {
+    width: 220px;
+    border-radius: 20px;
+  }
+
+  /* CARDS */
+  .customer-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .customer-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  }
+
+  .circle {
+    width: 50px;
+    height: 50px;
+    background: #1a2f44;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 600;
+  }
+
+     </style>
+    <section class="customers-section ">
+      <div class="customers-container">
+
+        <!-- LEFT CONTENT -->
+        <div class="customers-left reveal-left">
+          <span class="tag">OUR CUSTOMERS</span>
+
+          <h2>
+            Trusted By <br>
+            <span>Diverse</span><br>
+            Customer Segments
+          </h2>
+
+          <p>
+            We supply a wide range of welding equipments and accessories that are unmatched in terms of quality and
+            performance.
+          </p>
+
+          <p>
+            With timely delivery, dependable quality and affordable pricing, we have built a strong and growing
+            clientele.
+          </p>
+        </div>
+
+        <!-- RIGHT CONTENT -->
+        <div class="customers-right reveal-right">
+
+          <!-- CARDS -->
+          <div class="customer-cards">
+
+            <div class="customer-card">
+              <div class="circle">01</div>
+              <div>
+                <h3>Industries</h3>
+                <p>Multinationals, Engineering, Electronics...</p>
               </div>
+            </div>
 
-              <div class="ps-submenu-panel" id="m2">
-                <a href="#">MS Electrodes</a>
-                <a href="#">SS Electrodes</a>
-                <a href="#">Cast Iron Electrodes</a>
-                <a href="#">Hard Facing Electrodes</a>
+            <div class="customer-card">
+              <div class="circle">02</div>
+              <div>
+                <h3>Professionals</h3>
+                <p>Architects, Craftsman, Fabricators...</p>
               </div>
+            </div>
 
-              <div class="ps-submenu-panel" id="m3">
-                <a href="#">Electrode Holders</a>
-                <a href="#">Earth Clamps</a>
-                <a href="#">Welding Cables</a>
-                <a href="#">Cable Connectors</a>
+            <div class="customer-card">
+              <div class="circle">03</div>
+              <div>
+                <h3>Institutions</h3>
+                <p>Hospitals, Schools, Banks...</p>
               </div>
-
-              <div class="ps-submenu-panel" id="m4">
-                <a href="#">Safety Gloves</a>
-                <a href="#">Welding Helmets</a>
-                <a href="#">Face Shields</a>
-                <a href="#">Safety Shoes</a>
-              </div>
-
-              <div class="ps-submenu-panel" id="m5">
-                <a href="#">TIG Torches</a>
-                <a href="#">Collets</a>
-                <a href="#">Ceramic Cups</a>
-                <a href="#">Back Caps</a>
-              </div>
-
-              <div class="ps-submenu-panel" id="m6">
-                <a href="#">CO2 Torches</a>
-                <a href="#">Contact Tips</a>
-                <a href="#">Nozzles</a>
-                <a href="#">Torch Liners</a>
-              </div>
-
-              <div class="ps-submenu-panel" id="m7">
-                <a href="#">Cutting Nozzles</a>
-                <a href="#">Brazing Rods</a>
-                <a href="#">Gas Torches</a>
-                <a href="#">Flashback Arrestors</a>
-              </div>
-
-              <div class="ps-submenu-panel" id="m8">
-                <a href="#">Cleaner</a>
-                <a href="#">Penetrant</a>
-                <a href="#">Developer</a>
-                <a href="#">DP Test Kits</a>
-              </div>
-
-              <div class="ps-submenu-panel" id="m9">
-                <a href="#">Oxygen Regulators</a>
-                <a href="#">Acetylene Regulators</a>
-                <a href="#">Argon Regulators</a>
-                <a href="#">Regulator Spare Parts</a>
-              </div>
-
-              <div class="ps-submenu-panel" id="m10">
-                <a href="#">ARC Welding Machines</a>
-                <a href="#">MIG Welding Machines</a>
-                <a href="#">TIG Welding Machines</a>
-                <a href="#">Plasma Cutting Machines</a>
-              </div>
-
-              <div class="ps-submenu-panel" id="m11">
-                <a href="#">Industrial Primer</a>
-                <a href="#">Metal Paint</a>
-                <a href="#">Protective Coatings</a>
-                <a href="#">Touch-up Paints</a>
-              </div>
-
-              <div class="ps-submenu-panel" id="m12">
-                <a href="#">Angle Polishers</a>
-                <a href="#">Buffing Machines</a>
-                <a href="#">Pads</a>
-                <a href="#">Accessories</a>
-              </div>
-
-              <div class="ps-submenu-panel" id="m13">
-                <a href="#">Spanners</a>
-                <a href="#">Pliers</a>
-                <a href="#">Screwdrivers</a>
-                <a href="#">Hammers</a>
-              </div>
-
-              <div class="ps-submenu-panel" id="m14">
-                <a href="#">Cutting Wheels</a>
-                <a href="#">Grinding Wheels</a>
-                <a href="#">Flap Discs</a>
-                <a href="#">Sanding Discs</a>
-              </div>
-
-              <div class="ps-submenu-panel" id="m15">
-                <a href="#">Drill Bits</a>
-                <a href="#">Hole Saws</a>
-                <a href="#">Reamers</a>
-                <a href="#">Industrial Cutters</a>
-              </div>
-
-              <div class="ps-submenu-panel" id="m16">
-                <a href="#">Drilling Machines</a>
-                <a href="#">Angle Grinders</a>
-                <a href="#">Impact Tools</a>
-                <a href="#">Heavy Duty Tools</a>
-              </div>
-
             </div>
 
           </div>
-        </li>
 
-        <li><a href="gallery.html" class="ps-nav-link">Gallery</a></li>
-        <li><a href="certificates.html" class="ps-nav-link">Certificates</a></li>
+        </div>
 
-      </ul>
-    </nav>
+      </div>
+    </section>
 
-    <!-- CTA -->
-    <a href="contact.html" class="ps-contact-btn">Contact →</a>
+    <!-- =======================================Why Chose US============================ -->
 
-  </div>
-</header>
+    <style>
+      
+  /* =========================
+   WHY CHOOSE US
+========================= */
+  .why-choose-about {
+    padding: 100px 0;
+    background: #f7f8fb;
+    overflow: hidden;
+  }
 
-<script></script>
-</body>
-</html>
+  .why-choose-split {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .why-left-panel {
+    position: sticky;
+    top: 120px;
+  }
+
+  .section-eyebrow {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #c9921e;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+
+  .why-main-title {
+    font-size: clamp(2.2rem, 4vw, 4.2rem);
+    line-height: 1.05;
+    margin-bottom: 18px;
+    color: #1e2d3d;
+    font-weight: 800;
+  }
+
+  .why-subtext {
+    font-size: 1.1rem;
+    color: #667085;
+    max-width: 420px;
+  }
+
+  .why-right-panel {
+    position: relative;
+    padding-left: 34px;
+  }
+
+  .why-timeline-line {
+    position: absolute;
+    left: 22px;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, #1f2d3d, #7f8ea3, #d39a22);
+    border-radius: 20px;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 1.2s ease;
+  }
+
+  .why-point {
+    position: relative;
+    display: flex;
+    gap: 22px;
+    margin-bottom: 48px;
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.8s ease;
+  }
+
+  .why-point:last-child {
+    margin-bottom: 0;
+  }
+
+  .why-circle {
+    position: relative;
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    z-index: 2;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+    transform: scale(0.7);
+    transition: transform 0.5s ease;
+  }
+
+  .why-circle::after {
+    content: "";
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 2px solid rgba(211, 154, 34, 0.28);
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  .circle-dark {
+    background: #233446;
+  }
+
+  .circle-steel {
+    background: #61758d;
+  }
+
+  .circle-gold {
+    background: linear-gradient(135deg, #d39a22, #f0b846);
+  }
+
+  .why-content {
+    background: #fff;
+    border-radius: 18px;
+    padding: 24px 26px;
+    box-shadow: 0 16px 45px rgba(31, 45, 61, 0.08);
+    border: 1px solid rgba(20, 30, 45, 0.05);
+    flex: 1;
+    transform: translateX(40px);
+    opacity: 0;
+    transition: all 0.75s ease;
+  }
+
+  .why-content h3 {
+    font-size: 1.35rem;
+    line-height: 1.35;
+    margin-bottom: 12px;
+    color: #1e2d3d;
+    font-weight: 700;
+  }
+
+  .why-content h3 span {
+    color: #d39a22;
+    font-size: 1.55rem;
+    margin-right: 8px;
+    font-weight: 800;
+  }
+
+  .why-content p {
+    margin: 0;
+    color: #667085;
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  /* Active animation states */
+  .why-choose-about.animate .why-timeline-line {
+    transform: scaleY(1);
+  }
+
+  .why-point.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .why-point.show .why-content {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .why-point.show .why-circle {
+    transform: scale(1);
+  }
+
+  .why-point.show .why-circle::after {
+    animation: pulseRing 1.5s ease-out 1;
+    opacity: 1;
+  }
+
+  .why-point.show .why-circle {
+    animation: popBounce 0.55s ease;
+  }
+
+  /* Left text reveal */
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: all 0.9s ease;
+  }
+
+  .reveal-left.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* keyframes */
+  @keyframes popBounce {
+    0% {
+      transform: scale(0.6);
+    }
+
+    50% {
+      transform: scale(1.12);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes pulseRing {
+    0% {
+      transform: scale(0.8);
+      opacity: 0.8;
+    }
+
+    100% {
+      transform: scale(1.45);
+      opacity: 0;
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 991px) {
+    .why-choose-split {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .why-left-panel {
+      position: relative;
+      top: unset;
+    }
+
+    .why-right-panel {
+      padding-left: 20px;
+    }
+
+    .why-timeline-line {
+      left: 18px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .why-choose-about {
+      padding: 70px 0;
+    }
+
+    .why-main-title {
+      font-size: 2rem;
+    }
+
+    .why-point {
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+
+    .why-circle {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      font-size: 14px;
+    }
+
+    .why-content {
+      padding: 18px 18px;
+      border-radius: 14px;
+    }
+
+    .why-content h3 {
+      font-size: 1.05rem;
+    }
+
+    .why-content h3 span {
+      font-size: 1.2rem;
+    }
+
+    .why-content p {
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+  }
+
+    </style>
+
+    <section class="why-choose-about section-space" id="why-choose">
+      <div class="container">
+        <div class="why-choose-split">
+
+          <!-- Left Panel -->
+          <div class="why-left-panel reveal-left">
+            <span class="section-eyebrow">Why Choose Us</span>
+            <h2 class="why-main-title">
+              Why Choose <span>Us?</span>
+            </h2>
+            <p class="why-subtext">The numbers speak for themselves.</p>
+          </div>
+
+          <!-- Right Panel -->
+          <div class="why-right-panel">
+
+            <!-- vertical line -->
+            <div class="why-timeline-line"></div>
+
+            <!-- Point 1 -->
+            <div class="why-point reveal-card">
+              <div class="why-circle circle-dark">1</div>
+
+              <div class="why-content">
+                <h3>
+                  <span class="why-highlight">91%</span> Trusted Product Supply
+                </h3>
+                <p>
+                  We maintain a strong reputation for reliable industrial product sourcing,
+                  consistent support and long-term client trust.
+                </p>
+              </div>
+            </div>
+
+            <!-- Point 2 -->
+            <div class="why-point reveal-card">
+              <div class="why-circle circle-steel">2</div>
+
+              <div class="why-content">
+                <h3>
+                  <span class="why-highlight">89%</span> Timely Delivery Commitment
+                </h3>
+                <p>
+                  Our supply process is focused on timely response, dependable dispatch
+                  and smooth coordination for urgent industrial requirements.
+                </p>
+              </div>
+            </div>
+
+            <!-- Point 3 -->
+            <div class="why-point reveal-card">
+              <div class="why-circle circle-gold">3</div>
+
+              <div class="why-content">
+                <h3>
+                  <span class="why-highlight">83%</span> Long-Term Client Retention
+                </h3>
+                <p>
+                  Years of quality service, practical support and honest business values
+                  help us build lasting client relationships.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  
+    <script>
+      window.addEventListener("scroll", () => {
+        document.querySelectorAll(".stat-num").forEach(counter => {
+          if (!counter.classList.contains("started")) {
+            const rect = counter.getBoundingClientRect();
+            if (rect.top < window.innerHeight) {
+              counter.classList.add("started");
+
+              let target = +counter.dataset.target;
+              let count = 0;
+
+              let interval = setInterval(() => {
+                count += Math.ceil(target / 50);
+                if (count >= target) {
+                  counter.innerText = target;
+                  clearInterval(interval);
+                } else {
+                  counter.innerText = count;
+                }
+              }, 30);
+            }
+          }
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const whySection = document.querySelector(".why-choose-about");
+        const leftPanel = document.querySelector(".reveal-left");
+        const points = document.querySelectorAll(".why-point");
+
+        if (!whySection) return;
+
+        let hasAnimated = false;
+
+        const runWhyAnimation = () => {
+          if (hasAnimated) return;
+          hasAnimated = true;
+
+          whySection.classList.add("animate");
+
+          if (leftPanel) {
+            setTimeout(() => {
+              leftPanel.classList.add("show");
+            }, 200);
+          }
+
+          points.forEach((point, index) => {
+            setTimeout(() => {
+              point.classList.add("show");
+            }, 800 + index * 550); // one by one runtime reveal
+          });
+        };
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                runWhyAnimation();
+              }
+            });
+          },
+          {
+            threshold: 0.28,
+          }
+        );
+
+        observer.observe(whySection);
+      });
+
+    </script>
+    <!-- =======================================Store Gallery============================================================= -->
+   
+       <style>
+      .store-gallery-section {
+        padding: 90px 0 10px;
+        background: #ffffff;
+      }
+
+      .store-gallery-section .container {
+        width: 1200px;
+        margin: 0 auto;
+      }
+
+      .store-gallery-head {
+        text-align: center;
+        max-width: 760px;
+        margin: 0 auto 40px;
+      }
+
+      .section-eyebrow {
+        display: inline-block;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #66A83D;
+        margin-bottom: 12px;
+      }
+
+      .section-heading {
+        font-size: clamp(30px, 4vw, 52px);
+        line-height: 1.1;
+        font-weight: 800;
+        color: #0f172a;
+        margin-bottom: 14px;
+      }
+
+      .section-heading em {
+        color: #66A83D;
+        font-style: normal;
+      }
+
+      .section-sub {
+        font-size: 16px;
+        line-height: 1.8;
+        color: #475569;
+      }
+
+      /* gallery box */
+      .store-gallery-box {
+        display: grid;
+        grid-template-columns: 130px 1fr;
+        gap: 24px;
+        align-items: stretch;
+      }
+
+      /* thumbnails */
+      .gallery-thumbs {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .thumb {
+        width: 100%;
+        height: 92px;
+        border-radius: 16px;
+        overflow: hidden;
+        cursor: pointer;
+        border: 2px solid transparent;
+        background: #fff;
+        box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+        transition: all 0.3s ease;
+        flex-shrink: 0;
+      }
+
+      .thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .thumb:hover {
+        transform: translateY(-3px);
+        border-color: rgba(232, 98, 10, 0.45);
+      }
+
+      .thumb.active {
+        border-color: #66A83D;
+        box-shadow: 0 14px 30px rgba(232, 98, 10, 0.18);
+      }
+
+      /* main wrap */
+      .gallery-main-wrap {
+        position: relative;
+        background: #fff;
+        border-radius: 28px;
+        overflow: hidden;
+        min-height: 560px;
+        box-shadow: 0 20px 60px rgba(15, 23, 42, 0.10);
+      }
+
+      .gallery-main {
+        width: 100%;
+        height: 100%;
+      }
+
+      .gallery-main img {
+        width: 100%;
+        height: 560px;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* nav buttons */
+      .gallery-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 52px;
+        height: 52px;
+        border: none;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.92);
+        color: #0f172a;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 3;
+        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+        transition: all 0.3s ease;
+      }
+
+      .gallery-nav:hover {
+        background: #66A83D;
+        color: #fff;
+      }
+
+      .prev-btn {
+        left: 18px;
+      }
+
+      .next-btn {
+        right: 18px;
+      }
+
+      /* =========================
+   TABLET
+========================= */
+      @media (max-width: 991px) {
+        .store-gallery-box {
+          grid-template-columns: 1fr;
+        }
+
+        .gallery-thumbs {
+          flex-direction: row;
+          overflow-x: auto;
+          overflow-y: hidden;
+          padding-bottom: 6px;
+          scrollbar-width: none;
+        }
+
+        .gallery-thumbs::-webkit-scrollbar {
+          display: none;
+        }
+
+        .thumb {
+          min-width: 110px;
+          width: 110px;
+          height: 80px;
+        }
+
+        .gallery-main-wrap {
+          min-height: auto;
+        }
+
+        .gallery-main img {
+          height: 460px;
+        }
+      }
+
+      /* =========================
+   MOBILE
+========================= */
+      @media (max-width: 767px) {
+        .store-gallery-section {
+          padding: 70px 0;
+        }
+
+        .store-gallery-head {
+          margin-bottom: 28px;
+        }
+
+        .section-heading {
+          font-size: 32px;
+        }
+
+        .section-sub {
+          font-size: 14px;
+          line-height: 1.7;
+        }
+
+        .store-gallery-box {
+          gap: 16px;
+        }
+
+        .thumb {
+          min-width: 90px;
+          width: 90px;
+          height: 70px;
+          border-radius: 12px;
+        }
+
+        .gallery-main-wrap {
+          border-radius: 20px;
+        }
+
+        .gallery-main img {
+          height: 280px;
+        }
+
+        .gallery-nav {
+          width: 42px;
+          height: 42px;
+          font-size: 20px;
+        }
+
+        .prev-btn {
+          left: 10px;
+        }
+
+        .next-btn {
+          right: 10px;
+        }
+      }
+   
+     </style>
+
+    <section class="store-gallery-section">
+      <div class="container">
+        <div class="store-gallery-head">
+          <span class="section-eyebrow">Our Store / Gallery</span>
+          <h2 class="section-heading">See Our <em>Showroom</em></h2>
+          <p class="section-sub">
+            Take a closer look at our store, product display and industrial supply environment.
+          </p>
+        </div>
+
+        <div class="store-gallery-box">
+
+          <!-- Left Thumbnails -->
+          <div class="gallery-thumbs" id="galleryThumbs">
+            <div class="thumb active" data-full="img/img2.png">
+              <img src="img/img2.png" alt="Store Image 1">
+            </div>
+
+            <div class="thumb" data-full="img/shope2.webp">
+              <img src="img/shope2.webp" alt="Store Image 2">
+            </div>
+
+            <div class="thumb" data-full="img/img1.avif">
+              <img src="img/img1.avif" alt="Store Image 4">
+            </div>
+
+            <div class="thumb" data-full="img/top.jpg">
+              <img src="img/top.jpg" alt="Store Image 5">
+            </div>
+
+            <div class="thumb" data-full="img/store6.webp">
+              <img src="img/store6.webp" alt="Store Image 6">
+            </div>
+
+            <div class="thumb" data-full="img/store1.jpg">
+              <img src="img/store1.jpg" alt="Store Image 6">
+            </div>
+          </div>
+
+          <!-- Main Image Area -->
+          <div class="gallery-main-wrap">
+            <button class="gallery-nav prev-btn" id="prevBtn" aria-label="Previous Image">&#10094;</button>
+
+            <div class="gallery-main">
+              <img id="mainGalleryImage" src="img/img2.png" alt="Main Store Image">
+            </div>
+
+            <button class="gallery-nav next-btn" id="nextBtn" aria-label="Next Image">&#10095;</button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const thumbs = document.querySelectorAll(".gallery-thumbs .thumb");
+      const mainImage = document.getElementById("mainGalleryImage");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+
+      let currentIndex = 0;
+
+      function updateGallery(index) {
+        if (index < 0) index = thumbs.length - 1;
+        if (index >= thumbs.length) index = 0;
+
+        currentIndex = index;
+        const newImage = thumbs[currentIndex].getAttribute("data-full");
+        const newAlt = thumbs[currentIndex].querySelector("img").alt;
+
+        mainImage.src = newImage;
+        mainImage.alt = newAlt;
+
+        thumbs.forEach((thumb) => thumb.classList.remove("active"));
+        thumbs[currentIndex].classList.add("active");
+
+        thumbs[currentIndex].scrollIntoView({
+          behavior: "smooth",
+          inline: "center",
+          block: "nearest"
+        });
+      }
+
+      thumbs.forEach((thumb, index) => {
+        thumb.addEventListener("click", () => {
+          updateGallery(index);
+        });
+      });
+
+      prevBtn.addEventListener("click", () => {
+        updateGallery(currentIndex - 1);
+      });
+
+      nextBtn.addEventListener("click", () => {
+        updateGallery(currentIndex + 1);
+      });
+    </script>
+
+
+    <a href="https://wa.me/919822603202" class="whatsapp-float" target="_blank">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+
+    <!-- =========================================================================================== -->
+      <!-- ═══════════════════════════════════════ FOOTER ═══════════════════════════════════════--> 
+    <footer class="sa-footer">
+      <div class="sa-footer-wave"></div>
+
+      <div class="container">
+        <div class="sa-footer-grid">
+
+          <!-- LEFT -->
+          <div class="sa-footer-col sa-footer-brand">
+            <a href="index.html" class="sa-footer-logo-wrap">
+              <img src="img/logobg.png" alt="Sudhanshu Associates Logo" class="sa-footer-logo-img">
+
+              <div class="sa-footer-logo-text">
+                <span class="sa-footer-brand-name">SUDHANSHU </span>
+                <span class="sa-footer-brand-sub">ASSOCIATES</span>
+              </div>
+            </a>
+
+            <p class="sa-footer-about">
+              A trusted sole proprietary concern based in Pune, specializing in
+              welding, NDT, safety, and power tool supplies for industry.
+            </p>
+
+            <div class="sa-footer-socials">
+              <a href="#" class="sa-social-btn sa-whatsapp" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a href="#" class="sa-social-btn sa-instagram" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="sa-social-btn sa-facebook" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- QUICK LINKS -->
+          <div class="sa-footer-col sa-footer-links-col">
+            <h4>QUICK LINKS</h4>
+            <ul class="sa-footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="product.html">Product</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="certificates.html">Certificates</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- PRODUCTS -->
+          <div class="sa-footer-col sa-footer-links-col">
+            <h4>PRODUCTS</h4>
+            <ul class="sa-footer-links">
+              <li><a href="product.html#electrodes">Welding Electrodes</a></li>
+              <li><a href="product.html#dp-testing-materials">NDT Equipment</a></li>
+              <li><a href="product.html#safety-equipments">Safety Products</a></li>
+              <li><a href="product.html#abrasives">Abrasives</a></li>
+              <li><a href="product.html#power-tools">Power Tools</a></li>
+              <li><a href="product.html#pressure-regulators">Gas Regulators</a></li>
+            </ul>
+          </div>
+
+          <!-- CONTACT -->
+          <div class="sa-footer-col sa-footer-contact-col">
+            <h4>CONTACT</h4>
+            <ul class="sa-footer-contact">
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>
+                  Sector No. 7, Plot No. 58, PCNTDA,
+                  Bhosari MIDC, Pune 411026,
+                  Maharashtra (India)
+                </span>
+              </li>
+
+              <li>
+                <i class="fas fa-phone-alt"></i>
+                <span>9822603202 / 9822377202 / 9881009380</span>
+              </li>
+
+              <li>
+                <i class="fas fa-envelope"></i>
+                <span>saplpune@gmail.com</span>
+              </li>
+
+              <li>
+                <i class="fas fa-globe"></i>
+                <span>www.sudhanshuassociates.com</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="sa-footer-bottom">
+          <p class="sa-footer-copy">© 2025 Sudhanshu Associates. All rights reserved.</p>
+          <p class="sa-footer-dev">
+            Developed by
+            <a href="https://www.qirotec.com/" target="_blank" class="sa-dev-link">
+              QIRO TECH INNOVATION PVT. LTD.
+            </a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- =========================================Javasripts Navbar mobile================================================ -->
+     <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const psMenuToggle = document.getElementById("psMenuToggle");
+        const psNav = document.getElementById("psNav");
+        const psOverlay = document.getElementById("psMobileOverlay");
+        const psDropdown = document.getElementById("psProductsDropdown");
+        const psToggle = document.getElementById("psProductsToggle");
+        const psMainItems = document.querySelectorAll(".ps-main-product-item");
+        const psPanels = document.querySelectorAll(".ps-submenu-panel");
+
+        function activatePanel(item) {
+          const targetId = item.getAttribute("data-target");
+          if (!targetId) return;
+
+          psMainItems.forEach(btn => btn.classList.remove("active"));
+          psPanels.forEach(panel => panel.classList.remove("active"));
+
+          item.classList.add("active");
+          const targetPanel = document.getElementById(targetId);
+          if (targetPanel) targetPanel.classList.add("active");
+        }
+
+        if (psMainItems.length) {
+          activatePanel(psMainItems[0]);
+        }
+
+        psMainItems.forEach((item) => {
+          item.addEventListener("mouseenter", function () {
+            if (window.innerWidth > 991) activatePanel(item);
+          });
+
+          item.addEventListener("click", function (e) {
+            if (window.innerWidth <= 991) e.preventDefault();
+            activatePanel(item);
+          });
+        });
+
+        function openMenu() {
+          if (!psMenuToggle || !psNav) return;
+          psMenuToggle.classList.add("active");
+          psNav.classList.add("active");
+          document.body.classList.add("ps-menu-open");
+          if (psOverlay) psOverlay.classList.add("active");
+        }
+
+        function closeMenu() {
+          if (!psMenuToggle || !psNav) return;
+          psMenuToggle.classList.remove("active");
+          psNav.classList.remove("active");
+          document.body.classList.remove("ps-menu-open");
+          if (psOverlay) psOverlay.classList.remove("active");
+          if (psDropdown) psDropdown.classList.remove("open");
+        }
+
+        if (psMenuToggle) {
+          psMenuToggle.addEventListener("click", function (e) {
+            e.stopPropagation();
+            if (psNav.classList.contains("active")) {
+              closeMenu();
+            } else {
+              openMenu();
+            }
+          });
+        }
+
+        if (psOverlay) {
+          psOverlay.addEventListener("click", closeMenu);
+        }
+
+        if (psToggle && psDropdown) {
+          psToggle.addEventListener("click", function (e) {
+            if (window.innerWidth <= 991) {
+              e.preventDefault();
+              e.stopPropagation();
+              psDropdown.classList.toggle("open");
+            }
+          });
+        }
+
+        window.addEventListener("resize", function () {
+          if (window.innerWidth > 991) {
+            closeMenu();
+          }
+        });
+      });
+    </script>
+<!-- ================================================================================= -->
+  <script>
+         
+      const animatedItems = document.querySelectorAll(
+        '.reveal-up, .reveal-left, .reveal-right, .zoom-in'
+      );
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, { threshold: 0.18 });
+
+      animatedItems.forEach((item) => observer.observe(item));
+
+    </script>
+     <script>
+      const sketchObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      }, { threshold: 0.2 });
+
+      document.querySelectorAll(".reveal-up, .timeline-sketch-wrap").forEach((el) => {
+        sketchObserver.observe(el);
+      });
+    </script>
 </body>
 </html>
