@@ -4069,9 +4069,12 @@ body {
   border-bottom-right-radius: 100% 80px;
 }
 .sa-footer .container{
- width: 100%;
+  width: 100%;
   max-width: 100%;
-  padding: 0 25px;   /* 🔥 SAME AS NAVBAR */
+
+  /* Equal left-right padding */
+  padding-left: 40px;
+  padding-right: 50px;
 }
 
 .sa-footer-grid{
