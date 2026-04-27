@@ -1,0 +1,5891 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sudhanshu Associates – Industrial Excellence Since 1974</title>
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="img/new logo.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <!-- AOS Animation -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+  <style>
+
+    
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#ffffff;
+      color:#0d1b2a;
+    }
+    
+    
+    .container{
+      width:min(1200px, calc(100% - 40px));
+      margin:auto;
+    }
+
+    
+    
+    /* =========================
+       PRODUCT EXPLORE
+    ========================= */
+    .sa-explore-product{
+      width: 100%;
+      padding: 70px 0;
+      background: #f5f4f2;
+    }
+
+    .sa-explore-container{
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      padding: 0 40px 0 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 40px;
+    }
+
+    .sa-explore-sidebar{
+      width: 390px;
+      min-width: 390px;
+      flex-shrink: 0;
+      position: sticky;
+      top: 95px;
+    }
+
+    .sa-sidebar-box{
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 30px;
+      padding: 34px 24px;
+      box-shadow: 0 14px 40px rgba(12, 22, 36, 0.05);
+    }
+
+    .sa-sidebar-title{
+      margin: 0 0 24px;
+      font-size: 34px;
+      font-weight: 800;
+      color: #63a83e;
+      line-height: 1.1;
+      font-family:'Sora', sans-serif;
+    }
+
+    .sa-dropdown{
+      border: 1px solid #dcdcdc;
+      border-radius: 22px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      background: #fff;
+    }
+
+    .sa-dropdown-toggle{
+      width: 100%;
+      border: none;
+      background: #fff;
+      color: #23324c;
+      padding: 18px 20px;
+      font-size: 17px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: 0.3s ease;
+      text-align: left;
+    }
+
+    .sa-dropdown.active .sa-dropdown-toggle{
+      background: #4341a8;
+      color: #fff;
+    }
+
+    .sa-dropdown-icon{
+      font-size: 14px;
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+      margin-left: 14px;
+    }
+
+    .sa-dropdown.active .sa-dropdown-icon{
+      transform: rotate(180deg);
+    }
+
+    .sa-dropdown-menu{
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      background: #fff;
+      padding: 0 20px;
+    }
+
+    .sa-dropdown.active .sa-dropdown-menu{
+      max-height: 700px;
+      padding: 4px 20px 8px;
+    }
+
+    .sa-dropdown-menu a{
+      display: block;
+      text-decoration: none;
+      color: #6c7890;
+      font-size: 15px;
+      line-height: 1.6;
+      padding: 13px 0;
+      border-bottom: 1px solid #ececec;
+      transition: 0.25s ease;
+    }
+
+    .sa-dropdown-menu a:last-child{
+      border-bottom: none;
+    }
+
+    .sa-dropdown-menu a:hover{
+      color: #4341a8;
+    }
+
+    .sa-product-link.active{
+      color: #4341a8;
+      font-weight: 700;
+    }
+
+    .sa-explore-main{
+      flex: 1;
+      min-width: 0;
+      margin-top: -60px;
+    }
+
+    .sa-explore-head{
+      margin-bottom: 24px;
+    }
+
+    .sa-explore-eyebrow{
+      display: inline-block;
+      margin-bottom: 8px;
+      color: #63a83e;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    .sa-explore-heading{
+      margin: 0;
+      color: #071b33;
+      font-size: 82px;
+      line-height: 0.95;
+      font-weight: 800;
+      font-family:'Sora', sans-serif;
+    }
+
+    .sa-product-display{
+      width: 100%;
+    }
+
+    .sa-product-section{
+      display: none;
+      animation: saFadeIn 0.35s ease;
+    }
+
+    .sa-product-section.active{
+      display: block;
+    }
+
+    .sa-product-detail-card{
+      display: grid;
+      grid-template-columns: 1.02fr 1fr;
+      gap: 28px;
+      align-items: center;
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      border-radius: 30px;
+      padding: 24px;
+      box-shadow: 0 18px 40px rgba(13, 27, 42, 0.06);
+      margin-bottom: 24px;
+    }
+
+    .sa-product-detail-image{
+      width: 100%;
+      height: 460px;
+      border-radius: 24px;
+      overflow: hidden;
+      background: #f1f1f1;
+    }
+
+    .sa-product-detail-image img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .sa-product-detail-content h2{
+      margin: 0 0 14px;
+      font-size: 38px;
+      line-height: 1.1;
+      color: #0b1d34;
+      font-family:'Sora', sans-serif;
+    }
+
+    .sa-product-detail-label{
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(99, 168, 62, 0.10);
+      color: #63a83e;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .sa-product-detail-content p{
+      margin: 0 0 18px;
+      font-size: 16px;
+      line-height: 1.8;
+      color: #66748a;
+    }
+
+    .sa-product-points{
+      list-style:none;
+      margin:0 0 24px;
+      padding:0;
+      display:grid;
+      gap:10px;
+    }
+
+    .sa-product-points li{
+      color:#32465d;
+      font-size:15px;
+      line-height:1.7;
+      padding-left:22px;
+      position:relative;
+    }
+
+    .sa-product-points li::before{
+      content:"✓";
+      position:absolute;
+      left:0;
+      top:0;
+      color:#63a83e;
+      font-weight:800;
+    }
+
+    .sa-product-btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 24px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #4341a8, #5b57dc);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      box-shadow: 0 12px 24px rgba(67, 65, 168, 0.22);
+      transition: transform 0.3s ease;
+    }
+
+    .sa-product-btn:hover{
+      transform: translateY(-2px);
+    }
+
+    /* extra info sections */
+    .sa-info-grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:24px;
+      margin-top:24px;
+    }
+
+    .sa-info-box{
+      background:#fff;
+      border:1px solid #e8e8e8;
+      border-radius:26px;
+      padding:24px;
+      box-shadow: 0 18px 40px rgba(13, 27, 42, 0.05);
+    }
+
+    .sa-info-box h3{
+      font-size:24px;
+      color:#0b1d34;
+      margin-bottom:14px;
+      font-family:'Sora', sans-serif;
+    }
+
+    .sa-info-box h4{
+      font-size:18px;
+      color:#1f3150;
+      margin:18px 0 10px;
+      font-family:'Sora', sans-serif;
+    }
+
+    .sa-info-box p{
+      color:#66748a;
+      line-height:1.8;
+      font-size:15px;
+      margin-bottom:12px;
+    }
+
+    .sa-grade-list{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:16px;
+    }
+
+    .sa-grade-pill{
+      padding:10px 14px;
+      border-radius:999px;
+      background:#f3f6fb;
+      border:1px solid #e3eaf3;
+      font-size:13px;
+      font-weight:700;
+      color:#334a62;
+    }
+
+    .sa-shielding-list{
+      list-style:none;
+      padding:0;
+      margin:10px 0 0;
+      display:grid;
+      gap:10px;
+    }
+
+    .sa-shielding-list li{
+      background:#f7f9fc;
+      border:1px solid #e7edf5;
+      border-radius:16px;
+      padding:12px 14px;
+      color:#395069;
+      font-size:14px;
+      line-height:1.6;
+      font-weight:600;
+    }
+
+    .sa-table-wrap{
+      margin-top:24px;
+      background:#fff;
+      border:1px solid #e8e8e8;
+      border-radius:26px;
+      padding:24px;
+      box-shadow: 0 18px 40px rgba(13, 27, 42, 0.05);
+      overflow:auto;
+    }
+
+    .sa-table-title{
+      font-size:24px;
+      color:#0b1d34;
+      margin-bottom:16px;
+      font-family:'Sora', sans-serif;
+    }
+
+    .sa-table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:700px;
+    }
+
+    .sa-table th,
+    .sa-table td{
+      border:1px solid #e3eaf2;
+      padding:14px 14px;
+      text-align:left;
+      font-size:14px;
+      color:#445a71;
+    }
+
+    .sa-table th{
+      background:#f5f8fc;
+      color:#0b1d34;
+      font-weight:800;
+    }
+
+    .sa-brand-strip{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:16px;
+      margin-top:24px;
+    }
+
+    .sa-brand-card{
+      background:#fff;
+      border:1px solid #e8e8e8;
+      border-radius:22px;
+      padding:18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:100px;
+      box-shadow: 0 16px 35px rgba(13, 27, 42, 0.04);
+    }
+
+    .sa-brand-card img{
+      max-width:100%;
+      max-height:56px;
+      object-fit:contain;
+      display:block;
+    }
+
+    .sa-gallery-grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:18px;
+      margin-top:24px;
+    }
+
+    .sa-gallery-card{
+      background:#fff;
+      border:1px solid #e8e8e8;
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow: 0 16px 35px rgba(13, 27, 42, 0.04);
+    }
+
+    .sa-gallery-card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+      display:block;
+    }
+
+    .sa-note-box{
+      margin-top:24px;
+      background:linear-gradient(135deg, #1f255f, #4341a8);
+      border-radius:24px;
+      padding:22px 24px;
+      color:#fff;
+    }
+
+    .sa-note-box h3{
+      font-size:22px;
+      margin-bottom:10px;
+      font-family:'Sora', sans-serif;
+    }
+
+    .sa-note-box p{
+      color:rgba(255,255,255,.88);
+      line-height:1.8;
+      font-size:15px;
+      margin:0;
+    }
+
+    @keyframes saFadeIn{
+      from{
+        opacity:0;
+        transform:translateY(10px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    /* footer */
+    .footer{
+      position: relative;
+      background: #0d1b2a;
+      color: rgba(255,255,255,.7);
+      padding: 80px 0 0;
+      overflow: hidden;
+      margin-top: 70px;
+    }
+
+    .footer-wave{
+      position: absolute;
+      top: -2px;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: #ffffff;
+      clip-path: ellipse(55% 100% at 50% 0%);
+    }
+
+    .footer-grid{
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 48px;
+      padding-top: 40px;
+    }
+
+    .footer-name{
+      display:block;
+      color:#fff;
+      font-size:28px;
+      font-weight:800;
+      font-family:'Sora', sans-serif;
+    }
+
+    .footer-tagline{
+      display:block;
+      margin-top:8px;
+      color:#66A83D;
+      font-size:14px;
+      font-weight:600;
+    }
+
+    .footer-about{
+      margin-top:18px;
+      line-height:1.8;
+      max-width:420px;
+    }
+
+    .footer-socials{
+      display:flex;
+      gap:12px;
+      margin-top:20px;
+    }
+
+    .social-btn{
+      width:40px;
+      height:40px;
+      border-radius:50%;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      background:rgba(255,255,255,0.08);
+      color:#fff;
+      font-weight:700;
+    }
+
+    .footer-links-col h4{
+      color:#fff;
+      margin-bottom:16px;
+      font-size:18px;
+    }
+
+    .footer-links-col ul{
+      list-style:none;
+      padding:0;
+      margin:0;
+    }
+
+    .footer-links-col ul li{
+      margin-bottom:12px;
+      line-height:1.7;
+    }
+
+    .footer-links-col ul li a{
+      color:rgba(255,255,255,.75);
+      text-decoration:none;
+    }
+
+    .footer-bottom{
+      margin-top:50px;
+      padding:20px 0;
+      border-top:1px solid rgba(255,255,255,0.08);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+      font-size:14px;
+    }
+
+    @media (max-width: 1200px){
+      .sa-explore-container{
+        padding: 0 20px;
+        gap: 24px;
+      }
+
+      .sa-explore-sidebar{
+        width: 330px;
+        min-width: 330px;
+      }
+
+      .sa-explore-heading{
+        font-size: 62px;
+      }
+
+      .sa-product-detail-card{
+        grid-template-columns: 1fr;
+      }
+
+      .sa-product-detail-image{
+        height: 360px;
+      }
+
+      .sa-info-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width: 991px){
+      .nav-links,
+      .nav-cta{
+        display:none;
+      }
+
+      .hamburger{
+        display:flex;
+      }
+
+      #navbar{
+        padding:14px 20px;
+      }
+
+      .sa-explore-container{
+        flex-direction: column;
+      }
+
+      .sa-explore-sidebar{
+        width: 100%;
+        min-width: 100%;
+        position: static;
+      }
+
+      .sa-explore-heading{
+        font-size: 48px;
+      }
+
+      .sa-product-detail-content h2{
+        font-size: 30px;
+      }
+
+      .sa-brand-strip{
+        grid-template-columns:repeat(2, 1fr);
+      }
+
+      .sa-gallery-grid{
+        grid-template-columns:1fr;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media (max-width: 575px){
+      .product-hero-simple{
+        min-height:52vh;
+        padding:110px 0 70px;
+      }
+
+      .sa-explore-product{
+        padding:50px 0;
+      }
+
+      .sa-explore-container{
+        padding:0 14px;
+      }
+
+      .sa-sidebar-box{
+        border-radius:24px;
+        padding:24px 16px;
+      }
+
+      .sa-sidebar-title{
+        font-size:28px;
+      }
+
+      .sa-dropdown-toggle{
+        font-size:15px;
+        padding:16px 14px;
+      }
+
+      .sa-dropdown-menu{
+        padding:0 14px;
+      }
+
+      .sa-dropdown.active .sa-dropdown-menu{
+        padding:4px 14px 8px;
+      }
+
+      .sa-explore-heading{
+        font-size:40px;
+      }
+
+      .sa-product-detail-card,
+      .sa-info-box,
+      .sa-table-wrap{
+        padding:16px;
+        border-radius:22px;
+      }
+
+      .sa-product-detail-image{
+        height:250px;
+        border-radius:18px;
+      }
+
+      .sa-product-detail-content h2{
+        font-size:24px;
+      }
+
+      .sa-brand-strip{
+        grid-template-columns:1fr;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+    }
+    /* =========================
+   PRODUCT DROPDOWN SKETCH STYLE
+========================= */
+.sa-has-product{
+  position: relative;
+}
+
+.sa-nav-link-with-arrow{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sa-arrow{
+  transition: transform 0.3s ease;
+}
+
+/* wrapper */
+.sa-product-dropdown-wrap{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding-top: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 999;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+/* hover open */
+.sa-has-product:hover .sa-product-dropdown-wrap,
+.sa-product-dropdown-wrap:hover{
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.sa-has-product:hover .sa-arrow{
+  transform: rotate(180deg);
+}
+
+/* left tall box */
+.sa-main-product-box{
+  width: 310px;
+  max-height: 520px;
+  overflow-y: auto;
+  background: #ffffff;
+  border: 1px solid rgba(13, 27, 42, 0.10);
+  border-radius: 18px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.14);
+  padding: 14px;
+}
+
+.sa-main-product-box::-webkit-scrollbar{
+  width: 6px;
+}
+
+.sa-main-product-box::-webkit-scrollbar-thumb{
+  background: rgba(31,58,95,0.18);
+  border-radius: 20px;
+}
+
+.sa-main-product-link{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  text-decoration: none;
+  width: 100%;
+  padding: 13px 14px;
+  margin-bottom: 8px;
+  border-radius: 14px;
+  border: 1px solid rgba(13, 27, 42, 0.06);
+  background: #f8fafc;
+  color: var(--sa-text);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.35;
+  transition: all 0.25s ease;
+}
+
+.sa-main-product-link:last-child{
+  margin-bottom: 0;
+}
+
+.sa-main-product-link:hover,
+.sa-main-product-link.active{
+  background: #ffffff;
+  border-color: rgba(31,58,95,0.18);
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+}
+
+.sa-link-arrow{
+  flex-shrink: 0;
+  color: var(--sa-brand);
+  font-size: 1rem;
+}
+
+/* right small box */
+.sa-sub-product-box{
+  width: 255px;
+  min-height: 180px;
+  background: #ffffff;
+  border: 1px solid rgba(13, 27, 42, 0.10);
+  border-radius: 16px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+  padding: 14px;
+  margin-top: 14px;
+}
+
+.sa-submenu-panel{
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sa-submenu-panel.active{
+  display: flex;
+}
+
+.sa-submenu-panel a{
+  text-decoration: none;
+  padding: 11px 12px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid rgba(13, 27, 42, 0.06);
+  color: var(--sa-text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.35;
+  transition: all 0.25s ease;
+}
+
+.sa-submenu-panel a:hover{
+  background: #ffffff;
+  border-color: rgba(31,58,95,0.16);
+  transform: translateX(2px);
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 991px){
+  .sa-has-product{
+    width: 100%;
+  }
+
+  .sa-nav-link-with-arrow{
+    width: 100%;
+    justify-content: space-between;
+    padding: 14px 0;
+  }
+
+  .sa-product-dropdown-wrap{
+    position: static;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    gap: 12px;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .sa-has-product.open .sa-product-dropdown-wrap{
+    display: flex;
+  }
+
+  .sa-has-product:hover .sa-arrow{
+    transform: none;
+  }
+
+  .sa-has-product.open .sa-arrow{
+    transform: rotate(180deg);
+  }
+
+  .sa-main-product-box,
+  .sa-sub-product-box{
+    width: 100%;
+    max-height: 280px;
+    margin-top: 0;
+    border-radius: 14px;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 640px){
+  .sa-main-product-link{
+    font-size: 0.88rem;
+    padding: 12px;
+  }
+
+  .sa-submenu-panel a{
+    font-size: 0.84rem;
+    padding: 10px 11px;
+  }
+}
+.sa-more-products{
+  display:none;
+}
+
+.sa-more-products.active{
+  display:block;
+}
+
+.sa-view-more-btn{
+  width:100%;
+  margin-top:8px;
+  padding:13px 0 6px;
+  border:none;
+  background:transparent;
+  color:#4341a8;
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:.4px;
+  text-align:left;
+  cursor:pointer;
+}
+
+.sa-view-more-btn:hover{
+  opacity:.85;
+}
+/* special horizontal image layout for TIG torch spares */
+.sa-wide-gallery{
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  overflow: hidden;
+  border-radius: 22px;
+  border: 1px solid #e8e8e8;
+  background: #fff;
+  box-shadow: 0 16px 35px rgba(13, 27, 42, 0.04);
+}
+
+.sa-wide-gallery-card{
+  min-height: 220px;
+  border-right: 1px solid #e8e8e8;
+  background: #fff;
+}
+
+.sa-wide-gallery-card:last-child{
+  border-right: none;
+}
+
+.sa-wide-gallery-card img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sa-mini-table-wrap{
+  margin-top: 24px;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 22px;
+  padding: 18px;
+  box-shadow: 0 16px 35px rgba(13, 27, 42, 0.04);
+  overflow: auto;
+}
+
+.sa-mini-title{
+  font-size: 20px;
+  color: #0b1d34;
+  margin-bottom: 14px;
+  font-family: 'Sora', sans-serif;
+}
+
+@media (max-width: 767px){
+  .sa-wide-gallery{
+    grid-template-columns: 1fr;
+  }
+
+  .sa-wide-gallery-card{
+    min-height: 200px;
+    border-right: none;
+    border-bottom: 1px solid #e8e8e8;
+  }
+
+  .sa-wide-gallery-card:last-child{
+    border-bottom: none;
+  }
+}
+/* CONTACT BUTTON STYLE UPDATE */
+.nav-cta {
+  background: #1e3a8a; /* Blue background */
+  color: #ffffff !important; /* White text */
+  padding: 10px 24px; /* same size ठेवण्यासाठी */
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.nav-cta:hover {
+  background: #0f2a6b; /* Dark blue on hover */
+  color: #ffffff;
+}
+.sa-sidebar-enquiry-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 14px;
+  padding: 13px 16px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #0f2d52, #1b4b80);
+  color: #fff !important;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .3px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.sa-sidebar-enquiry-btn:hover{
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #133866, #225a99);
+}
+
+
+*/
+
+.product-hero-simple .container{
+  position: relative;
+  z-index: 2;
+}
+
+.product-hero-content{
+  text-align: center;
+  color: #fff;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.product-page-tag{
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 8px 18px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.18);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  backdrop-filter: blur(6px);
+  color: #fff;
+}
+
+
+
+.product-hero-content p{
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.92);
+  margin: 0 auto;
+  max-width: 760px;
+}
+
+
+  .product-hero-content p{
+    font-size: 16px;
+  }
+
+@media (max-width: 576px){
+  .product-hero-simple{
+    min-height: 360px;
+  }
+
+.product-hero-content h1{
+  font-size: 72px;        /* gallery sarkha motha */
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 15px;
+}
+.product-hero-content p{
+  color: #ffffff;   /* white text */
+  font-size: 16px;
+  max-width: 650px;
+  margin: auto;
+  opacity: 0.95;   /* thoda smooth look */
+}
+/* .product-hero-bg::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5); /* dark overlay 
+} */
+  .product-page-tag{
+    font-size: 12px;
+    padding: 7px 14px;
+  }
+}
+
+/* BLUE */
+.text-blue{
+  color: #2E2F78;
+}
+
+/* GREEN */
+.text-green{
+  color: #66A83D;
+  margin-left: 8px;
+}
+
+/* paragraph */
+.product-hero-content p{
+  font-size: 16px;
+  color: #555;
+  max-width: 600px;
+}
+/* =========================
+   PRODUCT HERO - CLEAN FINAL
+========================= */
+.product-hero-simple{
+  position: relative;
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 10px 0 90px;
+}
+
+.product-hero-simple .container{
+  position: relative;
+  z-index: 3;
+}
+
+.product-hero-content{
+  max-width: 980px;
+  margin-bottom: 80px;
+  margin-top: 80px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.product-page-tag{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  margin-bottom: 20px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.22);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.product-hero-content h1{
+  margin: 0 0 18px;
+  font-size: clamp(52px, 8vw, 88px);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -2px;
+  font-family: 'Sora', sans-serif;
+}
+
+.text-blue{
+  color: #66A83D;
+}
+
+.text-green{
+  color: #2E2F78;
+  margin-left: 10px;
+}
+
+.product-hero-content p{
+  margin: 0 auto;
+  max-width: 860px;
+  font-size: clamp(18px, 2.1vw, 30px);
+  line-height: 1.7;
+  color: #000000;
+  font-weight: 500;
+}
+
+/* responsive */
+@media (max-width: 991px){
+  .product-hero-simple{
+    min-height: 470px;
+    padding: 110px 0 80px;
+  }
+
+  .product-hero-content h1{
+    letter-spacing: -1px;
+  }
+
+  .product-hero-content p{
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 576px){
+  .product-hero-simple{
+    min-height: 380px;
+    padding: 90px 0 65px;
+  }
+
+  .product-hero-content{
+    padding: 0 14px;
+  }
+
+  .product-hero-content h1{
+    font-size: 42px;
+    line-height: 1.12;
+    margin-bottom: 12px;
+  }
+
+  .text-green{
+    margin-left: 6px;
+  }
+
+  .product-hero-content p{
+    font-size: 15px;
+    line-height: 1.65;
+    max-width: 100%;
+  }
+
+  .product-page-tag{
+    font-size: 11px;
+    padding: 7px 14px;
+    margin-bottom: 14px;
+  }
+}
+/* =========================================================
+   FINAL PRODUCT PAGE MOBILE RESPONSIVE + HAMBURGER
+   desktop untouched
+========================================================= */
+
+html, body{
+  overflow-x: hidden;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+.ps-mobile-overlay{
+  display: none;
+}
+
+/* =========================
+   HEADER / HAMBURGER
+========================= */
+@media (max-width: 991px){
+
+  .ps-header{
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10050 !important;
+    background: rgba(255,255,255,0.98) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(13,27,42,0.08);
+  }
+
+  .ps-header-inner{
+    min-height: 72px;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    position: relative;
+    z-index: 10051;
+  }
+
+  .ps-logo-wrap,
+  .ps-logo-box,
+  .ps-logo-img,
+  .ps-logo-text{
+    position: relative;
+    z-index: 10052 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .ps-logo-wrap{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    min-width: 0;
+  }
+
+  .ps-logo-img{
+    display: block !important;
+    width: 50px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .ps-logo-title{
+    font-size: 14px;
+    line-height: 1;
+    color: #2E2F78 !important;
+    font-weight: 800;
+  }
+
+  .ps-logo-sub{
+    font-size: 11px;
+    line-height: 1.1;
+    color: #66A83D !important;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .ps-contact-btn{
+    display: none !important;
+  }
+
+  .ps-menu-toggle{
+    display: flex !important;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: none;
+    background: transparent !important;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 10053 !important;
+    flex-shrink: 0;
+  }
+
+  .ps-menu-toggle span{
+    display: block;
+    width: 22px;
+    height: 2.4px;
+    border-radius: 999px;
+    background: #1f2937 !important;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .ps-menu-toggle.active span:nth-child(1){
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .ps-menu-toggle.active span:nth-child(2){
+    opacity: 0;
+  }
+
+  .ps-menu-toggle.active span:nth-child(3){
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .ps-mobile-overlay{
+    display: block;
+    position: fixed;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 72px);
+    background: rgba(0,0,0,0.18);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    z-index: 10039 !important;
+  }
+
+  .ps-mobile-overlay.active{
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .ps-nav{
+    position: fixed !important;
+    top: 72px !important;
+    left: 0;
+    width: min(82vw, 320px) !important;
+    height: calc(100vh - 72px) !important;
+    background: #f3f3f3 !important;
+    transform: translateX(-100%);
+    transition: transform 0.35s ease;
+    z-index: 10040 !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 18px 22px 24px !important;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    box-shadow: 14px 0 35px rgba(0,0,0,0.10);
+  }
+
+  .ps-nav.active{
+    transform: translateX(0);
+  }
+
+  .ps-nav-list{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch;
+    gap: 0;
+    list-style: none;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .ps-nav-list > li{
+    width: 100%;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+    background: transparent !important;
+  }
+
+  .ps-nav-list > li:last-child{
+    border-bottom: none;
+  }
+
+  .ps-nav-link,
+  .ps-dropdown-toggle,
+  .ps-nav-link.active,
+  .ps-nav-link:visited,
+  .ps-nav-link:focus{
+    width: 100%;
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0 !important;
+    text-decoration: none;
+    color: #2E2F78 !important;
+    font-weight: 700 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+    -webkit-text-fill-color: #2E2F78 !important;
+  }
+
+  .ps-drop-caret,
+  .ps-item-arrow{
+    color: #2E2F78 !important;
+  }
+
+  .ps-dropdown-stage{
+    display: none;
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    margin-top: 4px;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .ps-dropdown.open .ps-dropdown-stage{
+    display: block;
+  }
+
+  .ps-main-dropdown-box,
+  .ps-sub-floating-box{
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 14px;
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: none !important;
+    overflow: hidden;
+    background: #ffffff !important;
+  }
+
+  .ps-main-products-scroll{
+    max-height: 220px;
+    overflow-y: auto;
+  }
+
+  .ps-main-product-item{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    background: #fff;
+    color: #2E2F78;
+    padding: 12px 14px;
+    cursor: pointer;
+  }
+
+  .ps-submenu-panel{
+    display: none;
+  }
+
+  .ps-submenu-panel.active{
+    display: block;
+  }
+
+  .ps-submenu-panel a{
+    display: block;
+    padding: 11px 14px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    background: #fff;
+    color: #2E2F78 !important;
+  }
+
+  body.ps-menu-open{
+    overflow: hidden;
+  }
+}
+
+/* =========================
+   PRODUCT HERO
+========================= */
+@media (max-width: 991px){
+  .product-hero-simple{
+    margin-top: 72px;
+    min-height: 380px;
+    padding: 90px 0 60px;
+  }
+
+  .product-hero-content{
+    padding: 0 14px;
+  }
+
+  .product-hero-content h1{
+    font-size: clamp(34px, 8vw, 52px);
+    line-height: 1.12;
+    margin-bottom: 12px;
+  }
+
+  .product-hero-content p{
+    font-size: 15px !important;
+    line-height: 1.7;
+    max-width: 100%;
+  }
+}
+
+/* =========================
+   PRODUCT LAYOUT
+========================= */
+@media (max-width: 1200px){
+  .sa-explore-container{
+    padding: 0 20px !important;
+    gap: 24px !important;
+  }
+
+  .sa-explore-sidebar{
+    width: 320px !important;
+    min-width: 320px !important;
+  }
+
+  .sa-explore-heading{
+    font-size: 56px !important;
+  }
+}
+
+@media (max-width: 991px){
+  .sa-explore-product{
+    padding: 50px 0 !important;
+  }
+
+  .sa-explore-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px !important;
+    padding: 0 14px !important;
+  }
+
+  .sa-explore-sidebar{
+    width: 100% !important;
+    min-width: 100% !important;
+    position: static !important;
+    top: auto !important;
+  }
+
+  .sa-sidebar-box{
+    padding: 22px 16px !important;
+    border-radius: 22px !important;
+  }
+
+  .sa-sidebar-title{
+    font-size: 26px !important;
+    margin-bottom: 18px !important;
+  }
+
+  .sa-dropdown{
+    border-radius: 18px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .sa-dropdown-toggle{
+    font-size: 15px !important;
+    padding: 16px 14px !important;
+  }
+
+  .sa-dropdown-menu{
+    padding: 0 14px !important;
+  }
+
+  .sa-dropdown.active .sa-dropdown-menu{
+    padding: 4px 14px 8px !important;
+  }
+
+  .sa-dropdown-menu a{
+    font-size: 14px !important;
+    padding: 11px 0 !important;
+    line-height: 1.55 !important;
+  }
+
+  .sa-view-more-btn,
+  .sa-sidebar-enquiry-btn{
+    font-size: 14px !important;
+  }
+
+  .sa-explore-main{
+    width: 100%;
+    min-width: 0;
+  }
+
+  .sa-explore-head{
+    margin-bottom: 18px !important;
+  }
+
+  .sa-explore-eyebrow{
+    font-size: 12px !important;
+    letter-spacing: 2px !important;
+  }
+
+  .sa-explore-heading{
+    font-size: 40px !important;
+    line-height: 1 !important;
+  }
+
+  .sa-product-detail-card{
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+    padding: 16px !important;
+    border-radius: 22px !important;
+  }
+
+  .sa-product-detail-image{
+    height: 260px !important;
+    border-radius: 18px !important;
+  }
+
+  .sa-product-detail-content h2{
+    font-size: 24px !important;
+    line-height: 1.18 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .sa-product-detail-content p{
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+  }
+
+  .sa-product-detail-label{
+    font-size: 11px !important;
+    padding: 7px 12px !important;
+  }
+
+  .sa-product-points{
+    gap: 8px !important;
+    margin: 0 0 18px !important;
+  }
+
+  .sa-product-points li{
+    font-size: 14px !important;
+    line-height: 1.65 !important;
+    padding-left: 20px !important;
+  }
+
+  .sa-product-btn{
+    width: 100%;
+    text-align: center;
+    padding: 13px 18px !important;
+  }
+
+  .sa-info-grid{
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    margin-top: 16px !important;
+  }
+
+  .sa-info-box,
+  .sa-table-wrap,
+  .sa-mini-table-wrap{
+    padding: 16px !important;
+    border-radius: 20px !important;
+  }
+
+  .sa-info-box h3,
+  .sa-table-title,
+  .sa-mini-title{
+    font-size: 20px !important;
+  }
+
+  .sa-info-box h4{
+    font-size: 16px !important;
+  }
+
+  .sa-info-box p,
+  .sa-table th,
+  .sa-table td{
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+  }
+
+  .sa-brand-strip{
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    margin-top: 16px !important;
+  }
+
+  .sa-brand-card{
+    min-height: 82px !important;
+    border-radius: 16px !important;
+    padding: 14px !important;
+  }
+
+  .sa-gallery-grid{
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    margin-top: 16px !important;
+  }
+
+  .sa-gallery-card{
+    border-radius: 18px !important;
+  }
+
+  .sa-gallery-card img{
+    height: 210px !important;
+  }
+
+  .sa-wide-gallery{
+    grid-template-columns: 1fr !important;
+    border-radius: 18px !important;
+  }
+
+  .sa-wide-gallery-card{
+    min-height: 200px !important;
+    border-right: none !important;
+    border-bottom: 1px solid #e8e8e8 !important;
+  }
+
+  .sa-wide-gallery-card:last-child{
+    border-bottom: none !important;
+  }
+
+  .sa-note-box{
+    margin-top: 18px !important;
+    padding: 18px 16px !important;
+    border-radius: 18px !important;
+  }
+
+  .sa-note-box h3{
+    font-size: 18px !important;
+  }
+
+  .sa-note-box p{
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+  }
+}
+
+@media (max-width: 575px){
+  .sa-explore-product{
+    padding: 42px 0 !important;
+  }
+
+  .sa-explore-container{
+    padding: 0 12px !important;
+  }
+
+  .sa-sidebar-title{
+    font-size: 24px !important;
+  }
+
+  .sa-explore-heading{
+    font-size: 34px !important;
+  }
+
+  .sa-product-detail-image{
+    height: 230px !important;
+  }
+
+  .sa-brand-strip{
+    grid-template-columns: 1fr !important;
+  }
+
+  .sa-table{
+    min-width: 620px !important;
+  }
+}
+
+/* =========================
+   FOOTER
+========================= */
+@media (max-width: 991px){
+  .footer{
+    margin-top: 50px !important;
+    padding: 70px 0 0 !important;
+  }
+
+  .footer-grid{
+    grid-template-columns: 1fr 1fr !important;
+    gap: 28px !important;
+  }
+
+  .footer-name{
+    font-size: 22px !important;
+  }
+
+  .footer-about{
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+  }
+}
+
+@media (max-width: 575px){
+  .footer-grid{
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .footer-bottom{
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    font-size: 13px !important;
+  }
+}
+  </style>
+
+
+<body>
+<header class="ps-header">
+    <div class="ps-header-inner">
+
+      <!-- Logo -->
+      <!-- <a href="index.html" class="ps-logo-wrap">
+        <div class="ps-logo-box">
+          <img src="img/logobg.png" alt="Sudhanshu Associates Logo" class="ps-logo-img">
+        </div>
+
+        <div class="ps-logo-text">
+          <span class="ps-logo-title">SUDHANSHU </span>
+          <span class="ps-logo-sub">ASSOCIATES</span>
+        </div>
+      </a> -->
+
+          <!-- LOGO -->
+    <a href="index.html" class="ps-logo-wrap">
+      <div class="ps-logo-vertical">
+        <img src="img/logobg.png" class="ps-logo-big">
+        <div class="ps-logo-text-new">SUDHANSHU <span>ASSOCIATES</span></div>
+      </div>
+    </a>
+
+      <!-- Menu Toggle -->
+      <button class="ps-menu-toggle" id="psMenuToggle" type="button" aria-label="Open Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Nav -->
+      <nav class="ps-nav" id="psNav">
+        <ul class="ps-nav-list">
+          <li><a href="index.html" class="ps-nav-link ">Home</a></li>
+          <li><a href="about.html" class="ps-nav-link">About</a></li>
+          <li class="ps-dropdown ps-dropdown-mega" id="psProductsDropdown">
+            <a href="product.html" class="ps-nav-link active ps-dropdown-toggle" id="psProductsToggle">
+              Product <span class="ps-drop-caret">▼</span>
+            </a>
+
+            <div class="ps-dropdown-stage">
+
+              <!-- LEFT MAIN PRODUCTS -->
+              <div class="ps-main-dropdown-box">
+                <div class="ps-main-products-scroll">
+
+                  <button class="ps-main-product-item active" data-target="ps-submenu-1" type="button">
+                    <span>TIG Welding Filler Wires</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-2" type="button">
+                    <span>Electrodes</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-3" type="button">
+                    <span>Welding Accessories</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-4" type="button">
+                    <span>Safety Equipments</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-5" type="button">
+                    <span>TIG Welding Torch &amp; Spares</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-6" type="button">
+                    <span>CO2 Welding Torch &amp; Spares</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-7" type="button">
+                    <span>Gas Cutting &amp; Brazing</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-8" type="button">
+                    <span>DP Testing Materials</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-9" type="button">
+                    <span>Pressure Regulators &amp; Spares</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-10" type="button">
+                    <span>Welding Machines</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-11" type="button">
+                    <span>Air Drying Paint</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-12" type="button">
+                    <span>Polishing Machines</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-13" type="button">
+                    <span>Hand Tools</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-14" type="button">
+                    <span>Abrasives</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-15" type="button">
+                    <span>Cutting Tools</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-16" type="button">
+                    <span>Power Tools</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                </div>
+              </div>
+
+              <!-- RIGHT SUBMENU -->
+              <div class="ps-sub-floating-box">
+                <div class="ps-submenu-panel active" id="ps-submenu-1">
+                  <a href="product.html#tig-filler-wires">SS TIG Wires</a>
+                  <a href="product.html#tig-filler-wires">MS TIG Wires</a>
+                  <a href="product.html#tig-filler-wires">Aluminium TIG Wires</a>
+                  <a href="product.html#tig-filler-wires">Copper Alloy TIG Wires</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-2">
+                  <a href="product.html#electrodes">MS Electrodes</a>
+                  <a href="product.html#electrodes">SS Electrodes</a>
+                  <a href="product.html#electrodes">Cast Iron Electrodes</a>
+                  <a href="product.html#electrodes">Hard Facing Electrodes</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-3">
+                  <a href="product.html#welding-accessories">Electrode Holders</a>
+                  <a href="product.html#welding-accessories">Earth Clamps</a>
+                  <a href="product.html#welding-accessories">Welding Cables</a>
+                  <a href="product.html#welding-accessories">Cable Connectors</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-4">
+                  <a href="product.html#safety-equipments">Safety Gloves</a>
+                  <a href="product.html#safety-equipments">Welding Helmets</a>
+                  <a href="product.html#safety-equipments">Face Shields</a>
+                  <a href="product.html#safety-equipments">Safety Shoes</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-5">
+                  <a href="product.html#tig-torch-spares">TIG Torches</a>
+                  <a href="product.html#tig-torch-spares">Collets</a>
+                  <a href="product.html#tig-torch-spares">Ceramic Cups</a>
+                  <a href="product.html#tig-torch-spares">Back Caps</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-6">
+                  <a href="product.html#co2-torch-spares">CO2 Torches</a>
+                  <a href="product.html#co2-torch-spares">Contact Tips</a>
+                  <a href="product.html#co2-torch-spares">Nozzles</a>
+                  <a href="product.html#co2-torch-spares">Torch Liners</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-7">
+                  <a href="product.html#gas-cutting-brazing">Cutting Nozzles</a>
+                  <a href="product.html#gas-cutting-brazing">Brazing Rods</a>
+                  <a href="product.html#gas-cutting-brazing">Gas Torches</a>
+                  <a href="product.html#gas-cutting-brazing">Flashback Arrestors</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-8">
+                  <a href="product.html#dp-testing-materials">Cleaner</a>
+                  <a href="product.html#dp-testing-materials">Penetrant</a>
+                  <a href="product.html#dp-testing-materials">Developer</a>
+                  <a href="product.html#dp-testing-materials">DP Test Kits</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-9">
+                  <a href="product.html#pressure-regulators">Oxygen Regulators</a>
+                  <a href="product.html#pressure-regulators">Acetylene Regulators</a>
+                  <a href="product.html#pressure-regulators">Argon Regulators</a>
+                  <a href="product.html#pressure-regulators">Regulator Spare Parts</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-10">
+                  <a href="product.html#welding-machines">ARC Welding Machines</a>
+                  <a href="product.html#welding-machines">MIG Welding Machines</a>
+                  <a href="product.html#welding-machines">TIG Welding Machines</a>
+                  <a href="product.html#welding-machines">Plasma Cutting Machines</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-11">
+                  <a href="product.html#air-drying-paint">Industrial Primer</a>
+                  <a href="product.html#air-drying-paint">Metal Paint</a>
+                  <a href="product.html#air-drying-paint">Protective Coatings</a>
+                  <a href="product.html#air-drying-paint">Touch-up Paints</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-12">
+                  <a href="product.html#polishing-machines">Angle Polishers</a>
+                  <a href="product.html#polishing-machines">Buffing Machines</a>
+                  <a href="product.html#polishing-machines">Pads</a>
+                  <a href="product.html#polishing-machines">Accessories</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-13">
+                  <a href="product.html#hand-tools">Spanners</a>
+                  <a href="product.html#hand-tools">Pliers</a>
+                  <a href="product.html#hand-tools">Screwdrivers</a>
+                  <a href="product.html#hand-tools">Hammers</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-14">
+                  <a href="product.html#abrasives">Cutting Wheels</a>
+                  <a href="product.html#abrasives">Grinding Wheels</a>
+                  <a href="product.html#abrasives">Flap Discs</a>
+                  <a href="product.html#abrasives">Sanding Discs</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-15">
+                  <a href="product.html#cutting-tools">Drill Bits</a>
+                  <a href="product.html#cutting-tools">Hole Saws</a>
+                  <a href="product.html#cutting-tools">Reamers</a>
+                  <a href="product.html#cutting-tools">Industrial Cutters</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-16">
+                  <a href="product.html#power-tools">Drilling Machines</a>
+                  <a href="product.html#power-tools">Angle Grinders</a>
+                  <a href="product.html#power-tools">Impact Tools</a>
+                  <a href="product.html#power-tools">Heavy Duty Tools</a>
+                </div>
+              </div>
+
+            </div>
+          </li>
+          <li><a href="gallery.html" class="ps-nav-link">Gallery</a></li>
+          <li><a href="certificates.html" class="ps-nav-link">Certificates</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA -->
+      <a href="contact.html" class="ps-contact-btn">
+        <span>Contact</span>
+        <span class="ps-contact-arrow">→</span>
+      </a>
+    </div>
+  </header>
+  <div class="ps-mobile-overlay" id="psMobileOverlay"></div>
+<!-- ===============================Hero Section================================================== -->
+
+<section class="product-hero-simple">
+  <div class="product-hero-bg"></div>
+  <div class="container">
+    <div class="product-hero-content">
+      
+      <h1>
+        <span class="text-blue">Our</span>
+        <span class="text-green">Product</span>
+      </h1>
+
+      <p>
+        Explore our wide range of industrial product including welding,
+        NDT, safety, abrasives and power tools.
+      </p>
+
+    </div>
+  </div>
+</section>
+  <section class="sa-explore-product">
+    <div class="sa-explore-container">
+
+      <aside class="sa-explore-sidebar">
+        <div class="sa-sidebar-box">
+          <h2 class="sa-sidebar-title">Categories</h2>
+
+          <div class="sa-dropdown active">
+            <button class="sa-dropdown-toggle" type="button">
+              <span>TIG Welding Filler Wires</span>
+              <span class="sa-dropdown-icon">▼</span>
+            </button>
+            <div class="sa-dropdown-menu">
+              <a href="#" class="sa-product-link active" data-product="stainless-steel-tig">STAINLESS STEEL TIG WELDING WIRE</a>
+              <a href="#" class="sa-product-link" data-product="mild-steel-tig">MILD STEEL TIG WELDING WIRES</a>
+              <a href="#" class="sa-product-link" data-product="aluminium-tig">ALUMINIUM TIG WELDING WIRES</a>
+              <a href="#" class="sa-product-link" data-product="silver-brazing">SILVER BRAZING</a>
+            </div>
+          </div>
+
+          <div class="sa-dropdown">
+            <button class="sa-dropdown-toggle" type="button">
+              <span>Electrodes</span>
+              <span class="sa-dropdown-icon">▼</span>
+            </button>
+            <div class="sa-dropdown-menu">
+              <a href="#" class="sa-product-link" data-product="hard-facing-electrodes">Hard Facing Electrodes</a>
+              <a href="#" class="sa-product-link" data-product="ms-electrodes">M S Electrodes</a>
+              <a href="#" class="sa-product-link" data-product="ss-electrodes">S S Electrodes</a>
+            </div>
+          </div>
+
+         <div class="sa-dropdown">
+  <button class="sa-dropdown-toggle" type="button">
+    <span>Welding Accessories</span>
+    <span class="sa-dropdown-icon">▼</span>
+  </button>
+
+  <div class="sa-dropdown-menu">
+    <a href="#" class="sa-product-link" data-product="industrial-welding-cables">INDUSTRIAL WELDING CABLES</a>
+    <a href="#" class="sa-product-link" data-product="apron-chrome-leather">Apron - Chrome Leather</a>
+    <a href="#" class="sa-product-link" data-product="wire-brush">Wire Brush</a>
+
+    <div class="sa-more-products" id="saWeldingAccessoriesMore">
+      <a href="#" class="sa-product-link" data-product="cable-lugs">Cable Lugs</a>
+      <a href="#" class="sa-product-link" data-product="chipping-hammer">Chipping Hammer</a>
+      <a href="#" class="sa-product-link" data-product="cable-connectors">Cable Connectors</a>
+      <a href="#" class="sa-product-link" data-product="welding-curtain">Welding Curtain</a>
+      <a href="#" class="sa-product-link" data-product="drying-ovens">Drying Ovens</a>
+      <a href="#" class="sa-product-link" data-product="earthing-clamp">Earthing Clamp</a>
+      <a href="#" class="sa-product-link" data-product="welding-glass">Welding Glass (Black / White)</a>
+      <a href="#" class="sa-product-link" data-product="head-screen-without-glass">Head Screen Without Glass</a>
+      <a href="#" class="sa-product-link" data-product="helmet-auto-darkening">Helmet Auto Darkening</a>
+      <a href="#" class="sa-product-link" data-product="hand-gloves">Hand Gloves</a>
+      <a href="#" class="sa-product-link" data-product="hand-sleeves">Hand Sleeves</a>
+      <a href="#" class="sa-product-link" data-product="holder">Holder</a>
+      <a href="#" class="sa-product-link" data-product="hand-screen">Hand Screen</a>
+      <a href="#" class="sa-product-link" data-product="welding-gauge">Welding Gauge</a>
+      <a href="#" class="sa-product-link" data-product="head-screen-spare-belt">Head Screen Spare Belt</a>
+      <a href="#" class="sa-product-link" data-product="thermopens">Thermopens</a>
+      <a href="#" class="sa-product-link" data-product="welding-inspector-mirror">Welding Inspector Mirror</a>
+      <a href="#" class="sa-product-link" data-product="leg-guard">Leg Guard</a>
+      <a href="#" class="sa-product-link" data-product="spot-welding-electrode">Spot Welding Electrode</a>
+      <a href="#" class="sa-product-link" data-product="purging-paper">Purging Paper / Back Purging Tape</a>
+    </div>
+
+    <button class="sa-view-more-btn" type="button" id="saViewMoreAccessories">VIEW MORE</button>
+  </div>
+</div>
+<div class="sa-dropdown">
+  <button class="sa-dropdown-toggle" type="button">
+    <span>Safety Equipments</span>
+    <span class="sa-dropdown-icon">▼</span>
+  </button>
+
+  <div class="sa-dropdown-menu">
+    <a href="#" class="sa-product-link" data-product="safety-apron-chrome-leather">Apron - Chrome Leather</a>
+    <a href="#" class="sa-product-link" data-product="ear-plug">Ear Plug</a>
+    <a href="#" class="sa-product-link" data-product="face-shield">Face Shield</a>
+    <a href="#" class="sa-product-link" data-product="safety-goggles">Goggles (White / Black / Grey)</a>
+    <a href="#" class="sa-product-link" data-product="safety-hand-gloves">Handgloves</a>
+    <a href="#" class="sa-product-link" data-product="safety-hand-sleeves">Handsleeves</a>
+    <a href="#" class="sa-product-link" data-product="safety-helmet">Safety Helmet</a>
+    <a href="#" class="sa-product-link" data-product="safety-leg-guard">Leg Guard</a>
+    <a href="#" class="sa-product-link" data-product="safety-belt">Safety Belt</a>
+    <a href="#" class="sa-product-link" data-product="safety-jacket">Safety Jacket</a>
+    <a href="#" class="sa-product-link" data-product="barrication-tape">Barrication Tape</a>
+  </div>
+</div>
+          <div class="sa-dropdown">
+  <button class="sa-dropdown-toggle" type="button">
+    <span>TIG Welding Torch &amp; Spares</span>
+    <span class="sa-dropdown-icon">▼</span>
+  </button>
+
+  <div class="sa-dropdown-menu">
+    <a href="#" class="sa-product-link" data-product="argon-torch">Argon Torch</a>
+    <a href="#" class="sa-product-link" data-product="tungsten-rods">Tungsten Rods</a>
+    <a href="#" class="sa-product-link" data-product="ceramic-nozzles">Ceramic Nozzles</a>
+  </div>
+</div>
+
+<div class="sa-dropdown">
+  <button class="sa-dropdown-toggle" type="button">
+    <span>CO2 Welding Torch &amp; Spares</span>
+    <span class="sa-dropdown-icon">▼</span>
+  </button>
+
+  <div class="sa-dropdown-menu">
+    <a href="#" class="sa-product-link" data-product="co2-torch">CO2 Torch</a>
+    <a href="#" class="sa-product-link" data-product="contact-tips">Contact Tips</a>
+    <a href="#" class="sa-product-link" data-product="anti-spatter-spray">Anti Spatter Spray</a>
+    <a href="#" class="sa-product-link" data-product="nozzle-gel">Nozzle Gel</a>
+    <a href="#" class="sa-product-link" data-product="pickling-gel">Pickling Gel</a>
+    <a href="#" class="sa-product-link" data-product="preheater">Pre Heater</a>
+  </div>
+</div>
+          <div class="sa-dropdown">
+  <button class="sa-dropdown-toggle" type="button">
+    <span>Gas Cutting &amp; Brazing</span>
+    <span class="sa-dropdown-icon">▼</span>
+  </button>
+
+  <div class="sa-dropdown-menu">
+    <a href="#" class="sa-product-link" data-product="blowpipes-brazing-torch">Blow Pipes / Brazing Torch</a>
+    <a href="#" class="sa-product-link" data-product="brass-brazing-rod">Brass Brazing Rod</a>
+    <a href="#" class="sa-product-link" data-product="copper-phosphorous-brazing-rod">Copper Phosphorous Brazing Rod</a>
+    <a href="#" class="sa-product-link" data-product="gas-cutter">Gas Cutter</a>
+    <a href="#" class="sa-product-link" data-product="cylinder-hand-trolley">Cylinder Hand Trolley with Wheels</a>
+    <a href="#" class="sa-product-link" data-product="brazing-flux">Brazing Flux</a>
+    <a href="#" class="sa-product-link" data-product="gouging-torch">Gouging Torch</a>
+    <a href="#" class="sa-product-link" data-product="hose-pipe">Hose Pipe</a>
+    <a href="#" class="sa-product-link" data-product="hose-clips">Hose Clips</a>
+    <a href="#" class="sa-product-link" data-product="heating-torch">Heating Torch</a>
+    <a href="#" class="sa-product-link" data-product="gas-lighter">Gas Lighter</a>
+    <a href="#" class="sa-product-link" data-product="gas-cutting-nozzle">Gas Cutting Nozzle</a>
+    <a href="#" class="sa-product-link" data-product="gas-nozzle-cleaner">Gas Nozzle Cleaner</a>
+    <a href="#" class="sa-product-link" data-product="flashback-arrestors">Flash Back Arrestors</a>
+    <a href="#" class="sa-product-link" data-product="cylinder-key">Cylinder Key</a>
+    <a href="#" class="sa-product-link" data-product="pug-cutting-machine">PUG Cutting Machine</a>
+  </div>
+</div>
+
+       <div class="sa-dropdown">
+  <button class="sa-dropdown-toggle" type="button">
+    <span>DP Testing Materials</span>
+    <span class="sa-dropdown-icon">▼</span>
+  </button>
+
+  <div class="sa-dropdown-menu">
+    <a href="#" class="sa-product-link" data-product="red-dye-penetrant-material">Daylight Visible Red Dye Penetrant Material</a>
+    <a href="#" class="sa-product-link" data-product="fluorescent-dye-penetrant-material">Fluorescent Dye Penetrant Material</a>
+    <a href="#" class="sa-product-link" data-product="developer-contrast-coating">Developer / Contrast Background Coating</a>
+  </div>
+</div>
+
+          <div class="sa-dropdown">
+  <button class="sa-dropdown-toggle" type="button">
+    <span>Pressure Regulators &amp; Spares</span>
+    <span class="sa-dropdown-icon">▼</span>
+  </button>
+
+  <div class="sa-dropdown-menu">
+    <a href="#" class="sa-product-link" data-product="argon-gas-regulator">Argon Gas Regulator</a>
+    <a href="#" class="sa-product-link" data-product="double-stage-regulator-flow-meter">Double Stage Regulator With Flow Meter</a>
+    <a href="#" class="sa-product-link" data-product="double-stage-regulators">Double Stage Regulators</a>
+    <a href="#" class="sa-product-link" data-product="single-stage-regulator">Single Stage Regulator</a>
+    <a href="#" class="sa-product-link" data-product="single-stage-regulator-flow-meter">Single Stage Regulator With Flow Meter</a>
+    <a href="#" class="sa-product-link" data-product="high-pressure-single-stage-regulators">High Pressure Single Stage Regulators</a>
+    <a href="#" class="sa-product-link" data-product="compact-single-stage-regulators">Compact Single Stage Regulators</a>
+    <a href="#" class="sa-product-link" data-product="ss-single-stage-regulators">SS Single Stage Regulators</a>
+    <a href="#" class="sa-product-link" data-product="general-double-stage-regulator">General Double Stage Regulator</a>
+    <a href="#" class="sa-product-link" data-product="electrode-holder-regulator-page">Electrode Holder</a>
+    <a href="#" class="sa-product-link" data-product="multi-cylinder-compressed-manifold">Multi Cylinder Compressed Manifold</a>
+    <a href="#" class="sa-product-link" data-product="flow-meter-gas">Flow Meter</a>
+  </div>
+</div>
+<div class="sa-dropdown">
+  <button class="sa-dropdown-toggle" type="button">
+    <span>Welding Machines</span>
+    <span class="sa-dropdown-icon">▼</span>
+  </button>
+
+  <div class="sa-dropdown-menu">
+    <a href="#" class="sa-product-link" data-product="aps-welding-machine">APS</a>
+    <a href="#" class="sa-product-link" data-product="welding-transformer">Welding Transformer</a>
+  </div>
+</div>
+<div class="sa-dropdown">
+  <button class="sa-dropdown-toggle" type="button">
+    <span>AIR DRYING PAINT</span>
+    <span class="sa-dropdown-icon">▼</span>
+  </button>
+
+  <div class="sa-dropdown-menu">
+    <a href="#" class="sa-product-link" data-product="air-drying-paint">View Product</a>
+
+    <a href="contact.html" class="sa-sidebar-enquiry-btn">
+      Enquiry Now
+    </a>
+  </div>
+</div>
+
+          <div class="sa-dropdown">
+  <button class="sa-dropdown-toggle" type="button">
+    <span>Polishing Machines</span>
+    <span class="sa-dropdown-icon">▼</span>
+  </button>
+
+  <div class="sa-dropdown-menu">
+    <a href="#" class="sa-product-link" data-product="ss-polishing-machine">Polishing Machine for SS</a>
+    <a href="#" class="sa-product-link" data-product="flexible-shaft-machine">Flexible Shaft for Polishing Machine</a>
+  </div>
+</div>
+
+          <div class="sa-dropdown">
+            <button class="sa-dropdown-toggle" type="button">
+              <span>Hand Tools</span>
+              <span class="sa-dropdown-icon">▼</span>
+            </button>
+            <div class="sa-dropdown-menu">
+              <a href="#" class="sa-product-link" data-product="hand-tools">View Product</a>
+            </div>
+          </div>
+
+          <div class="sa-dropdown">
+            <button class="sa-dropdown-toggle" type="button">
+              <span>Abrasives</span>
+              <span class="sa-dropdown-icon">▼</span>
+            </button>
+            <div class="sa-dropdown-menu">
+              <a href="#" class="sa-product-link" data-product="abrasives">View Product</a>
+            </div>
+          </div>
+
+          <div class="sa-dropdown">
+            <button class="sa-dropdown-toggle" type="button">
+              <span>Cutting Tools</span>
+              <span class="sa-dropdown-icon">▼</span>
+            </button>
+            <div class="sa-dropdown-menu">
+              <a href="#" class="sa-product-link" data-product="cutting-tools">View Product</a>
+            </div>
+          </div>
+
+          <div class="sa-dropdown">
+            <button class="sa-dropdown-toggle" type="button">
+              <span>Power Tools</span>
+              <span class="sa-dropdown-icon">▼</span>
+            </button>
+            <div class="sa-dropdown-menu">
+              <a href="#" class="sa-product-link" data-product="power-tools">View Product</a>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+
+
+
+      <div class="sa-explore-main">
+        <div class="sa-explore-head">
+          <span class="sa-explore-eyebrow">Explore</span>
+          <h2 class="sa-explore-heading">Product</h2>
+        </div>
+
+        <div class="sa-product-display">
+
+          <!-- =========================
+               STAINLESS STEEL TIG WELDING WIRE
+               UPDATED WITH USER PROVIDED INFO
+          ========================= -->
+          <div class="sa-product-section active" id="stainless-steel-tig">
+            <div class="sa-product-detail-card">
+              <div class="sa-product-detail-image">
+                <img src="img/wel2.webp " alt="Stainless Steel TIG Welding Wire">
+              </div>
+              <div class="sa-product-detail-content">
+                <span class="sa-product-detail-label">TIG Welding Filler Wires</span>
+                <h2>Stainless Steel TIG Welding Wire</h2>
+                <p>
+                  Premium stainless steel TIG welding wire for precision welding, smooth finish, controlled heat input and superior weld metal quality across industrial fabrication applications.
+                </p>
+
+                <ul class="sa-product-points">
+                  <li>Suitable for thin sheets, tubes and root pass welding in pipes</li>
+                  <li>Minimal heat input with smooth weld results</li>
+                  <li>Helps avoid excessive penetration and undercuts</li>
+                  <li>Used with inert shielding gases like argon, helium or mixed gas</li>
+                </ul>
+
+                <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+              </div>
+            </div>
+
+            <!-- brands -->
+            <div class="sa-brand-strip">
+              <div class="sa-brand-card"><img src="img/Venus.jpg" alt="Venus"></div>
+              <div class="sa-brand-card"><img src="img/and.jpg" alt="Anand Arc"></div>
+              <div class="sa-brand-card"><img src="img/bek.jpg" alt="Bekaert"></div>
+              <div class="sa-brand-card"><img src="img/sup.jpg" alt="Superon"></div>
+            </div>
+
+            <!-- TIG + MIG info -->
+            <div class="sa-info-grid">
+              <div class="sa-info-box">
+                <h3>TIG Welding</h3>
+                <p>
+                  In TIG welding, the arc is struck between the workpiece and the non-consumable electrode. Thoriated tungsten is used for welding ferrous materials, while zirconated tungsten is used for aluminium.
+                </p>
+                <p>
+                  The consumable wire is melted in the arc atmosphere and inert gases like argon, helium, or their mixtures are used as shielding gases.
+                </p>
+                <p>
+                  TIG welding is extremely suitable for joining thin sheets and tubes, and for making root pass welding in pipes because the heat input is minimal. TIG welds give smooth welds and superior quality weld metal.
+                </p>
+
+                <h4>Normal Grade</h4>
+                <div class="sa-grade-list">
+                  <span class="sa-grade-pill">304L</span>
+                  <span class="sa-grade-pill">308L</span>
+                  <span class="sa-grade-pill">308H</span>
+                  <span class="sa-grade-pill">308LSi</span>
+                  <span class="sa-grade-pill">309LMo</span>
+                  <span class="sa-grade-pill">310</span>
+                  <span class="sa-grade-pill">312</span>
+                  <span class="sa-grade-pill">316</span>
+                  <span class="sa-grade-pill">316H</span>
+                  <span class="sa-grade-pill">316L</span>
+                  <span class="sa-grade-pill">316LSi</span>
+                  <span class="sa-grade-pill">317</span>
+                  <span class="sa-grade-pill">317Si</span>
+                  <span class="sa-grade-pill">318Si</span>
+                  <span class="sa-grade-pill">321</span>
+                  <span class="sa-grade-pill">347</span>
+                  <span class="sa-grade-pill">347Si</span>
+                  <span class="sa-grade-pill">410</span>
+                  <span class="sa-grade-pill">420</span>
+                  <span class="sa-grade-pill">430</span>
+                  <span class="sa-grade-pill">409</span>
+                  <span class="sa-grade-pill">409Cb</span>
+                  <span class="sa-grade-pill">409Ti</span>
+                  <span class="sa-grade-pill">410NiMo</span>
+                  <span class="sa-grade-pill">430LNb</span>
+                  <span class="sa-grade-pill">2209</span>
+                  <span class="sa-grade-pill">904L</span>
+                </div>
+              </div>
+
+              <div class="sa-info-box">
+                <h3>MIG Welding</h3>
+                <p>
+                  Gas Metal Arc welding is generally called MIG welding. In this process, the consumable wire travels through a nozzle and tip before it strikes an arc with the workpiece.
+                </p>
+                <p>
+                  MIG welding is a high-productivity process. It does not need expensive machinery and the welding machines are easily transportable, which makes this process popular on construction sites.
+                </p>
+
+                <h4>Common Shielding Gases</h4>
+                <ul class="sa-shielding-list">
+                  <li>100% Argon</li>
+                  <li>99% Argon with 1% Oxygen</li>
+                  <li>97% Argon with 3% Carbon Dioxide</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- packaging -->
+            <div class="sa-table-wrap">
+              <h3 class="sa-table-title">Packaging Details</h3>
+              <table class="sa-table">
+                <thead>
+                  <tr>
+                    <th>Description</th>
+                    <th>Packing</th>
+                    <th>Length (mm)</th>
+                    <th>Size (mm)</th>
+                    <th>Weight</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>TIG Rods</td>
+                    <td>Corrugated Box</td>
+                    <td>1000</td>
+                    <td>4.0, 3.15, 2.5, 2.0, 1.6</td>
+                    <td>5 Kgs</td>
+                  </tr>
+                  <tr>
+                    <td>MIG Wire</td>
+                    <td>Plastic Spools</td>
+                    <td>-</td>
+                    <td>1.6, 1.2, 0.8</td>
+                    <td>12.5 Kgs</td>
+                  </tr>
+                  <tr>
+                    <td>SAW Wire</td>
+                    <td>Metal</td>
+                    <td>-</td>
+                    <td>4.0, 3.15, 2.5</td>
+                    <td>25 Kgs</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+         
+
+            <div class="sa-note-box">
+              <h3>Range & Industrial Use</h3>
+              <p>
+                This product range is suitable for industrial fabrication, thin section welding, pipe root pass welding and high-quality stainless steel welding applications where clean finish and smooth weld quality are important.
+              </p>
+            </div>
+          </div>
+<!-- =========================
+     MILD STEEL TIG WELDING WIRES
+     SAME STYLE AS STAINLESS SECTION
+========================= -->
+<div class="sa-product-section" id="mild-steel-tig">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/tig.webp" alt="Mild Steel TIG Welding Wires">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">TIG Welding Filler Wires</span>
+      <h2>Mild Steel TIG Welding Wires</h2>
+      <p>
+        High-quality carbon steel TIG and MIG welding wires designed for dependable weldability,
+        strong joints and industrial fabrication performance across mild and alloy steel applications.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Suitable for mild steel and carbon steel welding applications</li>
+        <li>Available in multiple TIG and MIG sizes</li>
+        <li>Useful for root pass of pipes, offshore rigs and structural work</li>
+        <li>Best quality wires supplied for dependable welding satisfaction</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+
+  <!-- INFO GRID -->
+  <div class="sa-info-grid">
+    <div class="sa-info-box">
+      <h3>About Carbon Steel</h3>
+      <p>
+        Carbon steel is considered to be carbon steel when no minimum content is specified or required
+        for chromium, cobalt, molybdenum, nickel, niobium, titanium, tungsten, vanadium or zirconium,
+        or any other element to be added to obtain a desired alloying effect.
+      </p>
+      <p>
+        The term “carbon steel” may also be used in reference to steel which is not stainless steel.
+        In this use, carbon steel may include alloy steels.
+      </p>
+      <p>
+        As the carbon content rises, steel has the ability to become harder and stronger through heat treatment,
+        but this also makes it less ductile. Regardless of the heat treatment, higher carbon content reduces weld ability.
+        In carbon steels, the higher carbon content lowers the melting point.
+      </p>
+      <p>
+        We provide our customer with best quality wires to attain utmost satisfaction.
+      </p>
+    </div>
+
+    <div class="sa-info-box">
+      <h3>Application Highlights</h3>
+      <ul class="sa-shielding-list">
+        <li>For welding of mild and 490 N/mm² steel</li>
+        <li>Especially suited for root pass of pipes, offshore rigs and structural work</li>
+        <li>Designed for welding Cr-Mo steels and high temperature service materials</li>
+        <li>Suitable for low alloy high strength steels requiring good toughness</li>
+        <li>Useful for hot hydrogen services and 9% chromium steels such as P91 and F91</li>
+      </ul>
+
+      <h4>Packaging</h4>
+      <p><strong>In TIG Form:</strong> 5 Kgs</p>
+      <p><strong>In MIG Form:</strong> 12.5 Kg</p>
+    </div>
+  </div>
+
+  <!-- GRADE TABLE -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Grades in Carbon Steel Alloy</h3>
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Grade</th>
+          <th>Size</th>
+          <th>Application</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ER – 70S 2</td>
+          <td>
+            TIG: 1.6, 2.0, 2.4, 3.2, 4.0<br>
+            MIG: 0.6, 0.8, 1.2, 1.6
+          </td>
+          <td>
+            For welding of mild and 490 N/mm² steel. Especially suited for root pass of pipes,
+            offshore rigs and structural work.
+          </td>
+        </tr>
+        <tr>
+          <td>ER – 80S B2</td>
+          <td>
+            TIG: 1.6, 2.0, 2.4, 3.2, 4.0<br>
+            MIG: 0.6, 0.8, 1.2, 1.6
+          </td>
+          <td>Designed for welding on 1-1/4 Cr 1/2 Mo steels.</td>
+        </tr>
+        <tr>
+          <td>ER-80S-B8</td>
+          <td>
+            TIG: 1.6, 2.0, 2.4, 3.2, 4.0<br>
+            MIG: 0.6, 0.8, 1.2, 1.6
+          </td>
+          <td>For welding of 9% Cr-1% Mo steel.</td>
+        </tr>
+        <tr>
+          <td>ER-80S-B6</td>
+          <td>
+            TIG: 1.6, 2.0, 2.4, 3.2, 4.0<br>
+            MIG: 0.6, 0.8, 1.2, 1.6
+          </td>
+          <td>
+            Designed for welding of material of similar composition for high temperature service conditions.
+          </td>
+        </tr>
+        <tr>
+          <td>ER-80S D2</td>
+          <td>
+            TIG: 1.6, 2.0, 2.4, 3.2, 4.0<br>
+            MIG: 0.6, 0.8, 1.2, 1.6
+          </td>
+          <td>
+            Low alloy steel wire with 2% manganese and 0.5% molybdenum as alloying elements.
+          </td>
+        </tr>
+        <tr>
+          <td>ER-80S-Ni1</td>
+          <td>
+            TIG: 1.6, 2.0, 2.4, 3.2, 4.0<br>
+            MIG: 0.6, 0.8, 1.2, 1.6
+          </td>
+          <td>
+            Used for welding low alloy high strength steels requiring good toughness
+            at temperature as low as -40°F.
+          </td>
+        </tr>
+        <tr>
+          <td>ER-90S-B3</td>
+          <td>
+            TIG: 1.6, 2.0, 2.4, 3.2, 4.0<br>
+            MIG: 0.6, 0.8, 1.2, 1.6
+          </td>
+          <td>Designed for welding 2-1/4 Cr 1 Mo steels.</td>
+        </tr>
+        <tr>
+          <td>ER-90S-B9</td>
+          <td>
+            TIG: 1.6, 2.0, 2.4, 3.2, 4.0<br>
+            MIG: 0.6, 0.8, 1.2, 1.6
+          </td>
+          <td>
+            Designed to weld high temperature steels for hot hydrogen services and is suitable
+            for 9% chromium steels such as P91 and F91.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- NOTE -->
+  <div class="sa-note-box">
+    <h3>Recommended Industrial Use</h3>
+    <p>
+      Mild steel TIG welding wires are suitable for construction, structural fabrication,
+      piping root pass welding, offshore applications and alloy steel welding jobs where
+      dependable performance and good weld quality are important.
+    </p>
+  </div>
+</div>
+<!-- =========================
+     ALUMINIUM TIG WELDING WIRES
+========================= -->
+<div class="sa-product-section" id="aluminium-tig">
+  
+  <!-- MAIN CARD -->
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/aluminium-tig-main.jpg" alt="Aluminium TIG Welding Wires">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">TIG Welding Filler Wires</span>
+      <h2>Aluminium TIG Welding Wires</h2>
+
+      <p>
+        Aluminium alloys are widely used in engineering structures due to their lightweight,
+        strength, corrosion resistance and excellent weldability. Choosing the right alloy
+        ensures optimal performance across industrial applications.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Lightweight with high strength-to-weight ratio</li>
+        <li>Excellent corrosion resistance</li>
+        <li>Highly suitable for automotive, aerospace & structural use</li>
+        <li>Used in transport, packaging, electrical & construction sectors</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+
+  <!-- INFO GRID -->
+  <div class="sa-info-grid">
+
+    <!-- LEFT -->
+    <div class="sa-info-box">
+      <h3>Uses of Aluminium Alloys</h3>
+      <p>
+        Aluminium when combined with other metals provides strength and specific
+        characteristics for various industrial applications.
+      </p>
+
+      <p>
+        Aluminium alloys are extensively used in automotive parts, transportation,
+        packaging, electrical applications, medicine, construction of homes and furniture.
+      </p>
+
+      <p>
+        High altitude flying and structural applications depend heavily on aluminium alloys
+        due to their durability and lightweight nature.
+      </p>
+
+      <h4>Products in Aluminium Alloy</h4>
+
+      <div class="sa-grade-list">
+        <span class="sa-grade-pill">5% Silicon ER 4043 / NG21</span>
+        <span class="sa-grade-pill">12% Silicon ER4047 / NG2</span>
+        <span class="sa-grade-pill">5% Magnesium ER 5356 / NG6</span>
+        <span class="sa-grade-pill">Pure Aluminium ER 1100 / AL 1B</span>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="sa-info-box">
+      <h3>Applications</h3>
+
+      <ul class="sa-shielding-list">
+        <li>Automotive and transportation components</li>
+        <li>Electrical and packaging industries</li>
+        <li>Construction and furniture manufacturing</li>
+        <li>Aerospace and high altitude engineering</li>
+        <li>Industrial fabrication and structural welding</li>
+      </ul>
+
+      <h4>Certification</h4>
+      <p>
+        We supply only ISO certified Aluminium Alloys ensuring quality, consistency
+        and industrial reliability.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- TABLE -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Packaging Details</h3>
+
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Packing</th>
+          <th>Length (mm)</th>
+          <th>Size (mm)</th>
+          <th>Weight</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>TIG Rods</td>
+          <td>Corrugated Box</td>
+          <td>1000</td>
+          <td>3.2, 2.4, 2.0, 1.6</td>
+          <td>5 Kgs</td>
+        </tr>
+
+        <tr>
+          <td>MIG Wire</td>
+          <td>Plastic Spools</td>
+          <td>-</td>
+          <td>1.6, 1.2, 0.8</td>
+          <td>Aluminium – 6 Kgs</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- GALLERY -->
+  <div class="sa-gallery-grid">
+    <div class="sa-gallery-card">
+      <img src="img/aluminium-tig-gallery-1.jpg" alt="Aluminium Wire Spool">
+    </div>
+
+    
+  </div>
+
+  <!-- NOTE -->
+  <div class="sa-note-box">
+    <h3>Industrial Supply</h3>
+    <p>
+      We cater to all welding requirements of aluminium alloys including Alfa Welding
+      Aluminium Alloys and FSH Aluminium Alloys, ensuring high performance and reliability
+      in industrial applications.
+    </p>
+  </div>
+
+</div>
+<!-- =========================
+     SILVER BRAZING
+========================= -->
+<div class="sa-product-section" id="silver-brazing">
+
+  <!-- MAIN CARD -->
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/silver-brazing-main.jpg" alt="Silver Brazing Alloys">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Brazing Product</span>
+      <h2>Silver Brazing Alloys</h2>
+
+      <p>
+        Silver brazing alloys are easy to use, high-strength bonding materials with excellent
+        flow characteristics and short melting ranges. These alloys provide superior mechanical
+        properties and versatile applications across industries.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>High strength and impact resistance</li>
+        <li>Excellent flow and bonding characteristics</li>
+        <li>Available in rods, foils, strips, granules, rings and paste</li>
+        <li>Customised solutions as per client specifications</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+
+  <!-- INFO GRID -->
+  <div class="sa-info-grid">
+
+    <!-- LEFT -->
+    <div class="sa-info-box">
+      <h3>Industrial Uses</h3>
+
+      <p>
+        Silver brazing is widely used in the automotive industry, especially for aluminium
+        radiators involving tube-to-fin and tube-to-header joints.
+      </p>
+
+      <p>
+        It is also used in pipe and tube applications to extend length, fabricate shapes,
+        join dissimilar materials and ensure pressure-tight joints.
+      </p>
+
+      <p>
+        Common base metals include aluminium and its alloys, copper alloys, steel,
+        stainless steel and other industrial materials.
+      </p>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="sa-info-box">
+      <h3>Advanced Applications</h3>
+
+      <ul class="sa-shielding-list">
+        <li>Microwave reflectors and satellite components</li>
+        <li>Camera and precision instrumentation</li>
+        <li>High-performance industrial assemblies</li>
+        <li>Joining dissimilar metals with strong bonding</li>
+      </ul>
+
+      <h4>Base Materials Used</h4>
+      <p>
+        Oxygen-free copper, nickel, stainless steel, copper-nickel alloys,
+        iron-nickel-cobalt alloys and tungsten.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- PRODUCTS -->
+  <div class="sa-info-box" style="margin-top:24px;">
+    <h3>Products in Silver Brazing Alloys</h3>
+
+    <div class="sa-grade-list">
+      <span class="sa-grade-pill">50%</span>
+      <span class="sa-grade-pill">43%</span>
+      <span class="sa-grade-pill">35%</span>
+      <span class="sa-grade-pill">30%</span>
+      <span class="sa-grade-pill">14%</span>
+      <span class="sa-grade-pill">5%</span>
+      <span class="sa-grade-pill">2%</span>
+    </div>
+
+    <p style="margin-top:14px;">
+      Available in Silver Brazing Rods, Foils, Shims, Preformed wires and strips.
+    </p>
+  </div>
+
+  <!-- TABLE -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Packaging Details</h3>
+
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Packing</th>
+          <th>Length (mm)</th>
+          <th>Size (mm)</th>
+          <th>Weight</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>TIG Rods</td>
+          <td>Corrugated Box</td>
+          <td>500</td>
+          <td>1.6</td>
+          <td>1 Kgs</td>
+        </tr>
+
+        <tr>
+          <td>SHIM / Foil</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>On Request</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- NOTE -->
+  <div class="sa-note-box">
+    <h3>Supply & Standards</h3>
+    <p>
+      We cater to all welding requirements of Silver Brazing Alloys including products
+      from Agrawal Co. (as per IS 2927 standards), ensuring reliable performance and
+      high-quality industrial bonding solutions.
+    </p>
+  </div>
+
+</div>
+
+
+
+<!-- =========================
+     HARD FACING ELECTRODES
+========================= -->
+<div class="sa-product-section" id="hard-facing-electrodes">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/hard-facing-electrodes-main.jpg" alt="Hard Facing Electrodes">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Electrodes</span>
+      <h2>Hard Facing Electrodes</h2>
+      <p>
+        A medium heavy coated rutile type good running hard facing welding electrode,
+        depositing a tough air hardening type weld metal of approximately 350 to 600 BHN hardness.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Weld metal is machinable</li>
+        <li>Recommended where maximum hardness is required</li>
+        <li>Suitable for repair and wear-resistant applications</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+
+  <div class="sa-info-grid">
+    <div class="sa-info-box">
+      <h3>Typical Applications</h3>
+      <p>
+        Suitable for shear blades, brake shoes, coupling, conveyor parts,
+        roller tractor wheels, steel castings, shafts and axles.
+      </p>
+
+      <h4>Uses</h4>
+      <p>
+        Hard Facing Electrodes are used for all kinds of gears, shafts,
+        hammers, pulleys, couplings and spindles.
+      </p>
+    </div>
+
+    <div class="sa-info-box">
+      <h3>Available Sizes</h3>
+      <div class="sa-grade-list">
+        <span class="sa-grade-pill">3.20 × 450</span>
+        <span class="sa-grade-pill">4.00 × 450</span>
+        <span class="sa-grade-pill">5.00 × 450</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- optional brands row -->
+  <div class="sa-brand-strip">
+    <div class="sa-brand-card"><img src="img/advani-oerlikon-logo.png" alt="Advani Oerlikon"></div>
+    <div class="sa-brand-card"><img src="img/esab-logo.png" alt="ESAB"></div>
+    <div class="sa-brand-card"><img src="img/superon-logo.png" alt="Superon"></div>
+    <div class="sa-brand-card"><img src="img/weldfast-logo.png" alt="Weldfast Electrodes"></div>
+  </div>
+
+  <div class="sa-brand-strip" style="margin-top:16px;">
+    <div class="sa-brand-card"><img src="img/mangalam-logo.png" alt="Mangalam"></div>
+    <div class="sa-brand-card"><img src="img/anand-arc-logo.png" alt="Anand Arc"></div>
+    <div class="sa-brand-card"><img src="img/honavar-logo.png" alt="Honavar Electrodes"></div>
+  </div>
+</div>
+<!-- =========================
+     M S ELECTRODES
+========================= -->
+<div class="sa-product-section" id="ms-electrodes">
+
+  <!-- MAIN CARD -->
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/ms-electrodes-main.jpg" alt="M S Electrodes">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Electrodes</span>
+      <h2>M S Electrodes</h2>
+
+      <p>
+        We offer a wide range of M S Electrodes with light, medium, medium heavy and heavy coated electrodes,
+        used for major and minor structural work.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Suitable for all welding positions</li>
+        <li>Smooth arc and low spatter</li>
+        <li>Radiographic quality weld metal</li>
+        <li>Designed specifically for mild steel welding</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+
+  <!-- INFO GRID -->
+  <div class="sa-info-grid">
+
+    <div class="sa-info-box">
+      <h3>Applications</h3>
+      <p>
+        M S electrodes are widely used for out-of-position welding and are ideal for
+        field construction, shipyards, water towers, pressure vessels, pressure pipes,
+        steel castings and storage tanks.
+      </p>
+    </div>
+
+    <div class="sa-info-box">
+      <h3>Available Sizes</h3>
+
+      <div class="sa-grade-list">
+        <span class="sa-grade-pill">2.50 × 350</span>
+        <span class="sa-grade-pill">3.15 × 350</span>
+        <span class="sa-grade-pill">4.00 × 450</span>
+        <span class="sa-grade-pill">5.00 × 450</span>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+          <div class="sa-product-section" id="ss-electrodes">
+            <div class="sa-product-detail-card">
+              <div class="sa-product-detail-image">
+                <img src="img/electrodes.jpg" alt="SS Electrodes">
+              </div>
+              <div class="sa-product-detail-content">
+                <span class="sa-product-detail-label">Electrodes</span>
+                <h2>S S Electrodes</h2>
+                <p>Stainless steel electrodes made for corrosion-resistant and high-quality weld joints.</p>
+                <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+              </div>
+            </div>
+          </div>
+<!-- INDUSTRIAL WELDING CABLES -->
+<div class="sa-product-section" id="industrial-welding-cables">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/industrial-welding-cables.jpg.jpeg" alt="Industrial Welding Cables">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Welding Accessories</span>
+      <h2>Industrial Welding Cables</h2>
+      <p>
+        ISI and IS standard industrial welding cables available in Keshav, Sun and Polyweld make.
+        Available in copper and aluminium conductor in TRS and HOFR type.
+      </p>
+      <ul class="sa-product-points">
+        <li>TRS: tough rubber sheathed</li>
+        <li>HOFR: heat, oil and flame retardant</li>
+        <li>Range from 16 sq.mm to 120 sq.mm</li>
+        <li>Supports 100 amps to 1200 amps</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Cable Capacity Range</h3>
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>TRS Amps</th>
+          <th>TRS Size</th>
+          <th>HOFR Amps</th>
+          <th>HOFR Size</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>100 amps</td><td>16 sq.mm</td><td>150 amps</td><td>16 sq.mm</td></tr>
+        <tr><td>150 amps</td><td>25 sq.mm</td><td>230 amps</td><td>25 sq.mm</td></tr>
+        <tr><td>230 amps</td><td>35 sq.mm</td><td>400 amps</td><td>35 sq.mm</td></tr>
+        <tr><td>400 amps</td><td>50 sq.mm</td><td>600 amps</td><td>50 sq.mm</td></tr>
+        <tr><td>600 amps</td><td>70 sq.mm</td><td>800 amps</td><td>70 sq.mm</td></tr>
+        <tr><td>800 amps</td><td>95 sq.mm</td><td>1000 amps</td><td>95 sq.mm</td></tr>
+        <tr><td>1000 amps</td><td>120 sq.mm</td><td>1200 amps</td><td>120 sq.mm</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- APRON CHROME LEATHER -->
+<div class="sa-product-section" id="apron-chrome-leather">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/apron-chrome-leather.jpeg" alt="Apron Chrome Leather">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Safety Accessory</span>
+      <h2>Apron - Chrome Leather</h2>
+      <p>
+        Chrome leather apron used for safety purpose during welding and industrial work.
+      </p>
+      <ul class="sa-product-points">
+        <li>Available in 24 × 36 inches</li>
+        <li>Available in 24 × 48 inches</li>
+        <li>Used for safety protection</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- WIRE BRUSH -->
+<div class="sa-product-section" id="wire-brush">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/wire-brush.jpeg" alt="Wire Brush">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Welding Accessories</span>
+      <h2>Wire Brush</h2>
+      <p>
+        Make - Maruti. Used for cleaning rust and removing paints.
+      </p>
+      <ul class="sa-product-points">
+        <li>Available in M.S and S.S</li>
+        <li>Available in 4 row and 5 row options</li>
+        <li>Circular wire wheel available in different sizes</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- CABLE LUGS -->
+<div class="sa-product-section" id="cable-lugs">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/cable-lugs.jpeg" alt="Cable Lugs">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Welding Accessories</span>
+      <h2>Cable Lugs</h2>
+      <p>
+        Available in copper finish and chrome plating.
+      </p>
+      <ul class="sa-product-points">
+        <li>Available from 200 amps to 600 amps</li>
+        <li>Strong and reliable connection support</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- CHIPPING HAMMER -->
+<div class="sa-product-section" id="chipping-hammer">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/chipping-hammer.jpeg" alt="Chipping Hammer">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Welding Accessories</span>
+      <h2>Chipping Hammer</h2>
+      <p>
+        Make - Welspring Universal. M.S without spring handle and powder coated body.
+      </p>
+      <ul class="sa-product-points">
+        <li>Used for welding clean-up work</li>
+        <li>Powder coated durable body</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- CABLE CONNECTORS -->
+<div class="sa-product-section" id="cable-connectors">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/cable-connectors.jpeg" alt="Cable Connectors">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Welding Accessories</span>
+      <h2>Cable Connectors</h2>
+      <p>
+        Make - Welspring Universal. Used for joining the length of the cable.
+      </p>
+      <ul class="sa-product-points">
+        <li>Available for cable side plug</li>
+        <li>Machine panel socket available</li>
+        <li>Gas exit connectors available</li>
+        <li>Range from 200 amps to 600 amps cable</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- WELDING CURTAIN -->
+<div class="sa-product-section" id="welding-curtain">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/welding-curtain.jpeg" alt="Welding Curtain">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Protection Accessory</span>
+      <h2>Welding Curtain</h2>
+      <p>
+        Make - Welspring Universal. Used for protection against welding spark.
+      </p>
+      <ul class="sa-product-points">
+        <li>Available in different sizes</li>
+        <li>Available in different types</li>
+        <li>Used for welding safety protection</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- DRYING OVENS -->
+<div class="sa-product-section" id="drying-ovens">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/drying-ovens.jpeg" alt="Drying Ovens">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Welding Equipment</span>
+      <h2>Drying Ovens</h2>
+      <p>
+        Make - Haridas. Used for drying electrodes before welding to remove moisture.
+      </p>
+      <ul class="sa-product-points">
+        <li>Electrode drying capacity from 4 kg to 100 kg</li>
+        <li>Portable and mother ovens available</li>
+        <li>Flux drying ovens from 50 kg to 100 kg</li>
+        <li>One year warranty against manufacturing defect</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- EARTHING CLAMP -->
+<div class="sa-product-section" id="earthing-clamp">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/earthing-clamp.jpeg" alt="Earthing Clamp">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Welding Accessories</span>
+      <h2>Earthing Clamp</h2>
+      <p>
+        Make - Welspring Universal. Used for earthing.
+      </p>
+      <ul class="sa-product-points">
+        <li>Available from 200 amps to 600 amps</li>
+        <li>Full brass body option available</li>
+        <li>Available in brass pincer type and M.S heavy</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- WELDING GLASS -->
+<div class="sa-product-section" id="welding-glass">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/welding-glass.jpeg" alt="Welding Black and White Glass">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Safety Glass</span>
+      <h2>Welding Glass (Black / White)</h2>
+      <p>
+        Used for welding protection. Glass size: 108 mm length × 83 mm width × 2 mm height.
+      </p>
+      <ul class="sa-product-points">
+        <li>11A1 DIN used for general welding</li>
+        <li>12A1 DIN used for heavy structural welding</li>
+        <li>13A1 DIN used for CO2 welding</li>
+        <li>14A1 DIN used for argon welding</li>
+        <li>White plain glass also available</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEAD SCREEN WITHOUT GLASS -->
+<div class="sa-product-section" id="head-screen-without-glass">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/head-screen-without-glass.jpeg" alt="Head Screen Without Glass">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Safety Accessory</span>
+      <h2>Head Screen Without Glass</h2>
+      <p>
+        Make - Sparkweld. Used for protection against arc welding.
+      </p>
+      <ul class="sa-product-points">
+        <li>Available in black fibre glass</li>
+        <li>Both side finish</li>
+        <li>Superior quality</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- HELMET AUTO DARKENING -->
+<div class="sa-product-section" id="helmet-auto-darkening">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/helmet-auto-darkening.jpeg" alt="Helmet Auto Darkening">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Safety Helmet</span>
+      <h2>Helmet Auto Darkening</h2>
+      <p>
+        Make - Welspring Universal. Used for arc welding with variable glass shade.
+      </p>
+      <ul class="sa-product-points">
+        <li>Variable shade from 9A1 DIN to 13A1 DIN</li>
+        <li>Available in various viewing area sizes</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- HAND GLOVES -->
+<div class="sa-product-section" id="hand-gloves">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/hand-gloves.jpeg" alt="Hand Gloves">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Safety Accessory</span>
+      <h2>Hand Gloves</h2>
+      <p>
+        Superior quality hand gloves used for safety.
+      </p>
+      <ul class="sa-product-points">
+        <li>Available in chrome leather</li>
+        <li>Available in cotton canvas</li>
+        <li>Available in seamless knitted, asbestos and heat resistance</li>
+        <li>Sizes available from 9 inches to 18 inches</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- HAND SLEEVES -->
+<div class="sa-product-section" id="hand-sleeves">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/hand-sleeves.jpeg" alt="Hand Sleeves">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Safety Accessory</span>
+      <h2>Hand Sleeves</h2>
+      <p>
+        Used for safety protection.
+      </p>
+      <ul class="sa-product-points">
+        <li>Available in chrome leather</li>
+        <li>Size 16 inches</li>
+        <li>Size 18 inches</li>
+        <li>Size 20 inches</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- HOLDER -->
+<div class="sa-product-section" id="holder">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/holder.jpeg" alt="Holder">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Arc Welding Accessory</span>
+      <h2>Holder (Arc Welding Holder)</h2>
+      <p>
+        Make - ADOR, Sparkweld, Arcweld, Weldowin, Million and Welspring Universal.
+        Used for holding the welding electrode while welding.
+      </p>
+      <ul class="sa-product-points">
+        <li>Available in fully insulated type</li>
+        <li>Available in semi insulated type</li>
+        <li>Brass body from 300 amps to 700 amps</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- HAND SCREEN -->
+<div class="sa-product-section" id="hand-screen">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/hand-screen.jpeg" alt="Hand Screen">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Protection Accessory</span>
+      <h2>Hand Screen</h2>
+      <p>
+        Make - Sparkweld. Used for protection against arc welding.
+      </p>
+      <ul class="sa-product-points">
+        <li>Black fibre glass body</li>
+        <li>Both side finish</li>
+        <li>Superior quality protection</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- WELDING GAUGE -->
+<div class="sa-product-section" id="welding-gauge">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/welding-gauge.jpg" alt="Welding Gauge">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Measuring Tool</span>
+      <h2>Welding Gauge</h2>
+      <p>
+        Used for measuring welding length and weld sizes.
+      </p>
+      <ul class="sa-product-points">
+        <li>Available in cam type</li>
+        <li>Available in fillet type</li>
+        <li>Cam type measures fillet leg length and weld throat size</li>
+        <li>Fillet type measures 11 fillet weld sizes for concave and convex welds</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEAD SCREEN SPARE BELT -->
+<div class="sa-product-section" id="head-screen-spare-belt">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/head-screen-spare-belt.jpg" alt="Head Screen Spare Belt">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Helmet Spare</span>
+      <h2>Head Screen Spare Belt</h2>
+      <p>
+        Make - Sparkweld, Welspring Universal. Original fibre adjustable belt.
+      </p>
+      <ul class="sa-product-points">
+        <li>Adjustable belt design</li>
+        <li>W/U make push turn type gear belt</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- THERMOPENS -->
+<div class="sa-product-section" id="thermopens">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/thermopens.jpg" alt="Thermopens">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Temperature Tool</span>
+      <h2>Thermopens</h2>
+      <p>
+        Temperature indicating crayons used for measuring surface temperature.
+      </p>
+      <ul class="sa-product-points">
+        <li>Available from 50°C to 1200°C</li>
+        <li>Useful for temperature indication during industrial work</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- WELDING INSPECTOR MIRROR -->
+<div class="sa-product-section" id="welding-inspector-mirror">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/welding-inspector-mirror.jpg" alt="Welding Inspector Mirror">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Inspection Tool</span>
+      <h2>Welding Inspector Mirror</h2>
+      <p>
+        Make - Welspring Universal.
+      </p>
+      <ul class="sa-product-points">
+        <li>Used for welding inspection visibility</li>
+        <li>Reliable industrial inspection accessory</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- LEG GUARD -->
+<div class="sa-product-section" id="leg-guard">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/leg-guard.jpg" alt="Leg Guard">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Safety Accessory</span>
+      <h2>Leg Guard</h2>
+      <p>
+        Used for leg protection against welding.
+      </p>
+      <ul class="sa-product-points">
+        <li>Available in chrome leather</li>
+        <li>Available from 14 inches to 18 inches</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- SPOT WELDING ELECTRODE -->
+<div class="sa-product-section" id="spot-welding-electrode">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/spot-welding-electrode.jpg" alt="Spot Welding Electrode">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Welding Electrode</span>
+      <h2>Spot Welding Electrode</h2>
+      <p>
+        Spot welding is a process in which contacting metal surfaces are joined by the heat obtained
+        from resistance to electric current flow.
+      </p>
+      <ul class="sa-product-points">
+        <li>Available in flat type</li>
+        <li>Available in radius nose type</li>
+        <li>Size 16 mm × 2 inch length</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- PURGING PAPER -->
+<div class="sa-product-section" id="purging-paper">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/purging-paper.jpg" alt="Purging Paper / Back Purging Tape">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Welding Consumable</span>
+      <h2>Purging Paper / Back Purging Tape</h2>
+      <p>
+        Purging Paper or Water Soluble Paper is made of Sodium Carboxy Methyl Cellulose and wooden pulp.
+      </p>
+      <ul class="sa-product-points">
+        <li>Dissolves rapidly and completely in most liquids including water</li>
+        <li>Useful for back purging support</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+<!-- APRON CHROME LEATHER -->
+<div class="sa-product-section" id="safety-apron-chrome-leather">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/safety-apron-chrome-leather.webp" alt="Apron Chrome Leather">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Safety Equipment</span>
+      <h2>Apron - Chrome Leather</h2>
+      <p>
+        Chrome leather apron used for safety purpose during welding and industrial work.
+      </p>
+      <ul class="sa-product-points">
+        <li>Available in 24 × 36 inches</li>
+        <li>Available in 24 × 48 inches</li>
+        <li>Used for safety protection</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- EAR PLUG -->
+<div class="sa-product-section" id="ear-plug">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/ear.jpg" alt="Ear Plug">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Safety Equipment</span>
+      <h2>Ear Plug</h2>
+      <p>
+        Make - 3M. Used to protect against noise pollution.
+      </p>
+      <ul class="sa-product-points">
+        <li>Helps reduce noise exposure</li>
+        <li>Suitable for industrial safety use</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- FACE SHIELD -->
+<div class="sa-product-section" id="face-shield">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/Face Shield.jpg" alt="Face Shield">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Safety Equipment</span>
+      <h2>Face Shield</h2>
+      <p>
+        Used for protection against welding and cutting.
+      </p>
+      <ul class="sa-product-points">
+        <li>Available in size 6 × 9</li>
+        <li>Available in size 9 × 12</li>
+        <li>Available with PVC belt</li>
+        <li>Available in A and B type</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- GOGGLES -->
+<div class="sa-product-section" id="safety-goggles">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/Safety Belt.jpg" alt="Safety Goggles">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Eye Protection</span>
+      <h2>Goggles (White / Black / Grey)</h2>
+      <p>
+        Used for protection of eyes against grinding, welding, cutting and forging.
+      </p>
+      <ul class="sa-product-points">
+        <li>Available in plain glass and toughened glass</li>
+        <li>Available in blue glass, green glass, 4FW, 6FW, 11FW</li>
+        <li>Indian and imported options available</li>
+        <li>Flip-up type two-in-one available</li>
+        <li>Glass shade no. 4A1 DIN and 11A1 DIN for gas cutting</li>
+        <li>Plain type available for grinding</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- HAND GLOVES -->
+<div class="sa-product-section" id="safety-hand-gloves">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/hand-gloves.jpeg" alt="Handgloves">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Safety Equipment</span>
+      <h2>Handgloves</h2>
+      <p>
+        Superior quality handgloves used for safety.
+      </p>
+      <ul class="sa-product-points">
+        <li>Available in chrome leather</li>
+        <li>Available in rubber</li>
+        <li>Available in cotton canvas</li>
+        <li>Available in seamless knitted, asbestos and heat resistance</li>
+        <li>Size available from 9 inches to 18 inches</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- HANDSLEEVES -->
+<div class="sa-product-section" id="safety-hand-sleeves">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/hand-sleeves.jpeg" alt="Handsleeves">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Safety Equipment</span>
+      <h2>Handsleeves</h2>
+      <p>
+        Used for safety protection.
+      </p>
+      <ul class="sa-product-points">
+        <li>Available in chrome leather</li>
+        <li>Available in 16 inches</li>
+        <li>Available in 18 inches</li>
+        <li>Available in 20 inches</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- SAFETY HELMET -->
+<div class="sa-product-section" id="safety-helmet">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/sa-helmet.jpg" alt="Safety Helmet">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Head Protection</span>
+      <h2>Safety Helmet</h2>
+      <p>
+        Make - Shree Arc (ISI Mark), Acme, Metro. Used for head protection.
+      </p>
+      <ul class="sa-product-points">
+        <li>Available with PVC fitting</li>
+        <li>Available with nape strap</li>
+        <li>Suitable for industrial head safety</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- LEG GUARD -->
+<div class="sa-product-section" id="safety-leg-guard">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/Leg Guard.jpg" alt="Leg Guard">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Safety Equipment</span>
+      <h2>Leg Guard</h2>
+      <p>
+        Used for leg protection against welding.
+      </p>
+      <ul class="sa-product-points">
+        <li>Available in chrome leather</li>
+        <li>Available from 14 inches to 18 inches</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- SAFETY BELT -->
+<div class="sa-product-section" id="safety-belt">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/Safety Belt.jpg" alt="Safety Belt">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Safety Equipment</span>
+      <h2>Safety Belt</h2>
+      <p>
+        Make - Shree Arc, Pioneer.
+      </p>
+      <ul class="sa-product-points">
+        <li>Available in full body harness</li>
+        <li>Available in canvas straps</li>
+        <li>Available in polypropylene straps</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- SAFETY JACKET -->
+<div class="sa-product-section" id="safety-jacket">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/Safety Jacket.jpg" alt="Safety Jacket">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Safety Equipment</span>
+      <h2>Safety Jacket</h2>
+      <p>
+        We offer a variety of Safety Jackets perfect for protecting the wearer against unfortunate accidents.
+      </p>
+      <ul class="sa-product-points">
+        <li>Made using quality raw material</li>
+        <li>Sourced from trusted vendors</li>
+        <li>Available in eye-catching and vibrant colors</li>
+        <li>Easily visible from far-off distances</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- BARRICATION TAPE -->
+<div class="sa-product-section" id="barrication-tape">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/Barrication Tape.jpg" alt="Barrication Tape">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Safety Equipment</span>
+      <h2>Barrication Tape</h2>
+      <p>
+        High quality barrication tapes designed to safeguard people from falling inside a manhole.
+      </p>
+      <ul class="sa-product-points">
+        <li>Designed using PE tapes</li>
+        <li>Available in orange color</li>
+        <li>Stable to ultra-violet radiations</li>
+        <li>Mesh size: 65 mm × 35 mm</li>
+        <li>Roll size: 1 meter width × 25 / 50 meter long</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- =========================
+     ARGON TORCH
+========================= -->
+<div class="sa-product-section" id="argon-torch">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/Argon Torch.webp" alt="Argon Torch">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">TIG Welding Torch & Spares</span>
+      <h2>Argon Torch</h2>
+
+      <p>
+        We are authorised distributors for argon torch and spares since 1978.
+        Used for argon welding applications.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Make – AHS / WELDCRAFFT</li>
+        <li>Imported TIG torch also available</li>
+        <li>Available in various types</li>
+        <li>Available in 4 mtrs and 8 mtrs</li>
+        <li>Water cooled and gas cooled options</li>
+        <li>Available from 50 amps to 600 amps</li>
+        <li>Available with round and ergo TIG handles</li>
+        <li>Global and Indian type available</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+
+
+</div>
+
+<!-- =========================
+     TUNGSTEN RODS
+========================= -->
+<div class="sa-product-section" id="tungsten-rods">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/tungsten-rods-main.webp" alt="Tungsten Rods">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">TIG Welding Torch & Spares</span>
+      <h2>Tungsten Rods</h2>
+
+      <p>
+        Premium tungsten rods for TIG welding applications. Available in multiple grades,
+        color codes and welding applications for AC and DC use.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Make – Plansee (Made in Austria)</li>
+        <li>Make – Winner (Made in China)</li>
+        <li>Available in Pure, Thoriated, Lanthanated, Ceriated and Zirconiated types</li>
+        <li>Suitable for AC, DC and low amperage TIG welding applications</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+
+  <div class="sa-info-grid">
+    <div class="sa-info-box">
+      <h3>Available Types & Color Codes</h3>
+      <div class="sa-grade-list">
+        <span class="sa-grade-pill">WP - Green</span>
+        <span class="sa-grade-pill">WT10 - Yellow</span>
+        <span class="sa-grade-pill">WT20 - Red</span>
+        <span class="sa-grade-pill">WT40 - Orange</span>
+        <span class="sa-grade-pill">WZ8 - White</span>
+        <span class="sa-grade-pill">WC20 - Grey</span>
+        <span class="sa-grade-pill">WL10 - Black</span>
+        <span class="sa-grade-pill">WL20 - Blue</span>
+        <span class="sa-grade-pill">WL15 - Gold</span>
+      </div>
+
+      <h4>Applications</h4>
+      <p><strong>Pure Tungsten (Green):</strong> Best suited for AC TIG welding of aluminium and magnesium alloys.</p>
+      <p><strong>Thoriated (Red / Yellow / Orange):</strong> Best suited for DC TIG welding of carbon steel, stainless steel, nickel alloys and titanium.</p>
+      <p><strong>Lanthanated (Black / Gold / Blue):</strong> Suitable for AC &amp; DC welding applications with good arc characteristics.</p>
+      <p><strong>Ceriated (Grey / Orange):</strong> Best suited for low amperage DC welding with stable arc start.</p>
+      <p><strong>Zirconiated (White / Brown):</strong> Best suited for AC TIG welding with higher contamination resistance.</p>
+    </div>
+
+    <div class="sa-info-box">
+      <h3>Technical Notes</h3>
+      <p><strong>W / WP / Green:</strong> Non-radioactive; suitable for AC welding of aluminium, magnesium and their alloys.</p>
+      <p><strong>WT10 / WT20:</strong> Excellent electron emission and high current carrying capacity; suitable for DC welding.</p>
+      <p><strong>WL10 / WL15 / WL20:</strong> Non-radioactive; excellent conductivity and welding capacity.</p>
+      <p><strong>WC10 / WC15 / WC20:</strong> Easier arc initiation under low current circumstances.</p>
+      <p><strong>WZ8:</strong> Suitable for AC welding and preferred for radiographic quality welding.</p>
+
+      <h4>Surface Notes</h4>
+      <ul class="sa-shielding-list">
+        <li>D = As Drawn</li>
+        <li>E = Electrolytic Polished</li>
+        <li>G = Ground</li>
+        <li>S = Swaged</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sa-mini-table-wrap">
+    <h3 class="sa-mini-title">Sizes</h3>
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Diameter (mm)</th>
+          <th>1.6</th>
+          <th>2.0</th>
+          <th>2.4</th>
+          <th>3.0</th>
+          <th>4.0</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Length (mm)</td>
+          <td>150 or 175</td>
+          <td>150 or 175</td>
+          <td>150 or 175</td>
+          <td>150 or 175</td>
+          <td>150 or 175</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- image layout like screenshot -->
+  <div class="sa-wide-gallery">
+    
+  </div>
+</div>
+
+
+
+
+<!-- =========================
+     CERAMIC NOZZLES
+========================= -->
+<div class="sa-product-section" id="ceramic-nozzles">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/ceramic-nozzles-main.webp" alt="Ceramic Nozzles">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">TIG Welding Torch & Spares</span>
+      <h2>Ceramic Nozzles</h2>
+
+      <p>
+        High quality ceramic nozzles for TIG welding torch applications, designed for proper gas flow
+        and reliable welding performance.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Available in different sizes</li>
+        <li>Suitable for TIG welding torch use</li>
+        <li>Reliable ceramic build quality</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+
+  <!-- image style exactly for adding multiple images -->
+  <div class="sa-wide-gallery">
+    <div class="sa-wide-gallery-card">
+      <img src="img/ceramic-nozzles-gallery-1.jpg" alt="Ceramic Nozzles Set">
+    </div>
+    <div class="sa-wide-gallery-card">
+      <img src="img/ceramic-nozzles-gallery-2.jpg" alt="Ceramic Nozzles Sizes">
+    </div>
+    <div class="sa-wide-gallery-card">
+      <img src="img/ceramic-nozzles-gallery-3.jpg" alt="Ceramic Nozzles Accessories">
+    </div>
+  </div>
+</div><!-- =========================
+     CO2 TORCH
+========================= -->
+<div class="sa-product-section" id="co2-torch">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/CO2.webp" alt="CO2 Torch">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">CO2 Welding Torch & Spares</span>
+      <h2>CO2 Torch</h2>
+
+      <p>
+        Used for CO2 welding and suitable for industrial welding applications.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Available in 3 mtrs</li>
+        <li>Water cooled and gas cooled options</li>
+        <li>Available from 190 amps to 600 amps</li>
+        <li>Round and ergo TIG handle</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+
+  <div class="sa-brand-strip">
+
+  </div>
+</div>
+
+<!-- =========================
+     CONTACT TIPS
+========================= -->
+<div class="sa-product-section" id="contact-tips">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/Contact Tips.jpg" alt="Contact Tips">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">CO2 Welding Torch & Spares</span>
+      <h2>Contact Tips</h2>
+
+      <p>
+        Used for CO2 welding for Mogora, Advani, Abicor Binzel and Panasonic CO2 torch.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Available in ECU (Copper)</li>
+        <li>Available in CuCrZr quality</li>
+        <li>Size from 0.8 mm to 1.6 mm</li>
+        <li>Suitable for 200 amps to 600 amps torch</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+
+  <div class="sa-brand-strip">
+    <div class="sa-brand-card"><img src="img/mangalam-logo.png" alt="Mogora"></div>
+    <div class="sa-brand-card"><img src="img/advani-oerlikon-logo.png" alt="Advani"></div>
+    
+  </div>
+</div>
+
+<!-- =========================
+     ANTI SPATTER SPRAY
+========================= -->
+<div class="sa-product-section" id="anti-spatter-spray">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/Anti Spatter Spray.webp" alt="Anti Spatter Spray">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Welding Chemical</span>
+      <h2>Anti Spatter Spray</h2>
+
+      <p>
+        Used for removing the spatter left during CO2 welding.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Make - Easypart, PROMTECH</li>
+        <li>Available in silicon and non-silicon spray can</li>
+        <li>550 ml spray can available</li>
+        <li>Water base anti spatter CAL GUARD available</li>
+        <li>Available in 5 kg, 20 kg and 200 kg packing</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+
+  <div class="sa-brand-strip">
+  </div>
+</div>
+
+<!-- =========================
+     NOZZLE GEL
+========================= -->
+<div class="sa-product-section" id="nozzle-gel">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/Nozzle.jpg" alt="Nozzle Gel">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Welding Consumable</span>
+      <h2>Nozzle Gel</h2>
+
+      <p>
+        Used for MIG gun nozzles and contact tips.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Used for nozzle and tip protection</li>
+        <li>Available in 300 gms tin</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+<!-- =========================
+     PICKLING GEL
+========================= -->
+<div class="sa-product-section" id="pickling-gel">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/Pickling.jpg" alt="Pickling Gel">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Welding Chemical</span>
+      <h2>Pickling Gel</h2>
+
+      <p>
+        Used in welding applications for cleaning and treatment after welding work.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Used along with welding maintenance applications</li>
+        <li>Suitable for industrial use</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- =========================
+     PRE HEATER
+========================= -->
+<div class="sa-product-section" id="preheater">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/Pre.jpg" alt="Pre Heater">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">CO2 Welding Accessory</span>
+      <h2>Pre Heater</h2>
+
+      <p>
+        Powder coated body, square type superior quality preheater used for heating CO2 gas before welding, as it is a cold gas.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Powder coated body</li>
+        <li>Square type superior quality</li>
+        <li>Available in 230 volts</li>
+        <li>Available in 42 volts</li>
+        <li>Available in 110 volts</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- BLOW PIPES / BRAZING TORCH -->
+<div class="sa-product-section" id="blowpipes-brazing-torch">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/Blow.jpg" alt="Blow Pipes Brazing Torch">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Gas Cutting & Brazing</span>
+      <h2>Blow Pipes / Brazing Torch</h2>
+      <p>
+        Make – Esab ISI mark, Ador ISI, Prestige, Million, Super. Used for gas welding, brazing and heating with oxy and acy or LPG.
+      </p>
+      <ul class="sa-product-points">
+        <li>High pressure and light weight pressure options</li>
+        <li>Available with 2, 3, 4, 5 and 6 tips</li>
+        <li>Swaged pipes and DH type available</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+
+  <div class="sa-brand-strip">
+    <div class="sa-brand-card"><img src="img/esab-logo.png" alt="ESAB"></div>
+    <div class="sa-brand-card"><img src="img/ador-logo.png" alt="ADOR"></div>
+    <div class="sa-brand-card"><img src="img/prestige-logo.png" alt="Prestige"></div>
+    <div class="sa-brand-card"><img src="img/super-logo.png" alt="Super"></div>
+  </div>
+</div>
+
+<!-- BRASS BRAZING ROD -->
+<div class="sa-product-section" id="brass-brazing-rod">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/Brass.jpg" alt="Brass Brazing Rod">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Brazing Rod</span>
+      <h2>Brass Brazing Rod</h2>
+      <p>
+        Silicon bronze brass brazing rod used for brass brazing with superior quality.
+      </p>
+      <ul class="sa-product-points">
+        <li>Available in 1.6 mm</li>
+        <li>Available in 3.15 mm</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- COPPER PHOSPHOROUS BRAZING ROD -->
+<div class="sa-product-section" id="copper-phosphorous-brazing-rod">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/Copper.jpg" alt="Copper Phosphorous Brazing Rod">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Brazing Rod</span>
+      <h2>Copper Phosphorous Brazing Rod</h2>
+      <p>
+        Copper phosphorous brazing rod for brazing applications.
+      </p>
+      <ul class="sa-product-points">
+        <li>Available in 1.6 mm</li>
+        <li>Available in 3.15 mm</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- GAS CUTTER -->
+<div class="sa-product-section" id="gas-cutter">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/Blow.jpg" alt="Gas Cutter">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Gas Cutting</span>
+      <h2>Gas Cutter</h2>
+      <p>
+        Gas cutting blowpipe / gas cutting torch used for gas cutting.
+      </p>
+      <ul class="sa-product-points">
+        <li>Make: ESAB, Prestige, TELCCO, Ador, Messer, Koike</li>
+        <li>Normal type available</li>
+        <li>3 seat ANM and PNM nozzles mix technology</li>
+        <li>3 pipe gas cutter with different sizes of cutting nozzles</li>
+        <li>ANM type for acetylene and PNM for LPG / Burshane</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- CYLINDER HAND TROLLEY -->
+<div class="sa-product-section" id="cylinder-hand-trolley">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/Cylinder.jpg" alt="Cylinder Hand Trolley">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Gas Handling</span>
+      <h2>Cylinder Hand Trolley with Wheels</h2>
+      <p>
+        Cylinder trolley for carrying gas cylinders from one place to another.
+      </p>
+      <ul class="sa-product-points">
+        <li>Single cylinder hand trolley</li>
+        <li>Two cylinder hand trolley</li>
+        <li>Powder coated body</li>
+        <li>Folding chain and wheels</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- BRAZING FLUX -->
+<div class="sa-product-section" id="brazing-flux">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/Brazing.jpg" alt="Brazing Flux">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Flux</span>
+      <h2>Brazing Flux</h2>
+      <p>
+        Brazing flux for silver, copper, brass, aluminum and cast iron. Make – ESAB India Limited.
+      </p>
+      <ul class="sa-product-points">
+        <li>Used for brazing</li>
+        <li>Prevents oxide formation while heating metal</li>
+        <li>Cleans contamination left on brazing surfaces</li>
+        <li>Available in 500 gms only</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- GOUGING TORCH -->
+<div class="sa-product-section" id="gouging-torch">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/Gouging.jpg" alt="Gouging Torch">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Cutting Tool</span>
+      <h2>Gouging Torch</h2>
+      <p>
+        Make – Metarc, Wel-Spring and imported China. Used for cutting and gouging without oxygen.
+      </p>
+      <ul class="sa-product-points">
+        <li>Available from 400 amps to 1200 amps</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- HOSE PIPE -->
+<div class="sa-product-section" id="hose-pipe">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/Hose Pipe.jpg" alt="Hose Pipe">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Gas Accessory</span>
+      <h2>Hose Pipe</h2>
+      <p>
+        Spirally reinforced for high flexibility with smooth inner tube free from sulphur to avoid clogging of welding torch and tools.
+      </p>
+      <ul class="sa-product-points">
+        <li>Outer cover highly abrasive resistant</li>
+        <li>Plain smooth and wrapped finish</li>
+        <li>Red for Acetylene</li>
+        <li>Blue for Oxygen</li>
+        <li>Used in welding, brazing and gas cutting applications</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- HOSE CLIPS -->
+<div class="sa-product-section" id="hose-clips">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/Hose.jpg" alt="Hose Clips">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Gas Accessory</span>
+      <h2>Hose Clips</h2>
+      <p>
+        Jolly make hose clips used for hose pipe applications.
+      </p>
+      <ul class="sa-product-points">
+        <li>Available from 6 mm to 10 mm size</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEATING TORCH -->
+<div class="sa-product-section" id="heating-torch">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/Heating.jpg" alt="Heating Torch">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Heating Tool</span>
+      <h2>Heating Torch</h2>
+      <p>
+        Make - Prestige. LPG heating torch used for heating with LPG and oxy / acy gas.
+      </p>
+      <ul class="sa-product-points">
+        <li>Available in one big burner</li>
+        <li>Available with 3 burners</li>
+        <li>Available with 8 mm and 6 mm nipple</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- GAS LIGHTER -->
+<div class="sa-product-section" id="gas-lighter">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/light.jpg" alt="Gas Lighter">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Gas Accessory</span>
+      <h2>Gas Lighter</h2>
+      <p>
+        Gas lighter with spark stone.
+      </p>
+      <ul class="sa-product-points">
+        <li>Used for gas lighter applications</li>
+        <li>Available in superior quality SAK type</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- GAS CUTTING NOZZLE -->
+<div class="sa-product-section" id="gas-cutting-nozzle">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/Gas.jpg" alt="Gas Cutting Nozzle">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Gas Cutting</span>
+      <h2>Gas Cutting Nozzle</h2>
+      <p>
+        Make – Ador, Messer, Sparkweld, Prestige, Million, Tanaka, Koike, Murex, Borris, United.
+      </p>
+      <ul class="sa-product-points">
+        <li>Used for gas cutting from 3 mm to 300 mm</li>
+        <li>A type for acetylene gas</li>
+        <li>B type for LPG gas</li>
+        <li>3 seat ANM and PNM nozzles for 3 pipe gas cutter</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Nozzle Size Cutting Range</h3>
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Nozzle Size</th>
+          <th>Cutting Range</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1/32"</td><td>03 to 06 mm</td></tr>
+        <tr><td>3/64"</td><td>05 to 12 mm</td></tr>
+        <tr><td>1/16"</td><td>10 to 100 mm</td></tr>
+        <tr><td>5/64"</td><td>98 to 150 mm</td></tr>
+        <tr><td>3/32"</td><td>148 to 200 mm</td></tr>
+        <tr><td>7/64"</td><td>199 to 250 mm</td></tr>
+        <tr><td>1/8"</td><td>249 to 300 mm</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- GAS NOZZLE CLEANER -->
+<div class="sa-product-section" id="gas-nozzle-cleaner">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/gas nozal clean.jpg" alt="Gas Nozzle Cleaner">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Cleaning Tool</span>
+      <h2>Gas Nozzle Cleaner</h2>
+      <p>
+        Used for gas cutting nozzle cleaning.
+      </p>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- FLASHBACK ARRESTORS -->
+<div class="sa-product-section" id="flashback-arrestors">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/flash.jpg" alt="Flashback Arrestors">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Safety Device</span>
+      <h2>Flash Back Arrestors</h2>
+      <p>
+        Non return valves used for safety to prevent back fire.
+      </p>
+      <ul class="sa-product-points">
+        <li>Make - ESAB, ADOR, Messer, Borris, Prince, Tanaka, Weldcraft</li>
+        <li>Available for oxygen and acetylene</li>
+        <li>Available for regulator side</li>
+        <li>Available for cutting torch side and pug cutting machine side</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- CYLINDER KEY -->
+<div class="sa-product-section" id="cylinder-key">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/Cylinder Key.jpg Key.jpg" alt="Cylinder Key">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Cylinder Accessory</span>
+      <h2>Cylinder Key</h2>
+      <p>
+        Used for opening oxygen, acetylene, argon, CO2 and nitrogen cylinders.
+      </p>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- PUG CUTTING MACHINE -->
+<div class="sa-product-section" id="pug-cutting-machine">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/PUG Cutting Machine.jpg" alt="PUG Cutting Machine">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Cutting Machine</span>
+      <h2>PUG Cutting Machine</h2>
+      <p>
+        Make Esab, Ador (both ISI mark). Available with spare aluminium track 1.8 mtrs long and circle cutting attachment.
+      </p>
+      <ul class="sa-product-points">
+        <li>Available with A type (A 1/16) gas cutting nozzle</li>
+        <li>Available with A type (A 3/64) gas cutting nozzle</li>
+        <li>Esab pug NM straight and circle machine available</li>
+        <li>Supports nozzle mix technology</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div><!-- =========================
+     DAYLIGHT VISIBLE RED DYE PENETRANT MATERIAL
+========================= -->
+<div class="sa-product-section" id="red-dye-penetrant-material">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/red-dye-penetrant-material.jpg" alt="Red Dye Penetrant Material">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">DP Testing Materials</span>
+      <h2>Daylight Visible Red Dye Penetrant Material</h2>
+
+      <p>
+        We offer a quality range of dye penetration material with company test certificate.
+        As an authorized dealer of DYEGLO Company, Pune, Maharashtra, the complete range is
+        approved by third party agencies and government companies.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Non-fluorescent red dye penetrant material</li>
+        <li>Available as solvent removable and water washable system</li>
+        <li>Comprises Penetrant, Developer and Cleaner</li>
+        <li>Available in all grades as per requirement</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+
+  <div class="sa-brand-strip">
+    <div class="sa-brand-card"><img src="img/dyeglo-logo.png" alt="DYEGLO"></div>
+  </div>
+
+  <div class="sa-info-grid">
+    <div class="sa-info-box">
+      <h3>Product Details</h3>
+      <p>
+        This daylight visible red dye penetrant material is used for inspection applications
+        where visible contrast inspection is required.
+      </p>
+      <p>
+        The range is supplied with reliable quality standards and test certification support.
+      </p>
+    </div>
+
+    <div class="sa-info-box">
+      <h3>Packing</h3>
+      <div class="sa-grade-list">
+        <span class="sa-grade-pill">400 ml Aerosol Cans</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =========================
+     FLUORESCENT DYE PENETRANT MATERIAL
+========================= -->
+<div class="sa-product-section" id="fluorescent-dye-penetrant-material">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/fluorescent-dye-penetrant-material.jpg" alt="Fluorescent Dye Penetrant Material">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">DP Testing Materials</span>
+      <h2>Fluorescent Dye Penetrant Material</h2>
+
+      <p>
+        Fluorescent dye penetrant material comprising solvent removable and water washable
+        fluorescent penetrant, developer and cleaner.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Fluorescent penetrant inspection system</li>
+        <li>Solvent removable type available</li>
+        <li>Water washable type available</li>
+        <li>Supplied with penetrant, developer and cleaner</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+
+  <div class="sa-info-grid">
+    <div class="sa-info-box">
+      <h3>Packing Options</h3>
+      <div class="sa-grade-list">
+        <span class="sa-grade-pill">1 Lit Packing</span>
+        <span class="sa-grade-pill">5 Lit Packing</span>
+      </div>
+    </div>
+
+    <div class="sa-info-box">
+      <h3>Applications</h3>
+      <p>
+        Suitable for fluorescent dye penetrant inspection where high visibility indication
+        is needed during testing procedures.
+      </p>
+    </div>
+  </div>
+
+  <div class="sa-wide-gallery">
+    <div class="sa-wide-gallery-card">
+      <img src="img/fluorescent-dp-1.jpg" alt="Fluorescent DP Material 1">
+    </div>
+    <div class="sa-wide-gallery-card">
+      <img src="img/fluorescent-dp-2.jpg" alt="Fluorescent DP Material 2">
+    </div>
+    <div class="sa-wide-gallery-card">
+      <img src="img/fluorescent-dp-3.jpg" alt="Fluorescent DP Material 3">
+    </div>
+  </div>
+</div>
+
+<!-- =========================
+     DEVELOPER / CONTRAST BACKGROUND COATING
+========================= -->
+<div class="sa-product-section" id="developer-contrast-coating">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/de-contrast-coating.jpg" alt="Developer Contrast Background Coating">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">DP Testing Materials</span>
+      <h2>Developer / Contrast Background Coating</h2>
+
+      <p>
+        Used to provide contrast background during dye penetrant inspection.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Fast drying type</li>
+        <li>Improves visible inspection contrast</li>
+        <li>Available in aerosol cans</li>
+        <li>400 ml capacity</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+
+  <div class="sa-info-box" style="margin-top:24px;">
+    <h3>Packing</h3>
+    <p>Available in aerosol cans of 400 ml capacity.</p>
+  </div>
+</div>
+        <!-- ARGON GAS REGULATOR -->
+<div class="sa-product-section" id="argon-gas-regulator">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/Argon Gas Regulator.jpg" alt="Argon Gas Regulator">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Pressure Regulators & Spares</span>
+      <h2>Argon Gas Regulator</h2>
+      <p>
+        Preset single stage regulators recommended for inert gas applications where flow is controlled by needle valve.
+      </p>
+      <ul class="sa-product-points">
+        <li>Suitable for inert gas applications</li>
+        <li>Flow controlled by needle valve</li>
+        <li>Single stage regulator type</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- DOUBLE STAGE REGULATOR WITH FLOW METER -->
+<div class="sa-product-section" id="double-stage-regulator-flow-meter">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/double Stage.jpg" alt="Double Stage Regulator With Flow Meter">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Pressure Regulators & Spares</span>
+      <h2>Double Stage Regulator With Flow Meter</h2>
+      <p>
+        General purpose double stage regulators recommended for use with inert gases where constant delivery pressure is needed regardless of fluctuations in cylinder pressure.
+      </p>
+      <ul class="sa-product-points">
+        <li>Suitable for inert gases</li>
+        <li>Constant delivery pressure</li>
+        <li>Flow meter attached</li>
+        <li>Double stage control</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- DOUBLE STAGE REGULATORS -->
+<div class="sa-product-section" id="double-stage-regulators">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/d-stage-regulators.jpg" alt="Double Stage Regulators">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Pressure Regulators & Spares</span>
+      <h2>Double Stage Regulators</h2>
+      <p>
+        Type 316 stainless steel double stage regulators recommended for high purity, corrosion resistant and toxic gas applications where constant, precise delivery pressure is required.
+      </p>
+      <ul class="sa-product-points">
+        <li>Type 316 stainless steel body</li>
+        <li>High purity gas application</li>
+        <li>Corrosion resistant / toxic gas compatible</li>
+        <li>Constant and precise delivery pressure</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- SINGLE STAGE REGULATOR -->
+<div class="sa-product-section" id="single-stage-regulator">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/single-stage-regulator.jpg" alt="Single Stage Regulator">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Pressure Regulators & Spares</span>
+      <h2>Single Stage Regulator</h2>
+      <p>
+        General purpose single stage regulators recommended for inert and non-corrosive gas applications where precise control of delivery pressure is not necessary.
+      </p>
+      <ul class="sa-product-points">
+        <li>For inert and non-corrosive gases</li>
+        <li>General purpose use</li>
+        <li>Suitable where precise delivery pressure is not necessary</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- SINGLE STAGE REGULATOR WITH FLOW METER -->
+<div class="sa-product-section" id="single-stage-regulator-flow-meter">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/single-stage-regulator-flow-meter.jpg" alt="Single Stage Regulator With Flow Meter">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Pressure Regulators & Spares</span>
+      <h2>Single Stage Regulator With Flow Meter</h2>
+      <p>
+        Single stage regulators with flow meter recommended for inert gas applications where precise control of flow is required by needle valve.
+      </p>
+      <ul class="sa-product-points">
+        <li>Flow meter attached</li>
+        <li>Precise flow control by needle valve</li>
+        <li>Suitable for inert gases</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- HIGH PRESSURE SINGLE STAGE REGULATORS -->
+<div class="sa-product-section" id="high-pressure-single-stage-regulators">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/high-pressure-single-stage-regulators.jpg" alt="High Pressure Single Stage Regulators">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Pressure Regulators & Spares</span>
+      <h2>High Pressure Single Stage Regulators</h2>
+      <p>
+        High pressure single stage regulators recommended for testing of refrigeration tubing, pharmaceutical industries and R&amp;D research centres.
+      </p>
+      <ul class="sa-product-points">
+        <li>High pressure application</li>
+        <li>For refrigeration tubing testing</li>
+        <li>Suitable for pharmaceutical industries</li>
+        <li>Useful in R&amp;D research centres</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- COMPACT SINGLE STAGE REGULATORS -->
+<div class="sa-product-section" id="compact-single-stage-regulators">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/compact-single-stage-regulators.jpg" alt="Compact Single Stage Regulators">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Pressure Regulators & Spares</span>
+      <h2>Compact Single Stage Regulators</h2>
+      <p>
+        Compact single stage regulators recommended for inert gas applications where there is no need to use a flow meter.
+      </p>
+      <ul class="sa-product-points">
+        <li>Compact design</li>
+        <li>Suitable for inert gas applications</li>
+        <li>No flow meter required</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- SS SINGLE STAGE REGULATORS -->
+<div class="sa-product-section" id="ss-single-stage-regulators">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/ss-single-stage-regulators.jpg" alt="SS Single Stage Regulators">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Pressure Regulators & Spares</span>
+      <h2>SS Single Stage Regulators</h2>
+      <p>
+        Type 316 stainless steel single stage regulators recommended for ultra high purity, corrosion resistant and toxic gas applications where slight variance in delivery pressure is acceptable as cylinder pressure decays.
+      </p>
+      <ul class="sa-product-points">
+        <li>Type 316 stainless steel</li>
+        <li>Ultra high purity gas use</li>
+        <li>Corrosion resistant / toxic gas use</li>
+        <li>Slight variance acceptable as cylinder pressure decays</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- GENERAL DOUBLE STAGE REGULATOR -->
+<div class="sa-product-section" id="general-double-stage-regulator">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/general-double-stage-regulator.jpg" alt="General Double Stage Regulator">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Pressure Regulators & Spares</span>
+      <h2>Double Stage Regulator</h2>
+      <p>
+        General purpose double stage regulators recommended for use with inert and non-corrosive pure gases and mixtures in laboratories where constant delivery pressure is required regardless of fluctuations in cylinder pressure.
+      </p>
+      <ul class="sa-product-points">
+        <li>For inert and non-corrosive pure gases</li>
+        <li>Suitable for gas mixtures</li>
+        <li>Used in laboratories</li>
+        <li>Constant delivery pressure</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- ELECTRODE HOLDER -->
+<div class="sa-product-section" id="electrode-holder-regulator-page">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/electrode-holder-regulator-page.jpg" alt="Electrode Holder">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Accessory</span>
+      <h2>Electrode Holder</h2>
+      <p>
+        Spring loaded holder designed for maximum safety, comfort and high productivity. Minimum contact area of conductivity and high grip cable connection avoids heat transfer to handle.
+      </p>
+      <ul class="sa-product-points">
+        <li>Maximum safety and comfort</li>
+        <li>High productivity design</li>
+        <li>High grip cable connection</li>
+        <li>Reduces heat transfer to handle</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- MULTI CYLINDER COMPRESSED MANIFOLD -->
+<div class="sa-product-section" id="multi-cylinder-compressed-manifold">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/multi-cylinder-compressed-manifold.jpg" alt="Multi Cylinder Compressed Manifold">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Gas Manifold</span>
+      <h2>Multi Cylinder Compressed Manifold</h2>
+      <p>
+        Multi cylinder compressed manifold available for Argon, Carbon Dioxide, Oxygen, Nitrogen, Hydrogen, Compressed Air and Helium gas.
+      </p>
+      <ul class="sa-product-points">
+        <li>For multiple gas cylinder connection</li>
+        <li>Suitable for Argon / CO2 / Oxygen / Nitrogen</li>
+        <li>Also for Hydrogen / C. Air / Helium gas</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- FLOW METER -->
+<div class="sa-product-section" id="flow-meter-gas">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/flow-meter-gas.jpg" alt="Flow Meter">
+    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Gas Control</span>
+      <h2>Flow Meter</h2>
+      <p>
+        Flow meter for CO2, Argon and Nitrogen gas.
+      </p>
+      <ul class="sa-product-points">
+        <li>Make - MISATU, Perfect, SAPL and Economy Series</li>
+        <li>Used for inlet and outlet pressure adjustment</li>
+        <li>Suitable for CO2, Argon and Nitrogen gas</li>
+      </ul>
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+         <!-- =========================
+     APS
+========================= -->
+<div class="sa-product-section" id="aps-welding-machine">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/aps.jpg" alt="APS Welding Machine">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Welding Machines</span>
+      <h2>APS</h2>
+
+      <p>
+        Industrial welding machine suitable for workshop and fabrication applications.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Reliable welding performance</li>
+        <li>Suitable for industrial use</li>
+        <li>Strong and durable machine build</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- =========================
+     WELDING TRANSFORMER
+========================= -->
+<div class="sa-product-section" id="welding-transformer">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/Welding Transformer.jpg" alt="Welding Transformer">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Welding Machines</span>
+      <h2>Welding Transformer</h2>
+
+      <p>
+        Make – Super Arc Industries. Available in copper and aluminium winding from 200 amps to 600 amps in two phase and three phase.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Copper and aluminium winding available</li>
+        <li>Range from 200 amps to 600 amps</li>
+        <li>Available in two phase and three phase</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+
+  <!-- brands -->
+  <div class="sa-brand-strip">
+    <div class="sa-brand-card"><img src="img/super-arc-industries-logo.png" alt="Super Arc Industries"></div>
+    <div class="sa-brand-card"><img src="img/sai-arc-logo.png" alt="Sai Arc"></div>
+  </div>
+
+  <!-- regulator type transformer -->
+  <div class="sa-info-grid">
+    <div class="sa-info-box">
+      <h3>Regulator Type Welding Transformer</h3>
+      <p>
+        Our clients can avail regulator type welding transformers known for precise engineering
+        and less power consumption. These are extensively used in various industries and are
+        available in different specifications.
+      </p>
+
+      <h4>Input Supply</h4>
+      <p>350–440 volts, 3 phase (2 wire), 50 Hz supply</p>
+
+      <h4>Duty Cycle</h4>
+      <p>60% (10 minutes &amp; 40°C)</p>
+    </div>
+
+    <div class="sa-info-box">
+      <h3>Portable Welding Transformers</h3>
+      <p>
+        Portable welding transformers. Make - Sai Arc.
+      </p>
+      <ul class="sa-shielding-list">
+        <li>Available from 150 to 250 amps</li>
+        <li>Single phase / two phase and combine</li>
+        <li>Copper and aluminium winding</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- technical table -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Technical Specifications</h3>
+
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Input Power (kVA)</th>
+          <th>Open Circuit Voltage (V)</th>
+          <th>Current Range</th>
+          <th>Max Hand Welding (A)</th>
+          <th>Cooling</th>
+          <th>Approx. Weight (Kg)</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>STR 200</td>
+          <td>8</td>
+          <td>50</td>
+          <td>50-200</td>
+          <td>150</td>
+          <td>-</td>
+          <td>50</td>
+        </tr>
+        <tr>
+          <td>STR 250</td>
+          <td>10</td>
+          <td>50</td>
+          <td>50-250</td>
+          <td>240</td>
+          <td>-</td>
+          <td>55</td>
+        </tr>
+        <tr>
+          <td>STR 300</td>
+          <td>15</td>
+          <td>60</td>
+          <td>60-300</td>
+          <td>240</td>
+          <td>FA</td>
+          <td>72</td>
+        </tr>
+        <tr>
+          <td>STR 400</td>
+          <td>21</td>
+          <td>65</td>
+          <td>80-400</td>
+          <td>300</td>
+          <td>FA</td>
+          <td>95</td>
+        </tr>
+        <tr>
+          <td>STR 500</td>
+          <td>25</td>
+          <td>70</td>
+          <td>80-500</td>
+          <td>400</td>
+          <td>FA</td>
+          <td>120</td>
+        </tr>
+        <tr>
+          <td>STR 600</td>
+          <td>36</td>
+          <td>70</td>
+          <td>80-600</td>
+          <td>450</td>
+          <td>FA</td>
+          <td>160</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+          <div class="sa-product-section" id="air-drying-paint">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/Air Drying Paint.jpg" alt="Air Drying Paint">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Air Drying Paint</span>
+      <h2>Air Drying Paint</h2>
+
+      <p>
+        High quality air drying paint solutions for industrial protection, finishing and maintenance applications.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Suitable for industrial coating use</li>
+        <li>Fast application and reliable finish</li>
+        <li>Useful for maintenance and protection work</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+<!-- =========================
+     POLISHING MACHINE FOR SS
+========================= -->
+<div class="sa-product-section" id="ss-polishing-machine">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/Polishing Machine for SS.jpg" alt="Polishing Machine for Stainless Steel">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Polishing Machines</span>
+      <h2>Polishing Machine for SS</h2>
+      <p>
+        High performance polishing and grinding machines for stainless steel applications,
+        suitable for grinding, polishing, buffing and finishing work.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Available in 2800 RPM, 5800 RPM, 8000 RPM and 12000 RPM models</li>
+        <li>Suitable for polishing, buffing, fettling and die grinding jobs</li>
+        <li>Available in single phase and three phase options</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">2800 RPM Grinder</h3>
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>H.P.</th>
+          <th>Volts</th>
+          <th>Phase</th>
+          <th>Shaft Length</th>
+          <th>Application</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>RM 2801</td>
+          <td>1</td>
+          <td>220</td>
+          <td>1</td>
+          <td>2 Mtr.</td>
+          <td>Grinding, Polishing, Buffing, Tyre Retreading</td>
+        </tr>
+        <tr>
+          <td>RM 2803</td>
+          <td>1</td>
+          <td>415</td>
+          <td>3</td>
+          <td>2 Mtr.</td>
+          <td>Grinding, Polishing, Buffing</td>
+        </tr>
+        <tr>
+          <td>RM 2802</td>
+          <td>2</td>
+          <td>220</td>
+          <td>1</td>
+          <td>2 Mtr.</td>
+          <td>Grinding, Polishing, Buffing</td>
+        </tr>
+        <tr>
+          <td>RM 2823</td>
+          <td>2</td>
+          <td>415</td>
+          <td>3</td>
+          <td>2 Mtr.</td>
+          <td>Grinding, Polishing, Buffing</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sa-info-grid">
+    <div class="sa-info-box">
+      <h3>5800 RPM Grinder</h3>
+      <p>
+        Used for fettling jobs and grinding.
+      </p>
+      <ul class="sa-shielding-list">
+        <li>WH 15 Holder used to fix grinding / buffing wheel upto 7"</li>
+        <li>Model: Prime 5800</li>
+        <li>1.5 HP, 415 Volts, 3 Phase</li>
+        <li>Shaft Length: 1.5 Mtr. / 2 Mtr.</li>
+      </ul>
+    </div>
+
+    <div class="sa-info-box">
+      <h3>8000 RPM Grinder</h3>
+      <p>
+        Single speed machine for die grinding jobs.
+      </p>
+      <ul class="sa-shielding-list">
+        <li>WH 10 Holder used to fix grinding wheel upto 100 mm</li>
+        <li>Model: Prime 8000</li>
+        <li>1.5 HP, 415 Volts, 3 Phase</li>
+        <li>Shaft Length: 1.5 Mtr. / 2 Mtr.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sa-info-grid">
+    <div class="sa-info-box">
+      <h3>12000 / 1200 RPM Grinder</h3>
+      <p>
+        Two speed machine for die grinding jobs.
+      </p>
+      <ul class="sa-shielding-list">
+        <li>Model: Prime 1212</li>
+        <li>1.5 HP, 415 Volts, 3 Phase</li>
+        <li>Shaft Length: 1.5 Mtr. / 2 Mtr.</li>
+        <li>FH 10 Holder used to fix mounted points, carbide and tungsten rotary cutter</li>
+      </ul>
+    </div>
+
+    <div class="sa-info-box">
+      <h3>Multi Speed Grinder</h3>
+      <p>
+        Belt driven machine for heavy buffing, polishing and grinding jobs.
+      </p>
+      <ul class="sa-shielding-list">
+        <li>RPM: 2800 / 4000 / 7000</li>
+        <li>2 HP, 415 Volts, 3 Phase</li>
+        <li>Shaft Length: 2 Mtr. / 3 Mtr.</li>
+        <li>Holder provided for grinding, buffing and collet attachment</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sa-wide-gallery" style="margin-top:24px;">
+    <div class="sa-wide-gallery-card">
+      <img src="img/ss-polishing-machine-1.jpg" alt="Polishing Machine 1">
+    </div>
+    <div class="sa-wide-gallery-card">
+      <img src="img/ss-polishing-machine-2.jpg" alt="Polishing Machine 2">
+    </div>
+    <div class="sa-wide-gallery-card">
+      <img src="img/ss-polishing-machine-3.jpg" alt="Polishing Machine 3">
+    </div>
+  </div>
+</div>
+
+<!-- =========================
+     FLEXIBLE SHAFT FOR POLISHING MACHINE
+========================= -->
+<div class="sa-product-section" id="flexible-shaft-machine">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/Flexible Shaft for Polishing Machine.jpg" alt="Flexible Shaft for Polishing Machine">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Polishing Machines</span>
+      <h2>Flexible Shaft for Polishing Machine</h2>
+      <p>
+        Flexible shaft is used to transmit rotary motion for buffing, grinding, polishing,
+        deburring, tyre retreading and general industrial applications.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Used to transmit rotary power upto 50000 RPM</li>
+        <li>Tough and long life component for continuous working conditions</li>
+        <li>Suitable where machines cannot be moved easily</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+
+  <div class="sa-info-grid">
+    <div class="sa-info-box">
+      <h3>Flexible Shaft Machine - Single Speed</h3>
+      <p>R-2 - 1 HP - 1200 RPM Single Speed Gear Machine.</p>
+      <ul class="sa-shielding-list">
+        <li>Used for die grinding, deburring and grinding</li>
+        <li>Supply: 400/440V - 3 Phase - 50 Cycles AC</li>
+        <li>Speed: 12000 RPM</li>
+        <li>Extra Accessories: 10 mm × 1500 mm flexible shaft assembly</li>
+        <li>Tool Holder: FH-10</li>
+        <li>Collet Size: 6 mm</li>
+      </ul>
+    </div>
+
+    <div class="sa-info-box">
+      <h3>Flexible Shaft Machine - 7 Speed</h3>
+      <p>1 HP 7 Speed Gear Machine.</p>
+      <ul class="sa-shielding-list">
+        <li>Used for die grinding, deburring, grinding, rust removing, cabinet polishing and drilling</li>
+        <li>Supply: 400/440V - 3 Phase - 50 Cycles AC</li>
+        <li>Speed: 850 / 1600 / 2100 / 3200 / 5700 / 8000 / 12000 RPM</li>
+        <li>Extra Accessories: 10 mm × 1200 mm or 12 mm × 1500 mm</li>
+        <li>FH 10 or WS 10 Tool Holder</li>
+        <li>6 mm / 6.3 mm / 3 mm Collet / Starter etc.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sa-info-box" style="margin-top:24px;">
+    <h3>Flexible Shafts For Polishing Machines</h3>
+    <p>
+      A flexible shaft is a tool for transmitting rotary motion between two objects. It consists
+      of a rotating wire rope or coil which is flexible but has some torsional stiffness.
+    </p>
+    <p>
+      It is widely used in buffing, grinding, polishing, deburring, tyre retreading, sugar industries,
+      boiler tube cleaning equipment and fixed position layout industries.
+    </p>
+  </div>
+
+  <div class="sa-wide-gallery" style="margin-top:24px;">
+    
+  </div>
+</div>
+
+          <div class="sa-product-section" id="hand-tools">
+            <div class="sa-product-detail-card">
+              <div class="sa-product-detail-image">
+                <img src="img/hand-tools.jpg" alt="Hand Tools">
+              </div>
+              <div class="sa-product-detail-content">
+                <span class="sa-product-detail-label">Tools</span>
+                <h2>Hand Tools</h2>
+                <p>Strong and dependable hand tools for workshop, site and industrial maintenance needs.</p>
+                <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="sa-product-section" id="abrasives">
+            <div class="sa-product-detail-card">
+              <div class="sa-product-detail-image">
+                <img src="img/ab.webp" alt="Abrasives">
+              </div>
+              <div class="sa-product-detail-content">
+                <span class="sa-product-detail-label">Abrasives</span>
+                <h2>Abrasives</h2>
+                <p>Grinding, finishing and cutting abrasive product for precision industrial applications.</p>
+                <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="sa-product-section" id="cutting-tools">
+            <div class="sa-product-detail-card">
+              <div class="sa-product-detail-image">
+                <img src="img/Cutting Tools.webp" alt="Cutting Tools">
+              </div>
+              <div class="sa-product-detail-content">
+                <span class="sa-product-detail-label">Tools</span>
+                <h2>Cutting Tools</h2>
+                <p>Heavy-duty cutting tools designed for efficiency, accuracy and extended performance.</p>
+                <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="sa-product-section" id="power-tools">
+            <div class="sa-product-detail-card">
+              <div class="sa-product-detail-image">
+                <img src="img/Power Tools.webp" alt="Power Tools">
+              </div>
+              <div class="sa-product-detail-content">
+                <span class="sa-product-detail-label">Power Tools</span>
+                <h2>Power Tools</h2>
+                <p>Professional power tools for drilling, grinding, cutting and industrial productivity.</p>
+                <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <a href="https://wa.me/919822603202" class="whatsapp-float" target="_blank">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+
+  <footer class="sa-footer">
+    <div class="sa-footer-wave"></div>
+
+    <div class="container">
+      <div class="sa-footer-grid">
+
+        <div class="sa-footer-col sa-footer-brand">
+          <a href="index.html" class="sa-footer-logo-wrap">
+            <img src="img/logobg.png" alt="Sudhanshu Associates Logo" class="sa-footer-logo-img">
+            <div class="sa-footer-logo-text">
+              <span class="sa-footer-brand-name">SUDHANSHU </span>
+              <span class="sa-footer-brand-sub"> ASSOCIATES</span>
+            </div>
+          </a>
+
+          <p class="sa-footer-about">
+            A trusted sole proprietary concern based in Pune, specializing in
+            welding, NDT, safety, and power tool supplies for industry.
+          </p>
+
+          <div class="sa-footer-socials">
+            <a href="#" class="sa-social-btn sa-whatsapp" aria-label="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="#" class="sa-social-btn sa-instagram" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="sa-social-btn sa-facebook" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="sa-footer-col sa-footer-links-col">
+          <h4>QUICK LINKS</h4>
+          <ul class="sa-footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="certificates.html">Certificates</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="sa-footer-col sa-footer-links-col">
+          <h4>PRODUCTS</h4>
+          <ul class="sa-footer-links">
+            <li><a href="product.html#electrodes">Welding Electrodes</a></li>
+            <li><a href="product.html#dp-testing-materials">NDT Equipment</a></li>
+            <li><a href="product.html#safety-equipments">Safety Products</a></li>
+            <li><a href="product.html#abrasives">Abrasives</a></li>
+            <li><a href="product.html#power-tools">Power Tools</a></li>
+            <li><a href="product.html#pressure-regulators">Gas Regulators</a></li>
+          </ul>
+        </div>
+
+        <div class="sa-footer-col sa-footer-contact-col">
+          <h4>CONTACT</h4>
+          <ul class="sa-footer-contact">
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <span>
+                Sector No. 7, Plot No. 58, PCNTDA,
+                Bhosari MIDC, Pune 411026,
+                Maharashtra (India)
+              </span>
+            </li>
+
+            <li>
+              <i class="fas fa-phone-alt"></i>
+              <span>9822603202 / 9822377202 / 9881009380</span>
+            </li>
+
+            <li>
+              <i class="fas fa-envelope"></i>
+              <span>saplpune@gmail.com</span>
+            </li>
+
+            <li>
+              <i class="fas fa-globe"></i>
+              <span>www.sudhanshuassociates.com</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sa-footer-bottom">
+        <p class="sa-footer-copy">© 2025 Sudhanshu Associates. All rights reserved.</p>
+        <p class="sa-footer-dev">
+          Developed by
+          <a href="https://www.qirotec.com/" target="_blank" class="sa-dev-link">
+            QIRO TECH INNOVATION PVT. LTD.
+          </a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  /* =========================
+     HEADER / MOBILE MENU
+  ========================= */
+  const psMenuToggle = document.getElementById("psMenuToggle");
+  const psNav = document.getElementById("psNav");
+  const psOverlay = document.getElementById("psMobileOverlay");
+  const psDropdown = document.getElementById("psProductsDropdown");
+  const psToggle = document.getElementById("psProductsToggle");
+  const psMainItems = document.querySelectorAll(".ps-main-product-item");
+  const psPanels = document.querySelectorAll(".ps-submenu-panel");
+
+  function activateHeaderSubmenu(item) {
+    const targetId = item.getAttribute("data-target");
+    if (!targetId) return;
+
+    psMainItems.forEach((btn) => btn.classList.remove("active"));
+    psPanels.forEach((panel) => panel.classList.remove("active"));
+
+    item.classList.add("active");
+
+    const targetPanel = document.getElementById(targetId);
+    if (targetPanel) {
+      targetPanel.classList.add("active");
+    }
+  }
+
+  if (psMainItems.length) {
+    activateHeaderSubmenu(psMainItems[0]);
+  }
+
+  psMainItems.forEach((item) => {
+    item.addEventListener("mouseenter", function () {
+      if (window.innerWidth > 991) {
+        activateHeaderSubmenu(item);
+      }
+    });
+
+    item.addEventListener("click", function (e) {
+      if (window.innerWidth <= 991) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      activateHeaderSubmenu(item);
+    });
+  });
+
+  function openMenu() {
+    if (!psMenuToggle || !psNav) return;
+    psMenuToggle.classList.add("active");
+    psNav.classList.add("active");
+    document.body.classList.add("ps-menu-open");
+    if (psOverlay) psOverlay.classList.add("active");
+  }
+
+  function closeMenu() {
+    if (!psMenuToggle || !psNav) return;
+    psMenuToggle.classList.remove("active");
+    psNav.classList.remove("active");
+    document.body.classList.remove("ps-menu-open");
+    if (psOverlay) psOverlay.classList.remove("active");
+    if (psDropdown) psDropdown.classList.remove("open");
+  }
+
+  if (psMenuToggle) {
+    psMenuToggle.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      if (psNav.classList.contains("active")) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+  }
+
+  if (psOverlay) {
+    psOverlay.addEventListener("click", closeMenu);
+  }
+
+  if (psToggle && psDropdown) {
+    psToggle.addEventListener("click", function (e) {
+      if (window.innerWidth <= 991) {
+        e.preventDefault();
+        e.stopPropagation();
+        psDropdown.classList.toggle("open");
+      }
+    });
+  }
+
+  document.addEventListener("click", function (e) {
+    if (window.innerWidth <= 991) {
+      const insideNav = psNav && psNav.contains(e.target);
+      const insideToggle = psMenuToggle && psMenuToggle.contains(e.target);
+      const insideOverlay = psOverlay && psOverlay.contains(e.target);
+
+      if (!insideNav && !insideToggle && !insideOverlay) {
+        closeMenu();
+      }
+    }
+  });
+
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 991) {
+      closeMenu();
+    }
+  });
+
+  window.addEventListener("scroll", function () {
+    const header = document.querySelector(".ps-header");
+    if (!header) return;
+
+    if (window.scrollY > 50) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  });
+
+  /* =========================
+     SIDEBAR DROPDOWN
+  ========================= */
+  const saDropdowns = document.querySelectorAll(".sa-dropdown");
+
+  saDropdowns.forEach((dropdown) => {
+    const toggle = dropdown.querySelector(".sa-dropdown-toggle");
+    if (!toggle) return;
+
+    toggle.addEventListener("click", function () {
+      const isActive = dropdown.classList.contains("active");
+
+      saDropdowns.forEach((item) => item.classList.remove("active"));
+
+      if (!isActive) {
+        dropdown.classList.add("active");
+      }
+    });
+  });
+
+  /* =========================
+     PRODUCT CONTENT SWITCH
+  ========================= */
+  const saProductLinks = document.querySelectorAll(".sa-product-link");
+  const saProductSections = document.querySelectorAll(".sa-product-section");
+
+  saProductLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      const targetId = this.getAttribute("data-product");
+      const targetSection = document.getElementById(targetId);
+
+      if (!targetId || !targetSection) return;
+
+      e.preventDefault();
+
+      saProductLinks.forEach((item) => item.classList.remove("active"));
+      this.classList.add("active");
+
+      saProductSections.forEach((section) => {
+        section.classList.remove("active");
+      });
+
+      targetSection.classList.add("active");
+
+      if (window.innerWidth < 992) {
+        setTimeout(() => {
+          targetSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        }, 120);
+      }
+    });
+  });
+
+  /* =========================
+     VIEW MORE ACCESSORIES
+  ========================= */
+  const viewMoreBtn = document.getElementById("saViewMoreAccessories");
+  const moreProducts = document.getElementById("saWeldingAccessoriesMore");
+
+  if (viewMoreBtn && moreProducts) {
+    viewMoreBtn.addEventListener("click", function () {
+      moreProducts.classList.toggle("active");
+      viewMoreBtn.textContent = moreProducts.classList.contains("active")
+        ? "VIEW LESS"
+        : "VIEW MORE";
+    });
+  }
+});
+</script>
+</body>
+</html>

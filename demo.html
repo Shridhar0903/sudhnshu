@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<body>
+<style>
+    /* ================= RESET ================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI', sans-serif;
+}
+
+body{
+  background:#f4f6f9;
+}
+
+/* ================= HEADER ================= */
+.ps-header{
+  width:100%;
+  background:#fff;
+  position:sticky;
+  top:0;
+  z-index:999;
+  box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.ps-header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 40px;
+}
+
+/* ================= LOGO ================= */
+.ps-logo-wrap{
+  text-decoration:none;
+}
+
+.ps-logo-vertical{
+  background:linear-gradient(180deg,#0b5ed7,#198754);
+  padding:18px 22px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  border-radius:0 0 12px 12px;
+}
+
+.ps-logo-big{
+  width:70px;
+  height:auto;
+}
+
+.ps-logo-text-new{
+  color:#fff;
+  font-size:14px;
+  font-weight:700;
+  margin-top:8px;
+  letter-spacing:1px;
+  white-space:nowrap;
+}
+
+/* ================= NAV ================= */
+.ps-nav{
+  flex:1;
+  margin-left:40px;
+}
+
+.ps-nav-list{
+  display:flex;
+  align-items:center;
+  gap:30px;
+  list-style:none;
+}
+
+.ps-nav-link{
+  text-decoration:none;
+  color:#333;
+  font-weight:500;
+  font-size:15px;
+  position:relative;
+  transition:0.3s;
+}
+
+/* underline effect */
+.ps-nav-link::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:2px;
+  background:#0b5ed7;
+  transition:0.3s;
+}
+
+.ps-nav-link:hover{
+  color:#0b5ed7;
+}
+
+.ps-nav-link:hover::after{
+  width:100%;
+}
+
+/* ================= CTA ================= */
+.ps-contact-btn{
+  background:linear-gradient(90deg,#0b5ed7,#198754);
+  color:#fff;
+  padding:10px 22px;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.ps-contact-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* ================= DROPDOWN ================= */
+.ps-dropdown{
+  position:relative;
+}
+
+.ps-dropdown-stage{
+  position:absolute;
+  top:100%;
+  left:0;
+  width:900px;
+  background:#fff;
+  display:none;
+  box-shadow:0 15px 40px rgba(0,0,0,0.1);
+  border-radius:6px;
+  overflow:hidden;
+}
+
+/* show dropdown */
+.ps-dropdown:hover .ps-dropdown-stage{
+  display:flex;
+}
+
+/* LEFT PANEL */
+.ps-main-dropdown-box{
+  width:40%;
+  background:#f5f7fa;
+  padding:20px;
+  max-height:400px;
+  overflow-y:auto;
+}
+
+/* scrollbar */
+.ps-main-dropdown-box::-webkit-scrollbar{
+  width:5px;
+}
+.ps-main-dropdown-box::-webkit-scrollbar-thumb{
+  background:#ccc;
+}
+
+/* LEFT ITEMS */
+.ps-main-product-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  width:100%;
+  padding:10px 12px;
+  border:none;
+  background:none;
+  cursor:pointer;
+  font-size:14px;
+  color:#333;
+  transition:0.2s;
+}
+
+.ps-main-product-item:hover{
+  background:#e9f2ff;
+}
+
+.ps-main-product-item.active{
+  background:#0b5ed7;
+  color:#fff;
+  border-radius:4px;
+}
+
+/* RIGHT PANEL */
+.ps-sub-floating-box{
+  width:60%;
+  padding:20px 30px;
+}
+
+/* SUBMENU */
+.ps-submenu-panel{
+  display:none;
+}
+
+.ps-submenu-panel.active{
+  display:block;
+}
+
+.ps-submenu-panel a{
+  display:block;
+  padding:8px 0;
+  text-decoration:none;
+  color:#333;
+  font-size:14px;
+  transition:0.2s;
+}
+
+.ps-submenu-panel a:hover{
+  color:#198754;
+  transform:translateX(5px);
+}
+
+/* ================= MOBILE MENU ================= */
+.ps-menu-toggle{
+  display:none;
+  flex-direction:column;
+  cursor:pointer;
+}
+
+.ps-menu-toggle span{
+  height:3px;
+  width:25px;
+  background:#333;
+  margin:4px 0;
+  border-radius:2px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:992px){
+
+  .ps-header-inner{
+    padding:0 20px;
+  }
+
+  .ps-nav{
+    position:fixed;
+    top:0;
+    left:-100%;
+    width:260px;
+    height:100%;
+    background:#fff;
+    flex-direction:column;
+    padding:20px;
+    transition:0.3s;
+    box-shadow:0 0 20px rgba(0,0,0,0.1);
+  }
+
+  .ps-nav.active{
+    left:0;
+  }
+
+  .ps-nav-list{
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .ps-menu-toggle{
+    display:flex;
+  }
+
+  .ps-contact-btn{
+    display:none;
+  }
+
+  /* DROPDOWN MOBILE */
+  .ps-dropdown-stage{
+    position:static;
+    width:100%;
+    flex-direction:column;
+    box-shadow:none;
+  }
+
+  .ps-main-dropdown-box{
+    width:100%;
+  }
+
+  .ps-sub-floating-box{
+    width:100%;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+@media(max-width:600px){
+
+  .ps-logo-big{
+    width:55px;
+  }
+
+  .ps-logo-text-new{
+    font-size:12px;
+  }
+
+  .ps-header-inner{
+    padding:0 15px;
+  }
+}
+</style>
+
+<header class="ps-header">
+  <div class="ps-header-inner">
+
+    <!-- LOGO -->
+    <a href="index.html" class="ps-logo-wrap">
+      <div class="ps-logo-vertical">
+        <img src="img/logobg.png" class="ps-logo-big">
+        <div class="ps-logo-text-new">SUDHANSHU ASSOCIATES</div>
+      </div>
+    </a>
+
+    <!-- TOGGLE -->
+    <div class="ps-menu-toggle" id="menuToggle">
+      <span></span><span></span><span></span>
+    </div>
+
+    <!-- NAV -->
+    <nav class="ps-nav" id="navMenu">
+      <ul class="ps-nav-list">
+
+        <li><a href="index.html" class="ps-nav-link active">Home</a></li>
+        <li><a href="about.html" class="ps-nav-link">About</a></li>
+
+        <!-- MEGA MENU -->
+        <li class="ps-dropdown">
+          <a href="product.html" class="ps-nav-link">Product ▼</a>
+
+          <div class="ps-dropdown-stage">
+
+            <!-- LEFT MENU -->
+            <div class="ps-main-dropdown-box">
+
+              <button class="ps-main-product-item active" data-target="m1">TIG Welding Filler Wires</button>
+              <button class="ps-main-product-item" data-target="m2">Electrodes</button>
+              <button class="ps-main-product-item" data-target="m3">Welding Accessories</button>
+              <button class="ps-main-product-item" data-target="m4">Safety Equipments</button>
+              <button class="ps-main-product-item" data-target="m5">TIG Welding Torch & Spares</button>
+              <button class="ps-main-product-item" data-target="m6">CO2 Welding Torch & Spares</button>
+              <button class="ps-main-product-item" data-target="m7">Gas Cutting & Brazing</button>
+              <button class="ps-main-product-item" data-target="m8">DP Testing Materials</button>
+              <button class="ps-main-product-item" data-target="m9">Pressure Regulators & Spares</button>
+              <button class="ps-main-product-item" data-target="m10">Welding Machines</button>
+              <button class="ps-main-product-item" data-target="m11">Air Drying Paint</button>
+              <button class="ps-main-product-item" data-target="m12">Polishing Machines</button>
+              <button class="ps-main-product-item" data-target="m13">Hand Tools</button>
+              <button class="ps-main-product-item" data-target="m14">Abrasives</button>
+              <button class="ps-main-product-item" data-target="m15">Cutting Tools</button>
+              <button class="ps-main-product-item" data-target="m16">Power Tools</button>
+
+            </div>
+
+            <!-- RIGHT SUBMENU -->
+            <div class="ps-sub-floating-box">
+
+              <div class="ps-submenu-panel active" id="m1">
+                <a href="#">SS TIG Wires</a>
+                <a href="#">MS TIG Wires</a>
+                <a href="#">Aluminium TIG Wires</a>
+                <a href="#">Copper Alloy TIG Wires</a>
+              </div>
+
+              <div class="ps-submenu-panel" id="m2">
+                <a href="#">MS Electrodes</a>
+                <a href="#">SS Electrodes</a>
+                <a href="#">Cast Iron Electrodes</a>
+                <a href="#">Hard Facing Electrodes</a>
+              </div>
+
+              <div class="ps-submenu-panel" id="m3">
+                <a href="#">Electrode Holders</a>
+                <a href="#">Earth Clamps</a>
+                <a href="#">Welding Cables</a>
+                <a href="#">Cable Connectors</a>
+              </div>
+
+              <div class="ps-submenu-panel" id="m4">
+                <a href="#">Safety Gloves</a>
+                <a href="#">Welding Helmets</a>
+                <a href="#">Face Shields</a>
+                <a href="#">Safety Shoes</a>
+              </div>
+
+              <div class="ps-submenu-panel" id="m5">
+                <a href="#">TIG Torches</a>
+                <a href="#">Collets</a>
+                <a href="#">Ceramic Cups</a>
+                <a href="#">Back Caps</a>
+              </div>
+
+              <div class="ps-submenu-panel" id="m6">
+                <a href="#">CO2 Torches</a>
+                <a href="#">Contact Tips</a>
+                <a href="#">Nozzles</a>
+                <a href="#">Torch Liners</a>
+              </div>
+
+              <div class="ps-submenu-panel" id="m7">
+                <a href="#">Cutting Nozzles</a>
+                <a href="#">Brazing Rods</a>
+                <a href="#">Gas Torches</a>
+                <a href="#">Flashback Arrestors</a>
+              </div>
+
+              <div class="ps-submenu-panel" id="m8">
+                <a href="#">Cleaner</a>
+                <a href="#">Penetrant</a>
+                <a href="#">Developer</a>
+                <a href="#">DP Test Kits</a>
+              </div>
+
+              <div class="ps-submenu-panel" id="m9">
+                <a href="#">Oxygen Regulators</a>
+                <a href="#">Acetylene Regulators</a>
+                <a href="#">Argon Regulators</a>
+                <a href="#">Regulator Spare Parts</a>
+              </div>
+
+              <div class="ps-submenu-panel" id="m10">
+                <a href="#">ARC Welding Machines</a>
+                <a href="#">MIG Welding Machines</a>
+                <a href="#">TIG Welding Machines</a>
+                <a href="#">Plasma Cutting Machines</a>
+              </div>
+
+              <div class="ps-submenu-panel" id="m11">
+                <a href="#">Industrial Primer</a>
+                <a href="#">Metal Paint</a>
+                <a href="#">Protective Coatings</a>
+                <a href="#">Touch-up Paints</a>
+              </div>
+
+              <div class="ps-submenu-panel" id="m12">
+                <a href="#">Angle Polishers</a>
+                <a href="#">Buffing Machines</a>
+                <a href="#">Pads</a>
+                <a href="#">Accessories</a>
+              </div>
+
+              <div class="ps-submenu-panel" id="m13">
+                <a href="#">Spanners</a>
+                <a href="#">Pliers</a>
+                <a href="#">Screwdrivers</a>
+                <a href="#">Hammers</a>
+              </div>
+
+              <div class="ps-submenu-panel" id="m14">
+                <a href="#">Cutting Wheels</a>
+                <a href="#">Grinding Wheels</a>
+                <a href="#">Flap Discs</a>
+                <a href="#">Sanding Discs</a>
+              </div>
+
+              <div class="ps-submenu-panel" id="m15">
+                <a href="#">Drill Bits</a>
+                <a href="#">Hole Saws</a>
+                <a href="#">Reamers</a>
+                <a href="#">Industrial Cutters</a>
+              </div>
+
+              <div class="ps-submenu-panel" id="m16">
+                <a href="#">Drilling Machines</a>
+                <a href="#">Angle Grinders</a>
+                <a href="#">Impact Tools</a>
+                <a href="#">Heavy Duty Tools</a>
+              </div>
+
+            </div>
+
+          </div>
+        </li>
+
+        <li><a href="gallery.html" class="ps-nav-link">Gallery</a></li>
+        <li><a href="certificates.html" class="ps-nav-link">Certificates</a></li>
+
+      </ul>
+    </nav>
+
+    <!-- CTA -->
+    <a href="contact.html" class="ps-contact-btn">Contact →</a>
+
+  </div>
+</header>
+
+<script></script>
+</body>
+</html>
+</body>
+</html>

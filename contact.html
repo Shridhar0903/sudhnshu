@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sudhanshu Associates – Industrial Excellence Since 1974</title>
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="img/new logo.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <!-- AOS Animation -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+<body>
+  <style>
+  
+/* =========================
+   CONTACT MAIN
+========================= */
+.sa-contact-main{
+  position: relative;
+  padding: 90px 0;
+  background: linear-gradient(135deg, #f7fbff 0%, #effaf3 100%);
+}
+
+.sa-contact-top-grid{
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 34px;
+  align-items: stretch;
+  margin-bottom: 46px;
+}
+
+.sa-contact-info-card,
+.sa-contact-form-card,
+.sa-highlight-card,
+.sa-map-card{
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(31, 118, 196, 0.08);
+  box-shadow: 0 18px 40px rgba(17, 38, 73, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.sa-contact-info-card,
+.sa-contact-form-card{
+  border-radius: 28px;
+  padding: 34px;
+  position: relative;
+  overflow: hidden;
+}
+
+.sa-contact-info-card::before,
+.sa-contact-form-card::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 28px;
+  width: 90px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #2E2F78, #66A83D);
+}
+
+.sa-section-mini{
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #2E2F78;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  margin-bottom: 14px;
+}
+
+.sa-section-title{
+  margin: 0 0 14px;
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.15;
+  color: #102649;
+  font-weight: 800;
+}
+
+.sa-section-text{
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #53677c;
+}
+
+/* INFO LIST */
+.sa-contact-info-list{
+  margin-top: 30px;
+  display: grid;
+  gap: 18px;
+}
+
+.sa-contact-info-item{
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 18px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(239,247,255,0.85), rgba(240,251,244,0.92));
+  border: 1px solid rgba(42, 120, 196, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.sa-contact-info-item:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px rgba(17, 38, 73, 0.08);
+}
+
+.sa-contact-info-item h4{
+  margin: 0 0 5px;
+  font-size: 17px;
+  color: #102649;
+  font-weight: 700;
+}
+
+.sa-contact-info-item p{
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #4f6378;
+}
+
+.sa-icon-box{
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  border-radius: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+}
+
+.sa-icon-red{
+  background: rgba(239, 68, 68, 0.12);
+  color: #ef4444;
+}
+
+.sa-icon-green{
+  background: rgba(34, 197, 94, 0.14);
+  color: #16a34a;
+}
+
+.sa-icon-blue{
+  background: rgba(59, 130, 246, 0.14);
+  color: #2563eb;
+}
+
+.sa-icon-indigo{
+  background: rgba(44, 123, 229, 0.13);
+  color: #1d4ed8;
+}
+
+/* FORM */
+.sa-form-top{
+  margin-bottom: 24px;
+}
+
+.sa-form-badge{
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(102,168,61,0.12);
+  color: #66A83D;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.sa-form-top h3{
+  margin: 0 0 10px;
+  font-size: 30px;
+  color: #102649;
+  font-weight: 800;
+}
+
+.sa-form-top p{
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #53677c;
+}
+
+.sa-contact-form{
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.sa-form-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.sa-input-group{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sa-input-group label{
+  font-size: 14px;
+  font-weight: 600;
+  color: #17345b;
+}
+
+.sa-input-group input,
+.sa-input-group textarea{
+  width: 100%;
+  border: 1px solid rgba(24, 90, 160, 0.14);
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 14px 16px;
+  font-size: 14px;
+  color: #102649;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.sa-input-group input:focus,
+.sa-input-group textarea:focus{
+  border-color: #2E2F78;
+  box-shadow: 0 0 0 4px rgba(46,47,120,0.10);
+}
+
+.sa-input-group textarea{
+  resize: vertical;
+  min-height: 130px;
+}
+
+.sa-contact-submit-btn{
+  align-self: flex-start;
+  border: 0;
+  background: linear-gradient(90deg, #2E2F78, #66A83D);
+  color: #fff;
+  padding: 15px 24px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 14px 28px rgba(46,47,120,0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sa-contact-submit-btn span{
+  margin-left: 10px;
+}
+
+.sa-contact-submit-btn:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 18px 34px rgba(46,47,120,0.22);
+}
+
+/* MAP */
+.sa-map-wrap{
+  margin-top: 8px;
+}
+
+.sa-map-head{
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 28px;
+}
+
+.sa-map-card{
+  border-radius: 28px;
+  overflow: hidden;
+  padding: 10px;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 18px 40px rgba(17, 38, 73, 0.08);
+}
+
+.sa-map-card iframe{
+  width: 100%;
+  height: 420px;
+  display: block;
+  border: 0;
+  border-radius: 20px;
+}
+
+/* ANIMATION */
+.sa-reveal-up{
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.sa-reveal-up.sa-show{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 991px){
+  .sa-contact-hero{
+    min-height: 460px;
+    padding: 105px 0 70px;
+  }
+
+  .sa-contact-hero-content{
+    max-width: 100%;
+    padding: 0 6px;
+  }
+
+  .sa-contact-hero-content h1{
+    font-size: 48px;
+    line-height: 1.12;
+  }
+
+  .sa-contact-hero-content p{
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .brand-name{
+    line-height: 1;
+  }
+
+  .sa-contact-main{
+    padding: 75px 0;
+  }
+
+  .sa-contact-top-grid{
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .sa-contact-info-card,
+  .sa-contact-form-card{
+    padding: 26px 22px;
+    border-radius: 22px;
+  }
+
+  .sa-contact-highlight-grid{
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-bottom: 35px;
+  }
+
+  .sa-form-grid{
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .sa-map-card iframe{
+    height: 360px;
+  }
+}
+
+@media (max-width: 575px){
+  .sa-contact-hero{
+    min-height: 390px;
+    padding: 90px 0 55px;
+  }
+
+  .sa-contact-tag{
+    font-size: 12px;
+    padding: 8px 14px;
+    margin-bottom: 14px;
+  }
+
+  .sa-contact-hero-content h1{
+    font-size: 32px;
+    line-height: 1.16;
+    margin-bottom: 12px;
+  }
+
+  .brand-name{
+    margin-top: 6px;
+  }
+
+  .associates-text{
+    margin-left: 0;
+  }
+
+  .sa-contact-hero-content p{
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .sa-contact-main{
+    padding: 58px 0;
+  }
+
+  .sa-contact-top-grid{
+    gap: 18px;
+  }
+
+  .sa-contact-info-card,
+  .sa-contact-form-card{
+    padding: 20px 16px;
+    border-radius: 18px;
+  }
+
+  .sa-section-mini{
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .sa-section-title{
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+
+  .sa-section-text{
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .sa-contact-info-list{
+    margin-top: 20px;
+    gap: 12px;
+  }
+
+  .sa-contact-info-item{
+    gap: 12px;
+    padding: 14px 12px;
+    border-radius: 14px;
+  }
+
+  .sa-contact-info-item h4{
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+
+  .sa-contact-info-item p{
+    font-size: 13px;
+    line-height: 1.7;
+    word-break: break-word;
+  }
+
+  .sa-icon-box{
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    border-radius: 12px;
+    font-size: 15px;
+  }
+
+  .sa-form-top{
+    margin-bottom: 18px;
+  }
+
+  .sa-form-badge{
+    font-size: 12px;
+    padding: 7px 12px;
+    margin-bottom: 10px;
+  }
+
+  .sa-form-top h3{
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .sa-form-top p{
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .sa-contact-form{
+    gap: 14px;
+  }
+
+  .sa-input-group{
+    gap: 6px;
+  }
+
+  .sa-input-group label{
+    font-size: 13px;
+  }
+
+  .sa-input-group input,
+  .sa-input-group textarea{
+    padding: 12px 13px;
+    font-size: 13px;
+    border-radius: 12px;
+  }
+
+  .sa-input-group textarea{
+    min-height: 115px;
+  }
+
+  .sa-contact-submit-btn{
+    width: 100%;
+    justify-content: center;
+    display: inline-flex;
+    align-items: center;
+    padding: 13px 18px;
+    font-size: 14px;
+  }
+
+  .sa-map-head{
+    margin-bottom: 18px;
+  }
+
+  .sa-map-card{
+    padding: 6px;
+    border-radius: 16px;
+  }
+
+  .sa-map-card iframe{
+    height: 300px;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 380px){
+  .sa-contact-hero-content h1{
+    font-size: 27px;
+  }
+
+  .sa-section-title{
+    font-size: 22px;
+  }
+
+  .sa-form-top h3{
+    font-size: 22px;
+  }
+
+  .sa-contact-info-card,
+  .sa-contact-form-card{
+    padding: 18px 14px;
+  }
+
+  .sa-contact-submit-btn{
+    font-size: 13px;
+  }
+}  
+
+.sa-contact-main{
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.sa-contact-top-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.sa-contact-info-card,
+.sa-contact-form-card,
+.sa-map-card{
+  background: #fff;
+  border-radius: 18px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.sa-section-mini{
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #2E2F78;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sa-section-title{
+  font-size: 32px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.sa-section-text{
+  font-size: 15px;
+  color: #6b7280;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.sa-contact-info-list{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sa-contact-info-item{
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.sa-contact-info-item h4{
+  font-size: 17px;
+  margin: 0 0 6px;
+  color: #111827;
+}
+
+.sa-contact-info-item p{
+  margin: 0;
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.sa-icon-box{
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+  color: #fff;
+}
+
+.sa-icon-red{ background: #ef4444; }
+.sa-icon-green{ background: #22c55e; }
+.sa-icon-blue{ background: #3b82f6; }
+
+.sa-form-top{
+  margin-bottom: 22px;
+}
+
+.sa-form-badge{
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #2E2F78;
+  background: rgba(46,47,120,0.08);
+  padding: 6px 12px;
+  border-radius: 30px;
+  margin-bottom: 10px;
+}
+
+.sa-form-top h3{
+  font-size: 28px;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.sa-form-top p{
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.sa-form-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.sa-input-group{
+  margin-bottom: 18px;
+}
+
+.sa-input-group label{
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.sa-input-group input,
+.sa-input-group textarea{
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  outline: none;
+  font-size: 14px;
+  transition: 0.3s ease;
+  background: #fff;
+}
+
+.sa-input-group input:focus,
+.sa-input-group textarea:focus{
+  border-color: #2E2F78;
+}
+
+.sa-contact-submit-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 24px;
+  background: #2E2F78;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.sa-contact-submit-btn:hover{
+  background: #1f205d;
+  transform: translateY(-2px);
+}
+
+.sa-map-wrap{
+  margin-top: 10px;
+}
+
+.sa-map-head{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sa-map-card{
+  padding: 12px;
+  overflow: hidden;
+}
+
+.sa-map-card iframe{
+  border-radius: 14px;
+}
+
+@media (max-width: 991px){
+  .sa-contact-top-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .sa-form-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .sa-section-title{
+    font-size: 26px;
+  }
+}
+</style>
+   <!-- =========================
+     NEW PREMIUM HEADER
+========================= -->
+<header class="ps-header">
+    <div class="ps-header-inner">
+
+      <!-- Logo -->
+      <!-- <a href="index.html" class="ps-logo-wrap">
+        <div class="ps-logo-box">
+          <img src="img/logobg.png" alt="Sudhanshu Associates Logo" class="ps-logo-img">
+        </div>
+
+        <div class="ps-logo-text">
+          <span class="ps-logo-title">SUDHANSHU </span>
+          <span class="ps-logo-sub">ASSOCIATES</span>
+        </div>
+      </a> -->
+
+          <!-- LOGO -->
+    <a href="index.html" class="ps-logo-wrap">
+      <div class="ps-logo-vertical">
+        <img src="img/logobg.png" class="ps-logo-big">
+        <div class="ps-logo-text-new">SUDHANSHU <span>ASSOCIATES</span></div>
+      </div>
+    </a>
+
+      <!-- Menu Toggle -->
+      <button class="ps-menu-toggle" id="psMenuToggle" type="button" aria-label="Open Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Nav -->
+      <nav class="ps-nav" id="psNav">
+        <ul class="ps-nav-list">
+          <li><a href="index.html" class="ps-nav-link ">Home</a></li>
+          <li><a href="about.html" class="ps-nav-link">About</a></li>
+          <li class="ps-dropdown ps-dropdown-mega" id="psProductsDropdown">
+            <a href="product.html" class="ps-nav-link ps-dropdown-toggle" id="psProductsToggle">
+              Product <span class="ps-drop-caret">▼</span>
+            </a>
+
+            <div class="ps-dropdown-stage">
+
+              <!-- LEFT MAIN PRODUCTS -->
+              <div class="ps-main-dropdown-box">
+                <div class="ps-main-products-scroll">
+
+                  <button class="ps-main-product-item active" data-target="ps-submenu-1" type="button">
+                    <span>TIG Welding Filler Wires</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-2" type="button">
+                    <span>Electrodes</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-3" type="button">
+                    <span>Welding Accessories</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-4" type="button">
+                    <span>Safety Equipments</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-5" type="button">
+                    <span>TIG Welding Torch &amp; Spares</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-6" type="button">
+                    <span>CO2 Welding Torch &amp; Spares</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-7" type="button">
+                    <span>Gas Cutting &amp; Brazing</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-8" type="button">
+                    <span>DP Testing Materials</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-9" type="button">
+                    <span>Pressure Regulators &amp; Spares</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-10" type="button">
+                    <span>Welding Machines</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-11" type="button">
+                    <span>Air Drying Paint</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-12" type="button">
+                    <span>Polishing Machines</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-13" type="button">
+                    <span>Hand Tools</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-14" type="button">
+                    <span>Abrasives</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-15" type="button">
+                    <span>Cutting Tools</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                  <button class="ps-main-product-item" data-target="ps-submenu-16" type="button">
+                    <span>Power Tools</span>
+                    <span class="ps-item-arrow">›</span>
+                  </button>
+
+                </div>
+              </div>
+
+              <!-- RIGHT SUBMENU -->
+              <div class="ps-sub-floating-box">
+                <div class="ps-submenu-panel active" id="ps-submenu-1">
+                  <a href="product.html#tig-filler-wires">SS TIG Wires</a>
+                  <a href="product.html#tig-filler-wires">MS TIG Wires</a>
+                  <a href="product.html#tig-filler-wires">Aluminium TIG Wires</a>
+                  <a href="product.html#tig-filler-wires">Copper Alloy TIG Wires</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-2">
+                  <a href="product.html#electrodes">MS Electrodes</a>
+                  <a href="product.html#electrodes">SS Electrodes</a>
+                  <a href="product.html#electrodes">Cast Iron Electrodes</a>
+                  <a href="product.html#electrodes">Hard Facing Electrodes</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-3">
+                  <a href="product.html#welding-accessories">Electrode Holders</a>
+                  <a href="product.html#welding-accessories">Earth Clamps</a>
+                  <a href="product.html#welding-accessories">Welding Cables</a>
+                  <a href="product.html#welding-accessories">Cable Connectors</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-4">
+                  <a href="product.html#safety-equipments">Safety Gloves</a>
+                  <a href="product.html#safety-equipments">Welding Helmets</a>
+                  <a href="product.html#safety-equipments">Face Shields</a>
+                  <a href="product.html#safety-equipments">Safety Shoes</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-5">
+                  <a href="product.html#tig-torch-spares">TIG Torches</a>
+                  <a href="product.html#tig-torch-spares">Collets</a>
+                  <a href="product.html#tig-torch-spares">Ceramic Cups</a>
+                  <a href="product.html#tig-torch-spares">Back Caps</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-6">
+                  <a href="product.html#co2-torch-spares">CO2 Torches</a>
+                  <a href="product.html#co2-torch-spares">Contact Tips</a>
+                  <a href="product.html#co2-torch-spares">Nozzles</a>
+                  <a href="product.html#co2-torch-spares">Torch Liners</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-7">
+                  <a href="product.html#gas-cutting-brazing">Cutting Nozzles</a>
+                  <a href="product.html#gas-cutting-brazing">Brazing Rods</a>
+                  <a href="product.html#gas-cutting-brazing">Gas Torches</a>
+                  <a href="product.html#gas-cutting-brazing">Flashback Arrestors</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-8">
+                  <a href="product.html#dp-testing-materials">Cleaner</a>
+                  <a href="product.html#dp-testing-materials">Penetrant</a>
+                  <a href="product.html#dp-testing-materials">Developer</a>
+                  <a href="product.html#dp-testing-materials">DP Test Kits</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-9">
+                  <a href="product.html#pressure-regulators">Oxygen Regulators</a>
+                  <a href="product.html#pressure-regulators">Acetylene Regulators</a>
+                  <a href="product.html#pressure-regulators">Argon Regulators</a>
+                  <a href="product.html#pressure-regulators">Regulator Spare Parts</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-10">
+                  <a href="product.html#welding-machines">ARC Welding Machines</a>
+                  <a href="product.html#welding-machines">MIG Welding Machines</a>
+                  <a href="product.html#welding-machines">TIG Welding Machines</a>
+                  <a href="product.html#welding-machines">Plasma Cutting Machines</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-11">
+                  <a href="product.html#air-drying-paint">Industrial Primer</a>
+                  <a href="product.html#air-drying-paint">Metal Paint</a>
+                  <a href="product.html#air-drying-paint">Protective Coatings</a>
+                  <a href="product.html#air-drying-paint">Touch-up Paints</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-12">
+                  <a href="product.html#polishing-machines">Angle Polishers</a>
+                  <a href="product.html#polishing-machines">Buffing Machines</a>
+                  <a href="product.html#polishing-machines">Pads</a>
+                  <a href="product.html#polishing-machines">Accessories</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-13">
+                  <a href="product.html#hand-tools">Spanners</a>
+                  <a href="product.html#hand-tools">Pliers</a>
+                  <a href="product.html#hand-tools">Screwdrivers</a>
+                  <a href="product.html#hand-tools">Hammers</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-14">
+                  <a href="product.html#abrasives">Cutting Wheels</a>
+                  <a href="product.html#abrasives">Grinding Wheels</a>
+                  <a href="product.html#abrasives">Flap Discs</a>
+                  <a href="product.html#abrasives">Sanding Discs</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-15">
+                  <a href="product.html#cutting-tools">Drill Bits</a>
+                  <a href="product.html#cutting-tools">Hole Saws</a>
+                  <a href="product.html#cutting-tools">Reamers</a>
+                  <a href="product.html#cutting-tools">Industrial Cutters</a>
+                </div>
+
+                <div class="ps-submenu-panel" id="ps-submenu-16">
+                  <a href="product.html#power-tools">Drilling Machines</a>
+                  <a href="product.html#power-tools">Angle Grinders</a>
+                  <a href="product.html#power-tools">Impact Tools</a>
+                  <a href="product.html#power-tools">Heavy Duty Tools</a>
+                </div>
+              </div>
+
+            </div>
+          </li>
+          <li><a href="gallery.html" class="ps-nav-link">Gallery</a></li>
+          <li><a href="certificates.html" class="ps-nav-link">Certificates</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA -->
+      <a href="contact.html" class="ps-contact-btn ">
+        <span>Contact</span>
+        <span class="ps-contact-arrow">→</span>
+      </a>
+    </div>
+  </header>
+  <div class="ps-mobile-overlay" id="psMobileOverlay"></div>
+
+
+<!-- =========================
+     CONTACT HERO
+========================= -->
+<style>
+/* =========================
+   ABOUT HERO - CLEAN FINAL
+========================= */
+.contact-hero-simple{
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  padding: 80px 0 40px;
+  overflow: hidden;
+}
+
+
+.contact-hero-bg::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    rgba(8,18,35,0.28) 0%,
+    rgba(8,18,35,0.36) 45%,
+    rgba(8,18,35,0.50) 100%);
+  z-index: 1;
+}
+
+.contact-hero-simple .container{
+  position: relative;
+  z-index: 3;
+}
+
+.contact-hero-content{
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.contact-hero-content h1{
+  margin: 0 0 18px;
+  font-size: clamp(52px, 8vw, 88px);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -2px;
+  font-family: 'Sora', sans-serif;
+}
+
+.contact-hero-content h1 span{
+  display: inline-block;
+}
+
+.text-blue{
+  color: #2E2F78 !important;
+}
+
+.text-green{
+  color: #66A83D !important;
+}
+.contact-hero-content p{
+  margin: 0 auto;
+  max-width: 860px;
+  font-size: clamp(18px, 2.1vw, 30px);
+  line-height: 1.7;
+  color: #030303;
+  font-weight: 500;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.18);
+}
+
+/* responsive */
+@media (max-width: 991px){
+  .contact-hero-simple{
+    min-height: 470px;
+    padding: 110px 0 80px;
+  }
+
+  .contact-hero-content h1{
+    letter-spacing: -1px;
+  }
+
+  .contact-hero-content p{
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 576px){
+  .contact-hero-simple{
+    min-height: 380px;
+    padding: 90px 0 65px;
+  }
+
+  .contact-hero-content{
+    padding: 0 14px;
+  }
+
+  .contact-hero-content h1{
+    font-size: 42px;
+    line-height: 1.12;
+    margin-bottom: 12px;
+  }
+
+  .text-green{
+    margin-left: 6px;
+  }
+
+  .contact-hero-content p{
+    font-size: 15px;
+    line-height: 1.65;
+    max-width: 100%;
+  }
+}
+</style>
+
+<section class="contact-hero-simple">
+    <!-- <div class="about-hero-bg"></div> -->
+    <div class="container">
+      <div class="contact-hero-content">
+        <h1>
+          <span class="text-green">Lets</span>
+          <span class="text-blue">Connect With us</span>
+        </h1>
+        <p>
+        We deliver industrial fabrication, enclosures, benches, automation systems,
+        medical units and customized engineering solutions with precision and quality.
+        </p>
+      </div>
+    </div>
+  </section>
+<!-- =========================
+     CONTACT MAIN SECTION
+========================= -->
+<section class="sa-contact-main">
+  <div class="container">
+
+    <div class="sa-contact-top-grid">
+
+      <!-- LEFT INFO -->
+      <div class="sa-contact-info-card">
+        <div class="sa-section-mini">Contact Us</div>
+        <h2 class="sa-section-title">Get In Touch</h2>
+        <p class="sa-section-text">
+          For enquiries, quotations and product support, contact our team.
+        </p>
+
+        <div class="sa-contact-info-list">
+
+          <div class="sa-contact-info-item">
+            <div class="sa-icon-box sa-icon-red">
+              <i class="fas fa-location-dot"></i>
+            </div>
+            <div>
+              <h4>Address</h4>
+              <p>
+                Plot No. 58, Sector No. 7, PCNTDA,<br>
+                Bhosari MIDC, Pune 411026
+              </p>
+            </div>
+          </div>
+
+          <div class="sa-contact-info-item">
+            <div class="sa-icon-box sa-icon-green">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div>
+              <h4>Phone</h4>
+              <p>9822603202 / 9822377202</p>
+            </div>
+          </div>
+
+          <div class="sa-contact-info-item">
+            <div class="sa-icon-box sa-icon-blue">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div>
+              <h4>Email</h4>
+              <p>saplpune@gmail.com</p>
+            </div>
+          </div>
+
+          <div class="sa-contact-info-item">
+            <div class="sa-icon-box sa-icon-blue">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div>
+              <h4>Office Time</h4>
+              <p>9:30 AM To 7 PM</p>
+            </div>
+          </div>
+
+          <div class="sa-contact-info-item">
+            <div class="sa-icon-box sa-icon-blue">
+              <i class="fas fa-calendar-days"></i>
+            </div>
+            <div>
+              <h4>Working Day</h4>
+              <p>Mon - Wed, Fri - Sun</p>
+              <p>Thursday Weekly Off</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- RIGHT FORM -->
+      <div class="sa-contact-form-card">
+        <div class="sa-form-top">
+          <span class="sa-form-badge">Enquiry Form</span>
+          <h3>Send Message</h3>
+          <p>Fill the form and we’ll contact you soon.</p>
+        </div>
+
+        <form class="sa-contact-form">
+          <div class="sa-form-grid">
+            <div class="sa-input-group">
+              <label>Name</label>
+              <input type="text" placeholder="Your name">
+            </div>
+
+            <div class="sa-input-group">
+              <label>Phone</label>
+              <input type="text" placeholder="Phone number">
+            </div>
+
+            <div class="sa-input-group">
+              <label>Email</label>
+              <input type="email" placeholder="Your email">
+            </div>
+
+            <div class="sa-input-group">
+              <label>Company</label>
+              <input type="text" placeholder="Company name">
+            </div>
+          </div>
+
+          <div class="sa-input-group">
+            <label>Requirement</label>
+            <input type="text" placeholder="Product requirement">
+          </div>
+
+          <div class="sa-input-group">
+            <label>Message</label>
+            <textarea rows="4" placeholder="Write your message"></textarea>
+          </div>
+
+          <button type="submit" class="sa-contact-submit-btn">
+            Submit
+            <span>→</span>
+          </button>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- MAP SECTION -->
+    <div class="sa-map-wrap">
+      <div class="sa-map-head">
+        <span class="sa-section-mini">Location</span>
+        <h2 class="sa-section-title">Visit Our Office</h2>
+        <p class="sa-section-text">
+          Find us at Bhosari MIDC, Pune.
+        </p>
+      </div>
+
+      <div class="sa-map-card">
+        <iframe
+          src="https://www.google.com/maps?q=Sudhanshu%20Associates%20Bhosari%20Pune&output=embed"
+          width="100%"
+          height="380"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+<footer class="sa-footer">
+  <div class="sa-footer-wave"></div>
+
+  <div class="container">
+    <div class="sa-footer-grid">
+
+      <!-- LEFT -->
+      <div class="sa-footer-col sa-footer-brand">
+        <a href="index.html" class="sa-footer-logo-wrap">
+          <img src="img/logobg.png" alt="Sudhanshu Associates Logo" class="sa-footer-logo-img">
+
+          <div class="sa-footer-logo-text">
+            <span class="sa-footer-brand-name">SUDHANSHU </span>
+            <span class="sa-footer-brand-sub">ASSOCIATES</span>
+          </div>
+        </a>
+
+        <p class="sa-footer-about">
+          A trusted sole proprietary concern based in Pune, specializing in
+          welding, NDT, safety, and power tool supplies for industry.
+        </p>
+
+        <div class="sa-footer-socials">
+          <a href="#" class="sa-social-btn sa-whatsapp" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="#" class="sa-social-btn sa-instagram" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="sa-social-btn sa-facebook" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- QUICK LINKS -->
+      <div class="sa-footer-col sa-footer-links-col">
+        <h4>QUICK LINKS</h4>
+        <ul class="sa-footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="product.html">Product</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="certificates.html">Certificates</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- PRODUCTS -->
+      <div class="sa-footer-col sa-footer-links-col">
+        <h4>PRODUCTS</h4>
+        <ul class="sa-footer-links">
+          <li><a href="product.html#electrodes">Welding Electrodes</a></li>
+          <li><a href="product.html#dp-testing-materials">NDT Equipment</a></li>
+          <li><a href="product.html#safety-equipments">Safety Products</a></li>
+          <li><a href="product.html#abrasives">Abrasives</a></li>
+          <li><a href="product.html#power-tools">Power Tools</a></li>
+          <li><a href="product.html#pressure-regulators">Gas Regulators</a></li>
+        </ul>
+      </div>
+
+      <!-- CONTACT -->
+      <div class="sa-footer-col sa-footer-contact-col">
+        <h4>CONTACT</h4>
+        <ul class="sa-footer-contact">
+          <li>
+            <i class="fas fa-map-marker-alt"></i>
+            <span>
+              Sector No. 7, Plot No. 58, PCNTDA,
+              Bhosari MIDC, Pune 411026,
+              Maharashtra (India)
+            </span>
+          </li>
+
+          <li>
+            <i class="fas fa-phone-alt"></i>
+            <span>9822603202 / 9822377202 / 9881009380</span>
+          </li>
+
+          <li>
+            <i class="fas fa-envelope"></i>
+            <span>saplpune@gmail.com</span>
+          </li>
+
+          <li>
+            <i class="fas fa-globe"></i>
+            <span>www.sudhanshuassociates.com</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="sa-footer-bottom">
+      <p class="sa-footer-copy">© 2025 Sudhanshu Associates. All rights reserved.</p>
+<p class="sa-footer-dev">
+  Developed by 
+  <a href="https://www.qirotec.com/" target="_blank" class="sa-dev-link">
+    QIRO TECH INNOVATION PVT. LTD.
+  </a>
+</p>    
+</div>
+  </div>
+</footer>
+
+
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const revealItems = document.querySelectorAll(".sa-reveal-up");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("sa-show");
+      }
+    });
+  }, {
+    threshold: 0.15
+  });
+
+  revealItems.forEach((item) => observer.observe(item));
+});
+</script>
+</body>
+</html>
