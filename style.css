@@ -3472,33 +3472,37 @@ font-size: .9rem; color: var(--dark-text);
   box-sizing: border-box;
 }
 
-.ps-header {
-  width: 100%;
-  padding: 4px 25px;   /* smaller navbar */
-  background: #f5f6f8;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  transition: all 0.3s ease;
+.ps-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(12px);
+    z-index: 9999;
+    padding: 10px 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
 }
 
-.ps-header-inner {
-  
-  margin:  auto;
-  padding-top: 2px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap: 18px;
-  height: 30px;        /* keeps navbar slim */
-  align-items: flex-start; /* lets logo overflow */
+/* INNER */
+.ps-header-inner{
+    max-width: 1400px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    height: 80px;
+    position: relative;   /* remove fixed */
+}
+/* BODY SPACE */
+body{
+    padding-top: 110px;
 }
 
 .ps-nav-link.active {
   box-shadow: 0 8px 18px rgba(37, 79, 183, 0.22);
 }
-
 
 .ps-contact-arrow {
   width: 34px;
@@ -3510,63 +3514,66 @@ body {
   padding-top: 82px;
 }
 /* ================= LOGO ================= */
-/* ================= LOGO WRAPPER ================= */
-.ps-logo-wrap{
-  position:relative;
-  top:-3px;
-  text-decoration:none;
-  display:inline-block;
 
+.ps-logo-wrap{
+  position: relative;
+  top: -3px;
+  text-decoration: none;
+  display: inline-block;
 }
-/* ================= LOGO BOX ================= */
+
 /* LOGO BOX */
 .ps-logo-vertical{
-  background:#ffffff;
-  padding:2px 1px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;      /* vertical center */
+  justify-content: center;  /* horizontal center */
+  gap: 4px;
 
-  display:flex;
-  flex-direction:Row;
-  align-items:center;
-  justify-content:center;
-  gap: 1px;
+  width: 400px;
+  height: 120px;   /* same height */
 
-  width:400px;
-  height:100px;                /* ✅ important */
-
-  border-radius:0 0 16px 16px;
-  box-shadow:0 12px 30px rgba(0, 0, 0, 0.499);
-  transition:0.3s;
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.499);
+  transition: 0.3s;
+  text-align: center;
+  padding: 0 15px;
 }
 
-/* optional hover effect */
+/* Hover */
 .ps-logo-vertical:hover{
-  transform:translateY(-3px);
-  box-shadow:0 18px 40px rgba(0,0,0,0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
 }
 
-/* ================= LOGO IMAGE ================= */
 /* IMAGE */
 .ps-logo-big{
-  height:70px;
-  width:auto;
-  display:block;      /* ✅ already good */
-  margin-bottom:2px;  /* 🔥 controls gap */
+  height: 62px;
+  width: auto;
+  display: block;
+  flex-shrink: 0;
 }
+
 /* TEXT */
 .ps-logo-text-new{
-  font-size:17px;
-  font-weight:800;
-  letter-spacing:1px;
-  text-align:center;
-  /* line-height:1.1;            ✅ clean spacing */
-  color:var(--accent-red);
+  font-size: 20px;      /* increased size */
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--accent-red);
+   margin-left: -6px; 
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
 }
 
+/* GREEN TEXT */
 .ps-logo-text-new span{
-  color:#198754;
+  color: #198754;
+    margin-left: 6px;   /* space between Sudhanshu and Associates */
 }
-
 
 /* CENTER NAV */
 .ps-nav {
