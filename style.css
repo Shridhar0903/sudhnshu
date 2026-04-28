@@ -1592,7 +1592,7 @@ font-size: 2rem; color: var(--white);
   justify-content: center;
 
   padding: 18px 30px;
-  border-radius: 50px;
+  
   background: #ffffff;
 
   box-shadow: 0 6px 20px rgba(0,0,0,0.06);
@@ -1601,7 +1601,7 @@ font-size: 2rem; color: var(--white);
 
 /* LOGO IMAGE */
 .brand-pill img {
-  height: 45px;
+  height: 80px;
   width: auto;
   object-fit: contain;
 
@@ -2187,60 +2187,13 @@ font-size: .9rem; color: var(--dark-text);
 
 
 
-.brands-marquee {
-  overflow: hidden;
-  padding: 40px 0;
-  background: #f8f9fb;
-}
 
-.brands-track {
-  display: flex;
-  gap: 40px;
-  animation: scrollBrands 25s linear infinite;
-}
-
-.brand-pill {
-  background: #fff;
-  padding: 20px 30px;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 160px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-  transition: 0.3s;
-}
-
-.brand-pill img {
-  max-width: 120px;
-  max-height: 40px;
-  object-fit: contain;
-  filter: grayscale(100%);
-  transition: 0.3s;
-}
-
-.brand-pill:hover img {
-  filter: grayscale(0%);
-  transform: scale(1.1);
-}
-
-.brand-pill:hover {
-  transform: translateY(-5px);
-}
 
 @keyframes scrollBrands {
   0% {
     transform: translateX(0);
   }
   100% {
-
-
-
-
-
-
-
-
 
     transform: translateX(-50%);
   }
@@ -2254,57 +2207,6 @@ font-size: .9rem; color: var(--dark-text);
 
 
 
-
-
-
-
-
-
-.brand-pill {
-  background: #fff;
-  padding: 25px 40px;
-  border-radius: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 200px;   /* 🔥 increase */
-  height: 90px;       /* 🔥 increase */
-  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-}
-
-.brand-pill img {
-  max-width: 150px;   /* 🔥 logo size increase */
-  max-height: 60px;
-  object-fit: contain;
-  transition: 0.3s ease;
-}
-
-
-
-
-
-.brands-marquee {
-  overflow: hidden;
-  padding: 50px 0;
-  background: #f8f9fb;
-}
-
-.brands-track {
-  display: flex;
-  width: max-content;
-  gap: 40px;
-  animation: scrollBrands 20s linear infinite;
-}
-
-/* 🔥 PERFECT LOOP */
-@keyframes scrollBrands {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
 
 
 
