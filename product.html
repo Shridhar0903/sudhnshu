@@ -228,23 +228,24 @@
     }
 
     .sa-product-detail-image{
-      width: 100%;
-      height: 460px;
-      border-radius: 24px;
-      overflow: hidden;
-      background: #f1f1f1;
+       width: 70%;          /* reduce overall size */
+       height: 500px;       /* reduce height */
+       margin: auto;        /* center image box */
+       border-radius: 24px;
+       overflow: hidden;
+       background: #f1f1f1;
     }
 
     .sa-product-detail-image img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;   /* full image visible */
+        display: block;
     }
 
     .sa-product-detail-content h2{
       margin: 0 0 14px;
-      font-size: 38px;
+      font-size: 50px;
       line-height: 1.1;
       color: #0b1d34;
       font-family:'Sora', sans-serif;
@@ -257,7 +258,7 @@
       border-radius: 999px;
       background: rgba(99, 168, 62, 0.10);
       color: #63a83e;
-      font-size: 12px;
+      font-size: 15px;
       font-weight: 800;
       letter-spacing: 1.4px;
       text-transform: uppercase;
@@ -280,7 +281,7 @@
 
     .sa-product-points li{
       color:#32465d;
-      font-size:15px;
+      font-size:16px;
       line-height:1.7;
       padding-left:22px;
       position:relative;
@@ -387,68 +388,137 @@
     }
 
     .sa-table-wrap{
-      margin-top:24px;
-      background:#fff;
-      border:1px solid #e8e8e8;
-      border-radius:26px;
-      padding:24px;
-      box-shadow: 0 18px 40px rgba(13, 27, 42, 0.05);
-      overflow:auto;
-    }
+    margin-top: 24px;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 26px;
+    padding: 24px;
+    box-shadow: 0 18px 40px rgba(13,27,42,0.05);
+    overflow: hidden;          /* remove scrollbar */
+    width: 100%;
+}
 
-    .sa-table-title{
-      font-size:24px;
-      color:#0b1d34;
-      margin-bottom:16px;
-      font-family:'Sora', sans-serif;
-    }
+/* TITLE */
+.sa-table-title{
+    font-size: 24px;
+    color: #0b1d34;
+    margin-bottom: 18px;
+    font-family: 'Sora', sans-serif;
+}
 
-    .sa-table{
-      width:100%;
-      border-collapse:collapse;
-      min-width:700px;
-    }
+/* TABLE FULL WIDTH */
+.sa-table{
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;      /* fit columns */
+}
 
-    .sa-table th,
-    .sa-table td{
-      border:1px solid #e3eaf2;
-      padding:14px 14px;
-      text-align:left;
-      font-size:14px;
-      color:#445a71;
-    }
+/* CELLS */
+.sa-table th,
+.sa-table td{
+    border: 1px solid #e3eaf2;
+    padding: 14px 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #445a71;
+    word-wrap: break-word;
+}
 
-    .sa-table th{
-      background:#f5f8fc;
-      color:#0b1d34;
-      font-weight:800;
-    }
+/* HEADER */
+.sa-table th{
+    background: #f5f8fc;
+    color: #0b1d34;
+    font-weight: 800;
+}
 
+    /* ========================================================== */
+
+    .sa-brands-section{
+    padding: 60px 0;
+    text-align: center;
+    background: #fff;
+}
+
+/* TITLE */
+.sa-section-title{
+    font-size: 36px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+.sa-section-title::after{
+    content: "";
+    width: 70px;
+    height: 4px;
+    background: gold;
+    position: absolute;
+    left: 50%;
+    bottom: -12px;
+    transform: translateX(-50%);
+    border-radius: 10px;
+}
+
+/* LOGO GRID CENTER */
+.sa-brand-strip{
+    display: grid;
+    grid-template-columns: repeat(3, 280px);   /* fixed card width */
+    justify-content: center;                  /* center full grid */
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* CARD */
+.sa-brand-card{
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 22px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 170px;                       /* bigger card */
+    box-shadow: 0 16px 35px rgba(13,27,42,0.06);
+    transition: 0.4s ease;
+}
+
+.sa-brand-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 22px 45px rgba(13,27,42,0.12);
+}
+
+/* BIG LOGO */
+.sa-brand-card img{
+    max-width: 220px;
+    max-height: 110px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* MOBILE */
+@media(max-width:992px){
     .sa-brand-strip{
-      display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap:16px;
-      margin-top:24px;
+        grid-template-columns: repeat(2, 240px);
+    }
+}
+
+@media(max-width:576px){
+    .sa-brand-strip{
+        grid-template-columns: 1fr;
+        justify-content: center;
     }
 
     .sa-brand-card{
-      background:#fff;
-      border:1px solid #e8e8e8;
-      border-radius:22px;
-      padding:18px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      min-height:100px;
-      box-shadow: 0 16px 35px rgba(13, 27, 42, 0.04);
+        width: 90%;
+        margin: auto;
     }
+}
+  /* ========================================================== */
 
-    .sa-brand-card img{
-      max-width:100%;
-      max-height:56px;
-      object-fit:contain;
-      display:block;
-    }
 
     .sa-gallery-grid{
       display:grid;
@@ -2173,6 +2243,8 @@ img{
     </div>
   </div>
 </section>
+
+<!-- ===============================MAIN Section================================================== -->
   <section class="sa-explore-product">
     <div class="sa-explore-container">
 
@@ -2445,6 +2517,16 @@ img{
                STAINLESS STEEL TIG WELDING WIRE
                UPDATED WITH USER PROVIDED INFO
           ========================= -->
+            <!-- brands -->
+            <section class="sa-brands-section">
+              <h2 class="sa-section-title">Trusted Brands We Deal In</h2>
+                  <div class="sa-brand-strip">
+                    <div class="sa-brand-card"><img src="img/Venus.jpg" alt="Venus"></div>
+                    <div class="sa-brand-card"><img src="img/Anand-arc-New.png" alt="Anand Arc"></div>
+                    <div class="sa-brand-card"><img src="img/logo-superon.png" alt="Superon"></div>
+                  </div>
+            </section><br>
+
           <div class="sa-product-section active" id="stainless-steel-tig">
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
@@ -2468,117 +2550,327 @@ img{
               </div>
             </div>
 
-            <!-- brands -->
-            <div class="sa-brand-strip">
-              <div class="sa-brand-card"><img src="img/Venus.jpg" alt="Venus"></div>
-              <div class="sa-brand-card"><img src="img/and.jpg" alt="Anand Arc"></div>
-              <div class="sa-brand-card"><img src="img/bek.jpg" alt="Bekaert"></div>
-              <div class="sa-brand-card"><img src="img/sup.jpg" alt="Superon"></div>
-            </div>
+          
 
-            <!-- TIG + MIG info -->
+            <!-- 4 card info -->
             <div class="sa-info-grid">
               <div class="sa-info-box">
-                <h3>TIG Welding</h3>
-                <p>
-                  In TIG welding, the arc is struck between the workpiece and the non-consumable electrode. Thoriated tungsten is used for welding ferrous materials, while zirconated tungsten is used for aluminium.
-                </p>
-                <p>
-                  The consumable wire is melted in the arc atmosphere and inert gases like argon, helium, or their mixtures are used as shielding gases.
-                </p>
-                <p>
-                  TIG welding is extremely suitable for joining thin sheets and tubes, and for making root pass welding in pipes because the heat input is minimal. TIG welds give smooth welds and superior quality weld metal.
-                </p>
 
-                <h4>Normal Grade</h4>
-                <div class="sa-grade-list">
-                  <span class="sa-grade-pill">304L</span>
-                  <span class="sa-grade-pill">308L</span>
-                  <span class="sa-grade-pill">308H</span>
-                  <span class="sa-grade-pill">308LSi</span>
-                  <span class="sa-grade-pill">309LMo</span>
-                  <span class="sa-grade-pill">310</span>
-                  <span class="sa-grade-pill">312</span>
-                  <span class="sa-grade-pill">316</span>
-                  <span class="sa-grade-pill">316H</span>
-                  <span class="sa-grade-pill">316L</span>
-                  <span class="sa-grade-pill">316LSi</span>
-                  <span class="sa-grade-pill">317</span>
-                  <span class="sa-grade-pill">317Si</span>
-                  <span class="sa-grade-pill">318Si</span>
-                  <span class="sa-grade-pill">321</span>
-                  <span class="sa-grade-pill">347</span>
-                  <span class="sa-grade-pill">347Si</span>
-                  <span class="sa-grade-pill">410</span>
-                  <span class="sa-grade-pill">420</span>
-                  <span class="sa-grade-pill">430</span>
-                  <span class="sa-grade-pill">409</span>
-                  <span class="sa-grade-pill">409Cb</span>
-                  <span class="sa-grade-pill">409Ti</span>
-                  <span class="sa-grade-pill">410NiMo</span>
-                  <span class="sa-grade-pill">430LNb</span>
-                  <span class="sa-grade-pill">2209</span>
-                  <span class="sa-grade-pill">904L</span>
-                </div>
+              <h3>TIG Wires</h3>
+
+              <p>
+                  Venus TIG Wires are premium-quality stainless steel filler wires designed for 
+                  Gas Tungsten Arc Welding (GTAW/TIG). They provide smooth arc stability, 
+                  excellent corrosion resistance, strong joints, and superior weld finish.
+              </p>
+
+              <p>
+                  Manufactured as per AWS standards, these TIG wires ensure reliable performance 
+                  and precision in every weld. Widely used for thin sheets, tubes, pipelines, 
+                  fabrication, and industrial stainless steel applications.
+              </p>
+
+              <p>
+                  Available in sizes from <strong>0.80 mm to 6.00 mm</strong> and 
+                  standard length <strong>36 inches / 1000 mm</strong>, making them ideal 
+                  for versatile welding needs.
+              </p>
+
+              <h4>Available Grades</h4>
+
+                  <div class="sa-grade-list">
+                      <span class="sa-grade-pill">307Si</span>
+                      <span class="sa-grade-pill">308H</span>
+                      <span class="sa-grade-pill">308L</span>
+                      <span class="sa-grade-pill">308LSi</span>
+                      <span class="sa-grade-pill">309L</span>
+                      <span class="sa-grade-pill">309LMo</span>
+                      <span class="sa-grade-pill">310</span>
+                      <span class="sa-grade-pill">312</span>
+                      <span class="sa-grade-pill">316L</span>
+                      <span class="sa-grade-pill">316LSi</span>
+                      <span class="sa-grade-pill">317L</span>
+                      <span class="sa-grade-pill">318Si</span>
+                      <span class="sa-grade-pill">347</span>
+                      <span class="sa-grade-pill">347Si</span>
+                      <span class="sa-grade-pill">385</span>
+                      <span class="sa-grade-pill">410</span>
+                      <span class="sa-grade-pill">410NiMo</span>
+                      <span class="sa-grade-pill">420</span>
+                      <span class="sa-grade-pill">430</span>
+                      <span class="sa-grade-pill">430LNb</span>
+                      <span class="sa-grade-pill">2209</span>
+                      <span class="sa-grade-pill">2594</span>
+                      <span class="sa-grade-pill">904L</span>
+                      <span class="sa-grade-pill">NiCr-3</span>
+                      <span class="sa-grade-pill">NiCrMo-3</span>
+                  </div>
               </div>
 
+              <!-- Card2 -->
               <div class="sa-info-box">
-                <h3>MIG Welding</h3>
-                <p>
-                  Gas Metal Arc welding is generally called MIG welding. In this process, the consumable wire travels through a nozzle and tip before it strikes an arc with the workpiece.
-                </p>
-                <p>
-                  MIG welding is a high-productivity process. It does not need expensive machinery and the welding machines are easily transportable, which makes this process popular on construction sites.
-                </p>
 
-                <h4>Common Shielding Gases</h4>
-                <ul class="sa-shielding-list">
-                  <li>100% Argon</li>
-                  <li>99% Argon with 1% Oxygen</li>
-                  <li>97% Argon with 3% Carbon Dioxide</li>
-                </ul>
+                  <h3>MIG Wires</h3>
+
+                  <p>
+                      Venus MIG Wires are high-performance welding wires designed for 
+                      Gas Metal Arc Welding (GMAW/MIG). They provide stable arc performance, 
+                      smooth wire feeding, strong weld joints, and high productivity for 
+                      industrial welding applications.
+                  </p>
+
+                   <p>
+                       Our range includes mild steel solid wire, flux core wire, and stainless 
+                       steel welding wire suitable for fabrication, automotive, structural, 
+                                      robotic, and continuous welding operations.
+                   </p>
+
+                   <p>
+                       Available in fiber drums of <strong>100–250 Kg</strong> for robotic and 
+                       automatic welding systems. Surface finishes available in 
+                       <strong>Bright, Matte & Semi Bright</strong>.
+                   </p>
+
+                   <h4>Available Grades</h4>
+
+                  <div class="sa-grade-list">
+                      <span class="sa-grade-pill">307Si</span>
+                      <span class="sa-grade-pill">308H</span>
+                      <span class="sa-grade-pill">308L</span>
+                      <span class="sa-grade-pill">308LSi</span>
+                      <span class="sa-grade-pill">309L</span>
+                      <span class="sa-grade-pill">309LMo</span>
+                      <span class="sa-grade-pill">310</span>
+                      <span class="sa-grade-pill">312</span>
+                      <span class="sa-grade-pill">316L</span>
+                      <span class="sa-grade-pill">316LSi</span>
+                      <span class="sa-grade-pill">317</span>
+                      <span class="sa-grade-pill">317L</span>
+                      <span class="sa-grade-pill">318Si</span>
+                      <span class="sa-grade-pill">347</span>
+                      <span class="sa-grade-pill">347Si</span>
+                      <span class="sa-grade-pill">385</span>
+                      <span class="sa-grade-pill">410</span>
+                      <span class="sa-grade-pill">410NiMo</span>
+                      <span class="sa-grade-pill">420L</span>
+                      <span class="sa-grade-pill">430</span>
+                      <span class="sa-grade-pill">430LNb</span>
+                      <span class="sa-grade-pill">430LNbTi</span>
+                      <span class="sa-grade-pill">430LNbW</span>
+                      <span class="sa-grade-pill">439</span>
+                      <span class="sa-grade-pill">2209</span>
+                      <span class="sa-grade-pill">2594</span>
+                      <span class="sa-grade-pill">NiCr-3</span>
+                      <span class="sa-grade-pill">NiCrMo-3</span>
+                  </div>
+
+                  <h4>Available Sizes</h4>
+
+                  <div class="sa-grade-list">
+                      <span class="sa-grade-pill">0.60 mm</span>
+                      <span class="sa-grade-pill">0.80 mm</span>
+                      <span class="sa-grade-pill">0.90 mm</span>
+                      <span class="sa-grade-pill">1.00 mm</span>
+                      <span class="sa-grade-pill">1.20 mm</span>
+                      <span class="sa-grade-pill">1.60 mm</span>
+                  </div>
+
               </div>
-            </div>
 
-            <!-- packaging -->
-            <div class="sa-table-wrap">
-              <h3 class="sa-table-title">Packaging Details</h3>
-              <table class="sa-table">
-                <thead>
-                  <tr>
-                    <th>Description</th>
-                    <th>Packing</th>
-                    <th>Length (mm)</th>
-                    <th>Size (mm)</th>
-                    <th>Weight</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>TIG Rods</td>
-                    <td>Corrugated Box</td>
-                    <td>1000</td>
-                    <td>4.0, 3.15, 2.5, 2.0, 1.6</td>
-                    <td>5 Kgs</td>
-                  </tr>
-                  <tr>
-                    <td>MIG Wire</td>
-                    <td>Plastic Spools</td>
-                    <td>-</td>
-                    <td>1.6, 1.2, 0.8</td>
-                    <td>12.5 Kgs</td>
-                  </tr>
-                  <tr>
-                    <td>SAW Wire</td>
-                    <td>Metal</td>
-                    <td>-</td>
-                    <td>4.0, 3.15, 2.5</td>
-                    <td>25 Kgs</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+               <!-- Card 3 -->
+              <div class="sa-info-box">
 
+                  <h3>Core Wires</h3>
+
+                  <p>
+                      Venus Core Wires are premium-quality stainless steel core wires specially 
+                      manufactured for electrode production. They are widely supplied to electrode 
+                      manufacturers across global markets for consistent quality and performance.
+                  </p>
+
+                  <p>
+                      Available in cut lengths or coil form, these wires can be customized in 
+                      diameter, length, packing, and packaging according to customer requirements.
+                  </p>
+
+                   <p>
+                       Specialized chemistries are also developed to improve flux compatibility, 
+                       weldability, and final welding performance for end users.
+                   </p>
+
+                   <h4>Available Grades</h4>
+
+                   <div class="sa-grade-list">
+                       <span class="sa-grade-pill">304L Mod.</span>
+                       <span class="sa-grade-pill">307Si</span>
+                       <span class="sa-grade-pill">308L</span>
+                       <span class="sa-grade-pill">308LSi</span>
+                       <span class="sa-grade-pill">309</span>
+                       <span class="sa-grade-pill">309L</span>
+                       <span class="sa-grade-pill">309LSi</span>
+                       <span class="sa-grade-pill">309LMo</span>
+                       <span class="sa-grade-pill">310</span>
+                       <span class="sa-grade-pill">312</span>
+                       <span class="sa-grade-pill">316</span>
+                       <span class="sa-grade-pill">316L</span>
+                       <span class="sa-grade-pill">316LSi</span>
+                       <span class="sa-grade-pill">317L</span>
+                       <span class="sa-grade-pill">318Si</span>
+                       <span class="sa-grade-pill">321</span>
+                       <span class="sa-grade-pill">347</span>
+                       <span class="sa-grade-pill">347Si</span>
+                       <span class="sa-grade-pill">409</span>
+                      <span class="sa-grade-pill">409Cb</span>
+                       <span class="sa-grade-pill">409Ti</span>
+                       <span class="sa-grade-pill">410</span>
+                       <span class="sa-grade-pill">410NiMo</span>
+                       <span class="sa-grade-pill">420</span>
+                       <span class="sa-grade-pill">430</span>
+                       <span class="sa-grade-pill">430LNb</span>
+                       <span class="sa-grade-pill">2209</span>
+                       <span class="sa-grade-pill">2594</span>
+                       <span class="sa-grade-pill">904L</span>
+                   </div>
+
+                  <h4>Standard Diameter</h4>
+
+                  <div class="sa-grade-list">
+                      <span class="sa-grade-pill">1.60 mm</span>
+                      <span class="sa-grade-pill">2.00 mm</span>
+                      <span class="sa-grade-pill">2.40 mm</span>
+                      <span class="sa-grade-pill">3.20 mm</span>
+                      <span class="sa-grade-pill">4.00 mm</span>
+                      <span class="sa-grade-pill">5.00 mm</span>
+                  </div>
+
+                  <h4>Standard Length</h4>
+
+                  <div class="sa-grade-list">
+                      <span class="sa-grade-pill">250 mm</span>
+                      <span class="sa-grade-pill">300 mm</span>
+                      <span class="sa-grade-pill">350 mm</span>
+                      <span class="sa-grade-pill">400 mm</span>
+                      <span class="sa-grade-pill">450 mm</span>
+                  </div>
+
+              </div>
+
+            
+               <!-- Card 4 -->
+                <div class="sa-info-box">
+
+                   <h3>Sub Arc Welding Wire</h3>
+
+                   <p>
+                       Submerged Arc Welding (SAW) is widely used for long straight seams, shipbuilding, 
+                       oil & gas refineries, LPG cylinder fabrication, bridge girders, and rotating pipes 
+                       or vessels, ensuring high-quality weld deposits.
+                   </p>
+
+                   <p>
+                       Venus Sub Arc Welding Wires are designed for continuous arc welding operations with 
+                       excellent arc stability and precision diameter tolerance. The copper-coated finish 
+                       ensures smooth feeding and ease of welding.
+                   </p>
+
+                    <p>
+                        These stainless steel alloy wires comply with AWS standards and deliver superior 
+                        weld strength, mechanical properties, and joint integrity for both automatic SAW 
+                        machines and hand-operated SAW guns.
+                    </p>
+
+                    <h4>Available Grades</h4>
+
+                    <div class="sa-grade-list">
+                        <span class="sa-grade-pill">307Si</span>
+                        <span class="sa-grade-pill">308L</span>
+                        <span class="sa-grade-pill">309L</span>
+                        <span class="sa-grade-pill">309LMo</span>
+                        <span class="sa-grade-pill">312</span>
+                        <span class="sa-grade-pill">316L</span>
+                        <span class="sa-grade-pill">317L</span>
+                        <span class="sa-grade-pill">347</span>
+                        <span class="sa-grade-pill">410NiMo</span>
+                        <span class="sa-grade-pill">420</span>
+                        <span class="sa-grade-pill">430</span>
+                        <span class="sa-grade-pill">2209</span>
+                        <span class="sa-grade-pill">2594</span>
+                    </div>
+
+                      <h4>Available Sizes</h4>
+
+                      <div class="sa-grade-list">
+                          <span class="sa-grade-pill">1.60 mm</span>
+                          <span class="sa-grade-pill">2.00 mm</span>
+                          <span class="sa-grade-pill">2.40 mm</span>
+                          <span class="sa-grade-pill">3.20 mm</span>
+                          <span class="sa-grade-pill">4.00 mm</span>
+                      </div>
+
+                      <h4>Surface Finish</h4>
+
+                      <div class="sa-grade-list">
+                          <span class="sa-grade-pill">Bright</span>
+                          <span class="sa-grade-pill">Matt</span>
+                      </div>
+
+                  </div>
+
+
+            <!-- Packaging Details -->
+<div class="sa-table-wrap">
+
+    <h3 class="sa-table-title">Packaging Details</h3>
+
+    <table class="sa-table">
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Packing Type</th>
+                <th>Length (mm)</th>
+                <th>Size / Diameter (mm)</th>
+                <th>Weight</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>TIG Wires</td>
+                <td>Corrugated Box</td>
+                <td>1000</td>
+                <td>0.80 to 6.00</td>
+                <td>5 Kgs</td>
+            </tr>
+
+            <tr>
+                <td>MIG Wires</td>
+                <td>Plastic Spool / Fiber Drum</td>
+                <td>-</td>
+                <td>0.60 to 1.60</td>
+                <td>12.5 Kg / 100–250 Kg</td>
+            </tr>
+
+            <tr>
+                <td>Core Wires</td>
+                <td>Bundle / Coil / Box</td>
+                <td>250 to 450</td>
+                <td>1.60 to 5.00</td>
+                <td>As Required</td>
+            </tr>
+
+            <tr>
+                <td>Sub Arc Wires</td>
+                <td>Metal Reel / Coil</td>
+                <td>-</td>
+                <td>1.60 to 4.00</td>
+                <td>25 Kgs</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</div>
          
 
             <div class="sa-note-box">
