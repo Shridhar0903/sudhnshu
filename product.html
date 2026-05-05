@@ -1,1969 +1,1341 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sudhanshu Associates – Industrial Excellence Since 1974</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
   <!-- FAVICON -->
   <link rel="icon" type="image/png" href="img/new logo.png">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;1,400&display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
   <!-- AOS Animation -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-  
+
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <!-- Three.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 
-  <style>
+<style>
 
-    
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+  .container {
+    width: min(1200px, calc(100% - 40px));
+    margin: auto;
+  }
 
-    html{
-      scroll-behavior:smooth;
-    }
 
-    body{
-      background:#ffffff;
-      color:#0d1b2a;
-    }
-    
-    
-    .container{
-      width:min(1200px, calc(100% - 40px));
-      margin:auto;
-    }
 
-    
-    
-    /* =========================
+  /* =========================
        PRODUCT EXPLORE
     ========================= */
-    .sa-explore-product{
-      width: 100%;
-      padding: 70px 0;
-      background: #f5f4f2;
-    }
+  .sa-explore-product {
+    width: 100%;
+    padding: 70px 0;
+    background: #f5f4f2;
+  }
 
-    .sa-explore-container{
-      width: 100%;
-      max-width: 100%;
-      margin: 0;
-      padding: 0 40px 0 20px;
-      display: flex;
-      align-items: flex-start;
-      gap: 40px;
-    }
+  .sa-explore-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 40px 0 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+  }
 
-    .sa-explore-sidebar{
-      width: 390px;
-      min-width: 390px;
-      flex-shrink: 0;
-      position: sticky;
-      top: 95px;
-    }
+  .sa-explore-sidebar {
+    width: 390px;
+    min-width: 390px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 95px;
+  }
 
-    .sa-sidebar-box{
-      background: #fff;
-      border: 1px solid #e5e5e5;
-      border-radius: 30px;
-      padding: 34px 24px;
-      box-shadow: 0 14px 40px rgba(12, 22, 36, 0.05);
-    }
+  .sa-sidebar-box {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 30px;
+    padding: 34px 24px;
+    box-shadow: 0 14px 40px rgba(12, 22, 36, 0.05);
+  }
 
-    .sa-sidebar-title{
-      margin: 0 0 24px;
-      font-size: 34px;
-      font-weight: 800;
-      color: #63a83e;
-      line-height: 1.1;
-      font-family:'Sora', sans-serif;
-    }
+  .sa-sidebar-title {
+    margin: 0 0 24px;
+    font-size: 34px;
+    font-weight: 800;
+    color: #63a83e;
+    line-height: 1.1;
+    font-family: 'Sora', sans-serif;
+  }
 
-    .sa-dropdown{
-      border: 1px solid #dcdcdc;
-      border-radius: 22px;
-      overflow: hidden;
-      margin-bottom: 16px;
-      background: #fff;
-    }
+  .sa-dropdown {
+    border: 1px solid #dcdcdc;
+    border-radius: 22px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    background: #fff;
+  }
 
-    .sa-dropdown-toggle{
-      width: 100%;
-      border: none;
-      background: #fff;
-      color: #23324c;
-      padding: 18px 20px;
-      font-size: 17px;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      cursor: pointer;
-      transition: 0.3s ease;
-      text-align: left;
-    }
+  .sa-dropdown-toggle {
+    width: 100%;
+    border: none;
+    background: #fff;
+    color: #23324c;
+    padding: 18px 20px;
+    font-size: 17px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-align: left;
+  }
 
-    .sa-dropdown.active .sa-dropdown-toggle{
-      background: #4341a8;
-      color: #fff;
-    }
+  .sa-dropdown.active .sa-dropdown-toggle {
+    background: #4341a8;
+    color: #fff;
+  }
 
-    .sa-dropdown-icon{
-      font-size: 14px;
-      transition: transform 0.3s ease;
-      flex-shrink: 0;
-      margin-left: 14px;
-    }
+  .sa-dropdown-icon {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 14px;
+  }
 
-    .sa-dropdown.active .sa-dropdown-icon{
-      transform: rotate(180deg);
-    }
+  .sa-dropdown.active .sa-dropdown-icon {
+    transform: rotate(180deg);
+  }
 
-    .sa-dropdown-menu{
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease, padding 0.35s ease;
-      background: #fff;
-      padding: 0 20px;
-    }
+  .sa-dropdown-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    background: #fff;
+    padding: 0 20px;
+  }
 
-    .sa-dropdown.active .sa-dropdown-menu{
-      max-height: 700px;
-      padding: 4px 20px 8px;
-    }
+  .sa-dropdown.active .sa-dropdown-menu {
+    max-height: 700px;
+    padding: 4px 20px 8px;
+  }
 
-    .sa-dropdown-menu a{
-      display: block;
-      text-decoration: none;
-      color: #6c7890;
-      font-size: 15px;
-      line-height: 1.6;
-      padding: 13px 0;
-      border-bottom: 1px solid #ececec;
-      transition: 0.25s ease;
-    }
+  .sa-dropdown-menu a {
+    display: block;
+    text-decoration: none;
+    color: #6c7890;
+    font-size: 15px;
+    line-height: 1.6;
+    padding: 13px 0;
+    border-bottom: 1px solid #ececec;
+    transition: 0.25s ease;
+  }
 
-    .sa-dropdown-menu a:last-child{
-      border-bottom: none;
-    }
+  .sa-dropdown-menu a:last-child {
+    border-bottom: none;
+  }
 
-    .sa-dropdown-menu a:hover{
-      color: #4341a8;
-    }
+  .sa-dropdown-menu a:hover {
+    color: #4341a8;
+  }
 
-    .sa-product-link.active{
-      color: #4341a8;
-      font-weight: 700;
-    }
+  .sa-product-link.active {
+    color: #4341a8;
+    font-weight: 700;
+  }
+/* ================================================================== */
+  .sa-explore-main {
+    flex: 1;
+    min-width: 0;
+    margin-top: -60px;
+  }
 
-    .sa-explore-main{
-      flex: 1;
-      min-width: 0;
-      margin-top: -60px;
-    }
+  .sa-explore-head {
+    margin-bottom: 24px;
+  }
 
-    .sa-explore-head{
-      margin-bottom: 24px;
-    }
+  .sa-explore-eyebrow {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: #63a83e;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
 
-    .sa-explore-eyebrow{
-      display: inline-block;
-      margin-bottom: 8px;
-      color: #63a83e;
-      font-size: 14px;
-      font-weight: 800;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-    }
+  .sa-explore-heading {
+    margin: 0;
+    color: #071b33;
+    font-size: 82px;
+    line-height: 0.95;
+    font-weight: 800;
+    font-family: 'Sora', sans-serif;
+  }
+/* ================================================================== */
+  .sa-product-display {
+    width: 100%;
+  }
 
-    .sa-explore-heading{
-      margin: 0;
-      color: #071b33;
-      font-size: 82px;
-      line-height: 0.95;
-      font-weight: 800;
-      font-family:'Sora', sans-serif;
-    }
+  .sa-product-section {
+    display: none;
+    animation: saFadeIn 0.35s ease;
+  }
 
-    .sa-product-display{
-      width: 100%;
-    }
+  .sa-product-section.active {
+    display: block;
+  }
 
-    .sa-product-section{
-      display: none;
-      animation: saFadeIn 0.35s ease;
-    }
+  .sa-product-detail-card {
+    display: grid;
+    grid-template-columns: 1.02fr 1fr;
+    gap: 28px;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 30px;
+    padding: 24px;
+    box-shadow: 0 18px 40px rgba(13, 27, 42, 0.06);
+    margin-bottom: 24px;
+  }
 
-    .sa-product-section.active{
-      display: block;
-    }
+  .sa-product-detail-image {
+    width: 70%;
+    /* reduce overall size */
+    height: 500px;
+    /* reduce height */
+    margin: auto;
+    /* center image box */
+    border-radius: 24px;
+    overflow: hidden;
+    background: #f1f1f1;
+  }
 
-    .sa-product-detail-card{
-      display: grid;
-      grid-template-columns: 1.02fr 1fr;
-      gap: 28px;
-      align-items: center;
-      background: #fff;
-      border: 1px solid #e8e8e8;
-      border-radius: 30px;
-      padding: 24px;
-      box-shadow: 0 18px 40px rgba(13, 27, 42, 0.06);
-      margin-bottom: 24px;
-    }
+  .sa-product-detail-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* full image visible */
+    display: block;
+  }
 
-    .sa-product-detail-image{
-       width: 70%;          /* reduce overall size */
-       height: 500px;       /* reduce height */
-       margin: auto;        /* center image box */
-       border-radius: 24px;
-       overflow: hidden;
-       background: #f1f1f1;
-    }
+  .sa-product-detail-content h2 {
+    margin: 0 0 14px;
+    font-size: 50px;
+    line-height: 1.1;
+    color: #0b1d34;
+    font-family: 'Sora', sans-serif;
+  }
 
-    .sa-product-detail-image img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;   /* full image visible */
-        display: block;
-    }
+  .sa-product-detail-label {
+    display: inline-block;
+    margin-bottom: 14px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(99, 168, 62, 0.10);
+    color: #63a83e;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+  }
 
-    .sa-product-detail-content h2{
-      margin: 0 0 14px;
-      font-size: 50px;
-      line-height: 1.1;
-      color: #0b1d34;
-      font-family:'Sora', sans-serif;
-    }
+  .sa-product-detail-content p {
+    margin: 0 0 18px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #66748a;
+  }
 
-    .sa-product-detail-label{
-      display: inline-block;
-      margin-bottom: 14px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(99, 168, 62, 0.10);
-      color: #63a83e;
-      font-size: 15px;
-      font-weight: 800;
-      letter-spacing: 1.4px;
-      text-transform: uppercase;
-    }
+  .sa-product-points {
+    list-style: none;
+    margin: 0 0 24px;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+  }
 
-    .sa-product-detail-content p{
-      margin: 0 0 18px;
-      font-size: 16px;
-      line-height: 1.8;
-      color: #66748a;
-    }
+  .sa-product-points li {
+    color: #32465d;
+    font-size: 16px;
+    line-height: 1.7;
+    padding-left: 22px;
+    position: relative;
+  }
 
-    .sa-product-points{
-      list-style:none;
-      margin:0 0 24px;
-      padding:0;
-      display:grid;
-      gap:10px;
-    }
+  .sa-product-points li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #63a83e;
+    font-weight: 800;
+  }
 
-    .sa-product-points li{
-      color:#32465d;
-      font-size:16px;
-      line-height:1.7;
-      padding-left:22px;
-      position:relative;
-    }
+  .sa-product-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 24px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #4341a8, #5b57dc);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 12px 24px rgba(67, 65, 168, 0.22);
+    transition: transform 0.3s ease;
+  }
 
-    .sa-product-points li::before{
-      content:"✓";
-      position:absolute;
-      left:0;
-      top:0;
-      color:#63a83e;
-      font-weight:800;
-    }
+  .sa-product-btn:hover {
+    transform: translateY(-2px);
+  }
 
-    .sa-product-btn{
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 24px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #4341a8, #5b57dc);
-      color: #fff;
-      text-decoration: none;
-      font-weight: 700;
-      box-shadow: 0 12px 24px rgba(67, 65, 168, 0.22);
-      transition: transform 0.3s ease;
-    }
+  /* extra info sections */
+  .sa-info-grid {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 24px;
+    margin-top: 24px;
+  }
 
-    .sa-product-btn:hover{
-      transform: translateY(-2px);
-    }
+  .sa-info-box {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 26px;
+    padding: 24px;
+    box-shadow: 0 18px 40px rgba(13, 27, 42, 0.05);
+  }
 
-    /* extra info sections */
-    .sa-info-grid{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:24px;
-      margin-top:24px;
-    }
+  .sa-info-box h3 {
+    font-size: 24px;
+    color: #0b1d34;
+    margin-bottom: 14px;
+    font-family: 'Sora', sans-serif;
+  }
 
-    .sa-info-box{
-      background:#fff;
-      border:1px solid #e8e8e8;
-      border-radius:26px;
-      padding:24px;
-      box-shadow: 0 18px 40px rgba(13, 27, 42, 0.05);
-    }
+  .sa-info-box h4 {
+    font-size: 18px;
+    color: #1f3150;
+    margin: 18px 0 10px;
+    font-family: 'Sora', sans-serif;
+  }
 
-    .sa-info-box h3{
-      font-size:24px;
-      color:#0b1d34;
-      margin-bottom:14px;
-      font-family:'Sora', sans-serif;
-    }
+  .sa-info-box p {
+    color: #66748a;
+    line-height: 1.8;
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
 
-    .sa-info-box h4{
-      font-size:18px;
-      color:#1f3150;
-      margin:18px 0 10px;
-      font-family:'Sora', sans-serif;
-    }
+  .sa-grade-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+  }
 
-    .sa-info-box p{
-      color:#66748a;
-      line-height:1.8;
-      font-size:15px;
-      margin-bottom:12px;
-    }
+  .sa-grade-pill {
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: #f3f6fb;
+    border: 1px solid #e3eaf3;
+    font-size: 13px;
+    font-weight: 700;
+    color: #334a62;
+  }
 
-    .sa-grade-list{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:16px;
-    }
+  .sa-shielding-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: grid;
+    gap: 10px;
+  }
 
-    .sa-grade-pill{
-      padding:10px 14px;
-      border-radius:999px;
-      background:#f3f6fb;
-      border:1px solid #e3eaf3;
-      font-size:13px;
-      font-weight:700;
-      color:#334a62;
-    }
+  .sa-shielding-list li {
+    background: #f7f9fc;
+    border: 1px solid #e7edf5;
+    border-radius: 16px;
+    padding: 12px 14px;
+    color: #395069;
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 600;
+  }
 
-    .sa-shielding-list{
-      list-style:none;
-      padding:0;
-      margin:10px 0 0;
-      display:grid;
-      gap:10px;
-    }
-
-    .sa-shielding-list li{
-      background:#f7f9fc;
-      border:1px solid #e7edf5;
-      border-radius:16px;
-      padding:12px 14px;
-      color:#395069;
-      font-size:14px;
-      line-height:1.6;
-      font-weight:600;
-    }
-
-    .sa-table-wrap{
+  .sa-table-wrap {
     margin-top: 24px;
     background: #fff;
     border: 1px solid #e8e8e8;
     border-radius: 26px;
     padding: 24px;
-    box-shadow: 0 18px 40px rgba(13,27,42,0.05);
-    overflow: hidden;          /* remove scrollbar */
+    box-shadow: 0 18px 40px rgba(13, 27, 42, 0.05);
+    overflow: hidden;
+    /* remove scrollbar */
     width: 100%;
-}
+  }
 
-/* TITLE */
-.sa-table-title{
+  /* TITLE */
+  .sa-table-title {
     font-size: 24px;
     color: #0b1d34;
     margin-bottom: 18px;
     font-family: 'Sora', sans-serif;
-}
+  }
 
-/* TABLE FULL WIDTH */
-.sa-table{
+  /* TABLE FULL WIDTH */
+  .sa-table {
     width: 100%;
     border-collapse: collapse;
-    table-layout: fixed;      /* fit columns */
-}
+    table-layout: fixed;
+    /* fit columns */
+  }
 
-/* CELLS */
-.sa-table th,
-.sa-table td{
+  /* CELLS */
+  .sa-table th,
+  .sa-table td {
     border: 1px solid #e3eaf2;
     padding: 14px 10px;
     text-align: center;
     font-size: 14px;
     color: #445a71;
     word-wrap: break-word;
-}
+  }
 
-/* HEADER */
-.sa-table th{
+  /* HEADER */
+  .sa-table th {
     background: #f5f8fc;
     color: #0b1d34;
     font-weight: 800;
+  }
+
+  /* ========================================================== */
+/* SECTION SMALL + LEFT ALIGN */
+.sa-brands-section {
+  padding: 40px 0; /* reduced spacing */
+  background: #fff;
 }
 
-    /* ========================================================== */
-
-    .sa-brands-section{
-    padding: 60px 0;
-    text-align: center;
-    background: #fff;
+/* CONTAINER (important for alignment) */
+.sa-brands-container {
+  width: 90%;
+  max-width: 1100px; /* reduce overall width */
+  margin: 0 auto;
 }
 
-/* TITLE */
-.sa-section-title{
-    font-size: 36px;
-    font-weight: 700;
-    color: #111;
-    margin-bottom: 40px;
-    position: relative;
-    display: inline-block;
+/* TITLE LEFT */
+.sa-section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 25px;
+  position: relative;
+  display: inline-block;
+   
 }
 
-.sa-section-title::after{
-    content: "";
-    width: 70px;
-    height: 4px;
-    background: gold;
-    position: absolute;
-    left: 50%;
-    bottom: -12px;
-    transform: translateX(-50%);
-    border-radius: 10px;
+/* underline LEFT aligned */
+.sa-section-title::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: gold;
+  position: absolute;
+  left: 10px;
+ 
+  bottom: -8px;
+  border-radius: 10px;
 }
 
-/* LOGO GRID CENTER */
-.sa-brand-strip{
-    display: grid;
-    grid-template-columns: repeat(3, 280px);   /* fixed card width */
-    justify-content: center;                  /* center full grid */
-    gap: 30px;
-    margin-top: 30px;
+/* GRID → 4 CARDS PER ROW */
+.sa-brand-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 logos per row */
+  gap: 20px;
 }
 
-/* CARD */
-.sa-brand-card{
-    background: #fff;
-    border: 1px solid #e8e8e8;
-    border-radius: 22px;
-    padding: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 170px;                       /* bigger card */
-    box-shadow: 0 16px 35px rgba(13,27,42,0.06);
-    transition: 0.4s ease;
+/* CARD SMALLER */
+.sa-brand-card {
+  
+  border: 1px solid #eee;
+  border-radius: 16px;
+  padding: 15px;
+  min-height: 120px; /* reduced height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: 0.3s ease;
+   margin-left: 50px;
+     margin-Right: 50px;
 }
 
-.sa-brand-card:hover{
-    transform: translateY(-8px);
-    box-shadow: 0 22px 45px rgba(13,27,42,0.12);
+.sa-brand-card:hover {
+  transform: translateY(-5px);
 }
 
-/* BIG LOGO */
-.sa-brand-card img{
-    max-width: 220px;
-    max-height: 110px;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    display: block;
+/* LOGO SMALLER */
+.sa-brand-card img {
+  max-width: 200px;
+  max-height: 100px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
-/* MOBILE */
-@media(max-width:992px){
-    .sa-brand-strip{
-        grid-template-columns: repeat(2, 240px);
+  /* MOBILE */
+  @media(max-width:992px) {
+    .sa-brand-strip {
+      grid-template-columns: repeat(2, 240px);
     }
-}
+  }
 
-@media(max-width:576px){
-    .sa-brand-strip{
-        grid-template-columns: 1fr;
-        justify-content: center;
+  @media(max-width:576px) {
+    .sa-brand-strip {
+      grid-template-columns: 1fr;
+      justify-content: center;
     }
 
-    .sa-brand-card{
-        width: 90%;
-        margin: auto;
+    .sa-brand-card {
+      width: 90%;
+      margin: auto;
     }
-}
+  }
+
   /* ========================================================== */
 
 
-    .sa-gallery-grid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:18px;
-      margin-top:24px;
+  .sa-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 24px;
+  }
+
+  .sa-gallery-card {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 16px 35px rgba(13, 27, 42, 0.04);
+  }
+
+  .sa-gallery-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    display: block;
+  }
+
+  .sa-note-box {
+    margin-top: 24px;
+    background: linear-gradient(135deg, #1f255f, #4341a8);
+    border-radius: 24px;
+    padding: 22px 24px;
+    color: #fff;
+  }
+
+  .sa-note-box h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-family: 'Sora', sans-serif;
+  }
+
+  .sa-note-box p {
+    color: rgba(255, 255, 255, .88);
+    line-height: 1.8;
+    font-size: 15px;
+    margin: 0;
+  }
+
+  @keyframes saFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
     }
 
-    .sa-gallery-card{
-      background:#fff;
-      border:1px solid #e8e8e8;
-      border-radius:22px;
-      overflow:hidden;
-      box-shadow: 0 16px 35px rgba(13, 27, 42, 0.04);
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  
+  @media (max-width: 1200px) {
+    .sa-explore-container {
+      padding: 0 20px;
+      gap: 24px;
     }
 
-    .sa-gallery-card img{
-      width:100%;
-      height:220px;
-      object-fit:cover;
-      display:block;
+    .sa-explore-sidebar {
+      width: 330px;
+      min-width: 330px;
     }
 
-    .sa-note-box{
-      margin-top:24px;
-      background:linear-gradient(135deg, #1f255f, #4341a8);
-      border-radius:24px;
-      padding:22px 24px;
-      color:#fff;
+    .sa-explore-heading {
+      font-size: 62px;
     }
 
-    .sa-note-box h3{
-      font-size:22px;
-      margin-bottom:10px;
-      font-family:'Sora', sans-serif;
+    .sa-product-detail-card {
+      grid-template-columns: 1fr;
     }
 
-    .sa-note-box p{
-      color:rgba(255,255,255,.88);
-      line-height:1.8;
-      font-size:15px;
-      margin:0;
+    .sa-product-detail-image {
+      height: 360px;
     }
 
-    @keyframes saFadeIn{
-      from{
-        opacity:0;
-        transform:translateY(10px);
-      }
-      to{
-        opacity:1;
-        transform:translateY(0);
-      }
+    .sa-info-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 991px) {
+
+    .nav-links,
+    .nav-cta {
+      display: none;
     }
 
-    /* footer */
-    .footer{
-      position: relative;
-      background: #0d1b2a;
-      color: rgba(255,255,255,.7);
-      padding: 80px 0 0;
-      overflow: hidden;
-      margin-top: 70px;
+    .hamburger {
+      display: flex;
     }
 
-    .footer-wave{
-      position: absolute;
-      top: -2px;
-      left: 0;
-      right: 0;
-      height: 60px;
-      background: #ffffff;
-      clip-path: ellipse(55% 100% at 50% 0%);
+    #navbar {
+      padding: 14px 20px;
     }
 
-    .footer-grid{
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1.5fr;
-      gap: 48px;
-      padding-top: 40px;
+    .sa-explore-container {
+      flex-direction: column;
     }
 
-    .footer-name{
-      display:block;
-      color:#fff;
-      font-size:28px;
-      font-weight:800;
-      font-family:'Sora', sans-serif;
+    .sa-explore-sidebar {
+      width: 100%;
+      min-width: 100%;
+      position: static;
     }
 
-    .footer-tagline{
-      display:block;
-      margin-top:8px;
-      color:#66A83D;
-      font-size:14px;
-      font-weight:600;
+    .sa-explore-heading {
+      font-size: 48px;
     }
 
-    .footer-about{
-      margin-top:18px;
-      line-height:1.8;
-      max-width:420px;
+    .sa-product-detail-content h2 {
+      font-size: 30px;
     }
 
-    .footer-socials{
-      display:flex;
-      gap:12px;
-      margin-top:20px;
+    .sa-brand-strip {
+      grid-template-columns: repeat(2, 1fr);
     }
 
-    .social-btn{
-      width:40px;
-      height:40px;
-      border-radius:50%;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      text-decoration:none;
-      background:rgba(255,255,255,0.08);
-      color:#fff;
-      font-weight:700;
+    .sa-gallery-grid {
+      grid-template-columns: 1fr;
     }
 
-    .footer-links-col h4{
-      color:#fff;
-      margin-bottom:16px;
-      font-size:18px;
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 575px) {
+    .product-hero-simple {
+      min-height: 52vh;
+      padding: 110px 0 70px;
     }
 
-    .footer-links-col ul{
-      list-style:none;
-      padding:0;
-      margin:0;
+    .sa-explore-product {
+      padding: 50px 0;
     }
 
-    .footer-links-col ul li{
-      margin-bottom:12px;
-      line-height:1.7;
+    .sa-explore-container {
+      padding: 0 14px;
     }
 
-    .footer-links-col ul li a{
-      color:rgba(255,255,255,.75);
-      text-decoration:none;
+    .sa-sidebar-box {
+      border-radius: 24px;
+      padding: 24px 16px;
     }
 
-    .footer-bottom{
-      margin-top:50px;
-      padding:20px 0;
-      border-top:1px solid rgba(255,255,255,0.08);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
-      flex-wrap:wrap;
-      font-size:14px;
+    .sa-sidebar-title {
+      font-size: 28px;
     }
 
-    @media (max-width: 1200px){
-      .sa-explore-container{
-        padding: 0 20px;
-        gap: 24px;
-      }
-
-      .sa-explore-sidebar{
-        width: 330px;
-        min-width: 330px;
-      }
-
-      .sa-explore-heading{
-        font-size: 62px;
-      }
-
-      .sa-product-detail-card{
-        grid-template-columns: 1fr;
-      }
-
-      .sa-product-detail-image{
-        height: 360px;
-      }
-
-      .sa-info-grid{
-        grid-template-columns:1fr;
-      }
+    .sa-dropdown-toggle {
+      font-size: 15px;
+      padding: 16px 14px;
     }
 
-    @media (max-width: 991px){
-      .nav-links,
-      .nav-cta{
-        display:none;
-      }
-
-      .hamburger{
-        display:flex;
-      }
-
-      #navbar{
-        padding:14px 20px;
-      }
-
-      .sa-explore-container{
-        flex-direction: column;
-      }
-
-      .sa-explore-sidebar{
-        width: 100%;
-        min-width: 100%;
-        position: static;
-      }
-
-      .sa-explore-heading{
-        font-size: 48px;
-      }
-
-      .sa-product-detail-content h2{
-        font-size: 30px;
-      }
-
-      .sa-brand-strip{
-        grid-template-columns:repeat(2, 1fr);
-      }
-
-      .sa-gallery-grid{
-        grid-template-columns:1fr;
-      }
-
-      .footer-grid{
-        grid-template-columns:1fr 1fr;
-      }
+    .sa-dropdown-menu {
+      padding: 0 14px;
     }
 
-    @media (max-width: 575px){
-      .product-hero-simple{
-        min-height:52vh;
-        padding:110px 0 70px;
-      }
-
-      .sa-explore-product{
-        padding:50px 0;
-      }
-
-      .sa-explore-container{
-        padding:0 14px;
-      }
-
-      .sa-sidebar-box{
-        border-radius:24px;
-        padding:24px 16px;
-      }
-
-      .sa-sidebar-title{
-        font-size:28px;
-      }
-
-      .sa-dropdown-toggle{
-        font-size:15px;
-        padding:16px 14px;
-      }
-
-      .sa-dropdown-menu{
-        padding:0 14px;
-      }
-
-      .sa-dropdown.active .sa-dropdown-menu{
-        padding:4px 14px 8px;
-      }
-
-      .sa-explore-heading{
-        font-size:40px;
-      }
-
-      .sa-product-detail-card,
-      .sa-info-box,
-      .sa-table-wrap{
-        padding:16px;
-        border-radius:22px;
-      }
-
-      .sa-product-detail-image{
-        height:250px;
-        border-radius:18px;
-      }
-
-      .sa-product-detail-content h2{
-        font-size:24px;
-      }
-
-      .sa-brand-strip{
-        grid-template-columns:1fr;
-      }
-
-      .footer-grid{
-        grid-template-columns:1fr;
-      }
+    .sa-dropdown.active .sa-dropdown-menu {
+      padding: 4px 14px 8px;
     }
-    /* =========================
+
+    .sa-explore-heading {
+      font-size: 40px;
+    }
+
+    .sa-product-detail-card,
+    .sa-info-box,
+    .sa-table-wrap {
+      padding: 16px;
+      border-radius: 22px;
+    }
+
+    .sa-product-detail-image {
+      height: 250px;
+      border-radius: 18px;
+    }
+
+    .sa-product-detail-content h2 {
+      font-size: 24px;
+    }
+
+    .sa-brand-strip {
+      grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* =========================
    PRODUCT DROPDOWN SKETCH STYLE
 ========================= */
-.sa-has-product{
-  position: relative;
-}
-
-.sa-nav-link-with-arrow{
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.sa-arrow{
-  transition: transform 0.3s ease;
-}
-
-/* wrapper */
-.sa-product-dropdown-wrap{
-  position: absolute;
-  top: 100%;
-  left: 0;
-  display: flex;
-  align-items: flex-start;
-  gap: 18px;
-  padding-top: 0;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  z-index: 999;
-  transition: opacity 0.25s ease, visibility 0.25s ease;
-}
-
-/* hover open */
-.sa-has-product:hover .sa-product-dropdown-wrap,
-.sa-product-dropdown-wrap:hover{
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-.sa-has-product:hover .sa-arrow{
-  transform: rotate(180deg);
-}
-
-/* left tall box */
-.sa-main-product-box{
-  width: 310px;
-  max-height: 520px;
-  overflow-y: auto;
-  background: #ffffff;
-  border: 1px solid rgba(13, 27, 42, 0.10);
-  border-radius: 18px;
-  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.14);
-  padding: 14px;
-}
-
-.sa-main-product-box::-webkit-scrollbar{
-  width: 6px;
-}
-
-.sa-main-product-box::-webkit-scrollbar-thumb{
-  background: rgba(31,58,95,0.18);
-  border-radius: 20px;
-}
-
-.sa-main-product-link{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  text-decoration: none;
-  width: 100%;
-  padding: 13px 14px;
-  margin-bottom: 8px;
-  border-radius: 14px;
-  border: 1px solid rgba(13, 27, 42, 0.06);
-  background: #f8fafc;
-  color: var(--sa-text);
-  font-size: 0.95rem;
-  font-weight: 700;
-  line-height: 1.35;
-  transition: all 0.25s ease;
-}
-
-.sa-main-product-link:last-child{
-  margin-bottom: 0;
-}
-
-.sa-main-product-link:hover,
-.sa-main-product-link.active{
-  background: #ffffff;
-  border-color: rgba(31,58,95,0.18);
-  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
-}
-
-.sa-link-arrow{
-  flex-shrink: 0;
-  color: var(--sa-brand);
-  font-size: 1rem;
-}
-
-/* right small box */
-.sa-sub-product-box{
-  width: 255px;
-  min-height: 180px;
-  background: #ffffff;
-  border: 1px solid rgba(13, 27, 42, 0.10);
-  border-radius: 16px;
-  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
-  padding: 14px;
-  margin-top: 14px;
-}
-
-.sa-submenu-panel{
-  display: none;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.sa-submenu-panel.active{
-  display: flex;
-}
-
-.sa-submenu-panel a{
-  text-decoration: none;
-  padding: 11px 12px;
-  border-radius: 12px;
-  background: #f8fafc;
-  border: 1px solid rgba(13, 27, 42, 0.06);
-  color: var(--sa-text);
-  font-size: 0.9rem;
-  font-weight: 600;
-  line-height: 1.35;
-  transition: all 0.25s ease;
-}
-
-.sa-submenu-panel a:hover{
-  background: #ffffff;
-  border-color: rgba(31,58,95,0.16);
-  transform: translateX(2px);
-}
-
-/* =========================
-   MOBILE
-========================= */
-@media (max-width: 991px){
-  .sa-has-product{
-    width: 100%;
+  .sa-has-product {
+    position: relative;
   }
 
-  .sa-nav-link-with-arrow{
-    width: 100%;
-    justify-content: space-between;
-    padding: 14px 0;
+  .sa-nav-link-with-arrow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
 
-  .sa-product-dropdown-wrap{
-    position: static;
-    display: none;
+  .sa-arrow {
+    transition: transform 0.3s ease;
+  }
+
+  /* wrapper */
+  .sa-product-dropdown-wrap {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding-top: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 999;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+  }
+
+  /* hover open */
+  .sa-has-product:hover .sa-product-dropdown-wrap,
+  .sa-product-dropdown-wrap:hover {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    gap: 12px;
-    flex-direction: column;
-    margin-top: 10px;
   }
 
-  .sa-has-product.open .sa-product-dropdown-wrap{
-    display: flex;
-  }
-
-  .sa-has-product:hover .sa-arrow{
-    transform: none;
-  }
-
-  .sa-has-product.open .sa-arrow{
+  .sa-has-product:hover .sa-arrow {
     transform: rotate(180deg);
   }
 
-  .sa-main-product-box,
-  .sa-sub-product-box{
-    width: 100%;
-    max-height: 280px;
-    margin-top: 0;
-    border-radius: 14px;
-    box-shadow: none;
-  }
-}
-
-@media (max-width: 640px){
-  .sa-main-product-link{
-    font-size: 0.88rem;
-    padding: 12px;
+  /* left tall box */
+  .sa-main-product-box {
+    width: 310px;
+    max-height: 520px;
+    overflow-y: auto;
+    background: #ffffff;
+    border: 1px solid rgba(13, 27, 42, 0.10);
+    border-radius: 18px;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.14);
+    padding: 14px;
   }
 
-  .sa-submenu-panel a{
-    font-size: 0.84rem;
-    padding: 10px 11px;
-  }
-}
-.sa-more-products{
-  display:none;
-}
-
-.sa-more-products.active{
-  display:block;
-}
-
-.sa-view-more-btn{
-  width:100%;
-  margin-top:8px;
-  padding:13px 0 6px;
-  border:none;
-  background:transparent;
-  color:#4341a8;
-  font-size:14px;
-  font-weight:800;
-  letter-spacing:.4px;
-  text-align:left;
-  cursor:pointer;
-}
-
-.sa-view-more-btn:hover{
-  opacity:.85;
-}
-/* special horizontal image layout for TIG torch spares */
-.sa-wide-gallery{
-  margin-top: 24px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  overflow: hidden;
-  border-radius: 22px;
-  border: 1px solid #e8e8e8;
-  background: #fff;
-  box-shadow: 0 16px 35px rgba(13, 27, 42, 0.04);
-}
-
-.sa-wide-gallery-card{
-  min-height: 220px;
-  border-right: 1px solid #e8e8e8;
-  background: #fff;
-}
-
-.sa-wide-gallery-card:last-child{
-  border-right: none;
-}
-
-.sa-wide-gallery-card img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.sa-mini-table-wrap{
-  margin-top: 24px;
-  background: #fff;
-  border: 1px solid #e8e8e8;
-  border-radius: 22px;
-  padding: 18px;
-  box-shadow: 0 16px 35px rgba(13, 27, 42, 0.04);
-  overflow: auto;
-}
-
-.sa-mini-title{
-  font-size: 20px;
-  color: #0b1d34;
-  margin-bottom: 14px;
-  font-family: 'Sora', sans-serif;
-}
-
-@media (max-width: 767px){
-  .sa-wide-gallery{
-    grid-template-columns: 1fr;
+  .sa-main-product-box::-webkit-scrollbar {
+    width: 6px;
   }
 
-  .sa-wide-gallery-card{
-    min-height: 200px;
-    border-right: none;
-    border-bottom: 1px solid #e8e8e8;
+  .sa-main-product-box::-webkit-scrollbar-thumb {
+    background: rgba(31, 58, 95, 0.18);
+    border-radius: 20px;
   }
 
-  .sa-wide-gallery-card:last-child{
-    border-bottom: none;
-  }
-}
-/* CONTACT BUTTON STYLE UPDATE */
-.nav-cta {
-  background: #1e3a8a; /* Blue background */
-  color: #ffffff !important; /* White text */
-  padding: 10px 24px; /* same size ठेवण्यासाठी */
-  border-radius: 30px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-/* Hover effect */
-.nav-cta:hover {
-  background: #0f2a6b; /* Dark blue on hover */
-  color: #ffffff;
-}
-.sa-sidebar-enquiry-btn{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin-top: 14px;
-  padding: 13px 16px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #0f2d52, #1b4b80);
-  color: #fff !important;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: .3px;
-  border: none;
-  transition: all 0.3s ease;
-}
-
-.sa-sidebar-enquiry-btn:hover{
-  transform: translateY(-2px);
-  background: linear-gradient(135deg, #133866, #225a99);
-}
-
-
-*/
-
-.product-hero-simple .container{
-  position: relative;
-  z-index: 2;
-}
-
-.product-hero-content{
-  text-align: center;
-  color: #fff;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.product-page-tag{
-  display: inline-block;
-  margin-bottom: 14px;
-  padding: 8px 18px;
-  border-radius: 30px;
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.18);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  backdrop-filter: blur(6px);
-  color: #fff;
-}
-
-
-
-.product-hero-content p{
-  font-size: 18px;
-  line-height: 1.7;
-  color: rgba(255,255,255,0.92);
-  margin: 0 auto;
-  max-width: 760px;
-}
-
-
-  .product-hero-content p{
-    font-size: 16px;
-  }
-
-@media (max-width: 576px){
-  .product-hero-simple{
-    min-height: 360px;
-  }
-
-.product-hero-content h1{
-  font-size: 72px;        /* gallery sarkha motha */
-  font-weight: 800;
-  line-height: 1.1;
-  margin-bottom: 15px;
-}
-.product-hero-content p{
-  color: #ffffff;   /* white text */
-  font-size: 16px;
-  max-width: 650px;
-  margin: auto;
-  opacity: 0.95;   /* thoda smooth look */
-}
-/* .product-hero-bg::after{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.5); /* dark overlay 
-} */
-  .product-page-tag{
-    font-size: 12px;
-    padding: 7px 14px;
-  }
-}
-
-/* BLUE */
-.text-blue{
-  color: #2E2F78;
-}
-
-/* GREEN */
-.text-green{
-  color: #66A83D;
-  margin-left: 8px;
-}
-
-/* paragraph */
-.product-hero-content p{
-  font-size: 16px;
-  color: #555;
-  max-width: 600px;
-}
-/* =========================
-   PRODUCT HERO - CLEAN FINAL
-========================= */
-.product-hero-simple{
-  position: relative;
-      display: flex;
-
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      padding: 10px 0 90px;
-}
-
-.product-hero-simple .container{
-  position: relative;
-  z-index: 3;
-}
-
-.product-hero-content{
-  max-width: 980px;
-  margin-bottom: 80px;
-  margin-top: 80px;
-  text-align: center;
-  padding: 0 20px;
-}
-
-.product-page-tag{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 18px;
-  margin-bottom: 20px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.14);
-  border: 1px solid rgba(255,255,255,0.22);
-  backdrop-filter: blur(8px);
-  color: #ffffff;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1.4px;
-  text-transform: uppercase;
-}
-
-.product-hero-content h1{
-  margin: 0 0 18px;
-  font-size: clamp(52px, 8vw, 88px);
-  line-height: 1.05;
-  font-weight: 800;
-  letter-spacing: -2px;
-  font-family: 'Sora', sans-serif;
-}
-
-.text-blue{
-  color: #66A83D;
-}
-
-.text-green{
-  color: #2E2F78;
-  margin-left: 10px;
-}
-
-.product-hero-content p{
-  margin: 0 auto;
-  max-width: 860px;
-  font-size: clamp(18px, 2.1vw, 30px);
-  line-height: 1.7;
-  color: #000000;
-  font-weight: 500;
-}
-
-/* responsive */
-@media (max-width: 991px){
-  .product-hero-simple{
-    min-height: 470px;
-    padding: 110px 0 80px;
-  }
-
-  .product-hero-content h1{
-    letter-spacing: -1px;
-  }
-
-  .product-hero-content p{
-    max-width: 720px;
-  }
-}
-
-@media (max-width: 576px){
-  .product-hero-simple{
-    min-height: 380px;
-    padding: 90px 0 65px;
-  }
-
-  .product-hero-content{
-    padding: 0 14px;
-  }
-
-  .product-hero-content h1{
-    font-size: 42px;
-    line-height: 1.12;
-    margin-bottom: 12px;
-  }
-
-  .text-green{
-    margin-left: 6px;
-  }
-
-  .product-hero-content p{
-    font-size: 15px;
-    line-height: 1.65;
-    max-width: 100%;
-  }
-
-  .product-page-tag{
-    font-size: 11px;
-    padding: 7px 14px;
-    margin-bottom: 14px;
-  }
-}
-/* =========================================================
-   FINAL PRODUCT PAGE MOBILE RESPONSIVE + HAMBURGER
-   desktop untouched
-========================================================= */
-
-html, body{
-  overflow-x: hidden;
-}
-
-img{
-  max-width: 100%;
-  height: auto;
-}
-
-.ps-mobile-overlay{
-  display: none;
-}
-
-/* =========================
-   HEADER / HAMBURGER
-========================= */
-@media (max-width: 991px){
-
-  .ps-header{
-    position: fixed !important;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10050 !important;
-    background: rgba(255,255,255,0.98) !important;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(13,27,42,0.08);
-  }
-
-  .ps-header-inner{
-    min-height: 72px;
-    padding: 0 14px;
+  .sa-main-product-link {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 12px;
-    position: relative;
-    z-index: 10051;
-  }
-
-  .ps-logo-wrap,
-  .ps-logo-box,
-  .ps-logo-img,
-  .ps-logo-text{
-    position: relative;
-    z-index: 10052 !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-
-  .ps-logo-wrap{
-    display: flex;
-    align-items: center;
     gap: 10px;
     text-decoration: none;
-    min-width: 0;
-  }
-
-  .ps-logo-img{
-    display: block !important;
-    width: 50px;
-    height: auto;
-    object-fit: contain;
-  }
-
-  .ps-logo-title{
-    font-size: 14px;
-    line-height: 1;
-    color: #2E2F78 !important;
-    font-weight: 800;
-  }
-
-  .ps-logo-sub{
-    font-size: 11px;
-    line-height: 1.1;
-    color: #66A83D !important;
+    width: 100%;
+    padding: 13px 14px;
+    margin-bottom: 8px;
+    border-radius: 14px;
+    border: 1px solid rgba(13, 27, 42, 0.06);
+    background: #f8fafc;
+    color: var(--sa-text);
+    font-size: 0.95rem;
     font-weight: 700;
-    letter-spacing: 0.5px;
+    line-height: 1.35;
+    transition: all 0.25s ease;
   }
 
-  .ps-contact-btn{
-    display: none !important;
+  .sa-main-product-link:last-child {
+    margin-bottom: 0;
   }
 
-  .ps-menu-toggle{
-    display: flex !important;
-    width: 42px;
-    height: 42px;
-    padding: 0;
+  .sa-main-product-link:hover,
+  .sa-main-product-link.active {
+    background: #ffffff;
+    border-color: rgba(31, 58, 95, 0.18);
+    box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+  }
+
+  .sa-link-arrow {
+    flex-shrink: 0;
+    color: var(--sa-brand);
+    font-size: 1rem;
+  }
+
+  /* right small box */
+  .sa-sub-product-box {
+    width: 255px;
+    min-height: 180px;
+    background: #ffffff;
+    border: 1px solid rgba(13, 27, 42, 0.10);
+    border-radius: 16px;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+    padding: 14px;
+    margin-top: 14px;
+  }
+
+  .sa-submenu-panel {
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .sa-submenu-panel.active {
+    display: flex;
+  }
+
+  .sa-submenu-panel a {
+    text-decoration: none;
+    padding: 11px 12px;
+    border-radius: 12px;
+    background: #f8fafc;
+    border: 1px solid rgba(13, 27, 42, 0.06);
+    color: var(--sa-text);
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.35;
+    transition: all 0.25s ease;
+  }
+
+  .sa-submenu-panel a:hover {
+    background: #ffffff;
+    border-color: rgba(31, 58, 95, 0.16);
+    transform: translateX(2px);
+  }
+
+  /* =========================
+   MOBILE
+========================= */
+  @media (max-width: 991px) {
+    .sa-has-product {
+      width: 100%;
+    }
+
+    .sa-nav-link-with-arrow {
+      width: 100%;
+      justify-content: space-between;
+      padding: 14px 0;
+    }
+
+    .sa-product-dropdown-wrap {
+      position: static;
+      display: none;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      gap: 12px;
+      flex-direction: column;
+      margin-top: 10px;
+    }
+
+    .sa-has-product.open .sa-product-dropdown-wrap {
+      display: flex;
+    }
+
+    .sa-has-product:hover .sa-arrow {
+      transform: none;
+    }
+
+    .sa-has-product.open .sa-arrow {
+      transform: rotate(180deg);
+    }
+
+    .sa-main-product-box,
+    .sa-sub-product-box {
+      width: 100%;
+      max-height: 280px;
+      margin-top: 0;
+      border-radius: 14px;
+      box-shadow: none;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .sa-main-product-link {
+      font-size: 0.88rem;
+      padding: 12px;
+    }
+
+    .sa-submenu-panel a {
+      font-size: 0.84rem;
+      padding: 10px 11px;
+    }
+  }
+
+  .sa-more-products {
+    display: none;
+  }
+
+  .sa-more-products.active {
+    display: block;
+  }
+
+  .sa-view-more-btn {
+    width: 100%;
+    margin-top: 8px;
+    padding: 13px 0 6px;
     border: none;
-    background: transparent !important;
+    background: transparent;
+    color: #4341a8;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: .4px;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .sa-view-more-btn:hover {
+    opacity: .85;
+  }
+
+  /* special horizontal image layout for TIG torch spares */
+  .sa-wide-gallery {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    overflow: hidden;
+    border-radius: 22px;
+    border: 1px solid #e8e8e8;
+    background: #fff;
+    box-shadow: 0 16px 35px rgba(13, 27, 42, 0.04);
+  }
+
+  .sa-wide-gallery-card {
+    min-height: 220px;
+    border-right: 1px solid #e8e8e8;
+    background: #fff;
+  }
+
+  .sa-wide-gallery-card:last-child {
+    border-right: none;
+  }
+
+  .sa-wide-gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .sa-mini-table-wrap {
+    margin-top: 24px;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 22px;
+    padding: 18px;
+    box-shadow: 0 16px 35px rgba(13, 27, 42, 0.04);
+    overflow: auto;
+  }
+
+  .sa-mini-title {
+    font-size: 20px;
+    color: #0b1d34;
+    margin-bottom: 14px;
+    font-family: 'Sora', sans-serif;
+  }
+
+  @media (max-width: 767px) {
+    .sa-wide-gallery {
+      grid-template-columns: 1fr;
+    }
+
+    .sa-wide-gallery-card {
+      min-height: 200px;
+      border-right: none;
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    .sa-wide-gallery-card:last-child {
+      border-bottom: none;
+    }
+  }
+
+  /* CONTACT BUTTON STYLE UPDATE */
+  .nav-cta {
+    background: #1e3a8a;
+    /* Blue background */
+    color: #ffffff !important;
+    /* White text */
+    padding: 10px 24px;
+    /* same size ठेवण्यासाठी */
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  /* Hover effect */
+  .nav-cta:hover {
+    background: #0f2a6b;
+    /* Dark blue on hover */
+    color: #ffffff;
+  }
+
+  .sa-sidebar-enquiry-btn {
+    display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    z-index: 10053 !important;
-    flex-shrink: 0;
-  }
-
-  .ps-menu-toggle span{
-    display: block;
-    width: 22px;
-    height: 2.4px;
-    border-radius: 999px;
-    background: #1f2937 !important;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-  }
-
-  .ps-menu-toggle.active span:nth-child(1){
-    transform: translateY(7px) rotate(45deg);
-  }
-
-  .ps-menu-toggle.active span:nth-child(2){
-    opacity: 0;
-  }
-
-  .ps-menu-toggle.active span:nth-child(3){
-    transform: translateY(-7px) rotate(-45deg);
-  }
-
-  .ps-mobile-overlay{
-    display: block;
-    position: fixed;
-    top: 72px;
-    left: 0;
     width: 100%;
-    height: calc(100vh - 72px);
-    background: rgba(0,0,0,0.18);
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.3s ease;
-    z-index: 10039 !important;
-  }
-
-  .ps-mobile-overlay.active{
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .ps-nav{
-    position: fixed !important;
-    top: 72px !important;
-    left: 0;
-    width: min(82vw, 320px) !important;
-    height: calc(100vh - 72px) !important;
-    background: #f3f3f3 !important;
-    transform: translateX(-100%);
-    transition: transform 0.35s ease;
-    z-index: 10040 !important;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding: 18px 22px 24px !important;
-    border-top-right-radius: 24px;
-    border-bottom-right-radius: 24px;
-    box-shadow: 14px 0 35px rgba(0,0,0,0.10);
-  }
-
-  .ps-nav.active{
-    transform: translateX(0);
-  }
-
-  .ps-nav-list{
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: stretch;
-    gap: 0;
-    list-style: none;
-    margin: 0 !important;
-    padding: 0 !important;
-    background: transparent !important;
-    border: none !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-  }
-
-  .ps-nav-list > li{
-    width: 100%;
-    border-bottom: 1px solid rgba(0,0,0,0.07);
-    background: transparent !important;
-  }
-
-  .ps-nav-list > li:last-child{
-    border-bottom: none;
-  }
-
-  .ps-nav-link,
-  .ps-dropdown-toggle,
-  .ps-nav-link.active,
-  .ps-nav-link:visited,
-  .ps-nav-link:focus{
-    width: 100%;
-    display: flex !important;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px 0 !important;
-    text-decoration: none;
-    color: #2E2F78 !important;
-    font-weight: 700 !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    opacity: 1 !important;
-    -webkit-text-fill-color: #2E2F78 !important;
-  }
-
-  .ps-drop-caret,
-  .ps-item-arrow{
-    color: #2E2F78 !important;
-  }
-
-  .ps-dropdown-stage{
-    display: none;
-    position: static !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    transform: none !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-    margin-top: 4px;
-    padding: 0 !important;
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-  }
-
-  .ps-dropdown.open .ps-dropdown-stage{
-    display: block;
-  }
-
-  .ps-main-dropdown-box,
-  .ps-sub-floating-box{
-    width: 100% !important;
-    max-width: 100% !important;
+    margin-top: 14px;
+    padding: 13px 16px;
     border-radius: 14px;
-    border: 1px solid rgba(0,0,0,0.06);
-    box-shadow: none !important;
-    overflow: hidden;
-    background: #ffffff !important;
-  }
-
-  .ps-main-products-scroll{
-    max-height: 220px;
-    overflow-y: auto;
-  }
-
-  .ps-main-product-item{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-align: left;
-    border: none;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-    background: #fff;
-    color: #2E2F78;
-    padding: 12px 14px;
-    cursor: pointer;
-  }
-
-  .ps-submenu-panel{
-    display: none;
-  }
-
-  .ps-submenu-panel.active{
-    display: block;
-  }
-
-  .ps-submenu-panel a{
-    display: block;
-    padding: 11px 14px;
+    background: linear-gradient(135deg, #0f2d52, #1b4b80);
+    color: #fff !important;
     text-decoration: none;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    background: #fff;
-    color: #2E2F78 !important;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .3px;
+    border: none;
+    transition: all 0.3s ease;
   }
 
-  body.ps-menu-open{
-    overflow: hidden;
-  }
-}
-
-/* =========================
-   PRODUCT HERO
-========================= */
-@media (max-width: 991px){
-  .product-hero-simple{
-    margin-top: 72px;
-    min-height: 380px;
-    padding: 90px 0 60px;
+  .sa-sidebar-enquiry-btn:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #133866, #225a99);
   }
 
-  .product-hero-content{
-    padding: 0 14px;
-  }
-
-  .product-hero-content h1{
-    font-size: clamp(34px, 8vw, 52px);
-    line-height: 1.12;
-    margin-bottom: 12px;
-  }
-
-  .product-hero-content p{
-    font-size: 15px !important;
-    line-height: 1.7;
-    max-width: 100%;
-  }
-}
-
-/* =========================
+  /* =========================
    PRODUCT LAYOUT
 ========================= */
-@media (max-width: 1200px){
-  .sa-explore-container{
-    padding: 0 20px !important;
-    gap: 24px !important;
+  @media (max-width: 1200px) {
+    .sa-explore-container {
+      padding: 0 20px !important;
+      gap: 24px !important;
+    }
+
+    .sa-explore-sidebar {
+      width: 320px !important;
+      min-width: 320px !important;
+    }
+
+    .sa-explore-heading {
+      font-size: 56px !important;
+    }
   }
 
-  .sa-explore-sidebar{
-    width: 320px !important;
-    min-width: 320px !important;
+  @media (max-width: 991px) {
+    .sa-explore-product {
+      padding: 50px 0 !important;
+    }
+
+    .sa-explore-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px !important;
+      padding: 0 14px !important;
+    }
+
+    .sa-explore-sidebar {
+      width: 100% !important;
+      min-width: 100% !important;
+      position: static !important;
+      top: auto !important;
+    }
+
+    .sa-sidebar-box {
+      padding: 22px 16px !important;
+      border-radius: 22px !important;
+    }
+
+    .sa-sidebar-title {
+      font-size: 26px !important;
+      margin-bottom: 18px !important;
+    }
+
+    .sa-dropdown {
+      border-radius: 18px !important;
+      margin-bottom: 12px !important;
+    }
+
+    .sa-dropdown-toggle {
+      font-size: 15px !important;
+      padding: 16px 14px !important;
+    }
+
+    .sa-dropdown-menu {
+      padding: 0 14px !important;
+    }
+
+    .sa-dropdown.active .sa-dropdown-menu {
+      padding: 4px 14px 8px !important;
+    }
+
+    .sa-dropdown-menu a {
+      font-size: 14px !important;
+      padding: 11px 0 !important;
+      line-height: 1.55 !important;
+    }
+
+    .sa-view-more-btn,
+    .sa-sidebar-enquiry-btn {
+      font-size: 14px !important;
+    }
+
+    .sa-explore-main {
+      width: 100%;
+      min-width: 0;
+    }
+
+    .sa-explore-head {
+      margin-bottom: 18px !important;
+    }
+
+    .sa-explore-eyebrow {
+      font-size: 12px !important;
+      letter-spacing: 2px !important;
+    }
+
+    .sa-explore-heading {
+      font-size: 40px !important;
+      line-height: 1 !important;
+    }
+
+    .sa-product-detail-card {
+      grid-template-columns: 1fr !important;
+      gap: 18px !important;
+      padding: 16px !important;
+      border-radius: 22px !important;
+    }
+
+    .sa-product-detail-image {
+      height: 260px !important;
+      border-radius: 18px !important;
+    }
+
+    .sa-product-detail-content h2 {
+      font-size: 24px !important;
+      line-height: 1.18 !important;
+      margin-bottom: 12px !important;
+    }
+
+    .sa-product-detail-content p {
+      font-size: 14px !important;
+      line-height: 1.7 !important;
+    }
+
+    .sa-product-detail-label {
+      font-size: 11px !important;
+      padding: 7px 12px !important;
+    }
+
+    .sa-product-points {
+      gap: 8px !important;
+      margin: 0 0 18px !important;
+    }
+
+    .sa-product-points li {
+      font-size: 14px !important;
+      line-height: 1.65 !important;
+      padding-left: 20px !important;
+    }
+
+    .sa-product-btn {
+      width: 100%;
+      text-align: center;
+      padding: 13px 18px !important;
+    }
+
+    .sa-info-grid {
+      grid-template-columns: 1fr !important;
+      gap: 16px !important;
+      margin-top: 16px !important;
+    }
+
+    .sa-info-box,
+    .sa-table-wrap,
+    .sa-mini-table-wrap {
+      padding: 16px !important;
+      border-radius: 20px !important;
+    }
+
+    .sa-info-box h3,
+    .sa-table-title,
+    .sa-mini-title {
+      font-size: 20px !important;
+    }
+
+    .sa-info-box h4 {
+      font-size: 16px !important;
+    }
+
+    .sa-info-box p,
+    .sa-table th,
+    .sa-table td {
+      font-size: 14px !important;
+      line-height: 1.7 !important;
+    }
+
+    .sa-brand-strip {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 12px !important;
+      margin-top: 16px !important;
+    }
+
+    .sa-brand-card {
+      min-height: 82px !important;
+      border-radius: 16px !important;
+      padding: 14px !important;
+    }
+
+    .sa-wide-gallery {
+      grid-template-columns: 1fr !important;
+      border-radius: 18px !important;
+    }
+
+    .sa-wide-gallery-card {
+      min-height: 200px !important;
+      border-right: none !important;
+      border-bottom: 1px solid #e8e8e8 !important;
+    }
+
+    .sa-wide-gallery-card:last-child {
+      border-bottom: none !important;
+    }
+
+    .sa-note-box {
+      margin-top: 18px !important;
+      padding: 18px 16px !important;
+      border-radius: 18px !important;
+    }
+
+    .sa-note-box h3 {
+      font-size: 18px !important;
+    }
+
+    .sa-note-box p {
+      font-size: 14px !important;
+      line-height: 1.7 !important;
+    }
   }
 
-  .sa-explore-heading{
-    font-size: 56px !important;
-  }
-}
+  @media (max-width: 575px) {
+    .sa-explore-product {
+      padding: 42px 0 !important;
+    }
 
-@media (max-width: 991px){
-  .sa-explore-product{
-    padding: 50px 0 !important;
-  }
+    .sa-explore-container {
+      padding: 0 12px !important;
+    }
 
-  .sa-explore-container{
-    display: flex;
-    flex-direction: column;
-    gap: 20px !important;
-    padding: 0 14px !important;
-  }
+    .sa-sidebar-title {
+      font-size: 24px !important;
+    }
 
-  .sa-explore-sidebar{
-    width: 100% !important;
-    min-width: 100% !important;
-    position: static !important;
-    top: auto !important;
-  }
+    .sa-explore-heading {
+      font-size: 34px !important;
+    }
 
-  .sa-sidebar-box{
-    padding: 22px 16px !important;
-    border-radius: 22px !important;
-  }
+    .sa-product-detail-image {
+      height: 230px !important;
+    }
 
-  .sa-sidebar-title{
-    font-size: 26px !important;
-    margin-bottom: 18px !important;
+    .sa-brand-strip {
+      grid-template-columns: 1fr !important;
+    }
+
+    .sa-table {
+      min-width: 620px !important;
+    }
   }
 
-  .sa-dropdown{
-    border-radius: 18px !important;
-    margin-bottom: 12px !important;
-  }
-
-  .sa-dropdown-toggle{
-    font-size: 15px !important;
-    padding: 16px 14px !important;
-  }
-
-  .sa-dropdown-menu{
-    padding: 0 14px !important;
-  }
-
-  .sa-dropdown.active .sa-dropdown-menu{
-    padding: 4px 14px 8px !important;
-  }
-
-  .sa-dropdown-menu a{
-    font-size: 14px !important;
-    padding: 11px 0 !important;
-    line-height: 1.55 !important;
-  }
-
-  .sa-view-more-btn,
-  .sa-sidebar-enquiry-btn{
-    font-size: 14px !important;
-  }
-
-  .sa-explore-main{
-    width: 100%;
-    min-width: 0;
-  }
-
-  .sa-explore-head{
-    margin-bottom: 18px !important;
-  }
-
-  .sa-explore-eyebrow{
-    font-size: 12px !important;
-    letter-spacing: 2px !important;
-  }
-
-  .sa-explore-heading{
-    font-size: 40px !important;
-    line-height: 1 !important;
-  }
-
-  .sa-product-detail-card{
-    grid-template-columns: 1fr !important;
-    gap: 18px !important;
-    padding: 16px !important;
-    border-radius: 22px !important;
-  }
-
-  .sa-product-detail-image{
-    height: 260px !important;
-    border-radius: 18px !important;
-  }
-
-  .sa-product-detail-content h2{
-    font-size: 24px !important;
-    line-height: 1.18 !important;
-    margin-bottom: 12px !important;
-  }
-
-  .sa-product-detail-content p{
-    font-size: 14px !important;
-    line-height: 1.7 !important;
-  }
-
-  .sa-product-detail-label{
-    font-size: 11px !important;
-    padding: 7px 12px !important;
-  }
-
-  .sa-product-points{
-    gap: 8px !important;
-    margin: 0 0 18px !important;
-  }
-
-  .sa-product-points li{
-    font-size: 14px !important;
-    line-height: 1.65 !important;
-    padding-left: 20px !important;
-  }
-
-  .sa-product-btn{
-    width: 100%;
-    text-align: center;
-    padding: 13px 18px !important;
-  }
-
-  .sa-info-grid{
-    grid-template-columns: 1fr !important;
-    gap: 16px !important;
-    margin-top: 16px !important;
-  }
-
-  .sa-info-box,
-  .sa-table-wrap,
-  .sa-mini-table-wrap{
-    padding: 16px !important;
-    border-radius: 20px !important;
-  }
-
-  .sa-info-box h3,
-  .sa-table-title,
-  .sa-mini-title{
-    font-size: 20px !important;
-  }
-
-  .sa-info-box h4{
-    font-size: 16px !important;
-  }
-
-  .sa-info-box p,
-  .sa-table th,
-  .sa-table td{
-    font-size: 14px !important;
-    line-height: 1.7 !important;
-  }
-
-  .sa-brand-strip{
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 12px !important;
-    margin-top: 16px !important;
-  }
-
-  .sa-brand-card{
-    min-height: 82px !important;
-    border-radius: 16px !important;
-    padding: 14px !important;
-  }
-
-  .sa-gallery-grid{
-    grid-template-columns: 1fr !important;
-    gap: 14px !important;
-    margin-top: 16px !important;
-  }
-
-  .sa-gallery-card{
-    border-radius: 18px !important;
-  }
-
-  .sa-gallery-card img{
-    height: 210px !important;
-  }
-
-  .sa-wide-gallery{
-    grid-template-columns: 1fr !important;
-    border-radius: 18px !important;
-  }
-
-  .sa-wide-gallery-card{
-    min-height: 200px !important;
-    border-right: none !important;
-    border-bottom: 1px solid #e8e8e8 !important;
-  }
-
-  .sa-wide-gallery-card:last-child{
-    border-bottom: none !important;
-  }
-
-  .sa-note-box{
-    margin-top: 18px !important;
-    padding: 18px 16px !important;
-    border-radius: 18px !important;
-  }
-
-  .sa-note-box h3{
-    font-size: 18px !important;
-  }
-
-  .sa-note-box p{
-    font-size: 14px !important;
-    line-height: 1.7 !important;
-  }
-}
-
-@media (max-width: 575px){
-  .sa-explore-product{
-    padding: 42px 0 !important;
-  }
-
-  .sa-explore-container{
-    padding: 0 12px !important;
-  }
-
-  .sa-sidebar-title{
-    font-size: 24px !important;
-  }
-
-  .sa-explore-heading{
-    font-size: 34px !important;
-  }
-
-  .sa-product-detail-image{
-    height: 230px !important;
-  }
-
-  .sa-brand-strip{
-    grid-template-columns: 1fr !important;
-  }
-
-  .sa-table{
-    min-width: 620px !important;
-  }
-}
-
-/* =========================
+   /* =========================
    FOOTER
 ========================= */
-@media (max-width: 991px){
-  .footer{
-    margin-top: 50px !important;
-    padding: 70px 0 0 !important;
+  @media (max-width: 991px) {
+    .footer {
+      margin-top: 50px !important;
+      padding: 70px 0 0 !important;
+    }
+
+    .footer-grid {
+      grid-template-columns: 1fr 1fr !important;
+      gap: 28px !important;
+    }
+
+    .footer-name {
+      font-size: 22px !important;
+    }
+
+    .footer-about {
+      font-size: 14px !important;
+      line-height: 1.7 !important;
+    }
   }
 
-  .footer-grid{
-    grid-template-columns: 1fr 1fr !important;
-    gap: 28px !important;
+  @media (max-width: 575px) {
+    .footer-grid {
+      grid-template-columns: 1fr !important;
+      gap: 24px !important;
+    }
+
+    .footer-bottom {
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      gap: 10px !important;
+      font-size: 13px !important;
+    }
   }
 
-  .footer-name{
-    font-size: 22px !important;
-  }
 
-  .footer-about{
-    font-size: 14px !important;
-    line-height: 1.7 !important;
-  }
-}
-
-@media (max-width: 575px){
-  .footer-grid{
-    grid-template-columns: 1fr !important;
-    gap: 24px !important;
-  }
-
-  .footer-bottom{
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 10px !important;
-    font-size: 13px !important;
-  }
-}
-  </style>
-
+</style>
 
 <body>
+
+<!-- =====================================Navbar===================================== -->
 <header class="ps-header">
     <div class="ps-header-inner">
 
@@ -1979,13 +1351,13 @@ img{
         </div>
       </a> -->
 
-          <!-- LOGO -->
-    <a href="index.html" class="ps-logo-wrap">
-      <div class="ps-logo-vertical">
-        <img src="img/logobg.png" class="ps-logo-big">
-        <div class="ps-logo-text-new">SUDHANSHU <span>ASSOCIATES</span></div>
-      </div>
-    </a>
+      <!-- LOGO -->
+      <a href="index.html" class="ps-logo-wrap">
+        <div class="ps-logo-vertical">
+          <img src="img/logobg.png" class="ps-logo-big">
+          <div class="ps-logo-text-new">SUDHANSHU <span>ASSOCIATES</span></div>
+        </div>
+      </a>
 
       <!-- Menu Toggle -->
       <button class="ps-menu-toggle" id="psMenuToggle" type="button" aria-label="Open Menu">
@@ -2214,44 +1586,164 @@ img{
           <li><a href="certificates.html" class="ps-nav-link">Certificates</a></li>
         </ul>
       </nav>
-
-      <!-- CTA -->
+          <!-- CTA -->
       <a href="contact.html" class="ps-contact-btn">
         <span>Contact</span>
         <span class="ps-contact-arrow">→</span>
       </a>
     </div>
   </header>
-  <div class="ps-mobile-overlay" id="psMobileOverlay"></div>
-<!-- ===============================Hero Section================================================== -->
 
-<section class="product-hero-simple">
-  <div class="product-hero-bg"></div>
-  <div class="container">
-    <div class="product-hero-content">
-      
-      <h1>
-        <span class="text-blue">Our</span>
-        <span class="text-green">Product</span>
-      </h1>
+  <!-- ===============================Hero Section================================================== -->
 
-      <p>
-        Explore our wide range of industrial product including welding,
-        NDT, safety, abrasives and power tools.
-      </p>
+  <section class="product-hero-simple">
+    <div class="product-hero-bg"></div>
+    <div class="container">
+      <div class="product-hero-content">
 
+        <h1>
+          <span class="text-blue">Our</span>
+          <span class="text-green">Product</span>
+        </h1>
+
+        <p>
+          Explore our wide range of industrial product including welding,
+          NDT, safety, abrasives and power tools.
+        </p>
+
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ===============================MAIN Section================================================== -->
-  <section class="sa-explore-product">
+  <style>
+/* =========================
+PRODUCT HERO - CLEAN FINAL
+========================= */
+  .product-hero-simple {
+    position: relative;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 10px 0 90px;
+  }
+
+  .product-hero-simple .container {
+    position: relative;
+    z-index: 3;
+  }
+
+  .product-hero-content {
+    max-width: 980px;
+    margin-bottom: 80px;
+    margin-top: 80px;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .product-page-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    margin-bottom: 20px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(8px);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+  }
+
+  .product-hero-content h1 {
+    margin: 0 0 18px;
+    font-size: clamp(52px, 8vw, 88px);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -2px;
+    font-family: 'Sora', sans-serif;
+  }
+
+  .text-blue {
+    color: #66A83D;
+  }
+
+  .text-green {
+    color: #2E2F78;
+    margin-left: 10px;
+  }
+
+  .product-hero-content p {
+    margin: 0 auto;
+    max-width: 860px;
+    font-size: clamp(18px, 2.1vw, 30px);
+    line-height: 1.7;
+    color: #000000;
+    font-weight: 500;
+  }
+
+  /* responsive */
+  @media (max-width: 991px) {
+    .product-hero-simple {
+      min-height: 470px;
+      padding: 110px 0 80px;
+    }
+
+    .product-hero-content h1 {
+      letter-spacing: -1px;
+    }
+
+    .product-hero-content p {
+      max-width: 720px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .product-hero-simple {
+      min-height: 380px;
+      padding: 90px 0 65px;
+    }
+
+    .product-hero-content {
+      padding: 0 14px;
+    }
+
+    .product-hero-content h1 {
+      font-size: 42px;
+      line-height: 1.12;
+      margin-bottom: 12px;
+    }
+
+    .text-green {
+      margin-left: 6px;
+    }
+
+    .product-hero-content p {
+      font-size: 15px;
+      line-height: 1.65;
+      max-width: 100%;
+    }
+
+    .product-page-tag {
+      font-size: 11px;
+      padding: 7px 14px;
+      margin-bottom: 14px;
+    }
+  }
+  </style>
+  <!-- ===============================Hero Section End================================================== -->
+   <section class="sa-explore-product">
     <div class="sa-explore-container">
 
       <aside class="sa-explore-sidebar">
         <div class="sa-sidebar-box">
           <h2 class="sa-sidebar-title">Categories</h2>
-
+          
+<!-- =========================================================================== -->
           <div class="sa-dropdown active">
             <button class="sa-dropdown-toggle" type="button">
               <span>TIG Welding Filler Wires</span>
@@ -2264,6 +1756,7 @@ img{
               <a href="#" class="sa-product-link" data-product="silver-brazing">SILVER BRAZING</a>
             </div>
           </div>
+<!-- =========================================================================== -->
 
           <div class="sa-dropdown">
             <button class="sa-dropdown-toggle" type="button">
@@ -2271,11 +1764,12 @@ img{
               <span class="sa-dropdown-icon">▼</span>
             </button>
             <div class="sa-dropdown-menu">
-              <a href="#" class="sa-product-link" data-product="hard-facing-electrodes">Hard Facing Electrodes</a>
               <a href="#" class="sa-product-link" data-product="ms-electrodes">M S Electrodes</a>
               <a href="#" class="sa-product-link" data-product="ss-electrodes">S S Electrodes</a>
+               <a href="#" class="sa-product-link" data-product="hard-facing-electrodes">Hard Facing Electrodes</a>
             </div>
           </div>
+<!-- =========================================================================== -->
 
          <div class="sa-dropdown">
   <button class="sa-dropdown-toggle" type="button">
@@ -2284,7 +1778,7 @@ img{
   </button>
 
   <div class="sa-dropdown-menu">
-    <a href="#" class="sa-product-link" data-product="industrial-welding-cables">INDUSTRIAL WELDING CABLES</a>
+    <!-- <a href="#" class="sa-product-link" data-product="industrial-welding-cables">INDUSTRIAL WELDING CABLES</a> -->
     <a href="#" class="sa-product-link" data-product="apron-chrome-leather">Apron - Chrome Leather</a>
     <a href="#" class="sa-product-link" data-product="wire-brush">Wire Brush</a>
 
@@ -2314,6 +1808,9 @@ img{
     <button class="sa-view-more-btn" type="button" id="saViewMoreAccessories">VIEW MORE</button>
   </div>
 </div>
+
+<!-- =========================================================================== -->
+
 <div class="sa-dropdown">
   <button class="sa-dropdown-toggle" type="button">
     <span>Safety Equipments</span>
@@ -2334,7 +1831,10 @@ img{
     <a href="#" class="sa-product-link" data-product="barrication-tape">Barrication Tape</a>
   </div>
 </div>
-          <div class="sa-dropdown">
+
+<!-- =========================================================================== -->
+
+  <div class="sa-dropdown">
   <button class="sa-dropdown-toggle" type="button">
     <span>TIG Welding Torch &amp; Spares</span>
     <span class="sa-dropdown-icon">▼</span>
@@ -2346,6 +1846,9 @@ img{
     <a href="#" class="sa-product-link" data-product="ceramic-nozzles">Ceramic Nozzles</a>
   </div>
 </div>
+
+<!-- =========================================================================== -->
+
 
 <div class="sa-dropdown">
   <button class="sa-dropdown-toggle" type="button">
@@ -2362,6 +1865,9 @@ img{
     <a href="#" class="sa-product-link" data-product="preheater">Pre Heater</a>
   </div>
 </div>
+
+<!-- =========================================================================== -->
+
           <div class="sa-dropdown">
   <button class="sa-dropdown-toggle" type="button">
     <span>Gas Cutting &amp; Brazing</span>
@@ -2388,6 +1894,8 @@ img{
   </div>
 </div>
 
+<!-- =========================================================================== -->
+
        <div class="sa-dropdown">
   <button class="sa-dropdown-toggle" type="button">
     <span>DP Testing Materials</span>
@@ -2400,6 +1908,7 @@ img{
     <a href="#" class="sa-product-link" data-product="developer-contrast-coating">Developer / Contrast Background Coating</a>
   </div>
 </div>
+<!-- =========================================================================== -->
 
           <div class="sa-dropdown">
   <button class="sa-dropdown-toggle" type="button">
@@ -2422,6 +1931,9 @@ img{
     <a href="#" class="sa-product-link" data-product="flow-meter-gas">Flow Meter</a>
   </div>
 </div>
+
+<!-- =========================================================================== -->
+
 <div class="sa-dropdown">
   <button class="sa-dropdown-toggle" type="button">
     <span>Welding Machines</span>
@@ -2429,10 +1941,19 @@ img{
   </button>
 
   <div class="sa-dropdown-menu">
-    <a href="#" class="sa-product-link" data-product="aps-welding-machine">APS</a>
-    <a href="#" class="sa-product-link" data-product="welding-transformer">Welding Transformer</a>
+
+    <!-- NEW PRODUCTS -->
+    <a href="#" class="sa-product-link" data-product="arc-welding">Arc Welding</a>
+    <a href="#" class="sa-product-link" data-product="tig-welding">TIG Welding</a>
+    <a href="#" class="sa-product-link" data-product="mig-welding">MIG Welding</a>
+    <a href="#" class="sa-product-link" data-product="cut-welding">Cut Welding</a>
+    <a href="#" class="sa-product-link" data-product="saw-welding">SAW Welding</a>
+    
   </div>
 </div>
+
+<!-- =========================================================================== -->
+
 <div class="sa-dropdown">
   <button class="sa-dropdown-toggle" type="button">
     <span>AIR DRYING PAINT</span>
@@ -2448,7 +1969,9 @@ img{
   </div>
 </div>
 
-          <div class="sa-dropdown">
+<!-- =========================================================================== -->
+
+  <div class="sa-dropdown">
   <button class="sa-dropdown-toggle" type="button">
     <span>Polishing Machines</span>
     <span class="sa-dropdown-icon">▼</span>
@@ -2459,6 +1982,8 @@ img{
     <a href="#" class="sa-product-link" data-product="flexible-shaft-machine">Flexible Shaft for Polishing Machine</a>
   </div>
 </div>
+<!-- =========================================================================== -->
+
 
           <div class="sa-dropdown">
             <button class="sa-dropdown-toggle" type="button">
@@ -2469,7 +1994,7 @@ img{
               <a href="#" class="sa-product-link" data-product="hand-tools">View Product</a>
             </div>
           </div>
-
+ <!-- =========================================================================== -->
           <div class="sa-dropdown">
             <button class="sa-dropdown-toggle" type="button">
               <span>Abrasives</span>
@@ -2479,7 +2004,7 @@ img{
               <a href="#" class="sa-product-link" data-product="abrasives">View Product</a>
             </div>
           </div>
-
+<!-- =========================================================================== -->
           <div class="sa-dropdown">
             <button class="sa-dropdown-toggle" type="button">
               <span>Cutting Tools</span>
@@ -2489,7 +2014,7 @@ img{
               <a href="#" class="sa-product-link" data-product="cutting-tools">View Product</a>
             </div>
           </div>
-
+<!-- =========================================================================== -->
           <div class="sa-dropdown">
             <button class="sa-dropdown-toggle" type="button">
               <span>Power Tools</span>
@@ -2503,7 +2028,7 @@ img{
       </aside>
 
 
-
+<!-- ===================================================================== -->
 
       <div class="sa-explore-main">
         <div class="sa-explore-head">
@@ -2517,17 +2042,18 @@ img{
                STAINLESS STEEL TIG WELDING WIRE
                UPDATED WITH USER PROVIDED INFO
           ========================= -->
-            <!-- brands -->
-            <section class="sa-brands-section">
-              <h2 class="sa-section-title">Trusted Brands We Deal In</h2>
-                  <div class="sa-brand-strip">
-                    <div class="sa-brand-card"><img src="img/Venus.jpg" alt="Venus"></div>
-                    <div class="sa-brand-card"><img src="img/Anand-arc-New.png" alt="Anand Arc"></div>
-                    <div class="sa-brand-card"><img src="img/logo-superon.png" alt="Superon"></div>
-                  </div>
-            </section><br>
 
           <div class="sa-product-section active" id="stainless-steel-tig">
+
+          <section class="sa-brands-section">
+            <h2 class="sa-section-title">Trusted Brands We Deal In</h2>
+            <div class="sa-brand-strip">
+              <div class="sa-brand-card"><img src="img/Venus.jpg" alt="Venus"></div>
+              <div class="sa-brand-card"><img src="img/Anand-arc-New.png" alt="Anand Arc"></div>
+              <div class="sa-brand-card"><img src="img/logo-superon.png" alt="Superon"></div>
+            </div>
+          </section>
+
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/wel2.webp " alt="Stainless Steel TIG Welding Wire">
@@ -2550,329 +2076,315 @@ img{
               </div>
             </div>
 
-          
-
-            <!-- 4 card info -->
+<!-- =========================================================================== -->
+            <!-- TIG + MIG info -->
             <div class="sa-info-grid">
               <div class="sa-info-box">
-
-              <h3>TIG Wires</h3>
-
-              <p>
-                   Sudhanshu TIG Wires are premium-quality stainless steel filler wires designed for 
-                  Gas Tungsten Arc Welding (GTAW/TIG). They provide smooth arc stability, 
+                <h3>TIG Wires</h3>
+                <p>
+                  Sudhanshu TIG Wires are premium-quality stainless steel filler wires designed for
+                  Gas Tungsten Arc Welding (GTAW/TIG). They provide smooth arc stability,
                   excellent corrosion resistance, strong joints, and superior weld finish.
-              </p>
+                <p>
+                  Manufactured as per AWS standards, these TIG wires ensure reliable performance
+                  and precision in every weld. Widely used for thin sheets, tubes, pipelines,
+                  fabrication, and industrial stainless steel applications.                </p>
+                <p>
+                  Available in sizes from <strong>0.80 mm to 6.00 mm</strong> and
+                  standard length <strong>36 inches / 1000 mm</strong>, making them ideal
+                  for versatile welding needs.             
+                 </p>
 
-              <p>
-                  Manufactured as per AWS standards, these TIG wires ensure reliable performance 
-                  and precision in every weld. Widely used for thin sheets, tubes, pipelines, 
-                  fabrication, and industrial stainless steel applications.
-              </p>
+                <h4>Available Grades</h4>
 
-              <p>
-                  Available in sizes from <strong>0.80 mm to 6.00 mm</strong> and 
-                  standard length <strong>36 inches / 1000 mm</strong>, making them ideal 
-                  for versatile welding needs.
-              </p>
-
-              <h4>Available Grades</h4>
-
-                  <div class="sa-grade-list">
-                      <span class="sa-grade-pill">307Si</span>
-                      <span class="sa-grade-pill">308H</span>
-                      <span class="sa-grade-pill">308L</span>
-                      <span class="sa-grade-pill">308LSi</span>
-                      <span class="sa-grade-pill">309L</span>
-                      <span class="sa-grade-pill">309LMo</span>
-                      <span class="sa-grade-pill">310</span>
-                      <span class="sa-grade-pill">312</span>
-                      <span class="sa-grade-pill">316L</span>
-                      <span class="sa-grade-pill">316LSi</span>
-                      <span class="sa-grade-pill">317L</span>
-                      <span class="sa-grade-pill">318Si</span>
-                      <span class="sa-grade-pill">347</span>
-                      <span class="sa-grade-pill">347Si</span>
-                      <span class="sa-grade-pill">385</span>
-                      <span class="sa-grade-pill">410</span>
-                      <span class="sa-grade-pill">410NiMo</span>
-                      <span class="sa-grade-pill">420</span>
-                      <span class="sa-grade-pill">430</span>
-                      <span class="sa-grade-pill">430LNb</span>
-                      <span class="sa-grade-pill">2209</span>
-                      <span class="sa-grade-pill">2594</span>
-                      <span class="sa-grade-pill">904L</span>
-                      <span class="sa-grade-pill">NiCr-3</span>
-                      <span class="sa-grade-pill">NiCrMo-3</span>
-                  </div>
+                <div class="sa-grade-list">
+                  <span class="sa-grade-pill">307Si</span>
+                  <span class="sa-grade-pill">308H</span>
+                  <span class="sa-grade-pill">308L</span>
+                  <span class="sa-grade-pill">308LSi</span>
+                  <span class="sa-grade-pill">309L</span>
+                  <span class="sa-grade-pill">309LMo</span>
+                  <span class="sa-grade-pill">310</span>
+                  <span class="sa-grade-pill">312</span>
+                  <span class="sa-grade-pill">316L</span>
+                  <span class="sa-grade-pill">316LSi</span>
+                  <span class="sa-grade-pill">317L</span>
+                  <span class="sa-grade-pill">318Si</span>
+                  <span class="sa-grade-pill">347</span>
+                  <span class="sa-grade-pill">347Si</span>
+                  <span class="sa-grade-pill">385</span>
+                  <span class="sa-grade-pill">410</span>
+                  <span class="sa-grade-pill">410NiMo</span>
+                  <span class="sa-grade-pill">420</span>
+                  <span class="sa-grade-pill">430</span>
+                  <span class="sa-grade-pill">430LNb</span>
+                  <span class="sa-grade-pill">2209</span>
+                  <span class="sa-grade-pill">2594</span>
+                  <span class="sa-grade-pill">904L</span>
+                  <span class="sa-grade-pill">NiCr-3</span>
+                  <span class="sa-grade-pill">NiCrMo-3</span>
+                </div>
               </div>
+              
+  <!-- =========================================================================== -->
 
-              <!-- Card2 -->
               <div class="sa-info-box">
+                <h3>MIG Wires</h3>
 
-                  <h3>MIG Wires</h3>
+                <p>
+                  Sudhanshu MIG Wires are high-performance welding wires designed for
+                  Gas Metal Arc Welding (GMAW/MIG). They provide stable arc performance,
+                  smooth wire feeding, strong weld joints, and high productivity for
+                  industrial welding applications.
+                </p>
 
-                  <p>
-                      Sudhanshu MIG Wires are high-performance welding wires designed for 
-                      Gas Metal Arc Welding (GMAW/MIG). They provide stable arc performance, 
-                      smooth wire feeding, strong weld joints, and high productivity for 
-                      industrial welding applications.
-                  </p>
+                <p>
+                  Our range includes mild steel solid wire, flux core wire, and stainless
+                  steel welding wire suitable for fabrication, automotive, structural,
+                  robotic, and continuous welding operations.
+                </p>
 
-                   <p>
-                       Our range includes mild steel solid wire, flux core wire, and stainless 
-                       steel welding wire suitable for fabrication, automotive, structural, 
-                                      robotic, and continuous welding operations.
-                   </p>
+                <p>
+                  Available in fiber drums of <strong>100–250 Kg</strong> for robotic and
+                  automatic welding systems. Surface finishes available in
+                  <strong>Bright, Matte & Semi Bright</strong>.
+                </p>
 
-                   <p>
-                       Available in fiber drums of <strong>100–250 Kg</strong> for robotic and 
-                       automatic welding systems. Surface finishes available in 
-                       <strong>Bright, Matte & Semi Bright</strong>.
-                   </p>
+                <h4>Available Grades</h4>
 
-                   <h4>Available Grades</h4>
+                <div class="sa-grade-list">
+                  <span class="sa-grade-pill">307Si</span>
+                  <span class="sa-grade-pill">308H</span>
+                  <span class="sa-grade-pill">308L</span>
+                  <span class="sa-grade-pill">308LSi</span>
+                  <span class="sa-grade-pill">309L</span>
+                  <span class="sa-grade-pill">309LMo</span>
+                  <span class="sa-grade-pill">310</span>
+                  <span class="sa-grade-pill">312</span>
+                  <span class="sa-grade-pill">316L</span>
+                  <span class="sa-grade-pill">316LSi</span>
+                  <span class="sa-grade-pill">317</span>
+                  <span class="sa-grade-pill">317L</span>
+                  <span class="sa-grade-pill">318Si</span>
+                  <span class="sa-grade-pill">347</span>
+                  <span class="sa-grade-pill">347Si</span>
+                  <span class="sa-grade-pill">385</span>
+                  <span class="sa-grade-pill">410</span>
+                  <span class="sa-grade-pill">410NiMo</span>
+                  <span class="sa-grade-pill">420L</span>
+                  <span class="sa-grade-pill">430</span>
+                  <span class="sa-grade-pill">430LNb</span>
+                  <span class="sa-grade-pill">430LNbTi</span>
+                  <span class="sa-grade-pill">430LNbW</span>
+                  <span class="sa-grade-pill">439</span>
+                  <span class="sa-grade-pill">2209</span>
+                  <span class="sa-grade-pill">2594</span>
+                  <span class="sa-grade-pill">NiCr-3</span>
+                  <span class="sa-grade-pill">NiCrMo-3</span>
+                </div>
 
-                  <div class="sa-grade-list">
-                      <span class="sa-grade-pill">307Si</span>
-                      <span class="sa-grade-pill">308H</span>
-                      <span class="sa-grade-pill">308L</span>
-                      <span class="sa-grade-pill">308LSi</span>
-                      <span class="sa-grade-pill">309L</span>
-                      <span class="sa-grade-pill">309LMo</span>
-                      <span class="sa-grade-pill">310</span>
-                      <span class="sa-grade-pill">312</span>
-                      <span class="sa-grade-pill">316L</span>
-                      <span class="sa-grade-pill">316LSi</span>
-                      <span class="sa-grade-pill">317</span>
-                      <span class="sa-grade-pill">317L</span>
-                      <span class="sa-grade-pill">318Si</span>
-                      <span class="sa-grade-pill">347</span>
-                      <span class="sa-grade-pill">347Si</span>
-                      <span class="sa-grade-pill">385</span>
-                      <span class="sa-grade-pill">410</span>
-                      <span class="sa-grade-pill">410NiMo</span>
-                      <span class="sa-grade-pill">420L</span>
-                      <span class="sa-grade-pill">430</span>
-                      <span class="sa-grade-pill">430LNb</span>
-                      <span class="sa-grade-pill">430LNbTi</span>
-                      <span class="sa-grade-pill">430LNbW</span>
-                      <span class="sa-grade-pill">439</span>
-                      <span class="sa-grade-pill">2209</span>
-                      <span class="sa-grade-pill">2594</span>
-                      <span class="sa-grade-pill">NiCr-3</span>
-                      <span class="sa-grade-pill">NiCrMo-3</span>
-                  </div>
+                <h4>Available Sizes</h4>
 
-                  <h4>Available Sizes</h4>
-
-                  <div class="sa-grade-list">
-                      <span class="sa-grade-pill">0.60 mm</span>
-                      <span class="sa-grade-pill">0.80 mm</span>
-                      <span class="sa-grade-pill">0.90 mm</span>
-                      <span class="sa-grade-pill">1.00 mm</span>
-                      <span class="sa-grade-pill">1.20 mm</span>
-                      <span class="sa-grade-pill">1.60 mm</span>
-                  </div>
-
+                <div class="sa-grade-list">
+                  <span class="sa-grade-pill">0.60 mm</span>
+                  <span class="sa-grade-pill">0.80 mm</span>
+                  <span class="sa-grade-pill">0.90 mm</span>
+                  <span class="sa-grade-pill">1.00 mm</span>
+                  <span class="sa-grade-pill">1.20 mm</span>
+                  <span class="sa-grade-pill">1.60 mm</span>
+                </div>
               </div>
 
-               <!-- Card 3 -->
+   <!-- =========================================================================== -->
+             
               <div class="sa-info-box">
+                <h3>Core Wires</h3>
 
-                  <h3>Core Wires</h3>
+                <p>
+                  Sudhanshu Core Wires are premium-quality stainless steel core wires specially
+                  manufactured for electrode production. They are widely supplied to electrode
+                  manufacturers across global markets for consistent quality and performance.
+                </p>
 
-                  <p>
-                      Sudhanshu Core Wires are premium-quality stainless steel core wires specially 
-                      manufactured for electrode production. They are widely supplied to electrode 
-                      manufacturers across global markets for consistent quality and performance.
-                  </p>
+                <p>
+                  Available in cut lengths or coil form, these wires can be customized in
+                  diameter, length, packing, and packaging according to customer requirements.
+                </p>
 
-                  <p>
-                      Available in cut lengths or coil form, these wires can be customized in 
-                      diameter, length, packing, and packaging according to customer requirements.
-                  </p>
+                <p>
+                  Specialized chemistries are also developed to improve flux compatibility,
+                  weldability, and final welding performance for end users.
+                </p>
 
-                   <p>
-                       Specialized chemistries are also developed to improve flux compatibility, 
-                       weldability, and final welding performance for end users.
-                   </p>
+                <h4>Available Grades</h4>
 
-                   <h4>Available Grades</h4>
+                <div class="sa-grade-list">
+                  <span class="sa-grade-pill">304L Mod.</span>
+                  <span class="sa-grade-pill">307Si</span>
+                  <span class="sa-grade-pill">308L</span>
+                  <span class="sa-grade-pill">308LSi</span>
+                  <span class="sa-grade-pill">309</span>
+                  <span class="sa-grade-pill">309L</span>
+                  <span class="sa-grade-pill">309LSi</span>
+                  <span class="sa-grade-pill">309LMo</span>
+                  <span class="sa-grade-pill">310</span>
+                  <span class="sa-grade-pill">312</span>
+                  <span class="sa-grade-pill">316</span>
+                  <span class="sa-grade-pill">316L</span>
+                  <span class="sa-grade-pill">316LSi</span>
+                  <span class="sa-grade-pill">317L</span>
+                  <span class="sa-grade-pill">318Si</span>
+                  <span class="sa-grade-pill">321</span>
+                  <span class="sa-grade-pill">347</span>
+                  <span class="sa-grade-pill">347Si</span>
+                  <span class="sa-grade-pill">409</span>
+                  <span class="sa-grade-pill">409Cb</span>
+                  <span class="sa-grade-pill">409Ti</span>
+                  <span class="sa-grade-pill">410</span>
+                  <span class="sa-grade-pill">410NiMo</span>
+                  <span class="sa-grade-pill">420</span>
+                  <span class="sa-grade-pill">430</span>
+                  <span class="sa-grade-pill">430LNb</span>
+                  <span class="sa-grade-pill">2209</span>
+                  <span class="sa-grade-pill">2594</span>
+                  <span class="sa-grade-pill">904L</span>
+                </div>
 
-                   <div class="sa-grade-list">
-                       <span class="sa-grade-pill">304L Mod.</span>
-                       <span class="sa-grade-pill">307Si</span>
-                       <span class="sa-grade-pill">308L</span>
-                       <span class="sa-grade-pill">308LSi</span>
-                       <span class="sa-grade-pill">309</span>
-                       <span class="sa-grade-pill">309L</span>
-                       <span class="sa-grade-pill">309LSi</span>
-                       <span class="sa-grade-pill">309LMo</span>
-                       <span class="sa-grade-pill">310</span>
-                       <span class="sa-grade-pill">312</span>
-                       <span class="sa-grade-pill">316</span>
-                       <span class="sa-grade-pill">316L</span>
-                       <span class="sa-grade-pill">316LSi</span>
-                       <span class="sa-grade-pill">317L</span>
-                       <span class="sa-grade-pill">318Si</span>
-                       <span class="sa-grade-pill">321</span>
-                       <span class="sa-grade-pill">347</span>
-                       <span class="sa-grade-pill">347Si</span>
-                       <span class="sa-grade-pill">409</span>
-                      <span class="sa-grade-pill">409Cb</span>
-                       <span class="sa-grade-pill">409Ti</span>
-                       <span class="sa-grade-pill">410</span>
-                       <span class="sa-grade-pill">410NiMo</span>
-                       <span class="sa-grade-pill">420</span>
-                       <span class="sa-grade-pill">430</span>
-                       <span class="sa-grade-pill">430LNb</span>
-                       <span class="sa-grade-pill">2209</span>
-                       <span class="sa-grade-pill">2594</span>
-                       <span class="sa-grade-pill">904L</span>
-                   </div>
+                <h4>Standard Diameter</h4>
 
-                  <h4>Standard Diameter</h4>
+                <div class="sa-grade-list">
+                  <span class="sa-grade-pill">1.60 mm</span>
+                  <span class="sa-grade-pill">2.00 mm</span>
+                  <span class="sa-grade-pill">2.40 mm</span>
+                  <span class="sa-grade-pill">3.20 mm</span>
+                  <span class="sa-grade-pill">4.00 mm</span>
+                  <span class="sa-grade-pill">5.00 mm</span>
+                </div>
 
-                  <div class="sa-grade-list">
-                      <span class="sa-grade-pill">1.60 mm</span>
-                      <span class="sa-grade-pill">2.00 mm</span>
-                      <span class="sa-grade-pill">2.40 mm</span>
-                      <span class="sa-grade-pill">3.20 mm</span>
-                      <span class="sa-grade-pill">4.00 mm</span>
-                      <span class="sa-grade-pill">5.00 mm</span>
-                  </div>
+                <h4>Standard Length</h4>
 
-                  <h4>Standard Length</h4>
+                <div class="sa-grade-list">
+                  <span class="sa-grade-pill">250 mm</span>
+                  <span class="sa-grade-pill">300 mm</span>
+                  <span class="sa-grade-pill">350 mm</span>
+                  <span class="sa-grade-pill">400 mm</span>
+                  <span class="sa-grade-pill">450 mm</span>
+                </div>
 
-                  <div class="sa-grade-list">
-                      <span class="sa-grade-pill">250 mm</span>
-                      <span class="sa-grade-pill">300 mm</span>
-                      <span class="sa-grade-pill">350 mm</span>
-                      <span class="sa-grade-pill">400 mm</span>
-                      <span class="sa-grade-pill">450 mm</span>
-                  </div>
+              </div>
+  <!-- =========================================================================== -->
+           <div class="sa-info-box">
+                <h3>Sub Arc Welding Wire</h3>
+
+                <p>
+                  Submerged Arc Welding (SAW) is widely used for long straight seams, shipbuilding,
+                  oil & gas refineries, LPG cylinder fabrication, bridge girders, and rotating pipes
+                  or vessels, ensuring high-quality weld deposits.
+                </p>
+
+                <p>
+                 Sudhanshu Sub Arc Welding Wires are designed for continuous arc welding operations with
+                  excellent arc stability and precision diameter tolerance. The copper-coated finish
+                  ensures smooth feeding and ease of welding.
+
+                <p>
+                  These stainless steel alloy wires comply with AWS standards and deliver superior
+                  weld strength, mechanical properties, and joint integrity for both automatic SAW
+                  machines and hand-operated SAW guns.
+                </p>
+
+                <h4>Available Grades</h4>
+
+                <div class="sa-grade-list">
+                  <span class="sa-grade-pill">307Si</span>
+                  <span class="sa-grade-pill">308L</span>
+                  <span class="sa-grade-pill">309L</span>
+                  <span class="sa-grade-pill">309LMo</span>
+                  <span class="sa-grade-pill">312</span>
+                  <span class="sa-grade-pill">316L</span>
+                  <span class="sa-grade-pill">317L</span>
+                  <span class="sa-grade-pill">347</span>
+                  <span class="sa-grade-pill">410NiMo</span>
+                  <span class="sa-grade-pill">420</span>
+                  <span class="sa-grade-pill">430</span>
+                  <span class="sa-grade-pill">2209</span>
+                  <span class="sa-grade-pill">2594</span>
+                </div>
+
+                <h4>Available Sizes</h4>
+
+                <div class="sa-grade-list">
+                  <span class="sa-grade-pill">1.60 mm</span>
+                  <span class="sa-grade-pill">2.00 mm</span>
+                  <span class="sa-grade-pill">2.40 mm</span>
+                  <span class="sa-grade-pill">3.20 mm</span>
+                  <span class="sa-grade-pill">4.00 mm</span>
+                </div>
+
+                <h4>Surface Finish</h4>
+
+                <div class="sa-grade-list">
+                  <span class="sa-grade-pill">Bright</span>
+                  <span class="sa-grade-pill">Matt</span>
+                </div>
 
               </div>
 
-            
-               <!-- Card 4 -->
-                <div class="sa-info-box">
+            </div>
 
-                   <h3>Sub Arc Welding Wire</h3>
+            <!-- packaging -->
+            <div class="sa-table-wrap">
+              <h3 class="sa-table-title">Packaging Details</h3>
+              <table class="sa-table">
+                  <thead>
+                    <tr>
+                      <th>Description</th>
+                      <th>Packing Type</th>
+                      <th>Length (mm)</th>
+                      <th>Size / Diameter (mm)</th>
+                      <th>Weight</th>
+                    </tr>
+                  </thead>
 
-                   <p>
-                       Submerged Arc Welding (SAW) is widely used for long straight seams, shipbuilding, 
-                       oil & gas refineries, LPG cylinder fabrication, bridge girders, and rotating pipes 
-                       or vessels, ensuring high-quality weld deposits.
-                   </p>
+                  <tbody>
 
-                   <p>
-                       Sudhanshu Sub Arc Welding Wires are designed for continuous arc welding operations with 
-                       excellent arc stability and precision diameter tolerance. The copper-coated finish 
-                       ensures smooth feeding and ease of welding.
-                   </p>
+                    <tr>
+                      <td>TIG Wires</td>
+                      <td>Corrugated Box</td>
+                      <td>1000</td>
+                      <td>0.80 to 6.00</td>
+                      <td>5 Kgs</td>
+                    </tr>
 
-                    <p>
-                        These stainless steel alloy wires comply with AWS standards and deliver superior 
-                        weld strength, mechanical properties, and joint integrity for both automatic SAW 
-                        machines and hand-operated SAW guns.
-                    </p>
+                    <tr>
+                      <td>MIG Wires</td>
+                      <td>Plastic Spool / Fiber Drum</td>
+                      <td>-</td>
+                      <td>0.60 to 1.60</td>
+                      <td>12.5 Kg / 100–250 Kg</td>
+                    </tr>
 
-                    <h4>Available Grades</h4>
+                    <tr>
+                      <td>Core Wires</td>
+                      <td>Bundle / Coil / Box</td>
+                      <td>250 to 450</td>
+                      <td>1.60 to 5.00</td>
+                      <td>As Required</td>
+                    </tr>
 
-                    <div class="sa-grade-list">
-                        <span class="sa-grade-pill">307Si</span>
-                        <span class="sa-grade-pill">308L</span>
-                        <span class="sa-grade-pill">309L</span>
-                        <span class="sa-grade-pill">309LMo</span>
-                        <span class="sa-grade-pill">312</span>
-                        <span class="sa-grade-pill">316L</span>
-                        <span class="sa-grade-pill">317L</span>
-                        <span class="sa-grade-pill">347</span>
-                        <span class="sa-grade-pill">410NiMo</span>
-                        <span class="sa-grade-pill">420</span>
-                        <span class="sa-grade-pill">430</span>
-                        <span class="sa-grade-pill">2209</span>
-                        <span class="sa-grade-pill">2594</span>
-                    </div>
+                    <tr>
+                      <td>Sub Arc Wires</td>
+                      <td>Metal Reel / Coil</td>
+                      <td>-</td>
+                      <td>1.60 to 4.00</td>
+                      <td>25 Kgs</td>
+                    </tr>
 
-                      <h4>Available Sizes</h4>
+                  </tbody>
+                </table>
+            </div>
 
-                      <div class="sa-grade-list">
-                          <span class="sa-grade-pill">1.60 mm</span>
-                          <span class="sa-grade-pill">2.00 mm</span>
-                          <span class="sa-grade-pill">2.40 mm</span>
-                          <span class="sa-grade-pill">3.20 mm</span>
-                          <span class="sa-grade-pill">4.00 mm</span>
-                      </div>
-
-                      <h4>Surface Finish</h4>
-
-                      <div class="sa-grade-list">
-                          <span class="sa-grade-pill">Bright</span>
-                          <span class="sa-grade-pill">Matt</span>
-                      </div>
-
-                  </div>
-
-
-            <!-- Packaging Details -->
-<div class="sa-table-wrap">
-
-    <h3 class="sa-table-title">Packaging Details</h3>
-
-    <table class="sa-table">
-        <thead>
-            <tr>
-                <th>Description</th>
-                <th>Packing Type</th>
-                <th>Length (mm)</th>
-                <th>Size / Diameter (mm)</th>
-                <th>Weight</th>
-            </tr>
-        </thead>
-
-        <tbody>
-
-            <tr>
-                <td>TIG Wires</td>
-                <td>Corrugated Box</td>
-                <td>1000</td>
-                <td>0.80 to 6.00</td>
-                <td>5 Kgs</td>
-            </tr>
-
-            <tr>
-                <td>MIG Wires</td>
-                <td>Plastic Spool / Fiber Drum</td>
-                <td>-</td>
-                <td>0.60 to 1.60</td>
-                <td>12.5 Kg / 100–250 Kg</td>
-            </tr>
-
-            <tr>
-                <td>Core Wires</td>
-                <td>Bundle / Coil / Box</td>
-                <td>250 to 450</td>
-                <td>1.60 to 5.00</td>
-                <td>As Required</td>
-            </tr>
-
-            <tr>
-                <td>Sub Arc Wires</td>
-                <td>Metal Reel / Coil</td>
-                <td>-</td>
-                <td>1.60 to 4.00</td>
-                <td>25 Kgs</td>
-            </tr>
-
-        </tbody>
-    </table>
-
-</div>
-         
-
+    
             <div class="sa-note-box">
               <h3>Range & Industrial Use</h3>
               <p>
@@ -2880,18 +2392,25 @@ img{
               </p>
             </div>
           </div>
+
+
 <!-- =========================
      MILD STEEL TIG WELDING WIRES
      SAME STYLE AS STAINLESS SECTION
 ========================= -->
+
+<!-- PRODUCT SECTION -->
 <div class="sa-product-section" id="mild-steel-tig">
+
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
       <img src="img/tig.webp" alt="Mild Steel TIG Welding Wires">
     </div>
+
     <div class="sa-product-detail-content">
       <span class="sa-product-detail-label">TIG Welding Filler Wires</span>
       <h2>Mild Steel TIG Welding Wires</h2>
+
       <p>
         High-quality carbon steel TIG and MIG welding wires designed for dependable weldability,
         strong joints and industrial fabrication performance across mild and alloy steel applications.
@@ -2908,48 +2427,58 @@ img{
     </div>
   </div>
 
+
   <!-- INFO GRID -->
   <div class="sa-info-grid">
+
     <div class="sa-info-box">
       <h3>About Carbon Steel</h3>
+
       <p>
         Carbon steel is considered to be carbon steel when no minimum content is specified or required
-        for chromium, cobalt, molybdenum, nickel, niobium, titanium, tungsten, vanadium or zirconium,
-        or any other element to be added to obtain a desired alloying effect.
+        for chromium, cobalt, molybdenum, nickel, niobium, titanium, tungsten, vanadium or zirconium.
       </p>
+
       <p>
         The term “carbon steel” may also be used in reference to steel which is not stainless steel.
         In this use, carbon steel may include alloy steels.
       </p>
+
       <p>
-        As the carbon content rises, steel has the ability to become harder and stronger through heat treatment,
-        but this also makes it less ductile. Regardless of the heat treatment, higher carbon content reduces weld ability.
-        In carbon steels, the higher carbon content lowers the melting point.
+        As the carbon content rises, steel becomes harder and stronger through heat treatment,
+        but this also makes it less ductile. Higher carbon content reduces weldability.
       </p>
+
       <p>
-        We provide our customer with best quality wires to attain utmost satisfaction.
+        We provide our customers with best quality wires to attain utmost satisfaction.
       </p>
     </div>
+
 
     <div class="sa-info-box">
       <h3>Application Highlights</h3>
-      <ul class="sa-shielding-list">
+
+      <ul>
         <li>For welding of mild and 490 N/mm² steel</li>
-        <li>Especially suited for root pass of pipes, offshore rigs and structural work</li>
-        <li>Designed for welding Cr-Mo steels and high temperature service materials</li>
-        <li>Suitable for low alloy high strength steels requiring good toughness</li>
-        <li>Useful for hot hydrogen services and 9% chromium steels such as P91 and F91</li>
+        <li>Root pass of pipes, offshore rigs and structural work</li>
+        <li>Welding Cr-Mo steels & high temperature materials</li>
+        <li>Low alloy high strength steel applications</li>
+        <li>Hot hydrogen services & 9% chromium steels</li>
       </ul>
 
       <h4>Packaging</h4>
-      <p><strong>In TIG Form:</strong> 5 Kgs</p>
-      <p><strong>In MIG Form:</strong> 12.5 Kg</p>
+      <p><strong>TIG:</strong> 5 Kgs</p>
+      <p><strong>MIG:</strong> 12.5 Kgs</p>
     </div>
+
   </div>
 
-  <!-- GRADE TABLE -->
+
+  <!-- TABLE -->
   <div class="sa-table-wrap">
-    <h3 class="sa-table-title">Grades in Carbon Steel Alloy</h3>
+
+    <h3>Grades in Carbon Steel Alloy</h3>
+
     <table class="sa-table">
       <thead>
         <tr>
@@ -2958,84 +2487,57 @@ img{
           <th>Application</th>
         </tr>
       </thead>
+
       <tbody>
+
         <tr>
           <td>ER – 70S 2</td>
-          <td>
-            TIG: 1.6, 2.0, 2.4, 3.2, 4.0<br>
-            MIG: 0.6, 0.8, 1.2, 1.6
-          </td>
-          <td>
-            For welding of mild and 490 N/mm² steel. Especially suited for root pass of pipes,
-            offshore rigs and structural work.
-          </td>
+          <td>TIG: 1.6–4.0 <br> MIG: 0.6–1.6</td>
+          <td>Welding of mild steel & structural applications</td>
         </tr>
+
         <tr>
           <td>ER – 80S B2</td>
-          <td>
-            TIG: 1.6, 2.0, 2.4, 3.2, 4.0<br>
-            MIG: 0.6, 0.8, 1.2, 1.6
-          </td>
-          <td>Designed for welding on 1-1/4 Cr 1/2 Mo steels.</td>
+          <td>TIG: 1.6–4.0 <br> MIG: 0.6–1.6</td>
+          <td>Welding of Cr-Mo steels</td>
         </tr>
+
         <tr>
           <td>ER-80S-B8</td>
-          <td>
-            TIG: 1.6, 2.0, 2.4, 3.2, 4.0<br>
-            MIG: 0.6, 0.8, 1.2, 1.6
-          </td>
-          <td>For welding of 9% Cr-1% Mo steel.</td>
+          <td>TIG: 1.6–4.0 <br> MIG: 0.6–1.6</td>
+          <td>For 9% Cr-1% Mo steel</td>
         </tr>
+
         <tr>
           <td>ER-80S-B6</td>
-          <td>
-            TIG: 1.6, 2.0, 2.4, 3.2, 4.0<br>
-            MIG: 0.6, 0.8, 1.2, 1.6
-          </td>
-          <td>
-            Designed for welding of material of similar composition for high temperature service conditions.
-          </td>
+          <td>TIG: 1.6–4.0 <br> MIG: 0.6–1.6</td>
+          <td>High temperature service welding</td>
         </tr>
+
         <tr>
           <td>ER-80S D2</td>
-          <td>
-            TIG: 1.6, 2.0, 2.4, 3.2, 4.0<br>
-            MIG: 0.6, 0.8, 1.2, 1.6
-          </td>
-          <td>
-            Low alloy steel wire with 2% manganese and 0.5% molybdenum as alloying elements.
-          </td>
+          <td>TIG: 1.6–4.0 <br> MIG: 0.6–1.6</td>
+          <td>Low alloy steel with manganese & molybdenum</td>
         </tr>
+
         <tr>
           <td>ER-80S-Ni1</td>
-          <td>
-            TIG: 1.6, 2.0, 2.4, 3.2, 4.0<br>
-            MIG: 0.6, 0.8, 1.2, 1.6
-          </td>
-          <td>
-            Used for welding low alloy high strength steels requiring good toughness
-            at temperature as low as -40°F.
-          </td>
+          <td>TIG: 1.6–4.0 <br> MIG: 0.6–1.6</td>
+          <td>Low temp (-40°F) high strength steel welding</td>
         </tr>
+
         <tr>
           <td>ER-90S-B3</td>
-          <td>
-            TIG: 1.6, 2.0, 2.4, 3.2, 4.0<br>
-            MIG: 0.6, 0.8, 1.2, 1.6
-          </td>
-          <td>Designed for welding 2-1/4 Cr 1 Mo steels.</td>
+          <td>TIG: 1.6–4.0 <br> MIG: 0.6–1.6</td>
+          <td>2-1/4 Cr 1 Mo steel welding</td>
         </tr>
+
         <tr>
           <td>ER-90S-B9</td>
-          <td>
-            TIG: 1.6, 2.0, 2.4, 3.2, 4.0<br>
-            MIG: 0.6, 0.8, 1.2, 1.6
-          </td>
-          <td>
-            Designed to weld high temperature steels for hot hydrogen services and is suitable
-            for 9% chromium steels such as P91 and F91.
-          </td>
+          <td>TIG: 1.6–4.0 <br> MIG: 0.6–1.6</td>
+          <td>High temp hydrogen services (P91, F91)</td>
         </tr>
+
       </tbody>
     </table>
   </div>
@@ -3045,17 +2547,20 @@ img{
   <div class="sa-note-box">
     <h3>Recommended Industrial Use</h3>
     <p>
-      Mild steel TIG welding wires are suitable for construction, structural fabrication,
-      piping root pass welding, offshore applications and alloy steel welding jobs where
-      dependable performance and good weld quality are important.
+      Suitable for construction, structural fabrication, piping, offshore and alloy steel welding
+      where strong and reliable joints are required.
     </p>
   </div>
+
 </div>
+
+
+
 <!-- =========================
      ALUMINIUM TIG WELDING WIRES
 ========================= -->
 <div class="sa-product-section" id="aluminium-tig">
-  
+
   <!-- MAIN CARD -->
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
@@ -3067,21 +2572,22 @@ img{
       <h2>Aluminium TIG Welding Wires</h2>
 
       <p>
-        Aluminium alloys are widely used in engineering structures due to their lightweight,
-        strength, corrosion resistance and excellent weldability. Choosing the right alloy
-        ensures optimal performance across industrial applications.
+        Aluminium alloys with a wide range of properties are used in engineering structures.
+        Selecting the right alloy depends on tensile strength, density, ductility,
+        malleability, workability, weldability and corrosion resistance.
       </p>
 
       <ul class="sa-product-points">
         <li>Lightweight with high strength-to-weight ratio</li>
         <li>Excellent corrosion resistance</li>
-        <li>Highly suitable for automotive, aerospace & structural use</li>
-        <li>Used in transport, packaging, electrical & construction sectors</li>
+        <li>High weldability and durability</li>
+        <li>Used across automotive, aerospace and industrial sectors</li>
       </ul>
 
       <a href="contact.html" class="sa-product-btn">Enquire Now</a>
     </div>
   </div>
+
 
   <!-- INFO GRID -->
   <div class="sa-info-grid">
@@ -3089,51 +2595,55 @@ img{
     <!-- LEFT -->
     <div class="sa-info-box">
       <h3>Uses of Aluminium Alloys</h3>
+
       <p>
-        Aluminium when combined with other metals provides strength and specific
-        characteristics for various industrial applications.
+        Aluminium when combined with other metals provides enhanced strength and
+        specific characteristics required for various industrial applications.
       </p>
 
       <p>
-        Aluminium alloys are extensively used in automotive parts, transportation,
-        packaging, electrical applications, medicine, construction of homes and furniture.
+        Aluminium alloys are widely used in automotive engine parts, transportation,
+        packaging, electrical applications, medicine, and construction of homes
+        and furniture.
       </p>
 
       <p>
-        High altitude flying and structural applications depend heavily on aluminium alloys
-        due to their durability and lightweight nature.
+        High altitude applications depend heavily on aluminium alloys due to their
+        ability to withstand pressure and stress while remaining lightweight.
       </p>
 
       <h4>Products in Aluminium Alloy</h4>
 
       <div class="sa-grade-list">
-        <span class="sa-grade-pill">5% Silicon ER 4043 / NG21</span>
-        <span class="sa-grade-pill">12% Silicon ER4047 / NG2</span>
-        <span class="sa-grade-pill">5% Magnesium ER 5356 / NG6</span>
-        <span class="sa-grade-pill">Pure Aluminium ER 1100 / AL 1B</span>
+        <span class="sa-grade-pill">ER 4043 / NG21 (5% Silicon)</span>
+        <span class="sa-grade-pill">ER 4047 / NG2 (12% Silicon)</span>
+        <span class="sa-grade-pill">ER 5356 / NG6 (5% Magnesium)</span>
+        <span class="sa-grade-pill">ER 1100 / AL 1B (Pure Aluminium)</span>
       </div>
     </div>
+
 
     <!-- RIGHT -->
     <div class="sa-info-box">
       <h3>Applications</h3>
 
       <ul class="sa-shielding-list">
-        <li>Automotive and transportation components</li>
-        <li>Electrical and packaging industries</li>
+        <li>Automotive and transportation industries</li>
+        <li>Electrical and packaging sectors</li>
         <li>Construction and furniture manufacturing</li>
         <li>Aerospace and high altitude engineering</li>
-        <li>Industrial fabrication and structural welding</li>
+        <li>Industrial fabrication and welding work</li>
       </ul>
 
-      <h4>Certification</h4>
+      <h4>Quality Assurance</h4>
       <p>
-        We supply only ISO certified Aluminium Alloys ensuring quality, consistency
-        and industrial reliability.
+        We supply only ISO certified Aluminium Alloys ensuring high quality,
+        consistency and reliable industrial performance.
       </p>
     </div>
 
   </div>
+
 
   <!-- TABLE -->
   <div class="sa-table-wrap">
@@ -3143,7 +2653,7 @@ img{
       <thead>
         <tr>
           <th>Description</th>
-          <th>Packing</th>
+          <th>Packaging</th>
           <th>Length (mm)</th>
           <th>Size (mm)</th>
           <th>Weight</th>
@@ -3170,26 +2680,19 @@ img{
     </table>
   </div>
 
-  <!-- GALLERY -->
-  <div class="sa-gallery-grid">
-    <div class="sa-gallery-card">
-      <img src="img/aluminium-tig-gallery-1.jpg" alt="Aluminium Wire Spool">
-    </div>
-
-    
-  </div>
 
   <!-- NOTE -->
   <div class="sa-note-box">
     <h3>Industrial Supply</h3>
     <p>
-      We cater to all welding requirements of aluminium alloys including Alfa Welding
-      Aluminium Alloys and FSH Aluminium Alloys, ensuring high performance and reliability
-      in industrial applications.
+      We cater to welding requirements of Aluminium Alloys including Alfa Welding
+      Aluminium Alloys and FSH Aluminium Alloys, ensuring high performance and
+      reliability across industrial applications.
     </p>
   </div>
-
 </div>
+
+
 <!-- =========================
      SILVER BRAZING
 ========================= -->
@@ -3202,87 +2705,86 @@ img{
     </div>
 
     <div class="sa-product-detail-content">
-      <span class="sa-product-detail-label">Brazing Product</span>
+      <span class="sa-product-detail-label">Brazing Alloys</span>
       <h2>Silver Brazing Alloys</h2>
 
       <p>
-        Silver brazing alloys are easy to use, high-strength bonding materials with excellent
-        flow characteristics and short melting ranges. These alloys provide superior mechanical
-        properties and versatile applications across industries.
+        Silver Brazing Alloys are easy to use, provide high strength joints,
+        and have excellent flow characteristics with short melting ranges.
+        These alloys are versatile and widely used in industrial applications.
       </p>
 
       <ul class="sa-product-points">
         <li>High strength and impact resistance</li>
         <li>Excellent flow and bonding characteristics</li>
-        <li>Available in rods, foils, strips, granules, rings and paste</li>
-        <li>Customised solutions as per client specifications</li>
+        <li>Available in wire, foil, rods, paste and powder forms</li>
+        <li>Customised as per client requirements</li>
       </ul>
 
       <a href="contact.html" class="sa-product-btn">Enquire Now</a>
     </div>
   </div>
 
+
   <!-- INFO GRID -->
   <div class="sa-info-grid">
 
     <!-- LEFT -->
     <div class="sa-info-box">
-      <h3>Industrial Uses</h3>
+      <h3>Applications & Uses</h3>
 
       <p>
-        Silver brazing is widely used in the automotive industry, especially for aluminium
-        radiators involving tube-to-fin and tube-to-header joints.
+        Silver brazing is widely used in the automotive industry,
+        especially for aluminium radiators and tube-to-fin joints.
       </p>
 
       <p>
-        It is also used in pipe and tube applications to extend length, fabricate shapes,
-        join dissimilar materials and ensure pressure-tight joints.
+        It is also used in pipe and tube applications for extending
+        length, fabricating shapes, and joining dissimilar materials
+        while ensuring leak-proof joints.
       </p>
 
       <p>
-        Common base metals include aluminium and its alloys, copper alloys, steel,
-        stainless steel and other industrial materials.
+        Applications extend to microwave reflectors, satellites,
+        cameras and sophisticated instruments using metals like
+        copper, stainless steel, nickel alloys and tungsten.
       </p>
+
+      <h4>Products in Silver Brazing</h4>
+
+      <div class="sa-grade-list">
+        <span class="sa-grade-pill">50% Silver</span>
+        <span class="sa-grade-pill">43% Silver</span>
+        <span class="sa-grade-pill">35% Silver</span>
+        <span class="sa-grade-pill">30% Silver</span>
+        <span class="sa-grade-pill">14% Silver</span>
+        <span class="sa-grade-pill">5% Silver</span>
+        <span class="sa-grade-pill">2% Silver</span>
+      </div>
     </div>
+
 
     <!-- RIGHT -->
     <div class="sa-info-box">
-      <h3>Advanced Applications</h3>
+      <h3>Material Compatibility</h3>
 
       <ul class="sa-shielding-list">
-        <li>Microwave reflectors and satellite components</li>
-        <li>Camera and precision instrumentation</li>
-        <li>High-performance industrial assemblies</li>
-        <li>Joining dissimilar metals with strong bonding</li>
+        <li>Aluminium and aluminium alloys</li>
+        <li>Copper and copper alloys</li>
+        <li>Steel and stainless steel</li>
+        <li>Nickel and nickel-based alloys</li>
+        <li>Tungsten and special engineering metals</li>
       </ul>
 
-      <h4>Base Materials Used</h4>
+      <h4>Standards</h4>
       <p>
-        Oxygen-free copper, nickel, stainless steel, copper-nickel alloys,
-        iron-nickel-cobalt alloys and tungsten.
+        Supplied as per IS 2927 standards ensuring quality and reliability
+        for industrial applications.
       </p>
     </div>
 
   </div>
 
-  <!-- PRODUCTS -->
-  <div class="sa-info-box" style="margin-top:24px;">
-    <h3>Products in Silver Brazing Alloys</h3>
-
-    <div class="sa-grade-list">
-      <span class="sa-grade-pill">50%</span>
-      <span class="sa-grade-pill">43%</span>
-      <span class="sa-grade-pill">35%</span>
-      <span class="sa-grade-pill">30%</span>
-      <span class="sa-grade-pill">14%</span>
-      <span class="sa-grade-pill">5%</span>
-      <span class="sa-grade-pill">2%</span>
-    </div>
-
-    <p style="margin-top:14px;">
-      Available in Silver Brazing Rods, Foils, Shims, Preformed wires and strips.
-    </p>
-  </div>
 
   <!-- TABLE -->
   <div class="sa-table-wrap">
@@ -3305,11 +2807,11 @@ img{
           <td>Corrugated Box</td>
           <td>500</td>
           <td>1.6</td>
-          <td>1 Kgs</td>
+          <td>1 Kg</td>
         </tr>
 
         <tr>
-          <td>SHIM / Foil</td>
+          <td>Shim / Foil</td>
           <td>-</td>
           <td>-</td>
           <td>-</td>
@@ -3322,22 +2824,24 @@ img{
 
   <!-- NOTE -->
   <div class="sa-note-box">
-    <h3>Supply & Standards</h3>
+    <h3>Industrial Supply</h3>
     <p>
-      We cater to all welding requirements of Silver Brazing Alloys including products
-      from Agrawal Co. (as per IS 2927 standards), ensuring reliable performance and
-      high-quality industrial bonding solutions.
+      We cater to your welding and brazing requirements with high-quality
+      Silver Brazing Alloys from Agrawal Co. (as per IS 2927),
+      ensuring durability and performance.
     </p>
   </div>
 
 </div>
 
 
-
 <!-- =========================
-     HARD FACING ELECTRODES
+    Product 2- HARD FACING ELECTRODES
 ========================= -->
+
 <div class="sa-product-section" id="hard-facing-electrodes">
+
+
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
       <img src="img/hard-facing-electrodes-main.jpg" alt="Hard Facing Electrodes">
@@ -3386,27 +2890,28 @@ img{
     </div>
   </div>
 
-  <!-- optional brands row -->
-  <div class="sa-brand-strip">
-    <div class="sa-brand-card"><img src="img/advani-oerlikon-logo.png" alt="Advani Oerlikon"></div>
-    <div class="sa-brand-card"><img src="img/esab-logo.png" alt="ESAB"></div>
-    <div class="sa-brand-card"><img src="img/superon-logo.png" alt="Superon"></div>
-    <div class="sa-brand-card"><img src="img/weldfast-logo.png" alt="Weldfast Electrodes"></div>
-  </div>
-
-  <div class="sa-brand-strip" style="margin-top:16px;">
-    <div class="sa-brand-card"><img src="img/mangalam-logo.png" alt="Mangalam"></div>
-    <div class="sa-brand-card"><img src="img/anand-arc-logo.png" alt="Anand Arc"></div>
-    <div class="sa-brand-card"><img src="img/honavar-logo.png" alt="Honavar Electrodes"></div>
-  </div>
 </div>
+
 <!-- =========================
      M S ELECTRODES
 ========================= -->
 <div class="sa-product-section" id="ms-electrodes">
+    <section class="sa-brands-section">
+            <h2 class="sa-section-title">Trusted Brands We Deal In</h2>
+            <div class="sa-brand-strip">
+              <div class="sa-brand-card"><img src="img/advani-oerlikon-logo.png" alt="advani"></div>
+              <div class="sa-brand-card"><img src="img/esab-logo.png" alt="esab"></div>
+              <div class="sa-brand-card"><img src="img/logo-superon.png" alt="Superon"></div>
+              <div class="sa-brand-card"><img src="img/weldfast-logo.png" alt="weldfast"></div>
+              <div class="sa-brand-card"><img src="img/mangalam-logo.png" alt="Mangalam"></div>
+              <div class="sa-brand-card"><img src="img/Anand-arc-New.png" alt="Anand"></div>
+                <div class="sa-brand-card"><img src="img/honavar-logo.png" alt="Honavar"></div>
+            </div>
+          </section>
 
   <!-- MAIN CARD -->
   <div class="sa-product-detail-card">
+    
     <div class="sa-product-detail-image">
       <img src="img/ms-electrodes-main.jpg" alt="M S Electrodes">
     </div>
@@ -3417,108 +2922,234 @@ img{
 
       <p>
         We offer a wide range of M S Electrodes with light, medium, medium heavy and heavy coated electrodes,
-        used for major and minor structural work.
+        used for major and minor structural work. These electrodes are specially designed for mild steel and
+        are suitable for all welding positions.
       </p>
 
       <ul class="sa-product-points">
+        <li>Light, medium, medium heavy & heavy coated electrodes</li>
         <li>Suitable for all welding positions</li>
-        <li>Smooth arc and low spatter</li>
-        <li>Radiographic quality weld metal</li>
-        <li>Designed specifically for mild steel welding</li>
+        <li>Smooth arc with low spatter</li>
+        <li>Produces radiographic quality weld metal</li>
+        <li>Ideal for structural and fabrication work</li>
       </ul>
 
       <a href="contact.html" class="sa-product-btn">Enquire Now</a>
     </div>
+
   </div>
+
 
   <!-- INFO GRID -->
   <div class="sa-info-grid">
 
+    <!-- LEFT -->
+    <div class="sa-info-box">
+      <h3>Product Overview</h3>
+
+      <p>
+        As the name suggests, M S Electrodes are manufactured specifically for welding mild steel.
+        These electrodes ensure excellent weld quality with smooth arc characteristics and minimal
+        spatter, making them reliable for both industrial and on-site applications.
+      </p>
+
+      <p>
+        They are widely used in fabrication, construction and repair work where strength,
+        durability and clean welding finish are required.
+      </p>
+    </div>
+
+    <!-- RIGHT -->
     <div class="sa-info-box">
       <h3>Applications</h3>
-      <p>
-        M S electrodes are widely used for out-of-position welding and are ideal for
-        field construction, shipyards, water towers, pressure vessels, pressure pipes,
-        steel castings and storage tanks.
-      </p>
-    </div>
 
-    <div class="sa-info-box">
-      <h3>Available Sizes</h3>
-
-      <div class="sa-grade-list">
-        <span class="sa-grade-pill">2.50 × 350</span>
-        <span class="sa-grade-pill">3.15 × 350</span>
-        <span class="sa-grade-pill">4.00 × 450</span>
-        <span class="sa-grade-pill">5.00 × 450</span>
-      </div>
-    </div>
-
-  </div>
-
-</div>
-
-          <div class="sa-product-section" id="ss-electrodes">
-            <div class="sa-product-detail-card">
-              <div class="sa-product-detail-image">
-                <img src="img/electrodes.jpg" alt="SS Electrodes">
-              </div>
-              <div class="sa-product-detail-content">
-                <span class="sa-product-detail-label">Electrodes</span>
-                <h2>S S Electrodes</h2>
-                <p>Stainless steel electrodes made for corrosion-resistant and high-quality weld joints.</p>
-                <a href="contact.html" class="sa-product-btn">Enquire Now</a>
-              </div>
-            </div>
-          </div>
-<!-- INDUSTRIAL WELDING CABLES -->
-<div class="sa-product-section" id="industrial-welding-cables">
-  <div class="sa-product-detail-card">
-    <div class="sa-product-detail-image">
-      <img src="img/industrial-welding-cables.jpg.jpeg" alt="Industrial Welding Cables">
-    </div>
-    <div class="sa-product-detail-content">
-      <span class="sa-product-detail-label">Welding Accessories</span>
-      <h2>Industrial Welding Cables</h2>
-      <p>
-        ISI and IS standard industrial welding cables available in Keshav, Sun and Polyweld make.
-        Available in copper and aluminium conductor in TRS and HOFR type.
-      </p>
-      <ul class="sa-product-points">
-        <li>TRS: tough rubber sheathed</li>
-        <li>HOFR: heat, oil and flame retardant</li>
-        <li>Range from 16 sq.mm to 120 sq.mm</li>
-        <li>Supports 100 amps to 1200 amps</li>
+      <ul class="sa-shielding-list">
+        <li>Field construction and structural fabrication</li>
+        <li>Shipyards and marine applications</li>
+        <li>Water towers and storage tanks</li>
+        <li>Pressure vessels and pressure pipes</li>
+        <li>Steel castings and galvanized steel tanks</li>
       </ul>
-      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
     </div>
+
   </div>
 
+
+  <!-- SIZE SECTION -->
   <div class="sa-table-wrap">
-    <h3 class="sa-table-title">Cable Capacity Range</h3>
+    <h3 class="sa-table-title">Available Sizes</h3>
+
     <table class="sa-table">
       <thead>
         <tr>
-          <th>TRS Amps</th>
-          <th>TRS Size</th>
-          <th>HOFR Amps</th>
-          <th>HOFR Size</th>
+          <th>Diameter (mm)</th>
+          <th>Length (mm)</th>
         </tr>
       </thead>
+
       <tbody>
-        <tr><td>100 amps</td><td>16 sq.mm</td><td>150 amps</td><td>16 sq.mm</td></tr>
-        <tr><td>150 amps</td><td>25 sq.mm</td><td>230 amps</td><td>25 sq.mm</td></tr>
-        <tr><td>230 amps</td><td>35 sq.mm</td><td>400 amps</td><td>35 sq.mm</td></tr>
-        <tr><td>400 amps</td><td>50 sq.mm</td><td>600 amps</td><td>50 sq.mm</td></tr>
-        <tr><td>600 amps</td><td>70 sq.mm</td><td>800 amps</td><td>70 sq.mm</td></tr>
-        <tr><td>800 amps</td><td>95 sq.mm</td><td>1000 amps</td><td>95 sq.mm</td></tr>
-        <tr><td>1000 amps</td><td>120 sq.mm</td><td>1200 amps</td><td>120 sq.mm</td></tr>
+        <tr>
+          <td>2.50</td>
+          <td>350</td>
+        </tr>
+        <tr>
+          <td>3.15</td>
+          <td>350</td>
+        </tr>
+        <tr>
+          <td>4.00</td>
+          <td>450</td>
+        </tr>
+        <tr>
+          <td>5.00</td>
+          <td>450</td>
+        </tr>
       </tbody>
     </table>
   </div>
+
+
+  <!-- NOTE -->
+  <div class="sa-note-box">
+    <h3>Recommended Usage</h3>
+    <p>
+      M S Electrodes are best suited for general purpose welding, structural fabrication,
+      maintenance work and applications requiring strong, clean and reliable weld joints
+      across mild steel components.
+    </p>
+  </div>
+
 </div>
 
-<!-- APRON CHROME LEATHER -->
+<!-- =========================
+     S S ELECTRODES
+========================= -->
+<div class="sa-product-section" id="ss-electrodes">
+
+  <!-- MAIN CARD -->
+  <div class="sa-product-detail-card">
+
+    <div class="sa-product-detail-image">
+      <img src="img/electrodes.jpg" alt="S S Electrodes">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Electrodes</span>
+      <h2>S S Electrodes</h2>
+
+      <p>
+        Stainless Steel Welding Electrodes are capable of depositing stainless steel type weld metal 
+        with normal carbon content. The weld metal provides excellent creep strength and radiographic 
+        quality welds, making them highly reliable for industrial applications.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Suitable for all welding positions</li>
+        <li>Excellent creep strength</li>
+        <li>Radiographic quality weld metal</li>
+        <li>Smooth welding performance</li>
+        <li>Corrosion-resistant weld joints</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+
+  </div>
+
+
+  <!-- INFO GRID -->
+  <div class="sa-info-grid">
+
+    <!-- LEFT -->
+    <div class="sa-info-box">
+      <h3>Product Overview</h3>
+
+      <p>
+        Stainless steel electrodes are designed to provide strong, corrosion-resistant welds
+        across various industrial applications. These electrodes ensure durability,
+        reliability, and high-quality welding results.
+      </p>
+
+      <p>
+        They can be easily manipulated in all welding positions and are widely used
+        where strength and corrosion resistance are critical.
+      </p>
+
+      <p>
+        We cater to welding requirements using trusted brands like Superon Stainless Steel
+        Welding Electrodes and Mangalam Stainless Steel Welding Electrodes.
+      </p>
+    </div>
+
+
+    <!-- RIGHT -->
+    <div class="sa-info-box">
+      <h3>Applications</h3>
+
+      <ul class="sa-shielding-list">
+        <li>Tank coils and storage vessels</li>
+        <li>Pulp and paper industry equipment</li>
+        <li>Textile industry machinery</li>
+        <li>Chemical mixers and processing units</li>
+        <li>Paints and dye industries</li>
+      </ul>
+
+      <h4>Packaging</h4>
+      <p>Available as per ISO Standards.</p>
+    </div>
+
+  </div>
+
+
+  <!-- SIZE TABLE -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Available Sizes</h3>
+
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Diameter (mm)</th>
+          <th>Length (mm)</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>2.50</td>
+          <td>350</td>
+        </tr>
+        <tr>
+          <td>3.15</td>
+          <td>350</td>
+        </tr>
+        <tr>
+          <td>4.00</td>
+          <td>450</td>
+        </tr>
+        <tr>
+          <td>5.00</td>
+          <td>450</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- NOTE -->
+  <div class="sa-note-box">
+    <h3>Recommended Usage</h3>
+    <p>
+      S S Electrodes are ideal for applications requiring corrosion resistance,
+      durability, and high-quality weld finish, especially in chemical, textile,
+      and industrial processing environments.
+    </p>
+  </div>
+
+</div>
+
+
+<!-- =====================Product 3====================================================================================================-->
+<!-- =======================APRON CHROME LEATHER=================== -->
 <div class="sa-product-section" id="apron-chrome-leather">
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
@@ -3744,7 +3375,7 @@ img{
 <div class="sa-product-section" id="helmet-auto-darkening">
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
-      <img src="img/helmet-auto-darkening.jpeg" alt="Helmet Auto Darkening">
+      <img src="img/sa" alt="Helmet Auto Darkening">
     </div>
     <div class="sa-product-detail-content">
       <span class="sa-product-detail-label">Safety Helmet</span>
@@ -4002,6 +3633,9 @@ img{
     </div>
   </div>
 </div>
+
+<!-- =====================Product 4====================================================================================================-->
+
 <!-- APRON CHROME LEATHER -->
 <div class="sa-product-section" id="safety-apron-chrome-leather">
   <div class="sa-product-detail-card">
@@ -4072,7 +3706,7 @@ img{
 <div class="sa-product-section" id="safety-goggles">
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
-      <img src="img/Safety Belt.jpg" alt="Safety Goggles">
+      <img src="img/Goggles.jpg" alt="Safety Goggles">
     </div>
     <div class="sa-product-detail-content">
       <span class="sa-product-detail-label">Eye Protection</span>
@@ -4144,7 +3778,7 @@ img{
 <div class="sa-product-section" id="safety-helmet">
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
-      <img src="img/sa-helmet.jpg" alt="Safety Helmet">
+      <img src="img/safety-helmet.webp" alt="Safety Helmet">
     </div>
     <div class="sa-product-detail-content">
       <span class="sa-product-detail-label">Head Protection</span>
@@ -4253,6 +3887,7 @@ img{
 </div>
 
 
+<!-- =====================Product 5====================================================================================================-->
 
 <!-- =========================
      ARGON TORCH
@@ -4294,6 +3929,8 @@ img{
      TUNGSTEN RODS
 ========================= -->
 <div class="sa-product-section" id="tungsten-rods">
+
+  <!-- MAIN CARD -->
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
       <img src="img/tungsten-rods-main.webp" alt="Tungsten Rods">
@@ -4304,64 +3941,145 @@ img{
       <h2>Tungsten Rods</h2>
 
       <p>
-        Premium tungsten rods for TIG welding applications. Available in multiple grades,
-        color codes and welding applications for AC and DC use.
+        High quality tungsten rods available in various grades and color codes,
+        suitable for different TIG welding applications including AC, DC and low amperage welding.
       </p>
 
       <ul class="sa-product-points">
         <li>Make – Plansee (Made in Austria)</li>
         <li>Make – Winner (Made in China)</li>
-        <li>Available in Pure, Thoriated, Lanthanated, Ceriated and Zirconiated types</li>
-        <li>Suitable for AC, DC and low amperage TIG welding applications</li>
+        <li>Available in multiple grades and color codes</li>
+        <li>Suitable for aluminium, stainless steel, nickel alloys & titanium</li>
       </ul>
 
       <a href="contact.html" class="sa-product-btn">Enquire Now</a>
     </div>
   </div>
 
+
+  <!-- TYPES & COLOR CODES -->
   <div class="sa-info-grid">
+
+    <!-- LEFT -->
     <div class="sa-info-box">
       <h3>Available Types & Color Codes</h3>
+
       <div class="sa-grade-list">
-        <span class="sa-grade-pill">WP - Green</span>
-        <span class="sa-grade-pill">WT10 - Yellow</span>
-        <span class="sa-grade-pill">WT20 - Red</span>
-        <span class="sa-grade-pill">WT40 - Orange</span>
-        <span class="sa-grade-pill">WZ8 - White</span>
-        <span class="sa-grade-pill">WC20 - Grey</span>
-        <span class="sa-grade-pill">WL10 - Black</span>
-        <span class="sa-grade-pill">WL20 - Blue</span>
-        <span class="sa-grade-pill">WL15 - Gold</span>
+        <span class="sa-grade-pill">WP – Green</span>
+        <span class="sa-grade-pill">WT10 – Yellow</span>
+        <span class="sa-grade-pill">WT20 – Red</span>
+        <span class="sa-grade-pill">WT40 – Orange</span>
+        <span class="sa-grade-pill">WZ8 – White</span>
+        <span class="sa-grade-pill">WC20 – Grey</span>
+        <span class="sa-grade-pill">WL10 – Black</span>
+        <span class="sa-grade-pill">WL15 – Gold</span>
+        <span class="sa-grade-pill">WL20 – Blue</span>
       </div>
 
       <h4>Applications</h4>
-      <p><strong>Pure Tungsten (Green):</strong> Best suited for AC TIG welding of aluminium and magnesium alloys.</p>
-      <p><strong>Thoriated (Red / Yellow / Orange):</strong> Best suited for DC TIG welding of carbon steel, stainless steel, nickel alloys and titanium.</p>
-      <p><strong>Lanthanated (Black / Gold / Blue):</strong> Suitable for AC &amp; DC welding applications with good arc characteristics.</p>
-      <p><strong>Ceriated (Grey / Orange):</strong> Best suited for low amperage DC welding with stable arc start.</p>
-      <p><strong>Zirconiated (White / Brown):</strong> Best suited for AC TIG welding with higher contamination resistance.</p>
+
+      <p><strong>Pure Tungsten (Green):</strong> Best for AC TIG welding of aluminium & magnesium.</p>
+
+      <p><strong>Thoriated (Red / Yellow / Orange):</strong> Best for DC TIG welding of carbon steel, stainless steel, nickel alloys and titanium.</p>
+
+      <p><strong>Lanthanated (Black / Gold / Blue):</strong> Suitable for AC & DC welding with stable arc performance.</p>
+
+      <p><strong>Ceriated (Grey / Orange):</strong> Ideal for low amperage DC welding with easy arc start.</p>
+
+      <p><strong>Zirconiated (White / Brown):</strong> Suitable for AC welding with high contamination resistance.</p>
     </div>
 
-    <div class="sa-info-box">
-      <h3>Technical Notes</h3>
-      <p><strong>W / WP / Green:</strong> Non-radioactive; suitable for AC welding of aluminium, magnesium and their alloys.</p>
-      <p><strong>WT10 / WT20:</strong> Excellent electron emission and high current carrying capacity; suitable for DC welding.</p>
-      <p><strong>WL10 / WL15 / WL20:</strong> Non-radioactive; excellent conductivity and welding capacity.</p>
-      <p><strong>WC10 / WC15 / WC20:</strong> Easier arc initiation under low current circumstances.</p>
-      <p><strong>WZ8:</strong> Suitable for AC welding and preferred for radiographic quality welding.</p>
 
-      <h4>Surface Notes</h4>
+    <!-- RIGHT -->
+    <div class="sa-info-box">
+      <h3>Technical Data</h3>
+
+      <p><strong>Pure Tungsten (WP):</strong> Non-radioactive; suitable for AC welding of aluminium and magnesium.</p>
+
+      <p><strong>Thoriated (WT10 / WT20):</strong> High current carrying capacity and excellent performance (radioactive).</p>
+
+      <p><strong>Lanthanated (WL10 / WL15 / WL20):</strong> Non-radioactive; excellent conductivity and arc stability.</p>
+
+      <p><strong>Ceriated (WC10 / WC15 / WC20):</strong> Easier arc initiation at low current.</p>
+
+      <p><strong>Zirconiated (WZ8):</strong> Best for AC welding with radiographic quality results.</p>
+
+      <h4>Surface Types</h4>
       <ul class="sa-shielding-list">
-        <li>D = As Drawn</li>
-        <li>E = Electrolytic Polished</li>
-        <li>G = Ground</li>
-        <li>S = Swaged</li>
+        <li>D – As Drawn</li>
+        <li>E – Electrolytic Polished</li>
+        <li>G – Ground</li>
+        <li>S – Swaged</li>
       </ul>
     </div>
+
   </div>
 
+
+  <!-- DETAILED TABLE -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Technical Composition</h3>
+
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Grade</th>
+          <th>Color</th>
+          <th>Composition</th>
+          <th>Features</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Pure Tungsten</td>
+          <td>WP</td>
+          <td>Green</td>
+          <td>W (Pure)</td>
+          <td>Non-radioactive, suitable for AC welding</td>
+        </tr>
+
+        <tr>
+          <td>Thoriated</td>
+          <td>WT10 / WT20</td>
+          <td>Yellow / Red</td>
+          <td>ThO2 (0.9–2.2%)</td>
+          <td>High current capacity, DC welding</td>
+        </tr>
+
+        <tr>
+          <td>Lanthanated</td>
+          <td>WL10 / WL15 / WL20</td>
+          <td>Black / Gold / Blue</td>
+          <td>La2O3</td>
+          <td>Non-radioactive, excellent arc stability</td>
+        </tr>
+
+        <tr>
+          <td>Ceriated</td>
+          <td>WC10 / WC20</td>
+          <td>Grey / Orange</td>
+          <td>CeO2</td>
+          <td>Easy arc start, low current welding</td>
+        </tr>
+
+        <tr>
+          <td>Zirconiated</td>
+          <td>WZ8</td>
+          <td>White</td>
+          <td>ZrO2</td>
+          <td>High contamination resistance, AC welding</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- SIZE TABLE -->
   <div class="sa-mini-table-wrap">
     <h3 class="sa-mini-title">Sizes</h3>
+
     <table class="sa-table">
       <thead>
         <tr>
@@ -4373,26 +4091,32 @@ img{
           <th>4.0</th>
         </tr>
       </thead>
+
       <tbody>
         <tr>
           <td>Length (mm)</td>
-          <td>150 or 175</td>
-          <td>150 or 175</td>
-          <td>150 or 175</td>
-          <td>150 or 175</td>
-          <td>150 or 175</td>
+          <td>150 / 175</td>
+          <td>150 / 175</td>
+          <td>150 / 175</td>
+          <td>150 / 175</td>
+          <td>150 / 175</td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <!-- image layout like screenshot -->
-  <div class="sa-wide-gallery">
-    
+
+  <!-- NOTE -->
+  <div class="sa-note-box">
+    <h3>Industrial Use</h3>
+    <p>
+      Tungsten rods are widely used in TIG welding for precision applications
+      including aluminium, stainless steel, nickel alloys, pipelines and
+      high-performance industrial fabrication.
+    </p>
   </div>
+
 </div>
-
-
 
 
 <!-- =========================
@@ -4426,16 +4150,23 @@ img{
   <!-- image style exactly for adding multiple images -->
   <div class="sa-wide-gallery">
     <div class="sa-wide-gallery-card">
-      <img src="img/ceramic-nozzles-gallery-1.jpg" alt="Ceramic Nozzles Set">
+      <img src="img/ceramic-No-1.jfif" alt="Ceramic Nozzles Set">
     </div>
+
     <div class="sa-wide-gallery-card">
-      <img src="img/ceramic-nozzles-gallery-2.jpg" alt="Ceramic Nozzles Sizes">
+      <img src="img/ceramic-no-3.avif" alt="Ceramic Nozzles Accessories">
     </div>
+
     <div class="sa-wide-gallery-card">
-      <img src="img/ceramic-nozzles-gallery-3.jpg" alt="Ceramic Nozzles Accessories">
+      <img src="img/ceramic-No-2.jfif" alt="Ceramic Nozzles Sizes">
     </div>
   </div>
-</div><!-- =========================
+</div>
+
+<!-- =====================Product 6====================================================================================================-->
+
+
+<!-- =========================
      CO2 TORCH
 ========================= -->
 <div class="sa-product-section" id="co2-torch">
@@ -4472,6 +4203,16 @@ img{
      CONTACT TIPS
 ========================= -->
 <div class="sa-product-section" id="contact-tips">
+
+  <section class="sa-brands-section">
+      <h2 class="sa-section-title">Trusted Brands We Deal In</h2>
+      <div class="sa-brand-strip">
+        <div class="sa-brand-card"><img src="img/mangalam-logo.png" alt="Venus"></div>
+        <div class="sa-brand-card"><img src="img/advani-oerlikon-logo.png" alt="Anand Arc"></div>
+       
+      </div>
+  </section>
+
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
       <img src="img/Contact Tips.jpg" alt="Contact Tips">
@@ -4496,11 +4237,6 @@ img{
     </div>
   </div>
 
-  <div class="sa-brand-strip">
-    <div class="sa-brand-card"><img src="img/mangalam-logo.png" alt="Mogora"></div>
-    <div class="sa-brand-card"><img src="img/advani-oerlikon-logo.png" alt="Advani"></div>
-    
-  </div>
 </div>
 
 <!-- =========================
@@ -4619,10 +4355,20 @@ img{
   </div>
 </div>
 
+<!-- =====================Product 7====================================================================================================-->
 
 
 <!-- BLOW PIPES / BRAZING TORCH -->
 <div class="sa-product-section" id="blowpipes-brazing-torch">
+  <section class="sa-brands-section">
+    <h2 class="sa-section-title">Trusted Brands We Deal In</h2>
+    <div class="sa-brand-strip">
+      <div class="sa-brand-card"><img src="img/sudhanshu_associates_messer_logo.jpg" alt="Messer"></div>
+      <div class="sa-brand-card"><img src="img/misatu_logo.jpg" alt="Misatu"></div>
+
+    </div>
+  </section>
+
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
       <img src="img/Blow.jpg" alt="Blow Pipes Brazing Torch">
@@ -4640,13 +4386,6 @@ img{
       </ul>
       <a href="contact.html" class="sa-product-btn">Enquire Now</a>
     </div>
-  </div>
-
-  <div class="sa-brand-strip">
-    <div class="sa-brand-card"><img src="img/esab-logo.png" alt="ESAB"></div>
-    <div class="sa-brand-card"><img src="img/ador-logo.png" alt="ADOR"></div>
-    <div class="sa-brand-card"><img src="img/prestige-logo.png" alt="Prestige"></div>
-    <div class="sa-brand-card"><img src="img/super-logo.png" alt="Super"></div>
   </div>
 </div>
 
@@ -4991,13 +4730,24 @@ img{
       <a href="contact.html" class="sa-product-btn">Enquire Now</a>
     </div>
   </div>
-</div><!-- =========================
+</div>
+
+<!-- =====================Product 8====================================================================================================-->
+
+<!-- =========================
      DAYLIGHT VISIBLE RED DYE PENETRANT MATERIAL
 ========================= -->
 <div class="sa-product-section" id="red-dye-penetrant-material">
+    <section class="sa-brands-section">
+      <h2 class="sa-section-title">Trusted Brands We Deal In</h2>
+      <div class="sa-brand-strip">
+        <div class="sa-brand-card"><img src="img/dyeglo_logo.jpg" alt="Messer"></div>
+      </div>
+    </section>
+
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
-      <img src="img/red-dye-penetrant-material.jpg" alt="Red Dye Penetrant Material">
+      <img src="img/Dyeglo -1.jfif" alt="Red Dye Penetrant Material">
     </div>
 
     <div class="sa-product-detail-content">
@@ -5021,9 +4771,6 @@ img{
     </div>
   </div>
 
-  <div class="sa-brand-strip">
-    <div class="sa-brand-card"><img src="img/dyeglo-logo.png" alt="DYEGLO"></div>
-  </div>
 
   <div class="sa-info-grid">
     <div class="sa-info-box">
@@ -5052,7 +4799,7 @@ img{
 <div class="sa-product-section" id="fluorescent-dye-penetrant-material">
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
-      <img src="img/fluorescent-dye-penetrant-material.jpg" alt="Fluorescent Dye Penetrant Material">
+      <img src="img/fluorent.jfif" alt="Fluorescent Dye Penetrant Material">
     </div>
 
     <div class="sa-product-detail-content">
@@ -5095,13 +4842,13 @@ img{
 
   <div class="sa-wide-gallery">
     <div class="sa-wide-gallery-card">
-      <img src="img/fluorescent-dp-1.jpg" alt="Fluorescent DP Material 1">
+      <img src="img/fluorent1.webp" alt="Fluorescent DP Material 1">
     </div>
     <div class="sa-wide-gallery-card">
-      <img src="img/fluorescent-dp-2.jpg" alt="Fluorescent DP Material 2">
+      <img src="img/fluorent2.jpg" alt="Fluorescent DP Material 2">
     </div>
     <div class="sa-wide-gallery-card">
-      <img src="img/fluorescent-dp-3.jpg" alt="Fluorescent DP Material 3">
+      <img src="img/fluorent-1.jpg" alt="Fluorescent DP Material 3">
     </div>
   </div>
 </div>
@@ -5112,7 +4859,7 @@ img{
 <div class="sa-product-section" id="developer-contrast-coating">
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
-      <img src="img/de-contrast-coating.jpg" alt="Developer Contrast Background Coating">
+      <img src="img/dp3.webp" alt="Developer Contrast Background Coating">
     </div>
 
     <div class="sa-product-detail-content">
@@ -5139,7 +4886,10 @@ img{
     <p>Available in aerosol cans of 400 ml capacity.</p>
   </div>
 </div>
-        <!-- ARGON GAS REGULATOR -->
+
+<!-- =====================Product 9===================================================================================================-->
+
+<!-- ARGON GAS REGULATOR -->
 <div class="sa-product-section" id="argon-gas-regulator">
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
@@ -5188,7 +4938,7 @@ img{
 <div class="sa-product-section" id="double-stage-regulators">
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
-      <img src="img/d-stage-regulators.jpg" alt="Double Stage Regulators">
+      <img src="img/double.jpg" alt="Double Stage Regulators">
     </div>
     <div class="sa-product-detail-content">
       <span class="sa-product-detail-label">Pressure Regulators & Spares</span>
@@ -5211,7 +4961,7 @@ img{
 <div class="sa-product-section" id="single-stage-regulator">
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
-      <img src="img/single-stage-regulator.jpg" alt="Single Stage Regulator">
+      <img src="img/single-stage.jpg" alt="Single Stage Regulator">
     </div>
     <div class="sa-product-detail-content">
       <span class="sa-product-detail-label">Pressure Regulators & Spares</span>
@@ -5233,7 +4983,7 @@ img{
 <div class="sa-product-section" id="single-stage-regulator-flow-meter">
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
-      <img src="img/single-stage-regulator-flow-meter.jpg" alt="Single Stage Regulator With Flow Meter">
+      <img src="img/single-stge _flow.jpg" alt="Single Stage Regulator With Flow Meter">
     </div>
     <div class="sa-product-detail-content">
       <span class="sa-product-detail-label">Pressure Regulators & Spares</span>
@@ -5255,7 +5005,7 @@ img{
 <div class="sa-product-section" id="high-pressure-single-stage-regulators">
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
-      <img src="img/high-pressure-single-stage-regulators.jpg" alt="High Pressure Single Stage Regulators">
+      <img src="img/High-pressure_single Stage.webp" alt="High Pressure Single Stage Regulators">
     </div>
     <div class="sa-product-detail-content">
       <span class="sa-product-detail-label">Pressure Regulators & Spares</span>
@@ -5278,7 +5028,7 @@ img{
 <div class="sa-product-section" id="compact-single-stage-regulators">
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
-      <img src="img/compact-single-stage-regulators.jpg" alt="Compact Single Stage Regulators">
+      <img src="img/compact-SS-regulators.jfif" alt="Compact Single Stage Regulators">
     </div>
     <div class="sa-product-detail-content">
       <span class="sa-product-detail-label">Pressure Regulators & Spares</span>
@@ -5300,7 +5050,7 @@ img{
 <div class="sa-product-section" id="ss-single-stage-regulators">
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
-      <img src="img/ss-single-stage-regulators.jpg" alt="SS Single Stage Regulators">
+      <img src="img/ss-single-stage-regulators.jfif" alt="SS Single Stage Regulators">
     </div>
     <div class="sa-product-detail-content">
       <span class="sa-product-detail-label">Pressure Regulators & Spares</span>
@@ -5346,7 +5096,7 @@ img{
 <div class="sa-product-section" id="electrode-holder-regulator-page">
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
-      <img src="img/electrode-holder-regulator-page.jpg" alt="Electrode Holder">
+      <img src="img/elctrod-holder.jpg" alt="Electrode Holder">
     </div>
     <div class="sa-product-detail-content">
       <span class="sa-product-detail-label">Accessory</span>
@@ -5369,7 +5119,7 @@ img{
 <div class="sa-product-section" id="multi-cylinder-compressed-manifold">
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
-      <img src="img/multi-cylinder-compressed-manifold.jpg" alt="Multi Cylinder Compressed Manifold">
+      <img src="img/multi-cylinder-compressed-manifold.webp" alt="Multi Cylinder Compressed Manifold">
     </div>
     <div class="sa-product-detail-content">
       <span class="sa-product-detail-label">Gas Manifold</span>
@@ -5391,7 +5141,7 @@ img{
 <div class="sa-product-section" id="flow-meter-gas">
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
-      <img src="img/flow-meter-gas.jpg" alt="Flow Meter">
+      <img src="img/flow-meter.jfif" alt="Flow Meter">
     </div>
     <div class="sa-product-detail-content">
       <span class="sa-product-detail-label">Gas Control</span>
@@ -5409,202 +5159,428 @@ img{
   </div>
 </div>
 
-         <!-- =========================
-     APS
-========================= -->
-<div class="sa-product-section" id="aps-welding-machine">
+<!-- =====================Product 10===================================================================================================-->
+<!-- arc-welding   -->
+
+<div class="sa-product-section" id="arc-welding">
+
+  <!-- MAIN CARD -->
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
-      <img src="img/aps.jpg" alt="APS Welding Machine">
+      <img src="img/arc-welding-main.jpg" alt="Arc Welding">
     </div>
 
     <div class="sa-product-detail-content">
       <span class="sa-product-detail-label">Welding Machines</span>
-      <h2>APS</h2>
+      <h2>Arc Welding Machines</h2>
 
       <p>
-        Industrial welding machine suitable for workshop and fabrication applications.
+        We provide a wide range of Arc Welding Machines including MOSFET, IGBT,
+        Modular IGBT and DON Series designed for industrial performance,
+        durability and high welding efficiency.
       </p>
 
       <ul class="sa-product-points">
-        <li>Reliable welding performance</li>
-        <li>Suitable for industrial use</li>
-        <li>Strong and durable machine build</li>
+        <li>Available in multiple series and capacities</li>
+        <li>High performance industrial welding machines</li>
+        <li>Suitable for heavy duty fabrication work</li>
+        <li>Reliable arc stability and efficiency</li>
       </ul>
 
       <a href="contact.html" class="sa-product-btn">Enquire Now</a>
     </div>
   </div>
+
+
+  <!-- IMAGE GALLERY (REPLACES BRAND STRIP) -->
+  <div class="sa-gallery-grid">
+    <div class="sa-gallery-card">
+      <img src="img/Arc-1.jpg" alt="Arc Welding Machine">
+    </div>
+    <div class="sa-gallery-card">
+      <img src="img/ARC-2.jpg" alt="Arc Welding Machine">
+    </div>
+    <div class="sa-gallery-card">
+      <img src="img/ARC-3.jpg" alt="Arc Welding Machine">
+    </div>
+    
+  </div>
+
+
+  <!-- INFO GRID -->
+  <div class="sa-info-grid">
+
+    <!-- LEFT -->
+    <div class="sa-info-box">
+      <h3>MOSFET Series</h3>
+      <div class="sa-grade-list">
+        <span class="sa-grade-pill">ARC-200</span>
+        <span class="sa-grade-pill">ARC-250 ST</span>
+        <span class="sa-grade-pill">ARC-300 L</span>
+        <span class="sa-grade-pill">ARC-300 S</span>
+        <span class="sa-grade-pill">ARC-300</span>
+        <span class="sa-grade-pill">ARC-400</span>
+      </div>
+
+      <h3 style="margin-top:20px;">IGBT Series</h3>
+      <div class="sa-grade-list">
+        <span class="sa-grade-pill">ARC-200 G</span>
+        <span class="sa-grade-pill">ARC-200 L</span>
+        <span class="sa-grade-pill">ARC-400 GLT</span>
+        <span class="sa-grade-pill">ARC-400 GT</span>
+        <span class="sa-grade-pill">ARC-400 SUMO</span>
+      </div>
+    </div>
+
+
+    <!-- RIGHT -->
+    <div class="sa-info-box">
+      <h3>Modular IGBT Series</h3>
+      <div class="sa-grade-list">
+        <span class="sa-grade-pill">ARC-400 CI</span>
+        <span class="sa-grade-pill">ARC-400 BIJ</span>
+        <span class="sa-grade-pill">ARC-400 IJ</span>
+        <span class="sa-grade-pill">ARC-630 IJ</span>
+      </div>
+
+      <h3 style="margin-top:20px;">DON Series</h3>
+      <div class="sa-grade-list">
+        <span class="sa-grade-pill">DONARC-220</span>
+        <span class="sa-grade-pill">DONARC-270 S</span>
+        <span class="sa-grade-pill">DONARC-270 L</span>
+        <span class="sa-grade-pill">DONARC-315 L</span>
+        <span class="sa-grade-pill">DONARC-315</span>
+        <span class="sa-grade-pill">DONARC-400</span>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- OPTIONAL NOTE -->
+  <div class="sa-note-box">
+    <h3>Industrial Application</h3>
+    <p>
+      Arc welding machines are widely used in fabrication industries,
+      construction, repair work, heavy engineering and structural welding
+      where high strength and durability are required.
+    </p>
+  </div>
+
 </div>
 
 <!-- =========================
-     WELDING TRANSFORMER
+     TIG WELDING
 ========================= -->
-<div class="sa-product-section" id="welding-transformer">
+<div class="sa-product-section" id="tig-welding">
+
+  <!-- MAIN CARD -->
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
-      <img src="img/Welding Transformer.jpg" alt="Welding Transformer">
+      <img src="img/tTIG-MAIN.jpg" alt="TIG Welding Machine">
     </div>
 
     <div class="sa-product-detail-content">
       <span class="sa-product-detail-label">Welding Machines</span>
-      <h2>Welding Transformer</h2>
+      <h2>TIG Welding Machines</h2>
 
       <p>
-        Make – Super Arc Industries. Available in copper and aluminium winding from 200 amps to 600 amps in two phase and three phase.
+        We offer a wide range of TIG Welding Machines including standard TIG,
+        ARC compatible TIG and Pulse AC/DC series machines designed for
+        precision welding, smooth arc control and industrial performance.
       </p>
 
       <ul class="sa-product-points">
-        <li>Copper and aluminium winding available</li>
-        <li>Range from 200 amps to 600 amps</li>
-        <li>Available in two phase and three phase</li>
+        <li>High precision TIG welding performance</li>
+        <li>Available in standard and Pulse AC/DC series</li>
+        <li>Suitable for stainless steel, aluminium and alloy welding</li>
+        <li>Smooth arc and stable output</li>
       </ul>
 
       <a href="contact.html" class="sa-product-btn">Enquire Now</a>
     </div>
   </div>
 
-  <!-- brands -->
-  <div class="sa-brand-strip">
-    <div class="sa-brand-card"><img src="img/super-arc-industries-logo.png" alt="Super Arc Industries"></div>
-    <div class="sa-brand-card"><img src="img/sai-arc-logo.png" alt="Sai Arc"></div>
+  <!-- IMAGE GALLERY -->
+  <div class="sa-gallery-grid">
+    <div class="sa-gallery-card">
+      <img src="img/TIG-1.jpg" alt="TIG Welding Machine">
+    </div>
+    <div class="sa-gallery-card">
+      <img src="img/TIG-2.jpg" alt="TIG Welding Machine">
+    </div>
+    <div class="sa-gallery-card">
+      <img src="img/TIG-3.jpg" alt="TIG Welding Machine">
+    </div>
   </div>
 
-  <!-- regulator type transformer -->
+  <!-- INFO GRID -->
   <div class="sa-info-grid">
+
+    <!-- LEFT -->
     <div class="sa-info-box">
-      <h3>Regulator Type Welding Transformer</h3>
-      <p>
-        Our clients can avail regulator type welding transformers known for precise engineering
-        and less power consumption. These are extensively used in various industries and are
-        available in different specifications.
-      </p>
-
-      <h4>Input Supply</h4>
-      <p>350–440 volts, 3 phase (2 wire), 50 Hz supply</p>
-
-      <h4>Duty Cycle</h4>
-      <p>60% (10 minutes &amp; 40°C)</p>
+      <h3>TIG / ARC Welding Series</h3>
+      <div class="sa-grade-list">
+        <span class="sa-grade-pill">TIG-200</span>
+        <span class="sa-grade-pill">TIG-300 S</span>
+        <span class="sa-grade-pill">TIG-300</span>
+        <span class="sa-grade-pill">TIG-400 SUMO</span>
+        <span class="sa-grade-pill">TIG-400 IJ</span>
+      </div>
     </div>
 
+    <!-- RIGHT -->
     <div class="sa-info-box">
-      <h3>Portable Welding Transformers</h3>
-      <p>
-        Portable welding transformers. Make - Sai Arc.
-      </p>
-      <ul class="sa-shielding-list">
-        <li>Available from 150 to 250 amps</li>
-        <li>Single phase / two phase and combine</li>
-        <li>Copper and aluminium winding</li>
-      </ul>
+      <h3>Pulse & AC/DC Series</h3>
+      <div class="sa-grade-list">
+        <span class="sa-grade-pill">TIG-200 M</span>
+        <span class="sa-grade-pill">TIG-315 BP AC/DC</span>
+        <span class="sa-grade-pill">TIG-500 P AC/DC</span>
+        <span class="sa-grade-pill">TIG-200 P AC/DC</span>
+      </div>
     </div>
+
   </div>
 
-  <!-- technical table -->
-  <div class="sa-table-wrap">
-    <h3 class="sa-table-title">Technical Specifications</h3>
-
-    <table class="sa-table">
-      <thead>
-        <tr>
-          <th>Model</th>
-          <th>Input Power (kVA)</th>
-          <th>Open Circuit Voltage (V)</th>
-          <th>Current Range</th>
-          <th>Max Hand Welding (A)</th>
-          <th>Cooling</th>
-          <th>Approx. Weight (Kg)</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr>
-          <td>STR 200</td>
-          <td>8</td>
-          <td>50</td>
-          <td>50-200</td>
-          <td>150</td>
-          <td>-</td>
-          <td>50</td>
-        </tr>
-        <tr>
-          <td>STR 250</td>
-          <td>10</td>
-          <td>50</td>
-          <td>50-250</td>
-          <td>240</td>
-          <td>-</td>
-          <td>55</td>
-        </tr>
-        <tr>
-          <td>STR 300</td>
-          <td>15</td>
-          <td>60</td>
-          <td>60-300</td>
-          <td>240</td>
-          <td>FA</td>
-          <td>72</td>
-        </tr>
-        <tr>
-          <td>STR 400</td>
-          <td>21</td>
-          <td>65</td>
-          <td>80-400</td>
-          <td>300</td>
-          <td>FA</td>
-          <td>95</td>
-        </tr>
-        <tr>
-          <td>STR 500</td>
-          <td>25</td>
-          <td>70</td>
-          <td>80-500</td>
-          <td>400</td>
-          <td>FA</td>
-          <td>120</td>
-        </tr>
-        <tr>
-          <td>STR 600</td>
-          <td>36</td>
-          <td>70</td>
-          <td>80-600</td>
-          <td>450</td>
-          <td>FA</td>
-          <td>160</td>
-        </tr>
-      </tbody>
-    </table>
+  <!-- NOTE -->
+  <div class="sa-note-box">
+    <h3>Industrial Application</h3>
+    <p>
+      TIG welding machines are widely used for precision welding in industries
+      such as fabrication, aerospace, automotive and stainless steel work where
+      clean and high-quality weld finish is required.
+    </p>
   </div>
+
 </div>
 
-          <div class="sa-product-section" id="air-drying-paint">
+<!-- =========================
+     MIG WELDING
+========================= -->
+<div class="sa-product-section" id="mig-welding">
+
+  <!-- MAIN CARD -->
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
-      <img src="img/Air Drying Paint.jpg" alt="Air Drying Paint">
+      <img src="img/MIG-MAIN.jpg" alt="MIG Welding Machine">
     </div>
 
     <div class="sa-product-detail-content">
-      <span class="sa-product-detail-label">Air Drying Paint</span>
-      <h2>Air Drying Paint</h2>
+      <span class="sa-product-detail-label">Welding Machines</span>
+      <h2>MIG Welding Machines</h2>
 
       <p>
-        High quality air drying paint solutions for industrial protection, finishing and maintenance applications.
+        We offer a complete range of MIG Welding Machines designed for high-speed,
+        continuous welding applications with excellent arc stability and productivity.
       </p>
 
       <ul class="sa-product-points">
-        <li>Suitable for industrial coating use</li>
-        <li>Fast application and reliable finish</li>
-        <li>Useful for maintenance and protection work</li>
+        <li>High efficiency continuous welding</li>
+        <li>Stable arc with low spatter</li>
+        <li>Suitable for industrial fabrication work</li>
+        <li>Available in multiple capacities and models</li>
       </ul>
 
       <a href="contact.html" class="sa-product-btn">Enquire Now</a>
     </div>
   </div>
+
+  <!-- IMAGE GALLERY -->
+  <div class="sa-gallery-grid">
+    <div class="sa-gallery-card">
+      <img src="img/MIG-1.jpg" alt="MIG Welding Machine">
+    </div>
+    <div class="sa-gallery-card">
+      <img src="img/MIG-2.jpg" alt="MIG Welding Machine">
+    </div>
+    <div class="sa-gallery-card">
+      <img src="img/MIG-3.jpg" alt="MIG Welding Machine">
+    </div>
+  </div>
+
+  <!-- INFO GRID -->
+  <div class="sa-info-grid">
+
+    <div class="sa-info-box">
+      <h3>Available Models</h3>
+      <div class="sa-grade-list">
+        <span class="sa-grade-pill">DONMIG 250Y</span>
+        <span class="sa-grade-pill">DONMIG 250 YS</span>
+        <span class="sa-grade-pill">MIG 250 F</span>
+        <span class="sa-grade-pill">MIG 250 FS</span>
+      </div>
+    </div>
+
+    <div class="sa-info-box">
+      <h3>Advanced Series</h3>
+      <div class="sa-grade-list">
+        <span class="sa-grade-pill">DONMIG 315 F</span>
+        <span class="sa-grade-pill">DONMIG 400</span>
+        <span class="sa-grade-pill">MIG 400 IJ</span>
+        <span class="sa-grade-pill">MIG 630 IJ</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- NOTE -->
+  <div class="sa-note-box">
+    <h3>Industrial Application</h3>
+    <p>
+      MIG welding machines are widely used in fabrication industries,
+      automotive manufacturing, structural welding and production work
+      where speed and efficiency are important.
+    </p>
+  </div>
+
 </div>
+
+<!-- =========================
+     CUT WELDING
+========================= -->
+<div class="sa-product-section" id="cut-welding">
+
+  <!-- MAIN CARD -->
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/CUT-MAIN.jpg" alt="Cut Welding Machine">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Welding Machines</span>
+      <h2>Cut Welding Machines</h2>
+
+      <p>
+        High-performance plasma cutting machines designed for precision cutting,
+        fast operation and reliable industrial performance across various materials.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Fast and accurate cutting performance</li>
+        <li>Suitable for industrial and fabrication work</li>
+        <li>Clean cut with minimal material distortion</li>
+        <li>Available in multiple capacity models</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+
+  <!-- IMAGE GALLERY -->
+  <div class="sa-gallery-grid">
+    <div class="sa-gallery-card">
+      <img src="img/CUT-1.jpg" alt="Cut Welding Machine">
+    </div>
+    <div class="sa-gallery-card">
+      <img src="img/CUT-2.jpg" alt="Cut Welding Machine">
+    </div>
+    <div class="sa-gallery-card">
+      <img src="img/CUT-3.jpg" alt="Cut Welding Machine">
+    </div>
+  </div>
+
+  <!-- INFO GRID -->
+  <div class="sa-info-grid">
+
+    <div class="sa-info-box">
+      <h3>Available Models</h3>
+      <div class="sa-grade-list">
+        <span class="sa-grade-pill">CUT 40</span>
+        <span class="sa-grade-pill">CUT 70</span>
+      </div>
+    </div>
+
+    <div class="sa-info-box">
+      <h3>Advanced Models</h3>
+      <div class="sa-grade-list">
+        <span class="sa-grade-pill">CUT 100 IJ</span>
+        <span class="sa-grade-pill">CUT 160 I</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- NOTE -->
+  <div class="sa-note-box">
+    <h3>Industrial Application</h3>
+    <p>
+      Cut welding (plasma cutting) machines are widely used in fabrication,
+      metal cutting, automotive industries and heavy engineering applications
+      where precision and speed are critical.
+    </p>
+  </div>
+
+</div>
+
+
+<!-- =========================
+     SAW WELDING
+========================= -->
+<div class="sa-product-section" id="saw-welding">
+
+  <!-- MAIN CARD -->
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/SAW-MAIN.jpg" alt="SAW Welding Machine">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Welding Machines</span>
+      <h2>SAW Welding Machines</h2>
+
+      <p>
+        Submerged Arc Welding (SAW) machines are designed for high deposition,
+        deep penetration welding and heavy fabrication applications.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>High speed and deep penetration welding</li>
+        <li>Low spatter and clean weld finish</li>
+        <li>Ideal for heavy structural and industrial work</li>
+        <li>Suitable for long continuous welds</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+
+  <!-- INFO -->
+  <div class="sa-info-grid">
+    <div class="sa-info-box">
+      <h3>Applications</h3>
+      <ul class="sa-shielding-list">
+        <li>Heavy fabrication industries</li>
+        <li>Shipbuilding and structural work</li>
+        <li>Pressure vessels and pipelines</li>
+        <li>Long seam welding applications</li>
+      </ul>
+    </div>
+
+    <div class="sa-info-box">
+      <h3>Advantages</h3>
+      <ul class="sa-shielding-list">
+        <li>High productivity and efficiency</li>
+        <li>Deep weld penetration</li>
+        <li>Minimal weld defects</li>
+        <li>Consistent weld quality</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<!-- =====================Product 11===================================================================================================-->
+
+
+
+<!-- =====================Product 12===================================================================================================-->
 <!-- =========================
      POLISHING MACHINE FOR SS
 ========================= -->
+
 <div class="sa-product-section" id="ss-polishing-machine">
+
+  <!-- MAIN CARD -->
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
       <img src="img/Polishing Machine for SS.jpg" alt="Polishing Machine for Stainless Steel">
@@ -5612,24 +5588,30 @@ img{
 
     <div class="sa-product-detail-content">
       <span class="sa-product-detail-label">Polishing Machines</span>
-      <h2>Polishing Machine for SS</h2>
+      <h2>Polishing Machine for Stainless Steel</h2>
+
       <p>
-        High performance polishing and grinding machines for stainless steel applications,
-        suitable for grinding, polishing, buffing and finishing work.
+        High performance polishing and grinding machines designed for stainless steel applications.
+        Suitable for grinding, polishing, buffing and tyre retreading operations.
       </p>
 
       <ul class="sa-product-points">
-        <li>Available in 2800 RPM, 5800 RPM, 8000 RPM and 12000 RPM models</li>
-        <li>Suitable for polishing, buffing, fettling and die grinding jobs</li>
-        <li>Available in single phase and three phase options</li>
+        <li>Available in 2800, 5800, 8000 and 12000 RPM models</li>
+        <li>Used for grinding, polishing, buffing & fettling jobs</li>
+        <li>Available in single phase and three phase</li>
       </ul>
 
       <a href="contact.html" class="sa-product-btn">Enquire Now</a>
     </div>
   </div>
 
+
+  <!-- =========================
+       2800 RPM TABLE
+  ========================= -->
   <div class="sa-table-wrap">
     <h3 class="sa-table-title">2800 RPM Grinder</h3>
+
     <table class="sa-table">
       <thead>
         <tr>
@@ -5641,6 +5623,7 @@ img{
           <th>Application</th>
         </tr>
       </thead>
+
       <tbody>
         <tr>
           <td>RM 2801</td>
@@ -5650,6 +5633,7 @@ img{
           <td>2 Mtr.</td>
           <td>Grinding, Polishing, Buffing, Tyre Retreading</td>
         </tr>
+
         <tr>
           <td>RM 2803</td>
           <td>1</td>
@@ -5658,6 +5642,7 @@ img{
           <td>2 Mtr.</td>
           <td>Grinding, Polishing, Buffing</td>
         </tr>
+
         <tr>
           <td>RM 2802</td>
           <td>2</td>
@@ -5666,6 +5651,7 @@ img{
           <td>2 Mtr.</td>
           <td>Grinding, Polishing, Buffing</td>
         </tr>
+
         <tr>
           <td>RM 2823</td>
           <td>2</td>
@@ -5678,151 +5664,283 @@ img{
     </table>
   </div>
 
+
+  <!-- =========================
+       INFO GRID
+  ========================= -->
   <div class="sa-info-grid">
+
+    <!-- 5800 RPM -->
     <div class="sa-info-box">
       <h3>5800 RPM Grinder</h3>
-      <p>
-        Used for fettling jobs and grinding.
-      </p>
+
       <ul class="sa-shielding-list">
-        <li>WH 15 Holder used to fix grinding / buffing wheel upto 7"</li>
-        <li>Model: Prime 5800</li>
-        <li>1.5 HP, 415 Volts, 3 Phase</li>
-        <li>Shaft Length: 1.5 Mtr. / 2 Mtr.</li>
+        <li><strong>Model:</strong> Prime 5800</li>
+        <li><strong>Power:</strong> 1.5 HP</li>
+        <li><strong>Voltage:</strong> 415 V</li>
+        <li><strong>Phase:</strong> 3 Phase</li>
+        <li><strong>Shaft Length:</strong> 1.5 / 2 Mtr.</li>
+        <li><strong>Application:</strong> Fettling Jobs / Grinding</li>
+        <li>WH 15 holder used for wheels up to 7"</li>
       </ul>
     </div>
 
+
+    <!-- 8000 RPM -->
     <div class="sa-info-box">
       <h3>8000 RPM Grinder</h3>
-      <p>
-        Single speed machine for die grinding jobs.
-      </p>
+
       <ul class="sa-shielding-list">
-        <li>WH 10 Holder used to fix grinding wheel upto 100 mm</li>
-        <li>Model: Prime 8000</li>
-        <li>1.5 HP, 415 Volts, 3 Phase</li>
-        <li>Shaft Length: 1.5 Mtr. / 2 Mtr.</li>
+        <li><strong>Model:</strong> Prime 8000</li>
+        <li><strong>Power:</strong> 1.5 HP</li>
+        <li><strong>Voltage:</strong> 415 V</li>
+        <li><strong>Phase:</strong> 3 Phase</li>
+        <li><strong>Shaft Length:</strong> 1.5 / 2 Mtr.</li>
+        <li><strong>Application:</strong> Die Grinding Jobs</li>
+        <li>WH 10 holder for grinding wheels up to 100 mm</li>
       </ul>
     </div>
+
   </div>
 
+
+  <!-- =========================
+       SECOND GRID
+  ========================= -->
   <div class="sa-info-grid">
+
+    <!-- 12000 RPM -->
     <div class="sa-info-box">
       <h3>12000 / 1200 RPM Grinder</h3>
-      <p>
-        Two speed machine for die grinding jobs.
-      </p>
+
       <ul class="sa-shielding-list">
-        <li>Model: Prime 1212</li>
-        <li>1.5 HP, 415 Volts, 3 Phase</li>
-        <li>Shaft Length: 1.5 Mtr. / 2 Mtr.</li>
-        <li>FH 10 Holder used to fix mounted points, carbide and tungsten rotary cutter</li>
+        <li><strong>Model:</strong> Prime 1212</li>
+        <li><strong>Power:</strong> 1.5 HP</li>
+        <li><strong>Voltage:</strong> 415 V</li>
+        <li><strong>Phase:</strong> 3 Phase</li>
+        <li><strong>Shaft Length:</strong> 1.5 / 2 Mtr.</li>
+        <li><strong>Speed:</strong> 2 Speed</li>
+        <li><strong>Application:</strong> Die Grinding Jobs</li>
+        <li>FH 10 holder for mounted points, carbide & tungsten rotary cutters</li>
       </ul>
     </div>
 
+
+    <!-- NOTE / FEATURE -->
     <div class="sa-info-box">
-      <h3>Multi Speed Grinder</h3>
-      <p>
-        Belt driven machine for heavy buffing, polishing and grinding jobs.
-      </p>
+      <h3>Machine Features</h3>
+
       <ul class="sa-shielding-list">
-        <li>RPM: 2800 / 4000 / 7000</li>
-        <li>2 HP, 415 Volts, 3 Phase</li>
-        <li>Shaft Length: 2 Mtr. / 3 Mtr.</li>
-        <li>Holder provided for grinding, buffing and collet attachment</li>
+        <li>High speed industrial performance</li>
+        <li>Strong and durable construction</li>
+        <li>Suitable for continuous operation</li>
+        <li>Ideal for stainless steel finishing</li>
       </ul>
     </div>
+
   </div>
 
+
+  <!-- =========================
+       GALLERY
+  ========================= -->
   <div class="sa-wide-gallery" style="margin-top:24px;">
     <div class="sa-wide-gallery-card">
-      <img src="img/ss-polishing-machine-1.jpg" alt="Polishing Machine 1">
+      <img src="img/P-SS_1.jfif" alt="Polishing Machine 1">
     </div>
+
     <div class="sa-wide-gallery-card">
-      <img src="img/ss-polishing-machine-2.jpg" alt="Polishing Machine 2">
+      <img src="img/p-ss-2.jpg" alt="Polishing Machine 2">
     </div>
+
     <div class="sa-wide-gallery-card">
-      <img src="img/ss-polishing-machine-3.jpg" alt="Polishing Machine 3">
+      <img src="img/p-ss-3.jfif" alt="Polishing Machine 3">
     </div>
   </div>
-</div>
 
+</div>
 <!-- =========================
-     FLEXIBLE SHAFT FOR POLISHING MACHINE
+     FLEXIBLE SHAFT MACHINE
 ========================= -->
 <div class="sa-product-section" id="flexible-shaft-machine">
+
+  <!-- MAIN CARD -->
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
-      <img src="img/Flexible Shaft for Polishing Machine.jpg" alt="Flexible Shaft for Polishing Machine">
+      <img src="img/flexible_shaft_machine_single_speed.jpg" alt="Flexible Shaft Machine">
     </div>
 
     <div class="sa-product-detail-content">
       <span class="sa-product-detail-label">Polishing Machines</span>
-      <h2>Flexible Shaft for Polishing Machine</h2>
+      <h2>Flexible Shaft Machine</h2>
+
       <p>
-        Flexible shaft is used to transmit rotary motion for buffing, grinding, polishing,
-        deburring, tyre retreading and general industrial applications.
+        Flexible shaft machines are used for transmitting rotary motion for grinding,
+        polishing, buffing, deburring and tyre retreading applications.
       </p>
 
       <ul class="sa-product-points">
-        <li>Used to transmit rotary power upto 50000 RPM</li>
-        <li>Tough and long life component for continuous working conditions</li>
-        <li>Suitable where machines cannot be moved easily</li>
+        <li>Transmits rotary power up to 50,000 RPM</li>
+        <li>Ideal for continuous industrial operations</li>
+        <li>Perfect for fixed position working environments</li>
       </ul>
 
       <a href="contact.html" class="sa-product-btn">Enquire Now</a>
     </div>
   </div>
 
+
+  <!-- =========================
+       SINGLE SPEED
+  ========================= -->
   <div class="sa-info-grid">
+
     <div class="sa-info-box">
       <h3>Flexible Shaft Machine - Single Speed</h3>
-      <p>R-2 - 1 HP - 1200 RPM Single Speed Gear Machine.</p>
+
       <ul class="sa-shielding-list">
-        <li>Used for die grinding, deburring and grinding</li>
-        <li>Supply: 400/440V - 3 Phase - 50 Cycles AC</li>
-        <li>Speed: 12000 RPM</li>
-        <li>Extra Accessories: 10 mm × 1500 mm flexible shaft assembly</li>
-        <li>Tool Holder: FH-10</li>
-        <li>Collet Size: 6 mm</li>
+        <li><strong>Model:</strong> R-2</li>
+        <li><strong>Power:</strong> 1 HP</li>
+        <li><strong>Supply:</strong> 400/440V - 3 Phase - AC</li>
+        <li><strong>Speed:</strong> 12000 RPM</li>
+        <li><strong>Application:</strong> Die Grinding, Deburring, Grinding</li>
+        <li><strong>Accessories:</strong> 10mm × 1500mm Flexible Shaft</li>
+        <li><strong>Tool Holder:</strong> FH-10</li>
+        <li><strong>Collet Size:</strong> 6 mm</li>
       </ul>
     </div>
 
+
+    <!-- =========================
+         7 SPEED
+    ========================= -->
     <div class="sa-info-box">
       <h3>Flexible Shaft Machine - 7 Speed</h3>
-      <p>1 HP 7 Speed Gear Machine.</p>
+
       <ul class="sa-shielding-list">
-        <li>Used for die grinding, deburring, grinding, rust removing, cabinet polishing and drilling</li>
-        <li>Supply: 400/440V - 3 Phase - 50 Cycles AC</li>
-        <li>Speed: 850 / 1600 / 2100 / 3200 / 5700 / 8000 / 12000 RPM</li>
-        <li>Extra Accessories: 10 mm × 1200 mm or 12 mm × 1500 mm</li>
-        <li>FH 10 or WS 10 Tool Holder</li>
-        <li>6 mm / 6.3 mm / 3 mm Collet / Starter etc.</li>
+        <li><strong>Power:</strong> 1 HP</li>
+        <li><strong>Supply:</strong> 400/440V - 3 Phase - AC</li>
+        <li><strong>Speed:</strong> 850 / 1600 / 2100 / 3200 / 5700 / 8000 / 12000 RPM</li>
+        <li><strong>Applications:</strong> Die Grinding, Deburring, Rust Removing, Cabinet Polishing, Drilling</li>
+        <li><strong>Accessories:</strong> 10mm × 1200mm / 12mm × 1500mm</li>
+        <li><strong>Tool Holder:</strong> FH-10 / WS-10</li>
+        <li><strong>Collet:</strong> 6mm / 6.3mm / 3mm</li>
       </ul>
     </div>
+
   </div>
 
-  <div class="sa-info-box" style="margin-top:24px;">
-    <h3>Flexible Shafts For Polishing Machines</h3>
-    <p>
-      A flexible shaft is a tool for transmitting rotary motion between two objects. It consists
-      of a rotating wire rope or coil which is flexible but has some torsional stiffness.
-    </p>
-    <p>
-      It is widely used in buffing, grinding, polishing, deburring, tyre retreading, sugar industries,
-      boiler tube cleaning equipment and fixed position layout industries.
-    </p>
+
+  <!-- =========================
+       MULTI SPEED GRINDER
+  ========================= -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Multi Speed Grinder (Belt Driven)</h3>
+
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>RPM</th>
+          <th>H.P.</th>
+          <th>Volts</th>
+          <th>Phase</th>
+          <th>Shaft Length</th>
+          <th>Application</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Prime 3 Speed</td>
+          <td>2800 / 4000 / 7000</td>
+          <td>2</td>
+          <td>415</td>
+          <td>3</td>
+          <td>2 / 3 Mtr.</td>
+          <td>Heavy Buffing / Polishing / Grinding</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
+
+  <!-- =========================
+       ACCESSORIES
+  ========================= -->
+  <div class="sa-info-grid">
+
+    <div class="sa-info-box">
+      <h3>Accessories</h3>
+
+      <ul class="sa-shielding-list">
+        <li>Janata Type Holder</li>
+        <li>FH-10 Holder (for 12000 RPM)</li>
+        <li>WH-10 Holder (for 8000 RPM)</li>
+        <li>WH-15 Holder (for 5800 RPM)</li>
+        <li>ZGE Holder (for Multi Speed Machine)</li>
+        <li>Collet Adaptor</li>
+        <li>Right Angle Attachment</li>
+        <li>Buffing Adaptor</li>
+      </ul>
+    </div>
+
+
+    <!-- =========================
+         FLEXIBLE SHAFT INFO
+    ========================= -->
+    <div class="sa-info-box">
+      <h3>Flexible Shaft</h3>
+
+      <p>
+        A flexible shaft is used to transmit rotary motion between two objects using
+        a rotating wire rope or coil with torsional strength.
+      </p>
+
+      <p>
+        It is widely used in polishing, grinding, deburring, tyre retreading,
+        sugar industries and boiler tube cleaning equipment.
+      </p>
+
+      <p>
+        Ideal for applications where machines cannot be moved and fixed layout is required.
+      </p>
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       GALLERY
+  ========================= -->
   <div class="sa-wide-gallery" style="margin-top:24px;">
-    
+
+    <div class="sa-wide-gallery-card">
+      <img src="img/FLWXIBLE-1.jpg" alt="Flexible Shaft Machine">
+    </div>
+
+    <div class="sa-wide-gallery-card">
+      <img src="img/FLEXIBLE-ACC.jpg" alt="Flexible Shaft Accessories">
+    </div>
+
+    <div class="sa-wide-gallery-card">
+      <img src="img/flexible_shaft.jpg" alt="Flexible Shaft Holder">
+    </div>
+
+    <div class="sa-wide-gallery-card">
+      <img src="img/multi_speed_grinder.jpg" alt="Flexible Shaft Use">
+    </div>
+
   </div>
+
 </div>
+
+<!-- ===============================PRODUCT 13============================================================================== -->
 
           <div class="sa-product-section" id="hand-tools">
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
-                <img src="img/hand-tools.jpg" alt="Hand Tools">
+                <img src="img/hand_tools.jpg" alt="Hand Tools">
               </div>
               <div class="sa-product-detail-content">
                 <span class="sa-product-detail-label">Tools</span>
@@ -5832,6 +5950,7 @@ img{
               </div>
             </div>
           </div>
+<!-- ===============================PRODUCT 14============================================================================== -->
 
           <div class="sa-product-section" id="abrasives">
             <div class="sa-product-detail-card">
@@ -5846,6 +5965,7 @@ img{
               </div>
             </div>
           </div>
+<!-- ===============================PRODUCT 15============================================================================== -->
 
           <div class="sa-product-section" id="cutting-tools">
             <div class="sa-product-detail-card">
@@ -5860,6 +5980,7 @@ img{
               </div>
             </div>
           </div>
+<!-- ===============================PRODUCT 16============================================================================== -->
 
           <div class="sa-product-section" id="power-tools">
             <div class="sa-product-detail-card">
@@ -6179,5 +6300,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 </script>
+
 </body>
 </html>
