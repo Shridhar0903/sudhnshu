@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Sudhanshu Associates-Product</title>
   <!-- FAVICON -->
   <link rel="icon" type="image/png" href="img/new logo.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -129,7 +129,7 @@
   }
 
   .sa-dropdown.active .sa-dropdown-menu {
-    max-height: 700px;
+    max-height: 3000px; /* increase this */
     padding: 4px 20px 8px;
   }
 
@@ -1619,18 +1619,15 @@
 /* =========================
 PRODUCT HERO - CLEAN FINAL
 ========================= */
- .product-hero-simple {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  .product-hero-simple {
+    position: relative;
+    display: flex;
 
-  min-height: 100vh;   /* 🔥 THIS IS THE MAIN FIX */
-  text-align: center;
-
-  overflow: hidden;
-  padding: 0 20px;     /* remove top-bottom padding */
-}
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 10px 0 90px;
+  }
 
   .product-hero-simple .container {
     position: relative;
@@ -1644,7 +1641,6 @@ PRODUCT HERO - CLEAN FINAL
     text-align: center;
     padding: 0 20px;
   }
-
 
   .product-page-tag {
     display: inline-flex;
@@ -1746,7 +1742,7 @@ PRODUCT HERO - CLEAN FINAL
       <aside class="sa-explore-sidebar">
         <div class="sa-sidebar-box">
           <h2 class="sa-sidebar-title">Categories</h2>
-
+          
 <!-- =========================================================================== -->
           <div class="sa-dropdown active">
             <button class="sa-dropdown-toggle" type="button">
@@ -1809,7 +1805,7 @@ PRODUCT HERO - CLEAN FINAL
       <a href="#" class="sa-product-link" data-product="purging-paper">Purging Paper / Back Purging Tape</a>
     </div>
 
-    <button class="sa-view-more-btn" type="button" id="saViewMoreAccessories">VIEW MORE</button>
+    <button class="sa-view-more-btn" type="button" id="saViewMoreAccessories" data-target="saWeldingAccessoriesMore">VIEW MORE</button>
   </div>
 </div>
 
@@ -1837,17 +1833,32 @@ PRODUCT HERO - CLEAN FINAL
 </div>
 
 <!-- =========================================================================== -->
-
-  <div class="sa-dropdown">
+<!-- Product 5 -->
+<div class="sa-dropdown">
   <button class="sa-dropdown-toggle" type="button">
     <span>TIG Welding Torch &amp; Spares</span>
     <span class="sa-dropdown-icon">▼</span>
   </button>
 
   <div class="sa-dropdown-menu">
-    <a href="#" class="sa-product-link" data-product="argon-torch">Argon Torch</a>
+
+    <!-- Existing -->
+    <!-- <a href="#" class="sa-product-link" data-product="argon-torch">Argon Torch</a>
     <a href="#" class="sa-product-link" data-product="tungsten-rods">Tungsten Rods</a>
-    <a href="#" class="sa-product-link" data-product="ceramic-nozzles">Ceramic Nozzles</a>
+    <a href="#" class="sa-product-link" data-product="ceramic-nozzles">Ceramic Nozzles</a> -->
+
+    <!-- NEW -->
+    <a href="#" class="sa-product-link" data-product="tig-water-circulator">TIG Water Circulator</a>
+
+    <!-- TORCH MODELS -->
+    <a href="#" class="sa-product-link" data-product="argon-torch-wcd-600">Argon Torch Wcd-600 Torch</a>
+    <a href="#" class="sa-product-link" data-product="argon-torch-wcd-400">Argon Torch Wcd-400 Torch</a>
+    <a href="#" class="sa-product-link" data-product="argon-torch-wcd-220">Argon Torch Wcd-220 Torch</a>
+
+    <a href="#" class="sa-product-link" data-product="argon-torch-acd-300">Argon ACD- 300 Torch</a>
+    <a href="#" class="sa-product-link" data-product="argon-torch-acd-200">Argon ACD -200 Torch</a>
+    <a href="#" class="sa-product-link" data-product="argon-torch-acd-110"> Argon ACD -110 Torch</a>
+
   </div>
 </div>
 
@@ -1914,26 +1925,58 @@ PRODUCT HERO - CLEAN FINAL
 </div>
 <!-- =========================================================================== -->
 
-          <div class="sa-dropdown">
+
+
+
+  <div class="sa-dropdown">
+
   <button class="sa-dropdown-toggle" type="button">
     <span>Pressure Regulators &amp; Spares</span>
     <span class="sa-dropdown-icon">▼</span>
   </button>
 
   <div class="sa-dropdown-menu">
-    <a href="#" class="sa-product-link" data-product="argon-gas-regulator">Argon Gas Regulator</a>
-    <a href="#" class="sa-product-link" data-product="double-stage-regulator-flow-meter">Double Stage Regulator With Flow Meter</a>
-    <a href="#" class="sa-product-link" data-product="double-stage-regulators">Double Stage Regulators</a>
-    <a href="#" class="sa-product-link" data-product="single-stage-regulator">Single Stage Regulator</a>
-    <a href="#" class="sa-product-link" data-product="single-stage-regulator-flow-meter">Single Stage Regulator With Flow Meter</a>
-    <a href="#" class="sa-product-link" data-product="high-pressure-single-stage-regulators">High Pressure Single Stage Regulators</a>
-    <a href="#" class="sa-product-link" data-product="compact-single-stage-regulators">Compact Single Stage Regulators</a>
-    <a href="#" class="sa-product-link" data-product="ss-single-stage-regulators">SS Single Stage Regulators</a>
-    <a href="#" class="sa-product-link" data-product="general-double-stage-regulator">General Double Stage Regulator</a>
-    <a href="#" class="sa-product-link" data-product="electrode-holder-regulator-page">Electrode Holder</a>
-    <a href="#" class="sa-product-link" data-product="multi-cylinder-compressed-manifold">Multi Cylinder Compressed Manifold</a>
-    <a href="#" class="sa-product-link" data-product="flow-meter-gas">Flow Meter</a>
+
+    <!-- NEW PRODUCTS ADDED -->
+
+    <a href="#" class="sa-product-link" data-product="regulator-for-cnc-application">Regulator for CNC Application</a>
+    <a href="#" class="sa-product-link" data-product="gas-cylinder-manifold">Cylinder Manifold for Gas Filling</a>
+    <a href="#" class="sa-product-link" data-product="cylinder-manifold-cnc">Cylinder Manifold for CNC Machine</a>
+    <a href="#" class="sa-product-link" data-product="stainless-steel-manifold">Stainless Steel Manifold</a>
+    <a href="#" class="sa-product-link" data-product="cryogenic-economizer">Cryogenic Economizers</a>
+    <a href="#" class="sa-product-link" data-product="cryogenic-cylinder-regulator">Cryogenic Cylinder Regulator</a>
+    <a href="#" class="sa-product-link" data-product="m-series-flowmeter">M Series Flowmeter Regulator</a>
+    <a href="#" class="sa-product-link" data-product="hd-double-stage">HD Series Double Stage Regulator</a>
+    <a href="#" class="sa-product-link" data-product="m-high-pressure">M Series High Pressure Regulator</a>
+    <a href="#" class="sa-product-link" data-product="economic-manifold">Economic Manifold (4 Cylinder)</a>
+    <a href="#" class="sa-product-link" data-product="master-valve-manifold">Master Valve for Manifold</a>
+    <a href="#" class="sa-product-link" data-product="co2-gas-preheater">CO2 Gas Preheater</a>
+    
+
+      <div class="sa-more-products" id="sapressureRegulatorsMore">
+        <a href="#" class="sa-product-link" data-product="lpg-double-gauge">LPG Double Gauge Regulator</a>
+        <a href="#" class="sa-product-link" data-product="m-series-single-gauge-lpg-regulator">LPG Single Gauge Regulator</a>
+         <a href="#" class="sa-product-link" data-product="cylinder-manifold">Cylinder Manifold</a><!-- Product 9 -->
+         <a href="#" class="sa-product-link" data-product="gas-preheater">Gas Pre Heater</a>
+         <a href="#" class="sa-product-link" data-product="flowmeter">Flow Meter (General)</a>
+         <a href="#" class="sa-product-link" data-product="compressed-gas-regulator">Compressed Gas Regulator</a>
+         <a href="#" class="sa-product-link" data-product="regulator-flowmeter-heater">Regulator with Flowmeter & Heater</a>
+         <a href="#" class="sa-product-link" data-product="combined-regulator-flowmeter">Combined Regulator & Flowmeter</a>
+         <a href="#" class="sa-product-link" data-product="p-series-regulator">P Series High Pressure Regulator</a>
+         <a href="#" class="sa-product-link" data-product="hf-series-regulator">HF Series High Flow Regulator</a>
+         <a href="#" class="sa-product-link" data-product="m-series-regulator">M Series Single Stage Regulator</a>
+         <a href="#" class="sa-product-link" data-product="mf-series-regulator">MF Series Regulator with Flow Meter</a>
+         <a href="#" class="sa-product-link" data-product="d-series-regulator">D Series Double Stage Regulator</a>
+         <a href="#" class="sa-product-link" data-product="df-series-regulator">DF Series Double Stage with Flow Meter</a>
+         <a href="#" class="sa-product-link" data-product="ssm-series">SSM Series SS Regulator</a>
+         <a href="#" class="sa-product-link" data-product="ssd-series">SSD Series SS Double Stage</a>
+         <a href="#" class="sa-product-link" data-product="m-high-pressure-single">M Series High Pressure Single</a>
+         <a href="#" class="sa-product-link" data-product="hd-high-pressure-double">HD High Pressure Double Stage</a>
+    </div>
+
+    <button class="sa-view-more-btn" type="button" id="saViewMoreAccessories" data-target="sapressureRegulatorsMore" >VIEW MORE</button>
   </div>
+
 </div>
 
 <!-- =========================================================================== -->
@@ -1965,11 +2008,17 @@ PRODUCT HERO - CLEAN FINAL
   </button>
 
   <div class="sa-dropdown-menu">
-    <a href="#" class="sa-product-link" data-product="air-drying-paint">View Product</a>
 
-    <a href="contact.html" class="sa-sidebar-enquiry-btn">
-      Enquiry Now
-    </a>
+    <a href="#" class="sa-product-link" data-product="air-drying-paint">Air Drying Paint</a>
+
+    <!-- NEW PRODUCTS -->
+    <a href="#" class="sa-product-link" data-product="anti-corrosion">Anti Corrosion</a>
+    <a href="#" class="sa-product-link" data-product="ndt-testing-aerosols">ND Testing</a>
+    <a href="#" class="sa-product-link" data-product="electrical-maintenance">Electrical Maintenance</a>
+    <a href="#" class="sa-product-link" data-product="lubricant">Lubricants</a>
+    <a href="#" class="sa-product-link" data-product="cleaner">Cleaner</a>
+    <a href="#" class="sa-product-link" data-product="automobile">Automobile</a>
+
   </div>
 </div>
 
@@ -3894,277 +3943,1003 @@ PRODUCT HERO - CLEAN FINAL
 <!-- =====================Product 5====================================================================================================-->
 
 <!-- =========================
-     ARGON TORCH
+     TIG WATER CIRCULATOR
 ========================= -->
-<div class="sa-product-section" id="argon-torch">
-  <div class="sa-product-detail-card">
-    <div class="sa-product-detail-image">
-      <img src="img/Argon Torch.webp" alt="Argon Torch">
-    </div>
-
-    <div class="sa-product-detail-content">
-      <span class="sa-product-detail-label">TIG Welding Torch & Spares</span>
-      <h2>Argon Torch</h2>
-
-      <p>
-        We are authorised distributors for argon torch and spares since 1978.
-        Used for argon welding applications.
-      </p>
-
-      <ul class="sa-product-points">
-        <li>Make – AHS / WELDCRAFFT</li>
-        <li>Imported TIG torch also available</li>
-        <li>Available in various types</li>
-        <li>Available in 4 mtrs and 8 mtrs</li>
-        <li>Water cooled and gas cooled options</li>
-        <li>Available from 50 amps to 600 amps</li>
-        <li>Available with round and ergo TIG handles</li>
-        <li>Global and Indian type available</li>
-      </ul>
-
-      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
-    </div>
-  </div>
-
-
-</div>
-
-<!-- =========================
-     TUNGSTEN RODS
-========================= -->
-<div class="sa-product-section" id="tungsten-rods">
+<div class="sa-product-section" id="tig-water-circulator">
 
   <!-- MAIN CARD -->
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
-      <img src="img/tungsten-rods-main.webp" alt="Tungsten Rods">
+      <img src="img/tig-water.webp" alt="TIG Water Circulator">
     </div>
 
     <div class="sa-product-detail-content">
       <span class="sa-product-detail-label">TIG Welding Torch & Spares</span>
-      <h2>Tungsten Rods</h2>
+      <h2>TIG Water Circulator</h2>
 
       <p>
-        High quality tungsten rods available in various grades and color codes,
-        suitable for different TIG welding applications including AC, DC and low amperage welding.
+        High-powered stainless steel pump water cooler designed with over 10 years of welding experience. 
+        Ensures efficient cooling for welding torches with superior performance, durability and reliability.
       </p>
 
       <ul class="sa-product-points">
-        <li>Make – Plansee (Made in Austria)</li>
-        <li>Make – Winner (Made in China)</li>
-        <li>Available in multiple grades and color codes</li>
-        <li>Suitable for aluminium, stainless steel, nickel alloys & titanium</li>
+        <li>Stainless steel corrosion-free pump for long life</li>
+        <li>No priming required – quick fill & drain system</li>
+        <li>Low maintenance and high efficiency</li>
+        <li>Large radiator with 200mm fan for effective cooling</li>
+        <li>Leak-proof design for safe operation</li>
       </ul>
 
       <a href="contact.html" class="sa-product-btn">Enquire Now</a>
     </div>
   </div>
 
-
-  <!-- TYPES & COLOR CODES -->
-  <div class="sa-info-grid">
-
-    <!-- LEFT -->
-    <div class="sa-info-box">
-      <h3>Available Types & Color Codes</h3>
-
-      <div class="sa-grade-list">
-        <span class="sa-grade-pill">WP – Green</span>
-        <span class="sa-grade-pill">WT10 – Yellow</span>
-        <span class="sa-grade-pill">WT20 – Red</span>
-        <span class="sa-grade-pill">WT40 – Orange</span>
-        <span class="sa-grade-pill">WZ8 – White</span>
-        <span class="sa-grade-pill">WC20 – Grey</span>
-        <span class="sa-grade-pill">WL10 – Black</span>
-        <span class="sa-grade-pill">WL15 – Gold</span>
-        <span class="sa-grade-pill">WL20 – Blue</span>
-      </div>
-
-      <h4>Applications</h4>
-
-      <p><strong>Pure Tungsten (Green):</strong> Best for AC TIG welding of aluminium & magnesium.</p>
-
-      <p><strong>Thoriated (Red / Yellow / Orange):</strong> Best for DC TIG welding of carbon steel, stainless steel, nickel alloys and titanium.</p>
-
-      <p><strong>Lanthanated (Black / Gold / Blue):</strong> Suitable for AC & DC welding with stable arc performance.</p>
-
-      <p><strong>Ceriated (Grey / Orange):</strong> Ideal for low amperage DC welding with easy arc start.</p>
-
-      <p><strong>Zirconiated (White / Brown):</strong> Suitable for AC welding with high contamination resistance.</p>
-    </div>
-
-
-    <!-- RIGHT -->
-    <div class="sa-info-box">
-      <h3>Technical Data</h3>
-
-      <p><strong>Pure Tungsten (WP):</strong> Non-radioactive; suitable for AC welding of aluminium and magnesium.</p>
-
-      <p><strong>Thoriated (WT10 / WT20):</strong> High current carrying capacity and excellent performance (radioactive).</p>
-
-      <p><strong>Lanthanated (WL10 / WL15 / WL20):</strong> Non-radioactive; excellent conductivity and arc stability.</p>
-
-      <p><strong>Ceriated (WC10 / WC15 / WC20):</strong> Easier arc initiation at low current.</p>
-
-      <p><strong>Zirconiated (WZ8):</strong> Best for AC welding with radiographic quality results.</p>
-
-      <h4>Surface Types</h4>
-      <ul class="sa-shielding-list">
-        <li>D – As Drawn</li>
-        <li>E – Electrolytic Polished</li>
-        <li>G – Ground</li>
-        <li>S – Swaged</li>
-      </ul>
-    </div>
-
-  </div>
-
-
-  <!-- DETAILED TABLE -->
+  <!-- SPECIFICATIONS TABLE -->
   <div class="sa-table-wrap">
-    <h3 class="sa-table-title">Technical Composition</h3>
+    <h3 class="sa-table-title">Specifications</h3>
+
+    <table class="sa-table">
+      <tbody>
+        <tr><td>Input</td><td>230V 50/60Hz</td></tr>
+        <tr><td>Motor</td><td>260W (0.9A / 220V)</td></tr>
+        <tr><td>Cooling Capacity</td><td>1.5 kW (1 L/Min)</td></tr>
+        <tr><td>Duty Cycle</td><td>100%</td></tr>
+        <tr><td>Max Pressure</td><td>3 bar</td></tr>
+        <tr><td>Tank Capacity</td><td>9 Liters</td></tr>
+        <tr><td>Flow Rate</td><td>8.5 L/Min at 6 mH</td></tr>
+        <tr><td>Operating Temperature</td><td>-20°C to 60°C</td></tr>
+        <tr><td>Dimensions</td><td>24” (L) × 15” (W) × 12” (H)</td></tr>
+        <tr><td>Net Weight</td><td>22 Kg</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <style>
+    .sa-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 20px;
+}
+
+.sa-grid-2 li {
+  list-style: none;
+  position: relative;
+  padding-left: 18px;
+}
+
+/* optional bullet styling */
+.sa-grid-2 li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #66A83D;
+  font-weight: bold;
+}
+  </style>
+
+<div class="sa-info-box" style="margin-top:24px;">
+  <h3>Precautions</h3>
+
+  <ul class="sa-shielding-list sa-grid-2">
+    <li>Always maintain proper water level in tank</li>
+    <li>Use clean or distilled water only</li>
+    <li>Ensure correct input voltage</li>
+    <li>Do not run pump without water</li>
+    <li>Avoid using in wet or rainy conditions</li>
+    <li>Do not tilt machine excessively</li>
+  </ul>
+</div>
+
+<!-- MAINTENANCE -->
+<div class="sa-info-box" style="margin-top:24px;">
+  <h3>Maintenance</h3>
+  <ul class="sa-shielding-list">
+    <li>Keep machine clean and dry</li>
+    <li>Change water periodically</li>
+    <li>Clean internal parts every 6 months</li>
+  </ul>
+</div>
+
+<!-- PANEL INFO -->
+<div class="sa-info-box" style="margin-top:24px;">
+  <h3>Installation Guide</h3>
+  <ul class="sa-shielding-list">
+    <li>Check voltage before starting</li>
+    <li>Connect outlet → welding machine inlet</li>
+    <li>Connect inlet → welding machine outlet</li>
+  </ul>
+</div>
+</div>
+
+<!-- =========================
+     ARGON ARC WELDING TORCH WCD/600
+========================= -->
+<div class="sa-product-section" id="argon-torch-wcd-600">
+
+  <!-- MAIN CARD -->
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/WCD-600.webp" alt="Argon Arc Welding Torch WCD 600">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">TIG Welding Torch & Spares</span>
+      <h2>Argon Arc Welding Torch WCD/600</h2>
+
+      <p>
+        Heavy-duty TIG welding torch designed for general Argon arc applications. 
+        Built for high performance, durability and long operational life.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Capacity: 600 Amps (DC) / 450 Amps (AC)</li>
+        <li>Compatible with ACD/300 (except head & hose)</li>
+        <li>Supports up to 6.0 mm tungsten rod</li>
+        <li>Ideal for heavy industrial welding applications</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+
+  <!-- TORCH PACKAGE -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Torch Package</h3>
+
+    <table class="sa-table">
+      <tbody>
+        <tr><td>Torch Head</td><td>WD-6001</td></tr>
+        <tr><td>Washer (2 pcs)</td><td>AW-3602</td></tr>
+        <tr><td>Handle</td><td>AW-3603</td></tr>
+        <tr><td>Conductor Adaptor</td><td>AW-3657</td></tr>
+        <tr><td>Water Drain Hose Assembly</td><td>WD-6058</td></tr>
+        <tr><td>Long Cap</td><td>AW-3601</td></tr>
+        <tr><td>Collet</td><td>AW-3634</td></tr>
+        <tr><td>Ceramic</td><td>AW-3621</td></tr>
+        <tr><td>Plus Cable Assembly</td><td>4M / 8M Options</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ACCESSORIES -->
+  <div class="sa-info-box" style="margin-top:24px;">
+    <h3>Standard Accessories Kit (10 pcs)</h3>
+
+    <div class="sa-grid-2">
+      <div>Ceramic Cup – AW-3621 / 22 / 23</div>
+      <div>Gas Lens – AW-3643 / 44</div>
+      <div>Collet – AW-3633 / 34 / 35</div>
+      <div>Short Cap – AW-3604</div>
+      <div>Long Cap – AW-3601</div>
+    </div>
+  </div>
+
+  <!-- COLLET TABLE -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Collet Sizes</h3>
 
     <table class="sa-table">
       <thead>
         <tr>
-          <th>Type</th>
-          <th>Grade</th>
-          <th>Color</th>
-          <th>Composition</th>
-          <th>Features</th>
+          <th>Size</th>
+          <th>Part No.</th>
         </tr>
       </thead>
-
       <tbody>
-        <tr>
-          <td>Pure Tungsten</td>
-          <td>WP</td>
-          <td>Green</td>
-          <td>W (Pure)</td>
-          <td>Non-radioactive, suitable for AC welding</td>
-        </tr>
+        <tr><td>2.5 mm</td><td>AW-3633</td></tr>
+        <tr><td>3.0 mm</td><td>AW-3634</td></tr>
+        <tr><td>4.0 mm</td><td>AW-3635</td></tr>
+        <tr><td>5.0 mm</td><td>AW-3636</td></tr>
+        <tr><td>6.0 mm</td><td>AW-3637</td></tr>
+      </tbody>
+    </table>
+  </div>
 
-        <tr>
-          <td>Thoriated</td>
-          <td>WT10 / WT20</td>
-          <td>Yellow / Red</td>
-          <td>ThO2 (0.9–2.2%)</td>
-          <td>High current capacity, DC welding</td>
-        </tr>
+  <!-- CERAMIC CUP TABLE -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Ceramic Cups</h3>
 
+    <table class="sa-table">
+      <thead>
         <tr>
-          <td>Lanthanated</td>
-          <td>WL10 / WL15 / WL20</td>
-          <td>Black / Gold / Blue</td>
-          <td>La2O3</td>
-          <td>Non-radioactive, excellent arc stability</td>
+          <th>Bore</th>
+          <th>Length</th>
+          <th>Part No.</th>
         </tr>
+      </thead>
+      <tbody>
+        <tr><td>6 mm</td><td>50 mm</td><td>AW-3620</td></tr>
+        <tr><td>9 mm</td><td>50 mm</td><td>AW-3621</td></tr>
+        <tr><td>12 mm</td><td>50 mm</td><td>AW-3622</td></tr>
+        <tr><td>15 mm</td><td>50 mm</td><td>AW-3623</td></tr>
+        <tr><td>19 mm</td><td>50 mm</td><td>AW-3624</td></tr>
+      </tbody>
+    </table>
+  </div>
 
-        <tr>
-          <td>Ceriated</td>
-          <td>WC10 / WC20</td>
-          <td>Grey / Orange</td>
-          <td>CeO2</td>
-          <td>Easy arc start, low current welding</td>
-        </tr>
+  <!-- GAS LENS TABLE -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Gas Lens</h3>
 
+    <table class="sa-table">
+      <thead>
         <tr>
-          <td>Zirconiated</td>
-          <td>WZ8</td>
-          <td>White</td>
-          <td>ZrO2</td>
-          <td>High contamination resistance, AC welding</td>
+          <th>Size</th>
+          <th>Part No.</th>
         </tr>
+      </thead>
+      <tbody>
+        <tr><td>2.5 mm</td><td>AW-3642</td></tr>
+        <tr><td>3.0 mm</td><td>AW-3643</td></tr>
+        <tr><td>4.0 mm</td><td>AW-3644</td></tr>
+        <tr><td>5.0 mm</td><td>AW-3645</td></tr>
+        <tr><td>6.0 mm</td><td>AW-3646</td></tr>
       </tbody>
     </table>
   </div>
 
 
-  <!-- SIZE TABLE -->
-  <div class="sa-mini-table-wrap">
-    <h3 class="sa-mini-title">Sizes</h3>
+</div>
+
+<!-- =========================
+     ARGON ARC WELDING TORCH WCD/400
+========================= -->
+<div class="sa-product-section" id="argon-torch-wcd-400">
+
+  <!-- MAIN CARD -->
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/WCD-600.webp" alt="Argon Arc Welding Torch WCD 400">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">TIG Welding Torch & Spares</span>
+      <h2>Argon Arc Welding Torch WCD/400</h2>
+
+      <p>
+        Medium-duty TIG welding torch designed for general Argon arc applications. 
+        Offers excellent performance, durability and smooth arc control for industrial use.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Capacity: 400 Amps (DC) / 300 Amps (AC)</li>
+        <li>Compatible with ACD/200 (except head & hose)</li>
+        <li>Supports up to 5.0 mm tungsten rod</li>
+        <li>Reliable performance for fabrication and workshop use</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+
+  <!-- TORCH PACKAGE -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Torch Package</h3>
+
+    <table class="sa-table">
+      <tbody>
+        <tr><td>Torch Head</td><td>WCD-4001</td></tr>
+        <tr><td>Washer (2 pcs)</td><td>AW-2403</td></tr>
+        <tr><td>Handle</td><td>AW-2404</td></tr>
+        <tr><td>Conductor Adaptor</td><td>AW-2457</td></tr>
+        <tr><td>Water Drain Hose Assembly</td><td>WD-4010</td></tr>
+        <tr><td>Long Cap</td><td>AW-2402</td></tr>
+        <tr><td>Collet</td><td>AW-2434</td></tr>
+        <tr><td>Ceramic</td><td>2411</td></tr>
+        <tr><td>Plus Cable Assembly</td><td>4M / 8M Options</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ACCESSORIES -->
+  <div class="sa-info-box" style="margin-top:24px;">
+    <h3>Standard Accessories Kit (14 pcs)</h3>
+
+    <div class="sa-grid-2">
+      <div>Ceramic Cup – 2411 / 2412 / 2413 / 2414</div>
+      <div>Lens Ceramic – 2463 / 2464</div>
+      <div>Collet – AW-2433 / 34 / 35 / 36</div>
+      <div>Gas Lens – AW-2443 / 2444</div>
+      <div>Caps – AW-2401 / AW-2402</div>
+    </div>
+  </div>
+
+  <!-- COLLET TABLE -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Collet Sizes</h3>
 
     <table class="sa-table">
       <thead>
         <tr>
-          <th>Diameter (mm)</th>
-          <th>1.6</th>
-          <th>2.0</th>
-          <th>2.4</th>
-          <th>3.0</th>
-          <th>4.0</th>
+          <th>Size</th>
+          <th>Part No.</th>
         </tr>
       </thead>
-
       <tbody>
+        <tr><td>1.0 mm</td><td>AW-2431</td></tr>
+        <tr><td>1.5 mm</td><td>AW-2432</td></tr>
+        <tr><td>2.0 mm</td><td>AW-2433</td></tr>
+        <tr><td>2.5 mm</td><td>AW-2434</td></tr>
+        <tr><td>3.0 mm</td><td>AW-2435</td></tr>
+        <tr><td>4.0 mm</td><td>AW-2436</td></tr>
+        <tr><td>5.0 mm</td><td>AW-2437</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- CERAMIC CUP TABLE -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Ceramic Cups</h3>
+
+    <table class="sa-table">
+      <thead>
         <tr>
-          <td>Length (mm)</td>
-          <td>150 / 175</td>
-          <td>150 / 175</td>
-          <td>150 / 175</td>
-          <td>150 / 175</td>
-          <td>150 / 175</td>
+          <th>Bore</th>
+          <th>Length</th>
+          <th>Part No.</th>
         </tr>
+      </thead>
+      <tbody>
+        <tr><td>6.3 mm</td><td>41 mm</td><td>2411</td></tr>
+        <tr><td>6.3 mm</td><td>67 mm</td><td>2412</td></tr>
+        <tr><td>9.5 mm</td><td>41 mm</td><td>2413</td></tr>
+        <tr><td>9.5 mm</td><td>67 mm</td><td>2414</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- GAS LENS TABLE -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Gas Lens</h3>
+
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Size</th>
+          <th>Part No.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1.5 mm</td><td>AW-2441</td></tr>
+        <tr><td>2.0 mm</td><td>AW-2442</td></tr>
+        <tr><td>2.5 mm</td><td>AW-2443</td></tr>
+        <tr><td>3.0 mm</td><td>AW-2444</td></tr>
+        <tr><td>4.0 mm</td><td>AW-2445</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- LENS CERAMIC TABLE -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Lens Ceramic</h3>
+
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Bore</th>
+          <th>Part No.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>6 mm</td><td>2461</td></tr>
+        <tr><td>8 mm</td><td>2462</td></tr>
+        <tr><td>10 mm</td><td>2463</td></tr>
+        <tr><td>12 mm</td><td>2464</td></tr>
+        <tr><td>15 mm</td><td>2465</td></tr>
       </tbody>
     </table>
   </div>
 
 
-  <!-- NOTE -->
-  <div class="sa-note-box">
-    <h3>Industrial Use</h3>
-    <p>
-      Tungsten rods are widely used in TIG welding for precision applications
-      including aluminium, stainless steel, nickel alloys, pipelines and
-      high-performance industrial fabrication.
-    </p>
+</div>
+
+<!-- =========================
+     ARGON ARC WELDING TORCH WCD/220
+========================= -->
+<div class="sa-product-section" id="argon-torch-wcd-220">
+
+  <!-- MAIN CARD -->
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/WCD-220.webp" alt="Argon Arc Welding Torch WCD 220">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">TIG Welding Torch & Spares</span>
+      <h2>Argon Arc Welding Torch WCD/220</h2>
+
+      <p>
+        Compact and lightweight TIG welding torch designed for general Argon arc applications. 
+        Ideal for precision welding and light to medium industrial work.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Capacity: 200 Amps (DC) / 150 Amps (AC)</li>
+        <li>Compatible with ACD/110 (except head & hose)</li>
+        <li>Supports up to 3.0 mm tungsten rod</li>
+        <li>Suitable for light fabrication and maintenance work</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+
+  <!-- TORCH PACKAGE -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Torch Package</h3>
+
+    <table class="sa-table">
+      <tbody>
+        <tr><td>Torch Head</td><td>WD-2201</td></tr>
+        <tr><td>Washer (2 pcs)</td><td>AW-1203</td></tr>
+        <tr><td>Handle</td><td>AW-1204</td></tr>
+        <tr><td>Conductor Adaptor</td><td>AW-1257</td></tr>
+        <tr><td>Water Drain Hose Assembly</td><td>WD-2110</td></tr>
+        <tr><td>Collet</td><td>AW-8113</td></tr>
+        <tr><td>Ceramic</td><td>AW-1231</td></tr>
+        <tr><td>Plus Cable Assembly</td><td>4M / 8M Options</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ACCESSORIES -->
+  <div class="sa-info-box" style="margin-top:24px;">
+    <h3>Standard Accessories Kit (11 pcs)</h3>
+
+    <div class="sa-grid-2">
+      <div>Ceramic Cup – AW-1231 / 1232 / 1233 / 1234</div>
+      <div>Lens Ceramic – AW-1262 / 1264</div>
+      <div>Collet – AW-8113 / 8114 / 8115</div>
+      <div>Gas Lens – WG-1244 / 1245</div>
+    </div>
+  </div>
+
+  <!-- COLLET TABLE -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Collet Sizes</h3>
+
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Size</th>
+          <th>Part No.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1.0 mm</td><td>AW-8111</td></tr>
+        <tr><td>1.5 mm</td><td>AW-8112</td></tr>
+        <tr><td>2.0 mm</td><td>AW-8113</td></tr>
+        <tr><td>2.5 mm</td><td>AW-8114</td></tr>
+        <tr><td>3.0 mm</td><td>AW-8115</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- CERAMIC CUP TABLE -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Ceramic Cups</h3>
+
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Bore</th>
+          <th>Length</th>
+          <th>Part No.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>6.0 mm</td><td>25 mm</td><td>AW-1231</td></tr>
+        <tr><td>8.0 mm</td><td>18 mm</td><td>AW-1232</td></tr>
+        <tr><td>9.5 mm</td><td>25 mm</td><td>AW-1233</td></tr>
+        <tr><td>6.0 mm</td><td>50 mm</td><td>AW-1234</td></tr>
+        <tr><td>6.0 mm</td><td>80 mm</td><td>AW-1235</td></tr>
+        <tr><td>4.0 mm</td><td>50 mm</td><td>AW-1236</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- GAS LENS TABLE -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Gas Lens</h3>
+
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Size</th>
+          <th>Part No.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1.0 mm</td><td>AW-1241</td></tr>
+        <tr><td>1.5 mm</td><td>AW-1242</td></tr>
+        <tr><td>2.0 mm</td><td>AW-1243</td></tr>
+        <tr><td>2.5 mm</td><td>AW-1244</td></tr>
+        <tr><td>3.0 mm</td><td>AW-1245</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- LENS CERAMIC TABLE -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Lens Ceramic</h3>
+
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Bore</th>
+          <th>Part No.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>6.0 mm</td><td>AW-1261</td></tr>
+        <tr><td>8.0 mm</td><td>AW-1262</td></tr>
+        <tr><td>10.0 mm</td><td>AW-1263</td></tr>
+        <tr><td>12.0 mm</td><td>AW-1264</td></tr>
+        <tr><td>15.0 mm</td><td>AW-1265</td></tr>
+      </tbody>
+    </table>
   </div>
 
 </div>
 
-
 <!-- =========================
-     CERAMIC NOZZLES
+     ARGON ARC TORCH ACD/300
 ========================= -->
-<div class="sa-product-section" id="ceramic-nozzles">
+<div class="sa-product-section" id="argon-torch-acd-300">
+
+  <!-- MAIN CARD -->
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
-      <img src="img/ceramic-nozzles-main.webp" alt="Ceramic Nozzles">
+      <img src="img/ACD-300.webp" alt="Argon Arc Welding Torch ACD 300">
     </div>
 
     <div class="sa-product-detail-content">
-      <span class="sa-product-detail-label">TIG Welding Torch & Spares</span>
-      <h2>Ceramic Nozzles</h2>
+      <span class="sa-product-detail-label">TIG Welding Torch</span>
+      <h2>Argon Arc Welding Torch - ACD/300</h2>
 
       <p>
-        High quality ceramic nozzles for TIG welding torch applications, designed for proper gas flow
-        and reliable welding performance.
+        Designed for general Argon Arc welding applications, this torch offers
+        high performance, durability, and efficient cooling for industrial welding.
       </p>
 
       <ul class="sa-product-points">
-        <li>Available in different sizes</li>
-        <li>Suitable for TIG welding torch use</li>
-        <li>Reliable ceramic build quality</li>
+        <li>Capacity: 300 AMPS DC / 240 AMPS AC</li>
+        <li>Compatible with WCD/600 (except head & hose)</li>
+        <li>Supports up to 6.0 mm tungsten rod</li>
+        <li>Reliable and durable torch design</li>
       </ul>
 
       <a href="contact.html" class="sa-product-btn">Enquire Now</a>
     </div>
   </div>
 
-  <!-- image style exactly for adding multiple images -->
-  <div class="sa-wide-gallery">
-    <div class="sa-wide-gallery-card">
-      <img src="img/ceramic-No-1.jfif" alt="Ceramic Nozzles Set">
+
+  <!-- TORCH PACKAGE -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Torch Package</h3>
+    <table class="sa-table">
+      <tbody>
+        <tr><td>TORCH HEAD</td><td>AC-3001</td></tr>
+        <tr><td>WASHER (2 PCS.)</td><td>AW-3602</td></tr>
+        <tr><td>HANDLE</td><td>AW-3603</td></tr>
+        <tr><td>CONDUCTOR ADAPTOR</td><td>AW-3657</td></tr>
+        <tr><td>EXT. ARGON HOSE ASSY.</td><td>AC-3014</td></tr>
+        <tr><td>LONG CAP</td><td>AW-3601</td></tr>
+        <tr><td>COLLET</td><td>AW-3634</td></tr>
+        <tr><td>CERAMIC</td><td>AW-3621</td></tr>
+        <tr><td>PLUS CABLE ASSY</td><td>4M / 8M Options</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- STANDARD KIT -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Standard Accessories Kit (10 PCS)</h3>
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Ceramic Cup</th>
+          <th>Gas Lens</th>
+          <th>Collet</th>
+          <th>Caps</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>AW-3620, AW-3621, AW-3622</td>
+          <td>AW-3642, AW-3643</td>
+          <td>AW-3632, AW-3633, AW-3634</td>
+          <td>AW-3604, AW-3601</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- COLLET TABLE -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Collet</h3>
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Size</th>
+          <th>Part No.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>2.5 MM</td><td>AW-3633</td></tr>
+        <tr><td>3.0 MM</td><td>AW-3634</td></tr>
+        <tr><td>4.0 MM</td><td>AW-3635</td></tr>
+        <tr><td>5.0 MM</td><td>AW-3636</td></tr>
+        <tr><td>6.0 MM</td><td>AW-3637</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- CERAMIC CUP -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Ceramic Cup</h3>
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Bore</th>
+          <th>Length</th>
+          <th>Part No.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>6.0 MM</td><td>50 MM</td><td>AW-3620</td></tr>
+        <tr><td>9.0 MM</td><td>50 MM</td><td>AW-3621</td></tr>
+        <tr><td>12.0 MM</td><td>50 MM</td><td>AW-3622</td></tr>
+        <tr><td>15.0 MM</td><td>50 MM</td><td>AW-3623</td></tr>
+        <tr><td>19.0 MM</td><td>50 MM</td><td>AW-3624</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- GAS LENS -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Gas Lens</h3>
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Size</th>
+          <th>Part No.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>2.5 MM</td><td>AW-3642</td></tr>
+        <tr><td>3.0 MM</td><td>AW-3643</td></tr>
+        <tr><td>4.0 MM</td><td>AW-3644</td></tr>
+        <tr><td>5.0 MM</td><td>AW-3645</td></tr>
+        <tr><td>6.0 MM</td><td>AW-3646</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- =========================
+     ARGON ARC TORCH ACD/200
+========================= -->
+<div class="sa-product-section" id="argon-torch-acd-200">
+
+  <!-- MAIN CARD -->
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/ACD-200.webp" alt="Argon Arc Welding Torch ACD 200">
     </div>
 
-    <div class="sa-wide-gallery-card">
-      <img src="img/ceramic-no-3.avif" alt="Ceramic Nozzles Accessories">
-    </div>
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">TIG Welding Torch</span>
+      <h2>Argon Arc Welding Torch - ACD/200</h2>
 
-    <div class="sa-wide-gallery-card">
-      <img src="img/ceramic-No-2.jfif" alt="Ceramic Nozzles Sizes">
+      <p>
+        Designed for general Argon Arc welding applications, this torch ensures
+        efficient performance, durability, and smooth welding operation.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Capacity: 200 AMPS DC / 125 AMPS AC</li>
+        <li>Compatible with WCD/220 (except head & hose)</li>
+        <li>Supports up to 3.0 mm tungsten rod</li>
+        <li>Compact and reliable industrial design</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
     </div>
   </div>
+
+
+  <!-- TORCH PACKAGE -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Torch Package</h3>
+    <table class="sa-table">
+      <tbody>
+        <tr><td>TORCH HEAD</td><td>ACD-2001</td></tr>
+        <tr><td>WASHER (2 PCS.)</td><td>AW-2403</td></tr>
+        <tr><td>HANDLE</td><td>AW-2404</td></tr>
+        <tr><td>CONDUCTOR ADAPTOR</td><td>AW-2457</td></tr>
+        <tr><td>WATER DRAIN HOSE ASSY.</td><td>AC-2012</td></tr>
+        <tr><td>LONG CAP</td><td>AW-2402</td></tr>
+        <tr><td>COLLET</td><td>AW-2433</td></tr>
+        <tr><td>CERAMIC</td><td>2411</td></tr>
+        <tr><td>PLUS CABLE ASSY</td><td>4M / 8M Options</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- STANDARD KIT -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Standard Accessories Kit (14 PCS)</h3>
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Ceramic Cup</th>
+          <th>Lens Ceramic</th>
+          <th>Collet</th>
+          <th>Gas Lens</th>
+          <th>Caps</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2411, 2412, 2413, 2414</td>
+          <td>2463, 2464</td>
+          <td>AW-2432, AW-2433, AW-2434, AW-2435</td>
+          <td>AW-2443, AW-2444</td>
+          <td>AW-2401, AW-2402</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- COLLET TABLE -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Collet</h3>
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Size</th>
+          <th>Part No.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1.0 MM</td><td>AW-2431</td></tr>
+        <tr><td>1.5 MM</td><td>AW-2432</td></tr>
+        <tr><td>2.0 MM</td><td>AW-2433</td></tr>
+        <tr><td>2.5 MM</td><td>AW-2434</td></tr>
+        <tr><td>3.0 MM</td><td>AW-2435</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- CERAMIC CUP -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Ceramic Cup</h3>
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Bore</th>
+          <th>Length</th>
+          <th>Part No.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>6.3 MM</td><td>41 MM</td><td>2411</td></tr>
+        <tr><td>6.3 MM</td><td>67 MM</td><td>2412</td></tr>
+        <tr><td>9.5 MM</td><td>41 MM</td><td>2413</td></tr>
+        <tr><td>9.5 MM</td><td>67 MM</td><td>2414</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- GAS LENS -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Gas Lens</h3>
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Size</th>
+          <th>Part No.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1.5 MM</td><td>AW-2441</td></tr>
+        <tr><td>2.0 MM</td><td>AW-2442</td></tr>
+        <tr><td>2.5 MM</td><td>AW-2443</td></tr>
+        <tr><td>3.0 MM</td><td>AW-2444</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- LENS CERAMIC -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Lens Ceramic</h3>
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Bore</th>
+          <th>Part No.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>6 MM</td><td>2461</td></tr>
+        <tr><td>8 MM</td><td>2462</td></tr>
+        <tr><td>10 MM</td><td>2463</td></tr>
+        <tr><td>12 MM</td><td>2464</td></tr>
+        <tr><td>15 MM</td><td>2465</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- =========================
+     ARGON ARC TORCH ACD/110
+========================= -->
+<div class="sa-product-section" id="argon-torch-acd-110">
+
+  <!-- MAIN CARD -->
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/acd-110.webp" alt="Argon Arc Welding Torch ACD 110">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">TIG Welding Torch</span>
+      <h2>Argon Arc Welding Torch - ACD/110</h2>
+
+      <p>
+        Compact and efficient torch designed for light-duty Argon Arc welding
+        applications, ensuring precision and smooth welding performance.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Capacity: 100 AMPS DC / 60 AMPS AC</li>
+        <li>Compatible with WCD/220 (except head & hose)</li>
+        <li>Supports up to 2.5 mm tungsten rod</li>
+        <li>Ideal for precision and light fabrication work</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+
+
+  <!-- TORCH PACKAGE -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Torch Package</h3>
+    <table class="sa-table">
+      <tbody>
+        <tr><td>TORCH HEAD</td><td>AC-1101</td></tr>
+        <tr><td>WASHER (2 PCS.)</td><td>AW-1203</td></tr>
+        <tr><td>HANDLE</td><td>AW-1204</td></tr>
+        <tr><td>CONDUCTOR ADAPTOR</td><td>AW-1257</td></tr>
+        <tr><td>EXT. ARGON HOSE ASSY</td><td>AC-1012</td></tr>
+        <tr><td>COLLET</td><td>AW-8112</td></tr>
+        <tr><td>CERAMIC</td><td>AW-1231</td></tr>
+        <tr><td>PLUS CABLE ASSY</td><td>4M / 8M Options</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- STANDARD KIT -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Standard Accessories Kit (11 PCS)</h3>
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Ceramic Cup</th>
+          <th>Lens Ceramic</th>
+          <th>Collet</th>
+          <th>Gas Lens</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>AW-1231, AW-1232, AW-1233, AW-1234</td>
+          <td>AW-1262, AW-1263</td>
+          <td>AW-8112, AW-8113, AW-8114</td>
+          <td>AW-1243, AW-1244</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- CERAMIC CUP -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Ceramic Cup</h3>
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Bore</th>
+          <th>Length</th>
+          <th>Part No.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>6.0 MM</td><td>25 MM</td><td>AW-1231</td></tr>
+        <tr><td>8.0 MM</td><td>18 MM</td><td>AW-1232</td></tr>
+        <tr><td>9.5 MM</td><td>25 MM</td><td>AW-1233</td></tr>
+        <tr><td>6.0 MM</td><td>50 MM</td><td>AW-1234</td></tr>
+        <tr><td>6.0 MM</td><td>80 MM</td><td>AW-1235</td></tr>
+        <tr><td>4.0 MM</td><td>50 MM</td><td>AW-1236</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- COLLET -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Collet</h3>
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Size</th>
+          <th>Part No.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1.0 MM</td><td>AW-8111</td></tr>
+        <tr><td>1.5 MM</td><td>AW-8112</td></tr>
+        <tr><td>2.0 MM</td><td>AW-8113</td></tr>
+        <tr><td>2.5 MM</td><td>AW-8114</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- GAS LENS -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Gas Lens</h3>
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Size</th>
+          <th>Part No.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1.0 MM</td><td>AW-1241</td></tr>
+        <tr><td>1.5 MM</td><td>AW-1242</td></tr>
+        <tr><td>2.0 MM</td><td>AW-1243</td></tr>
+        <tr><td>2.5 MM</td><td>AW-1244</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- LENS CERAMIC -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Lens Ceramic</h3>
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Size</th>
+          <th>Part No.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>6.0 MM</td><td>AW-1261</td></tr>
+        <tr><td>8.0 MM</td><td>AW-1262</td></tr>
+        <tr><td>10.0 MM</td><td>AW-1263</td></tr>
+        <tr><td>12.0 MM</td><td>AW-1264</td></tr>
+        <tr><td>15.0 MM</td><td>AW-1265</td></tr>
+      </tbody>
+    </table>
+  </div>
+
 </div>
 
 <!-- =====================Product 6====================================================================================================-->
@@ -4892,277 +5667,595 @@ PRODUCT HERO - CLEAN FINAL
 </div>
 
 <!-- =====================Product 9===================================================================================================-->
-
-<!-- ARGON GAS REGULATOR -->
-<div class="sa-product-section" id="argon-gas-regulator">
+<!-- =========================
+     REGULATOR FOR CNC APPLICATION
+========================= -->
+<div class="sa-product-section" id="regulator-for-cnc-application">
   <div class="sa-product-detail-card">
+
     <div class="sa-product-detail-image">
-      <img src="img/Argon Gas Regulator.jpg" alt="Argon Gas Regulator">
+      <img src="img/Regulator-for-CNC.webp" alt="Regulator for CNC Application">
     </div>
+
     <div class="sa-product-detail-content">
-      <span class="sa-product-detail-label">Pressure Regulators & Spares</span>
-      <h2>Argon Gas Regulator</h2>
+      <span class="sa-product-detail-label">Pressure Regulators</span>
+      <h2>Regulator for CNC Application</h2>
+
       <p>
-        Preset single stage regulators recommended for inert gas applications where flow is controlled by needle valve.
+        High performance gas regulator designed for CNC applications with stable and precise gas flow control.
       </p>
+
       <ul class="sa-product-points">
-        <li>Suitable for inert gas applications</li>
-        <li>Flow controlled by needle valve</li>
-        <li>Single stage regulator type</li>
+        <li>Supports Argon, Air, Oxygen, Nitrogen</li>
+        <li>Reliable pressure control</li>
+        <li>Suitable for industrial CNC machines</li>
       </ul>
+
       <a href="contact.html" class="sa-product-btn">Enquire Now</a>
     </div>
+
   </div>
 </div>
 
-<!-- DOUBLE STAGE REGULATOR WITH FLOW METER -->
-<div class="sa-product-section" id="double-stage-regulator-flow-meter">
+<!-- =========================
+     GAS CYLINDER MANIFOLD
+========================= -->
+<div class="sa-product-section" id="gas-cylinder-manifold">
   <div class="sa-product-detail-card">
+
     <div class="sa-product-detail-image">
-      <img src="img/double Stage.jpg" alt="Double Stage Regulator With Flow Meter">
+      <img src="img/Misatu-Cylinder-Manifold-for-Gas-Filling.webp" alt="Gas Cylinder Manifold">
     </div>
+
     <div class="sa-product-detail-content">
-      <span class="sa-product-detail-label">Pressure Regulators & Spares</span>
-      <h2>Double Stage Regulator With Flow Meter</h2>
+      <span class="sa-product-detail-label">Pressure Regulators</span>
+      <h2>Gas Cylinder Manifold</h2>
+
       <p>
-        General purpose double stage regulators recommended for use with inert gases where constant delivery pressure is needed regardless of fluctuations in cylinder pressure.
+        Industrial gas manifold system designed for safe and efficient gas distribution.
       </p>
+
       <ul class="sa-product-points">
-        <li>Suitable for inert gases</li>
-        <li>Constant delivery pressure</li>
-        <li>Flow meter attached</li>
-        <li>Double stage control</li>
+        <li>Supports: Argon, CO₂, Oxygen, Nitrogen, Hydrogen, Compressed Air, Helium</li>
+        <li>Hydraulic Test Pressure: 350 Bar</li>
+        <li>Pneumatic Test Pressure: 200 Bar</li>
       </ul>
+
       <a href="contact.html" class="sa-product-btn">Enquire Now</a>
     </div>
+
   </div>
 </div>
 
-<!-- DOUBLE STAGE REGULATORS -->
-<div class="sa-product-section" id="double-stage-regulators">
+<!-- =========================
+     CYLINDER MANIFOLD FOR CNC MACHINE
+========================= -->
+<div class="sa-product-section" id="cylinder-manifold-cnc">
   <div class="sa-product-detail-card">
+
     <div class="sa-product-detail-image">
-      <img src="img/double.jpg" alt="Double Stage Regulators">
+      <img src="img/Misatu-gas-Cylinder-Manifold-for-CNC-Machine.webp" alt="Cylinder Manifold for CNC Machine">
     </div>
+
     <div class="sa-product-detail-content">
-      <span class="sa-product-detail-label">Pressure Regulators & Spares</span>
-      <h2>Double Stage Regulators</h2>
+      <span class="sa-product-detail-label">Pressure Regulators</span>
+      <h2>Cylinder Manifold for CNC Machine</h2>
+
       <p>
-        Type 316 stainless steel double stage regulators recommended for high purity, corrosion resistant and toxic gas applications where constant, precise delivery pressure is required.
+        Efficient gas manifold system designed for CNC machines ensuring continuous and stable gas supply.
       </p>
+
       <ul class="sa-product-points">
-        <li>Type 316 stainless steel body</li>
-        <li>High purity gas application</li>
-        <li>Corrosion resistant / toxic gas compatible</li>
-        <li>Constant and precise delivery pressure</li>
+        <li>Supports: Argon, Oxygen, Nitrogen</li>
+        <li>Designed for CNC applications</li>
+        <li>Reliable and durable performance</li>
       </ul>
+
       <a href="contact.html" class="sa-product-btn">Enquire Now</a>
     </div>
+
   </div>
 </div>
 
-<!-- SINGLE STAGE REGULATOR -->
-<div class="sa-product-section" id="single-stage-regulator">
+<!-- =========================
+     STAINLESS STEEL MANIFOLD
+========================= -->
+<div class="sa-product-section" id="stainless-steel-manifold">
   <div class="sa-product-detail-card">
+
     <div class="sa-product-detail-image">
-      <img src="img/single-stage.jpg" alt="Single Stage Regulator">
+      <img src="img/64.webp" alt="Stainless Steel Manifold">
     </div>
+
     <div class="sa-product-detail-content">
-      <span class="sa-product-detail-label">Pressure Regulators & Spares</span>
-      <h2>Single Stage Regulator</h2>
+      <span class="sa-product-detail-label">Pressure Regulators</span>
+      <h2>Stainless Steel Manifold</h2>
+
       <p>
-        General purpose single stage regulators recommended for inert and non-corrosive gas applications where precise control of delivery pressure is not necessary.
+        High quality stainless steel manifold designed for corrosion resistance and long service life.
       </p>
+
       <ul class="sa-product-points">
-        <li>For inert and non-corrosive gases</li>
-        <li>General purpose use</li>
-        <li>Suitable where precise delivery pressure is not necessary</li>
+        <li>Corrosion resistant stainless steel body</li>
+        <li>Suitable for industrial gas applications</li>
+        <li>Durable and low maintenance</li>
       </ul>
+
       <a href="contact.html" class="sa-product-btn">Enquire Now</a>
     </div>
+
   </div>
 </div>
 
-<!-- SINGLE STAGE REGULATOR WITH FLOW METER -->
-<div class="sa-product-section" id="single-stage-regulator-flow-meter">
+<!-- ========================================
+     CRYOGENIC ECONOMIZERS FOR LIQUID CYLINDER
+============================================== -->
+<div class="sa-product-section" id="cryogenic-economizer">
   <div class="sa-product-detail-card">
+
     <div class="sa-product-detail-image">
-      <img src="img/single-stge _flow.jpg" alt="Single Stage Regulator With Flow Meter">
+      <img src="img/product5.webp" alt="Cryogenic Economizer">
     </div>
+
     <div class="sa-product-detail-content">
-      <span class="sa-product-detail-label">Pressure Regulators & Spares</span>
-      <h2>Single Stage Regulator With Flow Meter</h2>
+      <span class="sa-product-detail-label">Pressure Regulators</span>
+      <h2>Cryogenic Economizer</h2>
+
       <p>
-        Single stage regulators with flow meter recommended for inert gas applications where precise control of flow is required by needle valve.
+        Designed to utilize gas pressure in liquid cryogenic cylinders and prevent gas loss through relief valves.
       </p>
+
       <ul class="sa-product-points">
-        <li>Flow meter attached</li>
-        <li>Precise flow control by needle valve</li>
-        <li>Suitable for inert gases</li>
+        <li>Minimizes gas loss to atmosphere</li>
+        <li>Suitable for cryogenic lines, vaporizers & converters</li>
+        <li>Ideal for space and cost-efficient installations</li>
       </ul>
+
       <a href="contact.html" class="sa-product-btn">Enquire Now</a>
     </div>
+
   </div>
 </div>
 
-<!-- HIGH PRESSURE SINGLE STAGE REGULATORS -->
-<div class="sa-product-section" id="high-pressure-single-stage-regulators">
+<!-- =========================
+     CRYOGENIC LIQUID CYLINDER REGULATOR
+========================= -->
+<div class="sa-product-section" id="cryogenic-cylinder-regulator">
   <div class="sa-product-detail-card">
+
     <div class="sa-product-detail-image">
-      <img src="img/High-pressure_single Stage.webp" alt="High Pressure Single Stage Regulators">
+      <img src="img/product6.webp" alt="Cryogenic Cylinder Regulator">
     </div>
+
     <div class="sa-product-detail-content">
-      <span class="sa-product-detail-label">Pressure Regulators & Spares</span>
-      <h2>High Pressure Single Stage Regulators</h2>
+      <span class="sa-product-detail-label">Pressure Regulators</span>
+      <h2>Cryogenic Cylinder Regulator</h2>
+
       <p>
-        High pressure single stage regulators recommended for testing of refrigeration tubing, pharmaceutical industries and R&amp;D research centres.
+        High performance regulator designed for Oxygen, Nitrogen, Argon and CO₂ cryogenic cylinders.
       </p>
+
       <ul class="sa-product-points">
-        <li>High pressure application</li>
-        <li>For refrigeration tubing testing</li>
-        <li>Suitable for pharmaceutical industries</li>
-        <li>Useful in R&amp;D research centres</li>
+        <li>Supports: Oxygen, Nitrogen, Argon, CO₂</li>
+        <li>Max Inlet Pressure: 38 Bar</li>
+        <li>Max Delivery Pressure: 24 Bar</li>
+        <li>Temperature Range: -196°C to 74°C</li>
       </ul>
+
       <a href="contact.html" class="sa-product-btn">Enquire Now</a>
     </div>
+
+  </div>
+
+  <!-- SPEC TABLE -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Key Specifications</h3>
+    <table class="sa-table">
+      <tbody>
+        <tr>
+          <td>Inlet Connection</td>
+          <td>5/8 BSPM</td>
+        </tr>
+        <tr>
+          <td>Outlet Connection</td>
+          <td>1/4 NPTF</td>
+        </tr>
+        <tr>
+          <td>Gauge Range</td>
+          <td>0–40 Bar</td>
+        </tr>
+        <tr>
+          <td>Filter</td>
+          <td>Built-in inlet filter</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- =========================
+     M SERIES SINGLE STAGE FLOWMETER REGULATOR
+========================= -->
+<div class="sa-product-section" id="m-series-flowmeter">
+  <div class="sa-product-detail-card">
+
+    <div class="sa-product-detail-image">
+      <img src="img/m-series-flowmeter.jpg" alt="M Series Flowmeter Regulator">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Pressure Regulators</span>
+      <h2>M Series Single Stage Flowmeter Regulator</h2>
+
+      <p>
+        Preset single stage regulator suitable for inert gas applications where constant delivery pressure is required.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Ideal for inert gases</li>
+        <li>Maintains constant delivery pressure</li>
+        <li>Suitable where high precision control is not required</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+
+  </div>
+
+  <!-- FEATURES -->
+  <div class="sa-info-grid">
+    <div class="sa-info-box">
+      <h3>Key Features</h3>
+      <ul class="sa-shielding-list">
+        <li>Reinforced rubber diaphragm</li>
+        <li>2″ dual scale gauges</li>
+        <li>Stem type seat mechanism</li>
+        <li>Forged body & bonnet</li>
+      </ul>
+    </div>
+
+    <div class="sa-info-box">
+      <h3>Applications</h3>
+      <p>
+        Suitable for industrial inert gas applications where stable output pressure is required despite cylinder pressure variation.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<!-- =========================
+     HD SERIES HIGH PRESSURE DOUBLE STAGE REGULATOR
+========================= -->
+<div class="sa-product-section" id="hd-double-stage">
+  <div class="sa-product-detail-card">
+
+    <div class="sa-product-detail-image">
+      <img src="img/product8.webp" alt="HD Series Double Stage Regulator">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Pressure Regulators</span>
+      <h2>HD Series High Pressure Double Stage Regulator</h2>
+
+      <p>
+        High pressure double stage regulator designed for precise and stable gas flow in industrial applications.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Double stage pressure control</li>
+        <li>Suitable for high pressure gas systems</li>
+        <li>Ensures stable and accurate output</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+
   </div>
 </div>
 
-<!-- COMPACT SINGLE STAGE REGULATORS -->
-<div class="sa-product-section" id="compact-single-stage-regulators">
+<!-- =========================
+     M SERIES HIGH PRESSURE SINGLE STAGE REGULATOR
+========================= -->
+<div class="sa-product-section" id="m-high-pressure">
   <div class="sa-product-detail-card">
+
     <div class="sa-product-detail-image">
-      <img src="img/compact-SS-regulators.jfif" alt="Compact Single Stage Regulators">
+      <img src="img/product9.webp" alt="M Series High Pressure Regulator">
     </div>
+
     <div class="sa-product-detail-content">
-      <span class="sa-product-detail-label">Pressure Regulators & Spares</span>
-      <h2>Compact Single Stage Regulators</h2>
+      <span class="sa-product-detail-label">Pressure Regulators</span>
+      <h2>M Series High Pressure Single Stage Regulator</h2>
+
       <p>
-        Compact single stage regulators recommended for inert gas applications where there is no need to use a flow meter.
+        High pressure single stage regulator designed for industrial gas applications with reliable performance.
       </p>
+
       <ul class="sa-product-points">
-        <li>Compact design</li>
-        <li>Suitable for inert gas applications</li>
-        <li>No flow meter required</li>
+        <li>Single stage pressure control</li>
+        <li>Suitable for high pressure gas systems</li>
+        <li>Durable and efficient design</li>
       </ul>
+
       <a href="contact.html" class="sa-product-btn">Enquire Now</a>
     </div>
+
   </div>
 </div>
 
-<!-- SS SINGLE STAGE REGULATORS -->
-<div class="sa-product-section" id="ss-single-stage-regulators">
+<!-- =========================
+     ECONOMIC MANIFOLD FOR FOUR CYLINDER
+========================= -->
+<div class="sa-product-section" id="economic-manifold">
   <div class="sa-product-detail-card">
+
     <div class="sa-product-detail-image">
-      <img src="img/ss-single-stage-regulators.jfif" alt="SS Single Stage Regulators">
+      <img src="img/product10.webp" alt="Economic Manifold For Four Cylinder">
     </div>
+
     <div class="sa-product-detail-content">
-      <span class="sa-product-detail-label">Pressure Regulators & Spares</span>
-      <h2>SS Single Stage Regulators</h2>
+      <span class="sa-product-detail-label">Pressure Regulators</span>
+      <h2>Economic Manifold For Four Cylinder</h2>
+
       <p>
-        Type 316 stainless steel single stage regulators recommended for ultra high purity, corrosion resistant and toxic gas applications where slight variance in delivery pressure is acceptable as cylinder pressure decays.
+        Cost-effective manifold system designed for connecting and controlling four gas cylinders efficiently.
       </p>
+
       <ul class="sa-product-points">
-        <li>Type 316 stainless steel</li>
-        <li>Ultra high purity gas use</li>
-        <li>Corrosion resistant / toxic gas use</li>
-        <li>Slight variance acceptable as cylinder pressure decays</li>
+        <li>Suitable for multi-cylinder gas supply</li>
+        <li>Durable and compact design</li>
+        <li>Easy operation and maintenance</li>
       </ul>
+
       <a href="contact.html" class="sa-product-btn">Enquire Now</a>
     </div>
+
+  </div>
+
+  <!-- MATERIAL DETAILS -->
+  <div class="sa-info-grid">
+    <div class="sa-info-box">
+      <h3>Construction</h3>
+      <ul class="sa-shielding-list">
+        <li>Block: Brass</li>
+        <li>Pipe: Copper</li>
+        <li>Valve: Brass body, wheel operated</li>
+      </ul>
+    </div>
+
+    <div class="sa-info-box">
+      <h3>Components</h3>
+      <ul class="sa-shielding-list">
+        <li>Pressure Gauge: 2.5” Dia</li>
+        <li>Pigtail: SS braided flexible</li>
+        <li>Soft seat valve design</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<!-- =========================
+     MASTER VALVE FOR MANIFOLD
+========================= -->
+<div class="sa-product-section" id="master-valve-manifold">
+  <div class="sa-product-detail-card">
+    
+    <div class="sa-product-detail-image">
+      <img src="img/product11.webp" alt="Master Valve For Manifold">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Pressure Regulators</span>
+      <h2>Master Valve For Manifold</h2>
+
+      <p>
+        High-pressure shut-off valve designed for heavy-duty use in manifold systems,
+        fill plants, tube trailers and industrial gas piping applications.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Suitable for Oxygen, Nitrogen, Hydrogen, Argon & other gases</li>
+        <li>Easy operation with long brass handle</li>
+        <li>½ turn operation from closed to fully open</li>
+        <li>Vacuum tested for high purity applications</li>
+        <li>Field rebuildable & interchangeable design</li>
+        <li>Max Pressure: 300 Bar (4350 PSI)</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+
   </div>
 </div>
 
-<!-- GENERAL DOUBLE STAGE REGULATOR -->
-<div class="sa-product-section" id="general-double-stage-regulator">
+<!-- =========================
+     CO2 GAS PREHEATER FOR MANIFOLD
+========================= -->
+<div class="sa-product-section" id="co2-gas-preheater">
   <div class="sa-product-detail-card">
+
     <div class="sa-product-detail-image">
-      <img src="img/general-double-stage-regulator.jpg" alt="General Double Stage Regulator">
+      <img src="img/product12.webp" alt="CO2 Gas Preheater">
     </div>
+
     <div class="sa-product-detail-content">
-      <span class="sa-product-detail-label">Pressure Regulators & Spares</span>
-      <h2>Double Stage Regulator</h2>
+      <span class="sa-product-detail-label">Pressure Regulators</span>
+      <h2>High Flow CO₂ Gas Preheater For Manifold</h2>
+
       <p>
-        General purpose double stage regulators recommended for use with inert and non-corrosive pure gases and mixtures in laboratories where constant delivery pressure is required regardless of fluctuations in cylinder pressure.
+        Designed to prevent freezing in CO₂ gas systems by maintaining stable gas flow 
+        and protecting regulators and manifold components.
       </p>
+
       <ul class="sa-product-points">
-        <li>For inert and non-corrosive pure gases</li>
-        <li>Suitable for gas mixtures</li>
-        <li>Used in laboratories</li>
-        <li>Constant delivery pressure</li>
+        <li>Handles inlet pressure up to 100 Bar</li>
+        <li>Prevents ice formation in regulator & pipeline</li>
+        <li>Protects internal components from damage</li>
+        <li>Ensures smooth and stable gas flow</li>
+        <li>Ideal for central gas supply systems</li>
       </ul>
+
       <a href="contact.html" class="sa-product-btn">Enquire Now</a>
     </div>
+
   </div>
 </div>
 
-<!-- ELECTRODE HOLDER -->
-<div class="sa-product-section" id="electrode-holder-regulator-page">
+<!-- =========================
+     M SERIES SINGLE STAGE DOUBLE GAUGE LPG REGULATOR
+========================= -->
+<div class="sa-product-section" id="lpg-double-gauge">
   <div class="sa-product-detail-card">
+
     <div class="sa-product-detail-image">
-      <img src="img/elctrod-holder.jpg" alt="Electrode Holder">
+      <img src="img/product13.webp" alt="Double Gauge LPG Regulator">
     </div>
+
     <div class="sa-product-detail-content">
-      <span class="sa-product-detail-label">Accessory</span>
-      <h2>Electrode Holder</h2>
+      <span class="sa-product-detail-label">Pressure Regulators</span>
+      <h2>M Series Single Stage Double Gauge LPG Regulator</h2>
+
       <p>
-        Spring loaded holder designed for maximum safety, comfort and high productivity. Minimum contact area of conductivity and high grip cable connection avoids heat transfer to handle.
+        Single stage LPG regulator designed for brazing and welding applications,
+        ensuring stable gas flow and reliable performance.
       </p>
+
       <ul class="sa-product-points">
-        <li>Maximum safety and comfort</li>
-        <li>High productivity design</li>
-        <li>High grip cable connection</li>
-        <li>Reduces heat transfer to handle</li>
+        <li>Recommended for brazing and welding use</li>
+        <li>Reinforced rubber diaphragm for durability</li>
+        <li>2″ dual scale gauges for accurate reading</li>
+        <li>Stem type seat mechanism</li>
+        <li>Forged body, bonnet, fittings and gauges</li>
       </ul>
+
       <a href="contact.html" class="sa-product-btn">Enquire Now</a>
     </div>
+
   </div>
 </div>
 
-<!-- MULTI CYLINDER COMPRESSED MANIFOLD -->
-<div class="sa-product-section" id="multi-cylinder-compressed-manifold">
+<!-- =========================
+     M SERIES SINGLE STAGE SINGLE GAUGE LPG REGULATOR
+========================= -->
+<div class="sa-product-section" id="m-series-single-gauge-lpg-regulator">
   <div class="sa-product-detail-card">
+
     <div class="sa-product-detail-image">
-      <img src="img/multi-cylinder-compressed-manifold.webp" alt="Multi Cylinder Compressed Manifold">
+      <img src="img/product14.webp" alt="Single Gauge LPG Regulator">
     </div>
+
     <div class="sa-product-detail-content">
-      <span class="sa-product-detail-label">Gas Manifold</span>
-      <h2>Multi Cylinder Compressed Manifold</h2>
+      <span class="sa-product-detail-label">Pressure Regulators</span>
+      <h2>M Series Single Stage Single Gauge LPG Regulator</h2>
+
       <p>
-        Multi cylinder compressed manifold available for Argon, Carbon Dioxide, Oxygen, Nitrogen, Hydrogen, Compressed Air and Helium gas.
+        Single stage LPG regulator designed for brazing and welding applications,
+        ensuring stable gas delivery and reliable performance.
       </p>
+
       <ul class="sa-product-points">
-        <li>For multiple gas cylinder connection</li>
-        <li>Suitable for Argon / CO2 / Oxygen / Nitrogen</li>
-        <li>Also for Hydrogen / C. Air / Helium gas</li>
+        <li>Recommended for brazing and welding applications</li>
+        <li>Reinforced rubber diaphragm for durability</li>
+        <li>2″ dual scale gauges for accurate readings</li>
+        <li>Stem type seat mechanism</li>
+        <li>Forged body, bonnet, fittings and gauges</li>
       </ul>
+
       <a href="contact.html" class="sa-product-btn">Enquire Now</a>
     </div>
+
   </div>
 </div>
 
-<!-- FLOW METER -->
-<div class="sa-product-section" id="flow-meter-gas">
+<!-- =========================
+     CYLINDER MANIFOLD
+========================= -->
+<div class="sa-product-section" id="cylinder-manifold">
   <div class="sa-product-detail-card">
+
     <div class="sa-product-detail-image">
-      <img src="img/flow-meter.jfif" alt="Flow Meter">
+      <img src="img/product15.webp" alt="Cylinder Manifold">
     </div>
+
     <div class="sa-product-detail-content">
-      <span class="sa-product-detail-label">Gas Control</span>
-      <h2>Flow Meter</h2>
+      <span class="sa-product-detail-label">Pressure Regulators</span>
+      <h2>Cylinder Manifold</h2>
+
       <p>
-        Flow meter for CO2, Argon and Nitrogen gas.
+        High-quality cylinder manifold system designed for safe and efficient distribution 
+        of industrial gases across multiple applications.
       </p>
+
       <ul class="sa-product-points">
-        <li>Make - MISATU, Perfect, SAPL and Economy Series</li>
-        <li>Used for inlet and outlet pressure adjustment</li>
-        <li>Suitable for CO2, Argon and Nitrogen gas</li>
+        <li><strong>Supported Gases:</strong> Argon, CO₂, Oxygen, Nitrogen, Hydrogen, Air, Helium</li>
+        <li>Stainless Steel 316 block and pipeline construction</li>
+        <li>Brass body valves with wheel operated soft seat design</li>
+        <li>Suitable for industrial and central gas supply systems</li>
       </ul>
+
       <a href="contact.html" class="sa-product-btn">Enquire Now</a>
     </div>
+
   </div>
 </div>
+<!-- =========================
+     GAS PRE HEATER CO2 & NITROUS OXIDE
+========================= -->
+<div class="sa-product-section" id="gas-pre-heater">
+  <div class="sa-product-detail-card">
 
+    <div class="sa-product-detail-image">
+      <img src="img/product16.webp" alt="Gas Pre Heater CO2 and Nitrous Oxide">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Pressure Regulators</span>
+      <h2>Gas Pre Heater CO₂ & Nitrous Oxide</h2>
+
+      <p>
+        Gas pre-heater designed to maintain smooth gas flow by preventing freezing 
+        and liquification during pressure drop in welding gas systems.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Prevents freezing and equipment damage</li>
+        <li>Maintains uniform gas temperature before regulator</li>
+        <li>Built-in heating element with thermostatic control</li>
+        <li>Compact enclosed design with indicator</li>
+        <li>Detachable fittings and replaceable heater cartridge</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+
+  </div>
+
+  <!-- ADVANTAGES -->
+  <div class="sa-info-grid" style="margin-top:24px;">
+    <div class="sa-info-box">
+      <h3>Advantages</h3>
+      <ul class="sa-shielding-list">
+        <li>Detachable nuts and nipples</li>
+        <li>Easy replaceable heater cartridge</li>
+        <li>Stable and continuous gas flow</li>
+      </ul>
+    </div>
+
+    <div class="sa-info-box">
+      <h3>Warnings</h3>
+      <ul class="sa-shielding-list">
+        <li>Use only with non-combustible gases</li>
+        <li>Protect from moisture and outdoor conditions</li>
+        <li>Use 36V / 42V / 110V / 230V AC supply only</li>
+        <li>Use with grounded electrical connection</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
 <!-- =====================Product 10===================================================================================================-->
 <!-- arc-welding   -->
 
@@ -5574,8 +6667,643 @@ PRODUCT HERO - CLEAN FINAL
 </div>
 
 <!-- =====================Product 11===================================================================================================-->
+<div class="sa-product-section" id="air-drying-paint">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/Air Drying Paint.jpg" alt="Air Drying Paint">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Air Drying Paint</span>
+      <h2>Air Drying Paint</h2>
+
+      <p>
+        High quality air drying paint solutions for industrial protection, finishing and maintenance applications.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Suitable for industrial coating use</li>
+        <li>Fast application and reliable finish</li>
+        <li>Useful for maintenance and protection work</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+<!-- ================================================================ -->
+<div class="sa-product-section" id="anti-corrosion">
+
+  <!-- MAIN CARD -->
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/corrosion-1.jpg" alt="Corrosion Resistance Aerosols">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Aerosol Solutions</span>
+      <h2>Corrosion Resistance  Aerosols</h2>
+
+      <p>
+        Advanced aerosol-based corrosion protection and maintenance solutions designed for
+        industrial durability, surface finishing and long-term performance across multiple industries.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Fast drying and easy application</li>
+        <li>High corrosion & UV resistance</li>
+        <li>Available in multiple shades & finishes</li>
+        <li>Suitable for industrial and decorative applications</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
 
 
+  <!-- =========================
+       PRODUCT TYPES TABLE
+  ========================= -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Product Range</h3>
+
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Air Drying Paint</td>
+          <td>Touch dry in 2–3 min, withstands up to 115°C, UV resistant, available in 3000+ shades</td>
+        </tr>
+
+        <tr>
+          <td>Thermocol Compliant Paint</td>
+          <td>Suitable for paper, wood, plastic & glass, ideal for decoration & art</td>
+        </tr>
+
+        <tr>
+          <td>Zinc Metal Spray</td>
+          <td>Cold galvanizing grey finish with excellent corrosion resistance</td>
+        </tr>
+
+        <tr>
+          <td>Zinc-Aluminium Spray</td>
+          <td>Silver bright galvanizing finish for touch-up applications</td>
+        </tr>
+
+        <tr>
+          <td>Metal Primer Spray</td>
+          <td>High performance primer coating for metal surfaces</td>
+        </tr>
+
+        <tr>
+          <td>Heat Resistant Sprays</td>
+          <td>Aluminium & Black sprays withstand up to 600°C, ideal for chimneys</td>
+        </tr>
+
+        <tr>
+          <td>Metallic Finish Sprays</td>
+          <td>Silver, Gold, Copper, Bronze finishes with 168 hrs salt spray resistance</td>
+        </tr>
+
+        <tr>
+          <td>Clear Lacquer</td>
+          <td>Enhances protection and gloss without affecting surface appearance</td>
+        </tr>
+
+        <tr>
+          <td>No Rust 30</td>
+          <td>Wax-based coating for high gloss surface protection</td>
+        </tr>
+
+        <tr>
+          <td>Zinkote 10 / 20 / 30</td>
+          <td>Advanced zinc coating solutions offering galvanizing-like corrosion protection</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- =========================
+       INFO GRID
+  ========================= -->
+  <div class="sa-info-grid">
+
+    <!-- LEFT -->
+    <div class="sa-info-box">
+      <h3>Zinkote Technology</h3>
+
+      <p>
+        Zinkote products are specially developed zinc-based coatings that provide protection
+        similar to hot dip galvanizing for components that cannot be dipped.
+      </p>
+
+      <ul class="sa-shielding-list">
+        <li>Zinkote 20 – Zinc flake coating for durable corrosion protection</li>
+        <li>Zinkote 30 – Zinc dust coating with strong bonding</li>
+        <li>Zinkote 10 – Zinc-aluminium micro layer for auto components</li>
+      </ul>
+    </div>
+
+
+    <!-- RIGHT -->
+    <div class="sa-info-box">
+      <h3>Key Benefits</h3>
+
+      <ul class="sa-shielding-list">
+        <li>Electrochemical bonding with base metal</li>
+        <li>Long-lasting corrosion resistance</li>
+        <li>Suitable for complex shapes and structures</li>
+        <li>High durability in harsh environments</li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       APPLICATIONS
+  ========================= -->
+  <div class="sa-note-box">
+    <h3>Applications</h3>
+
+    <p>
+      Widely used in power plants, electrical industries, automobile manufacturing,
+      heavy engineering, petrochemical industries, offshore construction, shipping,
+      steel mills, cement plants, paper industries and general fabrication sectors.
+    </p>
+  </div>
+
+</div>
+
+<!-- =================================================== -->
+
+<div class="sa-product-section" id="ndt-testing-aerosols">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/nd-testing.jpg" alt="NDT Testing Aerosol Sprays">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">NDT Testing</span>
+      <h2>NDT Testing Aerosol Sprays</h2>
+
+      <p>
+        Specialized aerosol sprays used in Non-Destructive Testing (NDT) processes 
+        to detect surface defects such as cracks, leaks and discontinuities with 
+        high accuracy and reliability.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>High sensitivity crack detection</li>
+        <li>Fast drying and easy application</li>
+        <li>Improves inspection accuracy</li>
+        <li>Widely used in industrial quality testing</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+
+  <!-- TABLE -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Product Details</h3>
+
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Description</th>
+          <th>Application</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Cleaner PM 30</td>
+          <td>Fast drying cleaner used for easy removal of oil and contaminants before inspection.</td>
+          <td>Surface preparation in NDT process</td>
+        </tr>
+
+        <tr>
+          <td>Developer PM 24</td>
+          <td>Moderate drying developer used to detect minute surface cracks clearly.</td>
+          <td>Crack detection during NDT</td>
+        </tr>
+
+        <tr>
+          <td>Dye Penetrant PM 10</td>
+          <td>Excellent penetrating properties, water washable. Helps locate surface defects effectively.</td>
+          <td>Crack detection and inspection</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ============================================================== -->
+
+<div class="sa-product-section" id="electrical-maintenance">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/electrical-maintenance.jpg" alt="Electrical Maintenance Aerosols">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Electrical Maintenance</span>
+      <h2>Electrical Maintenance Aerosols</h2>
+
+      <p>
+        High-performance aerosol solutions designed for electrical maintenance, cleaning, insulation 
+        and protection. These sprays improve efficiency, prevent corrosion, and ensure long-term 
+        reliability of electrical systems and components.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Fast drying and moisture resistant formulations</li>
+        <li>Prevents corrosion and voltage drops</li>
+        <li>Improves electrical performance and safety</li>
+        <li>Suitable for contacts, switchgears, PCB and motors</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+
+  <!-- TABLE -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Product Details</h3>
+
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Description</th>
+          <th>Applications</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Promclean 15</td>
+          <td>Removes grease, tarnish and oxidation. Prevents corrosion. Fast drying (-40°C to 150°C).</td>
+          <td>Electric contacts, switchgears</td>
+        </tr>
+
+        <tr>
+          <td>Promclean 16</td>
+          <td>Removes grease and moisture. Safe for plastic, rubber and paint. Prevents voltage drop.</td>
+          <td>Electric contacts, switchgears</td>
+        </tr>
+
+        <tr>
+          <td>Acrylic Spray</td>
+          <td>PCB coating spray. Antistatic and moisture repellent. Ensures long life of PCB.</td>
+          <td>PCB coating</td>
+        </tr>
+
+        <tr>
+          <td>Anti Track Varnish Spray</td>
+          <td>Provides insulating seal and reduces noise. Forms hard protective film.</td>
+          <td>Battery terminals, leakage protection</td>
+        </tr>
+
+        <tr>
+          <td>Battery Terminal Coating Spray</td>
+          <td>Prevents corrosion and seals leakage paths.</td>
+          <td>Battery terminals</td>
+        </tr>
+
+        <tr>
+          <td>Red Insulating Varnish Spray</td>
+          <td>Seals electrical leakage paths in motors.</td>
+          <td>Electric motors</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ==================================================================== -->
+ <div class="sa-product-section" id="lubricant">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/lubricants.jpg" alt="Lubricant Aerosols">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Lubricants</span>
+      <h2>Lubricant Aerosols</h2>
+
+      <p>
+        Advanced lubricant aerosol sprays designed for industrial applications including 
+        lubrication, corrosion protection, moisture displacement and high-temperature performance. 
+        Suitable for machinery, automotive parts and precision components.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Excellent lubrication and penetration properties</li>
+        <li>High resistance to water, dust and corrosion</li>
+        <li>Suitable for extreme temperature conditions</li>
+        <li>Used in automotive, industrial and maintenance applications</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+
+  <!-- TABLE -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Product Details</h3>
+
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Description</th>
+          <th>Applications</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Miracle 306</td>
+          <td>Multi-purpose spray for corrosion protection, lubrication and moisture displacement. Safe for paint, rubber and plastics. Works in sub-zero temperatures.</td>
+          <td>Rusted nuts & bolts, bearings, moving parts</td>
+        </tr>
+
+        <tr>
+          <td>Penetrating Oil</td>
+          <td>Low surface tension oil that penetrates deeply to loosen seized and rusted components quickly.</td>
+          <td>Loosening rusted and stuck parts</td>
+        </tr>
+
+        <tr>
+          <td>Dry PTFE Spray</td>
+          <td>Dry film lubricant resistant to water, oil and solvents. Does not attract dust. Ideal for low load and low speed.</td>
+          <td>Food industry, pharma, precision parts</td>
+        </tr>
+
+        <tr>
+          <td>Teflub Spray</td>
+          <td>PTFE based lubricant with deep penetration, high adhesion and resistance to water wash-off. Temp range -150°C to +260°C.</td>
+          <td>High temperature lubrication</td>
+        </tr>
+
+        <tr>
+          <td>Graphite Moly Spray</td>
+          <td>Contains MoS2 for high temperature lubrication. Strong adhesion and excellent heat resistance up to +400°C.</td>
+          <td>Heavy duty and high temperature parts</td>
+        </tr>
+
+        <tr>
+          <td>Copper Anti-Seize Spray</td>
+          <td>Prevents seizing and galling of threaded parts. High resistance to heat and corrosion.</td>
+          <td>Nuts, bolts, studs during assembly</td>
+        </tr>
+
+        <tr>
+          <td>Silicone Spray</td>
+          <td>Non-toxic, odorless lubricant with anti-stick properties. High temperature resistant.</td>
+          <td>Conveyors, windows, mould release, anti-spatter</td>
+        </tr>
+
+        <tr>
+          <td>Mould Release (Silicone Free)</td>
+          <td>Chemically inert spray used where silicone is not allowed. Prevents sticking in moulding process.</td>
+          <td>Plastic moulding applications</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ==================================================================== -->
+<div class="sa-product-section" id="cleaner">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/cleaner.jpg" alt="Cleaner Aerosols">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Cleaners</span>
+      <h2>Cleaner Aerosols</h2>
+
+      <p>
+        High-performance cleaning aerosol solutions designed for industrial, automotive and 
+        general maintenance applications. These cleaners effectively remove dirt, grease, oil, 
+        stains and residues while maintaining surface quality and finish.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Removes oil, grease, stains and contaminants</li>
+        <li>Suitable for metal, glass, plastic and industrial surfaces</li>
+        <li>Fast acting and efficient cleaning performance</li>
+        <li>Used in industrial, automotive and maintenance applications</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+
+  <!-- TABLE -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Product Details</h3>
+
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Description</th>
+          <th>Applications</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Promclean SS</td>
+          <td>Foaming cleaner for stainless steel surfaces. Removes fingerprints, dust and water marks while leaving a protective non-greasy shine.</td>
+          <td>SS surfaces, chrome, metals, plastics</td>
+        </tr>
+
+        <tr>
+          <td>Promclean 21</td>
+          <td>Heavy duty cleaner/degreaser with moderate evaporation. Removes stubborn oil, grease, wax and silicone deposits.</td>
+          <td>Industrial, aviation, automotive, engineering</td>
+        </tr>
+
+        <tr>
+          <td>Promclean 22</td>
+          <td>Multipurpose cleaner cum polisher suitable for all types of surfaces.</td>
+          <td>General surface cleaning and polishing</td>
+        </tr>
+
+        <tr>
+          <td>Gasket Remover Spray</td>
+          <td>Specially designed for easy removal of gaskets from flanges and components.</td>
+          <td>Automobile parts, industrial flanges</td>
+        </tr>
+
+        <tr>
+          <td>Carbon / Paint / Varnish Remover</td>
+          <td>Removes paint, lacquer, carbon deposits and varnish efficiently.</td>
+          <td>Surface preparation and maintenance</td>
+        </tr>
+
+        <tr>
+          <td>Promtech Glass Cleaner</td>
+          <td>Provides fast, streak-free cleaning on glass and ceramic surfaces.</td>
+          <td>Glass, mirrors, monitors, lenses, windscreens</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
+<!-- ==================================================== -->
+ <div class="sa-product-section" id="automobile">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/automobile.jpg" alt="Aerosols for Automobiles">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Automobile</span>
+      <h2>Aerosols for Automobiles</h2>
+
+      <p>
+        Comprehensive range of aerosol products specially designed for automobile maintenance, 
+        protection and performance enhancement. These sprays are widely used in workshops, 
+        service centers and automotive industries.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Complete solution for cleaning, lubrication and protection</li>
+        <li>Improves vehicle performance and durability</li>
+        <li>Suitable for body, engine, electrical and moving parts</li>
+        <li>Used in automotive service and maintenance applications</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+
+  <!-- TABLE -->
+  <div class="sa-table-wrap">
+    <h3 class="sa-table-title">Product Details</h3>
+
+    <table class="sa-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Description</th>
+          <th>Applications</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Air Drying Paint</td>
+          <td>Quick touch-up paint for automobile body parts.</td>
+          <td>Body touch-up</td>
+        </tr>
+
+        <tr>
+          <td>Thermocol Compliant Paints</td>
+          <td>Fluorescent and metallic paints for decorative and multi-surface use.</td>
+          <td>Decorative, plastic, glass, wood</td>
+        </tr>
+
+        <tr>
+          <td>Zinc Metal Spray / Zinkote 20</td>
+          <td>Provides strong corrosion resistance and underbody protection.</td>
+          <td>Underbody coating</td>
+        </tr>
+
+        <tr>
+          <td>Battery Terminal Coating</td>
+          <td>Prevents corrosion and seals leakage paths.</td>
+          <td>Battery terminals</td>
+        </tr>
+
+        <tr>
+          <td>Miracle 306</td>
+          <td>Multi-purpose spray for lubrication, rust removal and moisture displacement.</td>
+          <td>Moving parts, nuts, bolts, bearings</td>
+        </tr>
+
+        <tr>
+          <td>Penetrating Oil</td>
+          <td>Deep penetrating oil for loosening seized and rusted components.</td>
+          <td>Rusted parts removal</td>
+        </tr>
+
+        <tr>
+          <td>Teflub Spray</td>
+          <td>PTFE based lubricant with high temperature resistance and strong adhesion.</td>
+          <td>High temperature lubrication</td>
+        </tr>
+
+        <tr>
+          <td>Copper Anti-Seize Spray</td>
+          <td>Prevents seizing of threaded components with heat resistance.</td>
+          <td>Nuts, bolts, studs</td>
+        </tr>
+
+        <tr>
+          <td>Promclean 21</td>
+          <td>Heavy duty cleaner for oil, grease and stubborn deposits.</td>
+          <td>Brake drums, pads, greasy surfaces</td>
+        </tr>
+
+        <tr>
+          <td>Gasket Remover Spray</td>
+          <td>Removes gaskets easily from components.</td>
+          <td>Engine parts, flanges</td>
+        </tr>
+
+        <tr>
+          <td>Paint / Carbon / Varnish Remover</td>
+          <td>Removes paints, lacquers, carbon and varnish effectively.</td>
+          <td>Surface cleaning and preparation</td>
+        </tr>
+
+        <tr>
+          <td>Glass Cleaner</td>
+          <td>Provides streak-free cleaning on glass and ceramic surfaces.</td>
+          <td>Mirrors, windshields, screens</td>
+        </tr>
+
+        <tr>
+          <td>Tefkote-Z</td>
+          <td>PTFE based cleaner cum polisher for enhancing gloss and protection.</td>
+          <td>Painted surfaces</td>
+        </tr>
+
+        <tr>
+          <td>Shinewell</td>
+          <td>Wax-based cleaner that enhances shine of dashboard, rubber and plastic parts.</td>
+          <td>Dashboard, plastic, rubber</td>
+        </tr>
+
+        <tr>
+          <td>Carbclean</td>
+          <td>Effective cleaner for carburetors and fuel injectors.</td>
+          <td>Fuel system cleaning</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
 
 <!-- =====================Product 12===================================================================================================-->
 <!-- =========================
@@ -5750,15 +7478,15 @@ PRODUCT HERO - CLEAN FINAL
   ========================= -->
   <div class="sa-wide-gallery" style="margin-top:24px;">
     <div class="sa-wide-gallery-card">
-      <img src="img/ss-polishing-machine-1.jpg" alt="Polishing Machine 1">
+      <img src="img/P-SS_1.jfif" alt="Polishing Machine 1">
     </div>
 
     <div class="sa-wide-gallery-card">
-      <img src="img/ss-polishing-machine-2.jpg" alt="Polishing Machine 2">
+      <img src="img/p-ss-2.jpg" alt="Polishing Machine 2">
     </div>
 
     <div class="sa-wide-gallery-card">
-      <img src="img/ss-polishing-machine-3.jpg" alt="Polishing Machine 3">
+      <img src="img/p-ss-3.jfif" alt="Polishing Machine 3">
     </div>
   </div>
 
@@ -6303,7 +8031,29 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
 </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const viewMoreBtn2 = document.getElementById("saViewMoreAccessories2");
+  const moreProducts2 = document.getElementById("sapressureRegulatorsMore");
+
+  if (viewMoreBtn2 && moreProducts2) {
+    viewMoreBtn2.addEventListener("click", function () {
+      moreProducts2.classList.toggle("active");
+
+      viewMoreBtn2.textContent = moreProducts2.classList.contains("active")
+        ? "VIEW LESS"
+        : "VIEW MORE";
+    });
+  }
+
+});
+</script>
+
+
 
 </body>
 </html>
