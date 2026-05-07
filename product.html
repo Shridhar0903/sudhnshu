@@ -29,12 +29,6 @@
 
 <style>
 
-  .container {
-    width: min(1200px, calc(100% - 40px));
-    margin: auto;
-  }
-
-
 
   /* =========================
        PRODUCT EXPLORE
@@ -81,12 +75,12 @@
   }
 
   .sa-dropdown {
-    border: 1px solid #dcdcdc;
-    border-radius: 22px;
-    overflow: hidden;
-    margin-bottom: 16px;
-    background: #fff;
-  }
+  border: 1px solid #dcdcdc;
+  border-radius: 22px;
+  overflow: visible;
+  margin-bottom: 16px;
+  background: #fff;
+}
 
   .sa-dropdown-toggle {
     width: 100%;
@@ -121,18 +115,18 @@
   }
 
   .sa-dropdown-menu {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.35s ease, padding 0.35s ease;
-    background: #fff;
-    padding: 0 20px;
-  }
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.35s ease;
+  background: #fff;
+  padding: 0 20px;
+}
 
-  .sa-dropdown.active .sa-dropdown-menu {
-    max-height: 3000px; /* increase this */
-    padding: 4px 20px 8px;
-  }
-
+ .sa-dropdown.active .sa-dropdown-menu {
+  max-height: 5000px;
+  overflow: visible;
+  padding: 4px 20px 8px;
+}
   .sa-dropdown-menu a {
     display: block;
     text-decoration: none;
@@ -156,6 +150,14 @@
     color: #4341a8;
     font-weight: 700;
   }
+
+  .sa-more-products{
+  display: none;
+}
+
+.sa-more-products.active{
+  display: block;
+}
 /* ================================================================== */
   .sa-explore-main {
     flex: 1;
@@ -423,77 +425,107 @@
   }
 
   /* ========================================================== */
-/* SECTION SMALL + LEFT ALIGN */
-.sa-brands-section {
-  padding: 40px 0; /* reduced spacing */
-  background: #fff;
+/* =========================
+   BRANDS SECTION
+========================= */
+/* =========================
+   BRANDS SECTION
+========================= */
+.sa-brands-section{
+  padding:40px 40px;
+  /* background:#fff; */
+  overflow:hidden;
 }
 
-/* CONTAINER (important for alignment) */
-.sa-brands-container {
-  width: 90%;
-  max-width: 1100px; /* reduce overall width */
-  margin: 0 auto;
+/* CONTAINER */
+.sa-brands-container{
+  width:95%;
+  margin:0 auto;
 }
 
-/* TITLE LEFT */
-.sa-section-title {
-  font-size: 18px;
-  font-weight: 700;
-  color: #111;
-  margin-bottom: 25px;
-  position: relative;
-  display: inline-block;
-   
+/* TITLE */
+.sa-section-title{
+  font-size:18px;
+  font-weight:700;
+  color:#111;
+  margin-bottom:22px;
+  position:relative;
+  display:inline-block;
 }
 
-/* underline LEFT aligned */
-.sa-section-title::after {
-  content: "";
-  width: 60px;
-  height: 3px;
-  background: gold;
-  position: absolute;
-  left: 10px;
- 
-  bottom: -8px;
-  border-radius: 10px;
+.sa-section-title::after{
+  content:"";
+  width:60px;
+  height:3px;
+  background:gold;
+  position:absolute;
+  left:0;
+  bottom:-8px;
+  border-radius:10px;
 }
 
-/* GRID → 4 CARDS PER ROW */
-.sa-brand-strip {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 logos per row */
-  gap: 20px;
+/* =========================
+   HORIZONTAL LOGO ROW
+========================= */
+.sa-brand-strip{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  overflow-x:auto;
+  overflow-y:hidden;
+  padding-bottom:10px;
+
+  /* smooth scroll */
+  scroll-behavior:smooth;
 }
 
-/* CARD SMALLER */
-.sa-brand-card {
-  
-  border: 1px solid #eee;
-  border-radius: 16px;
-  padding: 15px;
-  min-height: 120px; /* reduced height */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  transition: 0.3s ease;
-   margin-left: 50px;
-     margin-Right: 50px;
+/* scrollbar */
+.sa-brand-strip::-webkit-scrollbar{
+  height:6px;
 }
 
-.sa-brand-card:hover {
-  transform: translateY(-5px);
+.sa-brand-strip::-webkit-scrollbar-thumb{
+  background:#ccc;
+  border-radius:20px;
 }
 
-/* LOGO SMALLER */
-.sa-brand-card img {
-  max-width: 200px;
-  max-height: 100px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
+/* =========================
+   LOGO CARD
+========================= */
+.sa-brand-card{
+  flex:0 0 auto;
+
+  width:180px;
+  height:110px;
+
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:16px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:12px;
+
+  box-shadow:0 8px 20px rgba(0,0,0,0.05);
+  transition:0.3s ease;
+}
+
+.sa-brand-card:hover{
+  transform:translateY(-4px);
+}
+
+/* =========================
+   LOGO IMAGE
+========================= */
+.sa-brand-card img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+
+  /* make small logos look bigger */
+  transform:scale(1.1);
 }
 
   /* MOBILE */
@@ -1468,94 +1500,144 @@
               <!-- RIGHT SUBMENU -->
               <div class="ps-sub-floating-box">
                 <div class="ps-submenu-panel active" id="ps-submenu-1">
-                  <a href="product.html#tig-filler-wires">SS TIG Wires</a>
-                  <a href="product.html#tig-filler-wires">MS TIG Wires</a>
-                  <a href="product.html#tig-filler-wires">Aluminium TIG Wires</a>
-                  <a href="product.html#tig-filler-wires">Copper Alloy TIG Wires</a>
+                  <a href="product.html#tig-filler-wires">Stainless Steel Tig Welding Wires</a>
+                  <a href="product.html#tig-filler-wires">Mild Steel Tig Welding Wires</a>
+                  <a href="product.html#tig-filler-wires">Aluminium Tig Welding Wires</a>
+                  <a href="product.html#tig-filler-wires">Silver Brazing</a>
                 </div>
 
                 <div class="ps-submenu-panel" id="ps-submenu-2">
-                  <a href="product.html#electrodes">MS Electrodes</a>
-                  <a href="product.html#electrodes">SS Electrodes</a>
-                  <a href="product.html#electrodes">Cast Iron Electrodes</a>
+                  <a href="product.html#electrodes">M  S Electrodes</a>
+                  <a href="product.html#electrodes">S S Electrodes</a>
                   <a href="product.html#electrodes">Hard Facing Electrodes</a>
                 </div>
 
                 <div class="ps-submenu-panel" id="ps-submenu-3">
-                  <a href="product.html#welding-accessories">Electrode Holders</a>
-                  <a href="product.html#welding-accessories">Earth Clamps</a>
-                  <a href="product.html#welding-accessories">Welding Cables</a>
-                  <a href="product.html#welding-accessories">Cable Connectors</a>
+                  <a href="product.html#apron-chrome-leather">Apron - Chrome Leather</a>
+                  <a href="product.html#wire-brush">Wire Brush</a>
+                  <a href="product.html#cable-lugs">Cable Lugs</a>
+                  <a href="product.html#chipping-hammer">Chipping Hammer</a>
+                  <a href="product.html#cable-connectors">Cable Connectors</a>
+                  <a href="product.html#welding-curtain">Welding Curtain</a>
+                  <a href="product.html#drying-ovens">Drying Ovens</a>
+                  <a href="product.html#earthing-clamp">Earthing Clamp</a>
+                  <a href="product.html#welding-glass">Welding Glass (Black / White)</a>
+                  <a href="product.html#head-screen-without-glass">Head Screen Without Glass</a>
+                  <a href="product.html#helmet-auto-darkening">Helmet Auto Darkening</a>
+                  <a href="product.html#hand-gloves">Hand Gloves</a>
+                  <a href="product.html#hand-sleeves">Hand Sleeves</a>
+                  <a href="product.html#holder">Holder</a>
+                  <a href="product.html#hand-screen">Hand Screen</a>
+                  <a href="product.html#welding-gauge">Welding Gauge</a>
+                  <a href="product.html#head-screen-spare-belt">Head Screen Spare Belt</a>
+                  <a href="product.html#thermopens">Thermopens</a>
+                  <!-- <a href="product.html#welding-inspector-mirror">Welding Inspector Mirror</a>
+                  <a href="product.html#leg-guard">Leg Guard</a>
+                  <a href="product.html#spot-welding-electrode">Spot Welding Electrode</a>
+                  <a href="product.html#purging-paper">Purging Paper / Back Purging Tape</a> -->
                 </div>
 
-                <div class="ps-submenu-panel" id="ps-submenu-4">
-                  <a href="product.html#safety-equipments">Safety Gloves</a>
-                  <a href="product.html#safety-equipments">Welding Helmets</a>
-                  <a href="product.html#safety-equipments">Face Shields</a>
-                  <a href="product.html#safety-equipments">Safety Shoes</a>
+               <div class="ps-submenu-panel" id="ps-submenu-4">
+                  <a href="product.html#safety-apron-chrome-leather"> Apron - Chrome Leathe </a>
+                  <a href="product.html#ear-plug">    Ear Plug  </a>
+                  <a href="product.html#face-shield">    Face Shield  </a>
+                  <a href="product.html#safety-goggles">    Goggles (White / Black / Grey)  </a>
+                  <a href="product.html#safety-hand-gloves">    Handgloves  </a>
+                  <a href="product.html#safety-hand-sleeves">    Handsleeves  </a>
+                  <a href="product.html#safety-helmet">    Safety Helmet  </a>
+                  <a href="product.html#safety-leg-guard">    Leg Guard  </a>
+                  <a href="product.html#safety-belt">    Safety Belt  </a>
+                  <a href="product.html#safety-jacket">    Safety Jacket  </a>
+                  <a href="product.html#barrication-tape">    Barrication Tape  </a>
                 </div>
 
-                <div class="ps-submenu-panel" id="ps-submenu-5">
-                  <a href="product.html#tig-torch-spares">TIG Torches</a>
-                  <a href="product.html#tig-torch-spares">Collets</a>
-                  <a href="product.html#tig-torch-spares">Ceramic Cups</a>
-                  <a href="product.html#tig-torch-spares">Back Caps</a>
-                </div>
+              <div class="ps-submenu-panel" id="ps-submenu-5">
+                <a href="product.html#tig-water-circulator">TIG Water Circulator </a>
+                <a href="product.html#argon-torch-wcd-600">Argon Torch Wcd-600 Torch</a>
+                <a href="product.html#argon-torch-wcd-400">Argon Torch Wcd-400 Torch</a>
+                <a href="product.html#argon-torch-wcd-220">Argon Torch Wcd-220 Torch</a>
+                <a href="product.html#argon-torch-acd-300">Argon ACD-300 Torch</a>
+                <a href="product.html#argon-torch-acd-200">Argon ACD-200 Torch</a>
+                <a href="product.html#argon-torch-acd-110">Argon ACD-110 Torch</a>
+              </div>
 
-                <div class="ps-submenu-panel" id="ps-submenu-6">
-                  <a href="product.html#co2-torch-spares">CO2 Torches</a>
-                  <a href="product.html#co2-torch-spares">Contact Tips</a>
-                  <a href="product.html#co2-torch-spares">Nozzles</a>
-                  <a href="product.html#co2-torch-spares">Torch Liners</a>
-                </div>
 
-                <div class="ps-submenu-panel" id="ps-submenu-7">
-                  <a href="product.html#gas-cutting-brazing">Cutting Nozzles</a>
-                  <a href="product.html#gas-cutting-brazing">Brazing Rods</a>
-                  <a href="product.html#gas-cutting-brazing">Gas Torches</a>
-                  <a href="product.html#gas-cutting-brazing">Flashback Arrestors</a>
-                </div>
+              <div class="ps-submenu-panel" id="ps-submenu-6">
+                <a href="product.html#co2-torch">CO2 Torch</a>
+                <a href="product.html#contact-tips">Contact Tips</a>
+                <a href="product.html#anti-spatter-spray">Anti Spatter Spray</a>
+                <a href="product.html#nozzle-gel">Nozzle Gel</a>
+                <a href="product.html#pickling-gel">Pickling Gel</a>
+                <a href="product.html#preheater">Pre Heater</a>
+              </div>
 
-                <div class="ps-submenu-panel" id="ps-submenu-8">
-                  <a href="product.html#dp-testing-materials">Cleaner</a>
-                  <a href="product.html#dp-testing-materials">Penetrant</a>
-                  <a href="product.html#dp-testing-materials">Developer</a>
-                  <a href="product.html#dp-testing-materials">DP Test Kits</a>
-                </div>
 
-                <div class="ps-submenu-panel" id="ps-submenu-9">
-                  <a href="product.html#pressure-regulators">Oxygen Regulators</a>
-                  <a href="product.html#pressure-regulators">Acetylene Regulators</a>
-                  <a href="product.html#pressure-regulators">Argon Regulators</a>
-                  <a href="product.html#pressure-regulators">Regulator Spare Parts</a>
-                </div>
+               <div class="ps-submenu-panel" id="ps-submenu-7">
+                <a href="product.html#blowpipes-brazing-torch">Blow Pipes / Brazing Torch</a>
+                <a href="product.html#brass-brazing-rod">Brass Brazing Rod</a>
+                <a href="product.html#copper-phosphorous-brazing-rod">Copper Phosphorous Brazing Rod</a>
+                <a href="product.html#gas-cutter">Gas Cutter</a>
+                <a href="product.html#cylinder-hand-trolley">Cylinder Hand Trolley with Wheels</a>
+                <a href="product.html#brazing-flux">Brazing Flux</a>
+                <a href="product.html#gouging-torch">Gouging Torch</a>
+                <a href="product.html#hose-pipe">Hose Pipe</a>
+                <a href="product.html#hose-clips">Hose Clips</a>
+                <a href="product.html#heating-torch">Heating Torch</a>
+                <a href="product.html#gas-lighter">Gas Lighter</a>
+                <a href="product.html#gas-cutting-nozzle">Gas Cutting Nozzle</a>
+                <a href="product.html#gas-nozzle-cleaner">Gas Nozzle Cleaner</a>
+                <a href="product.html#flashback-arrestors">Flash Back Arrestors</a>
+                <a href="product.html#cylinder-key">Cylinder Key</a>
+                <a href="product.html#pug-cutting-machine">PUG Cutting Machine</a>
+              </div>
+
+              <div class="ps-submenu-panel" id="ps-submenu-8">
+                <a href="product.html#red-dye-penetrant-material">Daylight Visible Red Dye Penetrant Material</a>
+                <a href="product.html#fluorescent-dye-penetrant-material">Fluorescent Dye Penetrant Material</a>
+                <a href="product.html#developer-contrast-coating">Developer / Contrast Background Coating</a>
+              </div>
+
+               <div class="ps-submenu-panel" id="ps-submenu-9">
+                 <a href="product.html#regulator-for-cnc-application">Regulator for CNC Application</a>
+                 <a href="product.html#gas-cylinder-manifold">Cylinder Manifold for Gas Filling</a>
+                 <a href="product.html#cylinder-manifold-cnc">Cylinder Manifold for CNC Machine</a>
+                 <a href="product.html#stainless-steel-manifold">Stainless Steel Manifold</a>
+                 <a href="product.html#cryogenic-economizer">Cryogenic Economizers</a>
+                 <a href="product.html#cryogenic-cylinder-regulator">Cryogenic Cylinder Regulator</a>
+                 <a href="product.html#m-series-flowmeter">M Series Flowmeter Regulator</a>
+                 <a href="product.html#hd-double-stage">HD Series Double Stage Regulator</a>
+                 <a href="product.html#m-high-pressure">M Series High Pressure Regulator</a>
+                 <a href="product.html#economic-manifold">Economic Manifold (4 Cylinder)</a>
+                 <a href="product.html#master-valve-manifold">Master Valve for Manifold</a>
+                 <a href="product.html#co2-gas-preheater">CO2 Gas Preheater</a>
+               </div>
+
 
                 <div class="ps-submenu-panel" id="ps-submenu-10">
-                  <a href="product.html#welding-machines">ARC Welding Machines</a>
-                  <a href="product.html#welding-machines">MIG Welding Machines</a>
-                  <a href="product.html#welding-machines">TIG Welding Machines</a>
-                  <a href="product.html#welding-machines">Plasma Cutting Machines</a>
-                </div>
+                   <a href="product.html#arc-welding">Arc Welding</a>
+                   <a href="product.html#tig-welding">TIG Welding</a>
+                   <a href="product.html#mig-welding">MIG Welding</a>
+                   <a href="product.html#cut-welding">Cut Welding</a>
+                   <a href="product.html#saw-welding">SAW Welding</a>
+                 </div>
 
-                <div class="ps-submenu-panel" id="ps-submenu-11">
-                  <a href="product.html#air-drying-paint">Industrial Primer</a>
-                  <a href="product.html#air-drying-paint">Metal Paint</a>
-                  <a href="product.html#air-drying-paint">Protective Coatings</a>
-                  <a href="product.html#air-drying-paint">Touch-up Paints</a>
-                </div>
+               <div class="ps-submenu-panel" id="ps-submenu-11">
+                <a href="product.html#air-drying-paint">Air Drying Paint</a>
+                <a href="product.html#anti-corrosion">Anti Corrosion</a>
+                <a href="product.html#ndt-testing-aerosols">ND Testing</a>
+                <a href="product.html#electrical-maintenance">Electrical Maintenance</a>
+                <a href="product.html#lubricant">Lubricants</a>
+                <a href="product.html#cleaner">Cleaner</a>
+                <a href="product.html#automobile">Automobile</a>
+              </div>
 
-                <div class="ps-submenu-panel" id="ps-submenu-12">
-                  <a href="product.html#polishing-machines">Angle Polishers</a>
-                  <a href="product.html#polishing-machines">Buffing Machines</a>
-                  <a href="product.html#polishing-machines">Pads</a>
-                  <a href="product.html#polishing-machines">Accessories</a>
-                </div>
+               <div class="ps-submenu-panel" id="ps-submenu-12">
+                 <a href="product.html#ss-polishing-machine">Polishing Machine for SS</a>
+                 <a href="product.html#flexible-shaft-machine">Flexible Shaft for Polishing Machine</a>
+               </div>
 
                 <div class="ps-submenu-panel" id="ps-submenu-13">
-                  <a href="product.html#hand-tools">Spanners</a>
-                  <a href="product.html#hand-tools">Pliers</a>
-                  <a href="product.html#hand-tools">Screwdrivers</a>
-                  <a href="product.html#hand-tools">Hammers</a>
+                 <a href="product.html#hand-tools">View Product</a>
                 </div>
 
                 <div class="ps-submenu-panel" id="ps-submenu-14">
@@ -1629,10 +1711,14 @@ PRODUCT HERO - CLEAN FINAL
     padding: 10px 0 90px;
   }
 
-  .product-hero-simple .container {
-    position: relative;
-    z-index: 3;
-  }
+  .product-hero-simple .container{
+  width:100%;
+  max-width:100%;
+  padding:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
 
   .product-hero-content {
     max-width: 980px;
@@ -1842,11 +1928,6 @@ PRODUCT HERO - CLEAN FINAL
 
   <div class="sa-dropdown-menu">
 
-    <!-- Existing -->
-    <!-- <a href="#" class="sa-product-link" data-product="argon-torch">Argon Torch</a>
-    <a href="#" class="sa-product-link" data-product="tungsten-rods">Tungsten Rods</a>
-    <a href="#" class="sa-product-link" data-product="ceramic-nozzles">Ceramic Nozzles</a> -->
-
     <!-- NEW -->
     <a href="#" class="sa-product-link" data-product="tig-water-circulator">TIG Water Circulator</a>
 
@@ -1926,9 +2007,7 @@ PRODUCT HERO - CLEAN FINAL
 <!-- =========================================================================== -->
 
 
-
-
-  <div class="sa-dropdown">
+  <div class="sa-dropdown active">
 
   <button class="sa-dropdown-toggle" type="button">
     <span>Pressure Regulators &amp; Spares</span>
@@ -1953,10 +2032,10 @@ PRODUCT HERO - CLEAN FINAL
     <a href="#" class="sa-product-link" data-product="co2-gas-preheater">CO2 Gas Preheater</a>
     
 
-      <div class="sa-more-products" id="sapressureRegulatorsMore">
+      <!-- <div class="sa-more-products" id="sapressureRegulatorsMore">
         <a href="#" class="sa-product-link" data-product="lpg-double-gauge">LPG Double Gauge Regulator</a>
         <a href="#" class="sa-product-link" data-product="m-series-single-gauge-lpg-regulator">LPG Single Gauge Regulator</a>
-         <a href="#" class="sa-product-link" data-product="cylinder-manifold">Cylinder Manifold</a><!-- Product 9 -->
+         <a href="#" class="sa-product-link" data-product="cylinder-manifold">Cylinder Manifold</a>
          <a href="#" class="sa-product-link" data-product="gas-preheater">Gas Pre Heater</a>
          <a href="#" class="sa-product-link" data-product="flowmeter">Flow Meter (General)</a>
          <a href="#" class="sa-product-link" data-product="compressed-gas-regulator">Compressed Gas Regulator</a>
@@ -1972,9 +2051,9 @@ PRODUCT HERO - CLEAN FINAL
          <a href="#" class="sa-product-link" data-product="ssd-series">SSD Series SS Double Stage</a>
          <a href="#" class="sa-product-link" data-product="m-high-pressure-single">M Series High Pressure Single</a>
          <a href="#" class="sa-product-link" data-product="hd-high-pressure-double">HD High Pressure Double Stage</a>
-    </div>
+    </div> -->
 
-    <button class="sa-view-more-btn" type="button" id="saViewMoreAccessories" data-target="sapressureRegulatorsMore" >VIEW MORE</button>
+    <!-- <button class="sa-view-more-btn" type="button" id="saViewMoreAccessories" >VIEW MORE</button> -->
   </div>
 
 </div>
@@ -2081,7 +2160,7 @@ PRODUCT HERO - CLEAN FINAL
       </aside>
 
 
-<!-- ===================================================================== -->
+<!-- ========================Product 1============================================ -->
 
       <div class="sa-explore-main">
         <div class="sa-explore-head">
@@ -2886,6 +2965,7 @@ PRODUCT HERO - CLEAN FINAL
   </div>
 
 </div>
+<!-- ========================Product 2============================================ -->
 
 
 <!-- =========================
@@ -3202,8 +3282,17 @@ PRODUCT HERO - CLEAN FINAL
 
 
 <!-- =====================Product 3====================================================================================================-->
+
 <!-- =======================APRON CHROME LEATHER=================== -->
 <div class="sa-product-section" id="apron-chrome-leather">
+    <section class="sa-brands-section">
+            <h2 class="sa-section-title">Trusted Brands We Deal In</h2>
+            <div class="sa-brand-strip">
+              <div class="sa-brand-card"><img src="img/welspring_logo.jpg" alt="welspring"></div>
+              <div class="sa-brand-card"><img src="img/callington_logo.jpg" alt="callington"></div>
+             
+            </div>
+          </section>
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
       <img src="img/apron-chrome-leather.jpeg" alt="Apron Chrome Leather">
@@ -3691,6 +3780,13 @@ PRODUCT HERO - CLEAN FINAL
 
 <!-- APRON CHROME LEATHER -->
 <div class="sa-product-section" id="safety-apron-chrome-leather">
+    <section class="sa-brands-section">
+            <h2 class="sa-section-title">Trusted Brands We Deal In</h2>
+            <div class="sa-brand-strip">
+              <div class="sa-brand-card"><img src="img/karam_logo.jpg" alt="Venus"></div>
+             
+            </div>
+          </section>
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
       <img src="img/safety-apron-chrome-leather.webp" alt="Apron Chrome Leather">
@@ -3946,6 +4042,14 @@ PRODUCT HERO - CLEAN FINAL
      TIG WATER CIRCULATOR
 ========================= -->
 <div class="sa-product-section" id="tig-water-circulator">
+    <section class="sa-brands-section">
+            <h2 class="sa-section-title">Trusted Brands We Deal In</h2>
+            <div class="sa-brand-strip">
+              <div class="sa-brand-card"><img src="img/sap_logo.jpg" alt="Venus"></div>
+              <div class="sa-brand-card"><img src="img/weldcraft_logo.jpg" alt="Anand Arc"></div>
+        
+            </div>
+          </section>
 
   <!-- MAIN CARD -->
   <div class="sa-product-detail-card">
@@ -4949,6 +5053,14 @@ PRODUCT HERO - CLEAN FINAL
      CO2 TORCH
 ========================= -->
 <div class="sa-product-section" id="co2-torch">
+    <section class="sa-brands-section">
+            <h2 class="sa-section-title">Trusted Brands We Deal In</h2>
+            <div class="sa-brand-strip">
+              <div class="sa-brand-card"><img src="img/kuang_tai_logo.jpg" alt="Venus"></div>
+              <div class="sa-brand-card"><img src="img/hyundai_logo.jpg" alt="Anand Arc"></div>
+              <div class="sa-brand-card"><img src="img/swastik_weld_logo.jpg" alt="Superon"></div>
+            </div>
+          </section>
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
       <img src="img/CO2.webp" alt="CO2 Torch">
@@ -5139,11 +5251,12 @@ PRODUCT HERO - CLEAN FINAL
 
 <!-- BLOW PIPES / BRAZING TORCH -->
 <div class="sa-product-section" id="blowpipes-brazing-torch">
+  
   <section class="sa-brands-section">
     <h2 class="sa-section-title">Trusted Brands We Deal In</h2>
     <div class="sa-brand-strip">
       <div class="sa-brand-card"><img src="img/sudhanshu_associates_messer_logo.jpg" alt="Messer"></div>
-      <div class="sa-brand-card"><img src="img/misatu_logo.jpg" alt="Misatu"></div>
+      <div class="sa-brand-card"><img src="img/misatu-logo.webp" alt="Misatu"></div>
 
     </div>
   </section>
@@ -5671,6 +5784,13 @@ PRODUCT HERO - CLEAN FINAL
      REGULATOR FOR CNC APPLICATION
 ========================= -->
 <div class="sa-product-section" id="regulator-for-cnc-application">
+    <section class="sa-brands-section">
+            <h2 class="sa-section-title">Trusted Brands We Deal In</h2>
+            <div class="sa-brand-strip">
+              <div class="sa-brand-card"><img src="img/misatu-logo.webp" alt="Venus"></div>
+            
+            </div>
+          </section>
   <div class="sa-product-detail-card">
 
     <div class="sa-product-detail-image">
@@ -6260,6 +6380,14 @@ PRODUCT HERO - CLEAN FINAL
 <!-- arc-welding   -->
 
 <div class="sa-product-section" id="arc-welding">
+    <section class="sa-brands-section">
+            <h2 class="sa-section-title">Trusted Brands We Deal In</h2>
+            <div class="sa-brand-strip">
+              <div class="sa-brand-card"><img src="img/rilon_logo.jpg" alt="Venus"></div>
+              <div class="sa-brand-card"><img src="img/aps_logo.jpg" alt="Anand Arc"></div>
+           
+            </div>
+          </section>
 
   <!-- MAIN CARD -->
   <div class="sa-product-detail-card">
@@ -7311,6 +7439,13 @@ PRODUCT HERO - CLEAN FINAL
 ========================= -->
 
 <div class="sa-product-section" id="ss-polishing-machine">
+    <section class="sa-brands-section">
+            <h2 class="sa-section-title">Trusted Brands We Deal In</h2>
+            <div class="sa-brand-strip">
+              <div class="sa-brand-card"><img src="img/sunner_logo.jpg" alt="Venus"></div>
+       
+            </div>
+          </section>
 
   <!-- MAIN CARD -->
   <div class="sa-product-detail-card">
@@ -7670,6 +7805,14 @@ PRODUCT HERO - CLEAN FINAL
 <!-- ===============================PRODUCT 13============================================================================== -->
 
           <div class="sa-product-section" id="hand-tools">
+              <section class="sa-brands-section">
+            <h2 class="sa-section-title">Trusted Brands We Deal In</h2>
+            <div class="sa-brand-strip">
+              <div class="sa-brand-card"><img src="img/taparia_logo.jpg" alt="Venus"></div>
+              <div class="sa-brand-card"><img src="img/everest_logo.jpg" alt="Anand Arc"></div>
+              <div class="sa-brand-card"><img src="img/jhalani_logo.jpg" alt="Superon"></div>
+            </div>
+          </section>
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/hand_tools.jpg" alt="Hand Tools">
@@ -7685,6 +7828,17 @@ PRODUCT HERO - CLEAN FINAL
 <!-- ===============================PRODUCT 14============================================================================== -->
 
           <div class="sa-product-section" id="abrasives">
+
+              <section class="sa-brands-section">
+            <h2 class="sa-section-title">Trusted Brands We Deal In</h2>
+            <div class="sa-brand-strip">
+              <div class="sa-brand-card"><img src="img/cumi_logo.jpg" alt="Venus"></div>
+              <div class="sa-brand-card"><img src="img/abracut_logo.jpg" alt="Anand Arc"></div>
+              <div class="sa-brand-card"><img src="img/flexicut_logo.jpg" alt="Superon"></div>
+               <div class="sa-brand-card"><img src="img/norton_logo.jpg" alt="Superon"></div>
+            </div>
+          </section>
+
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/ab.webp" alt="Abrasives">
@@ -7700,6 +7854,14 @@ PRODUCT HERO - CLEAN FINAL
 <!-- ===============================PRODUCT 15============================================================================== -->
 
           <div class="sa-product-section" id="cutting-tools">
+              <section class="sa-brands-section">
+            <h2 class="sa-section-title">Trusted Brands We Deal In</h2>
+            <div class="sa-brand-strip">
+              <div class="sa-brand-card"><img src="img/it_logo.jpg" alt="Venus"></div>
+              <div class="sa-brand-card"><img src="img/addison_logo.jpg" alt="Anand Arc"></div>
+    
+            </div>
+          </section>
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/Cutting Tools.webp" alt="Cutting Tools">
@@ -7715,6 +7877,15 @@ PRODUCT HERO - CLEAN FINAL
 <!-- ===============================PRODUCT 16============================================================================== -->
 
           <div class="sa-product-section" id="power-tools">
+              <section class="sa-brands-section">
+            <h2 class="sa-section-title">Trusted Brands We Deal In</h2>
+            <div class="sa-brand-strip">
+              <div class="sa-brand-card"><img src="img/bosch_logo.jpg" alt="Venus"></div>
+              <div class="sa-brand-card"><img src="img/hitachi_logo.jpg" alt="Anand Arc"></div>
+              <div class="sa-brand-card"><img src="img/dewalt_logo.jpg" alt="Superon"></div>
+               <div class="sa-brand-card"><img src="img/kpt_logo.jpg" alt="Superon"></div>
+            </div>
+          </section>
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/Power Tools.webp" alt="Power Tools">
@@ -8034,26 +8205,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </script>
 
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-  const viewMoreBtn2 = document.getElementById("saViewMoreAccessories2");
-  const moreProducts2 = document.getElementById("sapressureRegulatorsMore");
+  const viewMoreBtn = document.getElementById("saViewMoreAccessories");
+  const moreProducts = document.getElementById("sapressureRegulatorsMore");
 
-  if (viewMoreBtn2 && moreProducts2) {
-    viewMoreBtn2.addEventListener("click", function () {
-      moreProducts2.classList.toggle("active");
+  if (viewMoreBtn && moreProducts) {
 
-      viewMoreBtn2.textContent = moreProducts2.classList.contains("active")
-        ? "VIEW LESS"
-        : "VIEW MORE";
+    viewMoreBtn.addEventListener("click", function () {
+
+      moreProducts.classList.toggle("active");
+
+      viewMoreBtn.textContent =
+        moreProducts.classList.contains("active")
+          ? "VIEW LESS"
+          : "VIEW MORE";
+
     });
+
   }
 
 });
 </script>
-
-
 
 </body>
 </html>
