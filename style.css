@@ -3549,6 +3549,7 @@ body {
   left: 0;
 
   display: flex;
+  align-items: flex-start;
   gap: 20px;
 
   opacity: 0;
@@ -3659,19 +3660,26 @@ body {
   color: #0f2747;
   flex-shrink: 0;
 }
-
-/* RIGHT FLOATING BOX */
+/* ======================================================================= */
 .ps-sub-floating-box {
-  box-shadow: 0 18px 45px rgba(20, 35, 90, 0.08);
-  width: 500px;
-  height: 100%;
-  background: #ffffff;
+  width: 300px;
+  background: #fff;
   border-radius: 14px;
   border: 1px solid #e2e6ed;
-
   padding: 12px;
+
+  box-shadow: 0 18px 45px rgba(20,35,90,0.08);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: 0.25s ease;
 }
 
+.ps-sub-floating-box.show{
+  opacity: 1;
+  visibility: visible;
+}
 .ps-submenu-panel {
  display: none;
   flex-direction: column;
