@@ -41,6 +41,273 @@
     }
 
     /* =========================
+   FINAL MOBILE MENU FIX
+========================= */
+    .ps-mobile-overlay {
+      display: none;
+    }
+
+    @media (max-width: 991px) {
+
+      .ps-header {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10050 !important;
+        background: rgba(255, 255, 255, 0.98) !important;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+
+      .ps-header-inner {
+        min-height: 72px;
+        padding: 0 14px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        z-index: 10051;
+      }
+
+      .ps-logo-wrap,
+      .ps-logo-box,
+      .ps-logo-img,
+      .ps-logo-text {
+        position: relative;
+        z-index: 10052 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+
+      .ps-logo-img {
+        display: block !important;
+        width: 54px;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .ps-logo-title {
+        color: #2E2F78 !important;
+      }
+
+      .ps-logo-sub {
+        color: #66A83D !important;
+      }
+
+      .ps-menu-toggle {
+        display: flex !important;
+        width: 42px;
+        height: 42px;
+        padding: 0;
+        border: none;
+        background: transparent !important;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        z-index: 10053 !important;
+      }
+
+      .ps-menu-toggle span {
+        display: block;
+        width: 22px;
+        height: 2.4px;
+        border-radius: 999px;
+        background: #1f2937 !important;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+
+      .ps-menu-toggle.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+
+      .ps-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .ps-menu-toggle.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      .ps-contact-btn {
+        display: none !important;
+      }
+
+      .ps-mobile-overlay {
+        display: block;
+        position: fixed;
+        top: 72px !important;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 72px) !important;
+        background: rgba(0, 0, 0, 0.18);
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s ease;
+        z-index: 10039 !important;
+      }
+
+      .ps-mobile-overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .ps-nav {
+        position: fixed !important;
+        top: 72px !important;
+        left: 0;
+        width: min(80vw, 320px) !important;
+        height: calc(100vh - 72px) !important;
+        background: #f3f3f3 !important;
+        transform: translateX(-100%);
+        transition: transform 0.35s ease;
+        z-index: 10040 !important;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 18px 22px 24px !important;
+        border-top-right-radius: 24px;
+        border-bottom-right-radius: 24px;
+        box-shadow: 14px 0 35px rgba(0, 0, 0, 0.10);
+      }
+
+      .ps-nav.active {
+        transform: translateX(0);
+      }
+
+      .ps-nav-list {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch;
+        gap: 0;
+        list-style: none;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+      }
+
+      .ps-nav-list>li {
+        width: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+        background: transparent !important;
+      }
+
+      .ps-nav-list>li:last-child {
+        border-bottom: none;
+      }
+
+      .ps-nav-link,
+      .ps-dropdown-toggle,
+      .ps-nav-link.active,
+      .ps-nav-link:visited,
+      .ps-nav-link:focus {
+        width: 100%;
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 0 !important;
+        text-decoration: none;
+        color: #2E2F78 !important;
+        font-weight: 700 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        opacity: 1 !important;
+        -webkit-text-fill-color: #2E2F78 !important;
+      }
+
+      .ps-nav-list li:first-child .ps-nav-link,
+      .ps-nav-list li:first-child .ps-nav-link.active {
+        color: #2E2F78 !important;
+        -webkit-text-fill-color: #2E2F78 !important;
+      }
+
+      .ps-drop-caret,
+      .ps-item-arrow {
+        color: #2E2F78 !important;
+      }
+
+      .ps-dropdown-stage {
+        display: none;
+        position: static !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        transform: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        margin-top: 4px;
+        padding: 0 !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+      }
+
+      .ps-dropdown.open .ps-dropdown-stage {
+        display: block;
+      }
+
+      .ps-main-dropdown-box,
+      .ps-sub-floating-box {
+        width: 100% !important;
+        max-width: 100% !important;
+        border-radius: 14px;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        box-shadow: none !important;
+        overflow: hidden;
+        background: #ffffff !important;
+      }
+
+      .ps-main-products-scroll {
+        max-height: 220px;
+        overflow-y: auto;
+      }
+
+      .ps-main-product-item {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+        border: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        background: #fff;
+        color: #2E2F78;
+        padding: 12px 14px;
+        cursor: pointer;
+      }
+
+      .ps-submenu-panel {
+        display: none;
+      }
+
+      .ps-submenu-panel.active {
+        display: block;
+      }
+
+      .ps-submenu-panel a {
+        display: block;
+        padding: 11px 14px;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        background: #fff;
+        color: #2E2F78 !important;
+      }
+
+      body.ps-menu-open {
+        overflow: hidden;
+      }
+
+      .hero-slider {
+        margin-top: 72px;
+      }
+    }
+
+
+    /* =========================
        CERTIFICATE HERO
     ========================= */
     .about-hero-simple {
@@ -1205,156 +1472,162 @@
       </div>
     </div>
   </footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const cards = Array.from(document.querySelectorAll(".certificate-showcase-card"));
-      const lightbox = document.getElementById("certificateLightbox");
-      const lightboxImg = document.getElementById("certificateLightboxImg");
-      const closeBtn = document.getElementById("certificateLightboxClose");
-      const prevBtn = document.getElementById("certificateLightboxPrev");
-      const nextBtn = document.getElementById("certificateLightboxNext");
+  /* =========================
+     CERTIFICATE LIGHTBOX
+  ========================= */
 
-      let currentIndex = 0;
+  const cards = Array.from(
+    document.querySelectorAll(".certificate-showcase-card")
+  );
 
-      function closeLightbox() {
-        lightbox.classList.remove("active");
-        lightboxImg.src = "";
-        document.body.style.overflow = "";
+  const lightbox =
+    document.getElementById("certificateLightbox");
+
+  const lightboxImg =
+    document.getElementById("certificateLightboxImg");
+
+  const closeBtn =
+    document.getElementById("certificateLightboxClose");
+
+  const prevBtn =
+    document.getElementById("certificateLightboxPrev");
+
+  const nextBtn =
+    document.getElementById("certificateLightboxNext");
+
+  let currentIndex = 0;
+
+  function closeLightbox() {
+
+    if (!lightbox) return;
+
+    lightbox.classList.remove("active");
+
+    if (lightboxImg) {
+      lightboxImg.src = "";
+    }
+
+    document.body.style.overflow = "";
+  }
+
+  function showImage(index) {
+
+    if (!cards.length) return;
+
+    if (index < 0) {
+      index = cards.length - 1;
+    }
+
+    if (index >= cards.length) {
+      index = 0;
+    }
+
+    currentIndex = index;
+
+    const imgSrc =
+      cards[currentIndex].getAttribute("href");
+
+    if (lightboxImg) {
+      lightboxImg.src = imgSrc;
+    }
+  }
+
+  cards.forEach((card, index) => {
+
+    card.addEventListener("click", function (e) {
+
+      e.preventDefault();
+
+      currentIndex = index;
+
+      showImage(currentIndex);
+
+      if (lightbox) {
+        lightbox.classList.add("active");
       }
 
-      function showImage(index) {
-        if (index < 0) {
-          index = cards.length - 1;
-        } else if (index >= cards.length) {
-          index = 0;
-        }
-        currentIndex = index;
-        const imgSrc = cards[currentIndex].getAttribute("href");
-        lightboxImg.src = imgSrc;
-      }
+      document.body.style.overflow = "hidden";
 
-      cards.forEach((card, index) => {
-        card.addEventListener("click", function (e) {
-          e.preventDefault();
-          currentIndex = index;
-          showImage(currentIndex);
-          lightbox.classList.add("active");
-          document.body.style.overflow = "hidden";
-        });
-      });
-
-      prevBtn.addEventListener("click", function (e) {
-        e.stopPropagation();
-        showImage(currentIndex - 1);
-      });
-
-      nextBtn.addEventListener("click", function (e) {
-        e.stopPropagation();
-        showImage(currentIndex + 1);
-      });
-
-      closeBtn.addEventListener("click", closeLightbox);
-
-      lightbox.addEventListener("click", function (e) {
-        if (e.target === lightbox) {
-          closeLightbox();
-        }
-      });
-
-      document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape") {
-          closeLightbox();
-        } else if (e.key === "ArrowLeft" && lightbox.classList.contains("active")) {
-          showImage(currentIndex - 1);
-        } else if (e.key === "ArrowRight" && lightbox.classList.contains("active")) {
-          showImage(currentIndex + 1);
-        }
-      });
     });
-  </script>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const toggle = document.getElementById("psMenuToggle");
-      const nav = document.getElementById("psNav");
-      const dropdown = document.getElementById("psProductsDropdown");
-      const dropdownBtn = document.getElementById("psProductsToggle");
-      const mainItems = document.querySelectorAll(".ps-main-product-item");
-      const panels = document.querySelectorAll(".ps-submenu-panel");
+  });
 
-      function activatePanel(item) {
-        const targetId = item.getAttribute("data-target");
-        if (!targetId) return;
+  if (prevBtn) {
 
-        mainItems.forEach((btn) => btn.classList.remove("active"));
-        panels.forEach((panel) => panel.classList.remove("active"));
+    prevBtn.addEventListener("click", function (e) {
 
-        item.classList.add("active");
-        const targetPanel = document.getElementById(targetId);
-        if (targetPanel) {
-          targetPanel.classList.add("active");
-        }
-      }
+      e.stopPropagation();
 
-      if (mainItems.length) {
-        activatePanel(mainItems[0]);
-      }
+      showImage(currentIndex - 1);
 
-      mainItems.forEach((item) => {
-        item.addEventListener("mouseenter", function () {
-          if (window.innerWidth > 991) {
-            activatePanel(item);
-          }
-        });
-
-        item.addEventListener("click", function (e) {
-          if (window.innerWidth <= 991) {
-            e.preventDefault();
-          }
-          activatePanel(item);
-        });
-      });
-
-      if (toggle && nav) {
-        toggle.addEventListener("click", function () {
-          nav.classList.toggle("active");
-          document.body.classList.toggle("menu-open");
-        });
-      }
-
-      if (dropdownBtn && dropdown) {
-        dropdownBtn.addEventListener("click", function (e) {
-          if (window.innerWidth <= 991) {
-            e.preventDefault();
-            dropdown.classList.toggle("open");
-          }
-        });
-      }
-
-      document.addEventListener("click", function (e) {
-        if (window.innerWidth <= 991) {
-          const insideNav = nav && nav.contains(e.target);
-          const insideToggle = toggle && toggle.contains(e.target);
-
-          if (!insideNav && !insideToggle) {
-            nav.classList.remove("active");
-            document.body.classList.remove("menu-open");
-          }
-        }
-      });
-
-      window.addEventListener("resize", function () {
-        if (window.innerWidth > 991) {
-          nav.classList.remove("active");
-          document.body.classList.remove("menu-open");
-          if (dropdown) dropdown.classList.remove("open");
-        }
-      });
     });
-  </script>
 
+  }
 
+  if (nextBtn) {
+
+    nextBtn.addEventListener("click", function (e) {
+
+      e.stopPropagation();
+
+      showImage(currentIndex + 1);
+
+    });
+
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener("click", closeLightbox);
+  }
+
+  if (lightbox) {
+
+    lightbox.addEventListener("click", function (e) {
+
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+
+    });
+
+  }
+
+  document.addEventListener("keydown", function (e) {
+
+    if (
+      e.key === "Escape" &&
+      lightbox &&
+      lightbox.classList.contains("active")
+    ) {
+      closeLightbox();
+    }
+
+    if (
+      e.key === "ArrowLeft" &&
+      lightbox &&
+      lightbox.classList.contains("active")
+    ) {
+      showImage(currentIndex - 1);
+    }
+
+    if (
+      e.key === "ArrowRight" &&
+      lightbox &&
+      lightbox.classList.contains("active")
+    ) {
+      showImage(currentIndex + 1);
+    }
+
+  });
+
+});
+</script>
+  
+
+<script src="script.js"></script>
 </body>
 
 </html>

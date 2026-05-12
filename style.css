@@ -3576,14 +3576,15 @@ body {
   width: 100%;
   height: 30px;
 }
-@media (min-width: 992px) {
+
+/* @media (min-width: 992px) {
   .ps-dropdown-mega:hover .ps-dropdown-stage,
   .ps-dropdown-stage:hover {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
   }
-}
+} */
 .ps-dropdown-mega:hover .ps-dropdown-stage {
   opacity: 1;
   visibility: visible;
@@ -3705,7 +3706,7 @@ body {
   border-color: #cfd5df;
 }
 
-/* MOBILE */
+/* MOBILE
 @media (max-width: 991px) {
   .ps-dropdown-stage {
     position: static;
@@ -3728,7 +3729,7 @@ body {
   }
 
  .ps-main-products-scroll {
-  max-height: 360px;   /* 🔥 height कमी केली */
+  max-height: 360px;   /* 🔥 height कमी केली 
   overflow-y: auto;
   padding-right: 8px;
 }
@@ -3744,7 +3745,7 @@ body {
     padding: 14px;
     border-radius: 14px;
   }
-}
+} */
 /* CONTACT BUTTON */
 .ps-contact-btn {
   min-width: 150px;
@@ -3809,7 +3810,7 @@ body {
 /* =========================
    TABLET
 ========================= */
-@media (max-width: 1300px) {
+/* @media (max-width: 1300px) {
   .ps-header-inner {
     gap: 18px;
   }
@@ -3836,7 +3837,7 @@ body {
   .ps-dropdown-menu {
     min-width: 620px;
   }
-}
+} */
 
 /* =========================
    MOBILE
@@ -3925,7 +3926,7 @@ body {
   }
 }
 
-@media (max-width: 575px) {
+/* @media (max-width: 575px) {
   .ps-logo-wrap {
     gap: 12px;
   }
@@ -3952,6 +3953,421 @@ body {
   .ps-menu-toggle {
     width: 46px;
     height: 46px;
+  }
+} */
+
+/* =========================================================
+   RESPONSIVE NAVBAR
+========================================================= */
+
+/* =========================================================
+   LARGE TABLET / SMALL LAPTOP
+========================================================= */
+@media (max-width: 1300px){
+
+  .ps-header{
+    padding: 10px 18px;
+  }
+
+  .ps-header-inner{
+    height: 74px;
+    gap: 16px;
+  }
+
+  /* LOGO */
+  .ps-logo-vertical{
+    width: 320px;
+    height: 95px;
+    padding: 0 12px;
+  }
+
+  .ps-logo-big{
+    height: 52px;
+  }
+
+  .ps-logo-text-new{
+    font-size: 17px;
+    letter-spacing: 0.5px;
+  }
+
+  .ps-logo-text-new span{
+    margin-left: 4px;
+  }
+
+  /* NAV */
+  .ps-nav-list{
+    gap: 10px;
+    padding: 5px 10px;
+  }
+
+  .ps-nav-link{
+    padding: 11px 18px;
+    font-size: 15px;
+  }
+
+  /* CONTACT BTN */
+  .ps-contact-btn{
+    min-width: 135px;
+    height: 46px;
+    font-size: 15px;
+    gap: 10px;
+  }
+
+  .ps-contact-arrow{
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+  }
+
+  /* DROPDOWN */
+  .ps-main-dropdown-box{
+    width: 250px;
+  }
+
+  .ps-sub-floating-box{
+    width: 270px;
+  }
+
+  .ps-main-product-item{
+    font-size: 14px;
+  }
+
+  .ps-submenu-panel a{
+    font-size: 13px;
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+@media (max-width: 991px){
+
+  body{
+    padding-top: 90px;
+  }
+
+  .ps-header{
+    padding: 12px 16px;
+  }
+
+  .ps-header-inner{
+    height: auto;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+  }
+
+  /* ================= LOGO ================= */
+
+  .ps-logo-wrap{
+    flex: 1;
+  }
+
+  .ps-logo-vertical{
+    width: 250px;
+    height: 78px;
+    border-radius: 0 0 14px 14px;
+    padding: 0 10px;
+    gap: 8px;
+  }
+
+  .ps-logo-big{
+    height: 42px;
+  }
+
+  .ps-logo-text-new{
+    font-size: 14px;
+    letter-spacing: 0.4px;
+    margin-left: 0;
+    flex-wrap: wrap;
+    line-height: 1.2;
+  }
+
+  .ps-logo-text-new span{
+    margin-left: 4px;
+  }
+
+  /* ================= MENU BUTTON ================= */
+
+  .ps-menu-toggle{
+    display: flex;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  .ps-menu-toggle span{
+    width: 22px;
+  }
+
+  /* ================= NAVIGATION ================= */
+
+  .ps-nav{
+    width: 100%;
+    display: none;
+    order: 5;
+    flex: unset;
+  }
+
+  .ps-nav.active{
+    display: block;
+  }
+
+  .ps-nav-list{
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+
+    margin-top: 10px;
+    padding: 18px;
+
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  }
+
+  .ps-nav-list li{
+    width: 100%;
+  }
+
+  .ps-nav-link{
+    width: 100%;
+    justify-content: space-between;
+
+    padding: 14px 16px;
+    border-radius: 14px;
+
+    font-size: 15px;
+  }
+
+  .ps-plus{
+    margin-left: auto;
+  }
+
+  /* ================= DROPDOWN ================= */
+
+  .ps-dropdown-stage{
+    position: static;
+    width: 100%;
+
+    display: none;
+    flex-direction: column;
+
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    gap: 14px;
+    margin-top: 12px;
+  }
+
+  .ps-dropdown.open .ps-dropdown-stage{
+    display: flex;
+  }
+
+  .ps-main-dropdown-box,
+  .ps-sub-floating-box{
+    width: 100%;
+    border-radius: 18px;
+  }
+
+  .ps-main-dropdown-box{
+    padding: 10px;
+  }
+
+  .ps-main-products-scroll{
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 6px;
+  }
+
+  .ps-main-product-item{
+    padding: 13px 14px;
+    font-size: 14px;
+    border-radius: 14px;
+  }
+
+  .ps-item-arrow{
+    font-size: 18px;
+  }
+
+  .ps-sub-floating-box{
+    padding: 12px;
+  }
+
+  .ps-submenu-panel{
+    gap: 8px;
+  }
+
+  .ps-submenu-panel a{
+    padding: 12px 14px;
+    font-size: 14px;
+    border-radius: 12px;
+    background: #f8f9fc;
+  }
+
+  /* ================= CONTACT BUTTON ================= */
+
+  .ps-contact-btn{
+    display: none;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+@media (max-width: 767px){
+
+  body{
+    padding-top: 82px;
+  }
+
+  .ps-header{
+    padding: 10px 12px;
+  }
+
+  .ps-header-inner{
+    gap: 10px;
+  }
+
+  /* LOGO */
+
+  .ps-logo-vertical{
+    width: 210px;
+    height: 68px;
+
+    gap: 6px;
+    padding: 0 8px;
+
+    border-radius: 0 0 12px 12px;
+  }
+
+  .ps-logo-big{
+    height: 34px;
+  }
+
+  .ps-logo-text-new{
+    font-size: 11px;
+    line-height: 1.1;
+    letter-spacing: 0.3px;
+  }
+
+  .ps-logo-text-new span{
+    margin-left: 3px;
+  }
+
+  /* MENU BUTTON */
+
+  .ps-menu-toggle{
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+  }
+
+  .ps-menu-toggle span{
+    width: 18px;
+    height: 2px;
+  }
+
+  /* NAV */
+
+  .ps-nav-list{
+    padding: 14px;
+    border-radius: 20px;
+    gap: 8px;
+  }
+
+  .ps-nav-link{
+    padding: 13px 14px;
+    font-size: 14px;
+    border-radius: 12px;
+  }
+
+  /* DROPDOWN */
+
+  .ps-dropdown-stage{
+    gap: 10px;
+  }
+
+  .ps-main-dropdown-box{
+    padding: 8px;
+    border-radius: 14px;
+  }
+
+  .ps-sub-floating-box{
+    padding: 10px;
+    border-radius: 14px;
+  }
+
+  .ps-main-products-scroll{
+    max-height: 240px;
+  }
+
+  .ps-main-product-item{
+    padding: 12px;
+    font-size: 13px;
+    margin-bottom: 5px;
+    border-radius: 12px;
+  }
+
+  .ps-submenu-panel a{
+    padding: 10px 12px;
+    font-size: 13px;
+    border-radius: 10px;
+  }
+
+  .ps-item-arrow{
+    font-size: 16px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+@media (max-width: 480px){
+
+  .ps-header{
+    padding: 8px 10px;
+  }
+
+  .ps-logo-vertical{
+    width: 185px;
+    height: 60px;
+  }
+
+  .ps-logo-big{
+    height: 30px;
+  }
+
+  .ps-logo-text-new{
+    font-size: 9.5px;
+  }
+
+  .ps-menu-toggle{
+    width: 40px;
+    height: 40px;
+  }
+
+  .ps-nav-list{
+    padding: 12px;
+  }
+
+  .ps-nav-link{
+    font-size: 13px;
+    padding: 12px;
+  }
+
+  .ps-main-product-item{
+    font-size: 12px;
+    padding: 11px;
+  }
+
+  .ps-submenu-panel a{
+    font-size: 12px;
+    padding: 10px;
   }
 }
 
