@@ -291,9 +291,7 @@
         overflow: hidden;
       }
 
-      .hero-slider {
-        margin-top: 72px;
-      }
+    
     }
 
     /* ==============================
@@ -1353,572 +1351,213 @@
       color: #ffffff;
     }
 
-    /* =========================
-   HERO SLIDER - RESPONSIVE FINAL
-========================= */
+
+/* =========================================================
+   HERO SLIDER
+========================================================= */
+
+/* =========================================================
+   HERO SLIDER
+========================================================= */
 
 .hero-slider{
-  position:relative;
-  width:100%;
-  min-height:100vh;
-  height:100vh;
-  overflow:hidden;
-  background:#0f1115;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
 }
 
 .hero-slides{
-  position:relative;
-  width:100%;
-  height:100%;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .hero-slide{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  opacity:0;
-  visibility:hidden;
-  transition:opacity .9s ease, visibility .9s ease;
-  z-index:1;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .7s ease;
+  z-index: 1;
 }
 
 .hero-slide.active{
-  opacity:1;
-  visibility:visible;
-  z-index:2;
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
 }
 
-/* =========================
-   IMAGE RESPONSIVE
-========================= */
+/* =========================================================
+   COMMON IMAGE
+========================================================= */
 
-.hero-slide-img{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center center;
-  display:block;
+.hero-slide img{
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
-/* =========================
+/* =========================================================
+   DESKTOP IMAGE
+========================================================= */
+
+.desktop-banner{
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* =========================================================
+   MOBILE IMAGE
+========================================================= */
+
+.mobile-banner{
+  display: none;
+}
+
+/* =========================================================
    OVERLAY
-========================= */
+========================================================= */
 
 .hero-slide-overlay{
-  position:absolute;
-  inset:0;
-  z-index:1;
-  background:linear-gradient(
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
     to bottom,
-    rgba(0,0,0,0.12),
-    rgba(0,0,0,0.05)
+    rgba(0,0,0,0.08),
+    rgba(0,0,0,0.03)
   );
+  z-index: 2;
 }
 
-/* =========================
-   CONTENT
-========================= */
-
-.hero-content{
-  position:relative;
-  z-index:3;
-  width:100%;
-  max-width:1200px;
-  margin:0 auto;
-  min-height:100%;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:140px 24px 120px;
-}
-
-/* =========================
-   BADGE
-========================= */
-
-.hero-badge{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
-  padding:12px 26px;
-  border-radius:999px;
-  background:rgba(255,255,255,0.10);
-  border:1px solid rgba(255,255,255,0.16);
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-  color:#ffffff;
-  font-size:15px;
-  font-weight:600;
-  letter-spacing:1px;
-  margin-bottom:24px;
-  box-shadow:0 12px 35px rgba(0,0,0,0.18);
-}
-
-.badge-dot{
-  width:10px;
-  height:10px;
-  border-radius:50%;
-  background:#67c23a;
-  box-shadow:0 0 12px rgba(103,194,58,0.8);
-}
-
-/* =========================
-   HEADING
-========================= */
-
-.hero-heading{
-  margin:0;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  line-height:.9;
-  font-weight:900;
-  letter-spacing:-2px;
-}
-
-.hero-line-1,
-.hero-line-2,
-.hero-line-3{
-  display:block;
-  font-size:clamp(42px,6vw,92px);
-}
-
-.hero-line-1,
-.hero-line-3{
-  color:#fff;
-}
-
-.hero-line-2{
-  color:#65bc38;
-}
-
-/* =========================
-   DESCRIPTION
-========================= */
-
-.hero-desc{
-  width:100%;
-  max-width:950px;
-  margin:24px auto 0;
-  font-size:clamp(18px,2vw,26px);
-  line-height:1.6;
-  color:rgba(255,255,255,0.92);
-}
-
-/* =========================
-   BUTTONS
-========================= */
-
-.hero-actions{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:16px;
-  margin-top:34px;
-}
-
-.btn-primary,
-.btn-outline{
-  min-width:200px;
-  height:58px;
-  padding:0 28px;
-  border-radius:999px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
-  text-decoration:none;
-  font-weight:700;
-  font-size:15px;
-  border:none;
-}
-
-.btn-primary{
-  background:linear-gradient(135deg,#2f2f6f,#65bc38);
-  color:#fff;
-  box-shadow:0 14px 30px rgba(0,0,0,0.25);
-}
-
-.btn-outline{
-  border:1px solid rgba(255,255,255,0.22);
-  color:#fff;
-  background:rgba(255,255,255,0.06);
-  backdrop-filter:blur(8px);
-}
-
-/* =========================
+/* =========================================================
    DOTS
-========================= */
+========================================================= */
 
 .hero-slider-dots{
-  position:absolute;
-  left:50%;
-  bottom:28px;
-  transform:translateX(-50%);
-  display:flex;
-  align-items:center;
-  gap:12px;
-  z-index:5;
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
 }
 
 .hero-dot{
-  width:12px;
-  height:12px;
-  border:none;
-  border-radius:50%;
-  background:rgba(255,255,255,0.35);
-  cursor:pointer;
-  transition:all .3s ease;
+  width: 10px;
+  height: 10px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  cursor: pointer;
+  transition: .3s;
 }
 
 .hero-dot.active{
-  width:34px;
-  border-radius:999px;
-  background:#65bc38;
+  width: 30px;
+  border-radius: 999px;
+  background: #65bc38;
 }
 
-/* =========================
-   ANIMATION
-========================= */
-
-.hero-slide.active .hero-badge,
-.hero-slide.active .hero-heading,
-.hero-slide.active .hero-desc,
-.hero-slide.active .hero-actions{
-  animation:heroFadeUp .9s ease forwards;
-}
-
-.hero-slide.active .hero-heading{
-  animation-delay:.15s;
-}
-
-.hero-slide.active .hero-desc{
-  animation-delay:.3s;
-}
-
-.hero-slide.active .hero-actions{
-  animation-delay:.45s;
-}
-
-.hero-badge,
-.hero-heading,
-.hero-desc,
-.hero-actions{
-  opacity:0;
-  transform:translateY(24px);
-}
-
-@keyframes heroFadeUp{
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-/* =========================
-   LARGE DESKTOP
-========================= */
-
-@media (min-width:1600px){
-
-  .hero-content{
-    max-width:1400px;
-  }
-
-  .hero-line-1,
-  .hero-line-2,
-  .hero-line-3{
-    font-size:110px;
-  }
-
-  .hero-desc{
-    max-width:1100px;
-    font-size:28px;
-  }
-   .hero-slide-img{
-    object-fit:cover;
-    object-position:center center;
-  }
-}
-
- 
-
-/* =========================
+/* =========================================================
    LAPTOP
-========================= */
+========================================================= */
 
-@media (max-width:1200px){
+@media (max-width: 1200px){
 
-  .hero-content{
-    max-width:1000px;
-    padding:130px 30px 110px;
-  }
-
-  .hero-line-1,
-  .hero-line-2,
-  .hero-line-3{
-    font-size:clamp(48px,6vw,78px);
-  }
-
-  .hero-desc{
-    max-width:820px;
-    font-size:20px;
-  }
-    .hero-slide-img{
-    object-fit:cover;
-    object-position:center center;
+  .hero-slider{
+    height: 92vh;
   }
 
 }
 
-/* =========================
-   TABLET
-========================= */
+/* =========================================================
+   TABLET + MOBILE
+========================================================= */
 
-@media (max-width:991px){
+@media (max-width: 991px){
 
-   .hero-slider,
+  .hero-slider{
+    height: 100vh;
+  }
+
   .hero-slide{
-    height:85vh;
-    min-height:85vh;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
   }
 
-    .hero-slide-img{
-    object-fit:contain;
-    object-position:center center;
-    width:100%;
-    height:100%;
-    background:#000;
+  /* HIDE DESKTOP */
+  .desktop-banner{
+    display: none;
   }
 
+  /* SHOW MOBILE */
+  .mobile-banner{
+    display: block;
+    position: absolute;
+    inset: 0;
 
-  .hero-content{
-    padding:120px 24px 100px;
-    max-width:820px;
-  }
+    width: 100%;
+    height: 100%;
 
-  .hero-badge{
-    font-size:13px;
-    padding:10px 18px;
-    margin-bottom:20px;
-  }
-
-  .hero-line-1,
-  .hero-line-2,
-  .hero-line-3{
-    font-size:clamp(40px,8vw,68px);
-    line-height:1;
-  }
-
-  .hero-desc{
-    max-width:90%;
-    font-size:17px;
-    line-height:1.55;
-  }
-
-  .hero-actions{
-    gap:12px;
-    margin-top:28px;
-  }
-
-  .btn-primary,
-  .btn-outline{
-    min-width:180px;
-    height:54px;
-    font-size:14px;
-  }
-
-  .hero-slider-dots{
-    bottom:22px;
-  }
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width:767px){
-
-   .hero-slider,
-  .hero-slides,
-  .hero-slide{
-    height:auto;
-    min-height:auto;
-  }
-
-  
-  .hero-slide-img{
-    position:relative;
-    width:100%;
-    height:auto;
-    object-fit:contain;
-    object-position:center center;
-    display:block;
+    object-fit: cover;
+    object-position: center top;
   }
 
   .hero-slide-overlay{
-    background:linear-gradient(
-      to bottom,
-      rgba(0,0,0,0.16),
-      rgba(0,0,0,0.08)
-    );
-
-      .hero-slide-overlay{
-    display:none;
+    display: none;
   }
 
   .hero-slider-dots{
-    bottom:10px;
-  }
-  }
-
-  .hero-content{
-    width:100%;
-    min-height:100svh;
-    justify-content:flex-start;
-    padding:110px 18px 40px;
+    bottom: 100px;
   }
 
-  .hero-badge{
-    max-width:92%;
-    padding:10px 16px;
-    font-size:11px;
-    line-height:1.3;
-    margin-bottom:16px;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px){
+
+  .hero-slider{
+    height: 100svh;
   }
 
-  .hero-heading{
-    width:100%;
-    max-width:340px;
-    letter-spacing:-1px;
+  .mobile-banner{
+    object-fit: cover;
+    object-position: center top;
   }
 
-  .hero-line-1,
-  .hero-line-2,
-  .hero-line-3{
-    font-size:clamp(32px,11vw,54px);
-  }
+}
 
-  .hero-desc{
-    max-width:340px;
-    margin-top:16px;
-    font-size:15px;
-    line-height:1.5;
-  }
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
 
-  .hero-actions{
-    width:100%;
-    max-width:340px;
-    margin-top:22px;
-    gap:12px;
-    flex-direction:column;
-    align-items:center;
-  }
-
-  .btn-primary,
-  .btn-outline{
-    width:100%;
-    min-width:unset;
-    height:52px;
-    font-size:14px;
-  }
-
-  .hero-slider-dots{
-    bottom:14px;
-    gap:10px;
-  }
+@media (max-width: 480px){
 
   .hero-dot{
-    width:10px;
-    height:10px;
+    width: 8px;
+    height: 8px;
   }
 
   .hero-dot.active{
-    width:28px;
+    width: 22px;
   }
+
 }
 
 /* =========================
-   SMALL MOBILE
-========================= */
-
-@media (max-width:480px){
-
-  .hero-content{
-    padding:100px 14px 32px;
-  }
-
-  .hero-badge{
-    font-size:10px;
-    padding:9px 14px;
-  }
-
-  .hero-line-1,
-  .hero-line-2,
-  .hero-line-3{
-    font-size:clamp(28px,10vw,46px);
-  }
-
-  .hero-desc{
-    max-width:300px;
-    font-size:14px;
-    line-height:1.45;
-  }
-    .hero-slide-img{
-    width:100%;
-    height:auto;
-    object-fit:contain;
-  }
-
-  .hero-actions{
-    max-width:300px;
-  }
-
-  .btn-primary,
-  .btn-outline{
-    height:50px;
-    font-size:13px;
-  }
-}
-
-/* =========================
-   EXTRA SMALL
-========================= */
-
-@media (max-width:360px){
-
-  .hero-content{
-    padding:92px 12px 28px;
-  }
-
-  .hero-line-1,
-  .hero-line-2,
-  .hero-line-3{
-    font-size:26px;
-  }
-
-  .hero-desc{
-    font-size:13px;
-  }
-
-  .hero-badge{
-    font-size:9px;
-  }
-    .hero-slide-img{
-    width:100%;
-    height:auto;
-    object-fit:contain;
-  }
-
-}
-
-    /* =========================
    PRODUCT SECTION
 ========================= */
     .product-section {
@@ -3080,127 +2719,95 @@
   </header>
   <div class="ps-mobile-overlay" id="psMobileOverlay"></div>
 
-  <!-- ═══════════════════════════════════════
+<!-- ═══════════════════════════════════════
      HERO SECTION – AUTO SLIDER
 ═══════════════════════════════════════ -->
-  <section id="home" class="hero-slider">
 
-    <div class="hero-slides">
+<section id="home" class="hero-slider">
 
-      <!-- Slide 1 -->
-      <div class="hero-slide active">
-        <img src="img/Banner1.png" alt="Sudhanshu Associates Building" class="hero-slide-img">
-        <div class="hero-slide-overlay"></div>
+  <div class="hero-slides">
 
-        <!-- <div class="hero-content">
-          <div class="hero-badge">
-            <span class="badge-dot"></span> Est. 1974 · Pune, India
-          </div> -->
+    <!-- ================================================= -->
+    <!-- SLIDE 1 -->
+    <!-- ================================================= -->
+    <div class="hero-slide active">
 
-          <!-- <h1 class="hero-heading">
-            <span class="hero-line-1">Industrial</span>
-            <span class="hero-line-2">Precision</span>
-            <span class="hero-line-3">Delivered</span>
-          </h1>
+      <!-- DESKTOP BANNER -->
+      <img src="img/Banner1.png"
+           alt="Sudhanshu Associates Building"
+           class="hero-slide-img desktop-banner">
 
-          <p class="hero-desc">
-            Trusted supplier of welding electrodes, NDT equipment, safety products,
-            abrasive materials &amp; power tools — serving industries with reliability.
-          </p> -->
+      <!-- MOBILE BANNER -->
+      <img src="img/mobile-banner1.png"
+           alt="Sudhanshu Associates Mobile Banner"
+           class="hero-slide-img mobile-banner">
 
-
-        </div>
-      </div>
-
-      <!-- Slide 2 -->
-      <div class="hero-slide">
-        <img src="img/Banner2.png" alt="Welding Supplies" class="hero-slide-img">
-        <div class="hero-slide-overlay"></div>
-
-        <!-- <div class="hero-content">
-          <div class="hero-badge">
-            <span class="badge-dot"></span> Welding Supply Experts
-          </div>
-
-          <h1 class="hero-heading">
-            <span class="hero-line-1">Complete</span>
-            <span class="hero-line-2">Welding</span>
-            <span class="hero-line-3">Solutions</span>
-          </h1>
-
-          <p class="hero-desc">
-            From welding electrodes and torches to machines and accessories,
-            we supply dependable solutions for industrial fabrication needs.
-          </p> -->
-
-
-        </div>
-      </div>
-
-      <!-- Slide 3 -->
-      <div class="hero-slide">
-        <img src="img/banner3.png" alt="Safety and NDT Equipment" class="hero-slide-img">
-        <div class="hero-slide-overlay"></div>
-
-        <!-- <div class="hero-content">
-          <div class="hero-badge">
-            <span class="badge-dot"></span> Safety · NDT · Reliability
-          </div>
-
-          <h1 class="hero-heading">
-            <span class="hero-line-1">Inspection &amp;</span>
-            <span class="hero-line-2">Safety</span>
-            <span class="hero-line-3">Assured</span>
-          </h1>
-
-          <p class="hero-desc">
-            Supplying non-destructive testing equipment and industrial safety products
-            built for performance, compliance and operational confidence.
-          </p> -->
-
-
-        </div>
-      </div>
-
-      <!-- Slide 4 -->
-      <div class="hero-slide">
-        <img src="img/banner4.png" alt="Industrial Power Tools" class="hero-slide-img">
-        <div class="hero-slide-overlay"></div>
-
-        <!-- <div class="hero-content">
-          <div class="hero-badge">
-            <span class="badge-dot"></span> Abrasives &amp; Power Tools
-          </div>
-
-          <h1 class="hero-heading">
-            <span class="hero-line-1">Built for</span>
-            <span class="hero-line-2">Industrial</span>
-            <span class="hero-line-3">Performance</span>
-          </h1>
-
-          <p class="hero-desc">
-            Abrasive materials, hand tools and power tools supplied with consistency,
-            quality focus and long-term industry trust.
-          </p> -->
-
-
-        </div>
-      </div>
+      <div class="hero-slide-overlay"></div>
 
     </div>
 
-    <!-- Dots -->
-    <div class="hero-slider-dots">
-      <button class="hero-dot active" data-slide="0"></button>
-      <button class="hero-dot" data-slide="1"></button>
-      <button class="hero-dot" data-slide="2"></button>
-      <button class="hero-dot" data-slide="3"></button>
+    <!-- ================================================= -->
+    <!-- SLIDE 2 -->
+    <!-- ================================================= -->
+    <div class="hero-slide">
+
+      <img src="img/Banner2.png"
+           alt="Welding Supplies"
+           class="hero-slide-img desktop-banner">
+
+      <img src="img/mobile-banner2.png"
+           alt="Welding Supplies Mobile"
+           class="hero-slide-img mobile-banner">
+
+      <div class="hero-slide-overlay"></div>
+
     </div>
 
+    <!-- ================================================= -->
+    <!-- SLIDE 3 -->
+    <!-- ================================================= -->
+    <div class="hero-slide">
 
-    <span></span>
+      <img src="img/banner3.png"
+           alt="Safety and NDT Equipment"
+           class="hero-slide-img desktop-banner">
+
+      <img src="img/mobile-banner3.png"
+           alt="Safety Equipment Mobile"
+           class="hero-slide-img mobile-banner">
+
+      <div class="hero-slide-overlay"></div>
+
     </div>
-  </section>
+
+    <!-- ================================================= -->
+    <!-- SLIDE 4 -->
+    <!-- ================================================= -->
+    <div class="hero-slide">
+
+      <img src="img/banner4.png"
+           alt="Industrial Power Tools"
+           class="hero-slide-img desktop-banner">
+
+      <img src="img/mobile-banner4.png"
+           alt="Industrial Tools Mobile"
+           class="hero-slide-img mobile-banner">
+
+      <div class="hero-slide-overlay"></div>
+
+    </div>
+
+  </div>
+
+  <!-- DOTS -->
+  <div class="hero-slider-dots">
+    <button class="hero-dot active" data-slide="0"></button>
+    <button class="hero-dot" data-slide="1"></button>
+    <button class="hero-dot" data-slide="2"></button>
+    <button class="hero-dot" data-slide="3"></button>
+  </div>
+
+</section>
 
   <!-- ═══════════════════════════════════════
        BRANDS / PARTNERS MARQUEE- css: in Style.css

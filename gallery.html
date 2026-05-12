@@ -26,188 +26,6 @@
 
 <style>
 
-
-/* /* =========================
-   MOBILE HEADER FIX
-========================= 
-
-.ps-menu-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  width: 40px;
-  height: 40px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 1002;
-  padding: 0;
-  -webkit-tap-highlight-color: transparent;
-  outline: none;
-  box-shadow: none;
-}
-
-.ps-menu-toggle span {
-  width: 24px;
-  height: 2px;
-  background: #2E2F78;
-  display: block;
-  border-radius: 999px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-/* ANIMATION 
-.ps-menu-toggle.active span:nth-child(1){
-  transform: rotate(45deg) translate(5px,5px);
-}
-.ps-menu-toggle.active span:nth-child(2){
-  opacity: 0;
-}
-.ps-menu-toggle.active span:nth-child(3){
-  transform: rotate(-45deg) translate(5px,-5px);
-}
-
-/* MOBILE NAV 
-@media (max-width: 991px){
-
-  .ps-menu-toggle{
-    display: flex;
-  }
-
-  .ps-menu-toggle:hover,
-  .ps-menu-toggle:focus,
-  .ps-menu-toggle:active{
-    background: none;
-    outline: none;
-    box-shadow: none;
-  }
-
-  .ps-nav{
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 300px;
-    max-width: 86vw;
-    height: 100vh;
-    background: #ffffff;
-    display: flex;
-    flex-direction: column;
-    padding: 88px 25px 30px;
-    transition: right 0.4s ease;
-    z-index: 1001;
-    overflow-y: auto;
-  }
-
-  .ps-nav.active{
-    right: 0;
-  }
-
-  .ps-nav-list{
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-  }
-
-  .ps-nav-list > li{
-    width: 100%;
-  }
-
-  .ps-nav-link,
-  .ps-dropdown-toggle{
-    width: 100%;
-    display: flex !important;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .ps-contact-btn{
-    display: none;
-  }
-
-  /* overlay 
-  .ps-mobile-overlay{
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.4);
-    backdrop-filter: blur(3px);
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.3s ease;
-    z-index: 1000;
-  }
-
-  .ps-mobile-overlay.active{
-    opacity: 1;
-    visibility: visible;
-  }
-
-  /* dropdown mobile 
-  .ps-dropdown-stage{
-    display: none;
-    position: static !important;
-    width: 100% !important;
-    padding-top: 12px;
-  }
-
-  .ps-dropdown.open .ps-dropdown-stage{
-    display: block;
-  }
-
-  .ps-main-dropdown-box,
-  .ps-sub-floating-box{
-    width: 100% !important;
-    max-width: 100% !important;
-    box-shadow: none !important;
-    border: 1px solid rgba(13,27,42,0.08);
-    border-radius: 14px;
-    overflow: hidden;
-    margin-top: 10px;
-    background: #fff;
-  }
-
-  .ps-main-products-scroll{
-    max-height: 220px;
-    overflow-y: auto;
-  }
-
-  .ps-main-product-item{
-    width: 100%;
-    border: none;
-    border-bottom: 1px solid rgba(13,27,42,0.06);
-    background: #fff;
-    padding: 13px 14px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-align: left;
-    cursor: pointer;
-  }
-
-  .ps-submenu-panel{
-    display: none;
-  }
-
-  .ps-submenu-panel.active{
-    display: block;
-  }
-
-  .ps-submenu-panel a{
-    display: block;
-    padding: 11px 14px;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(13,27,42,0.06);
-    color: #334155;
-    background: #fff;
-  }
-
-  body.menu-open{
-    overflow: hidden;
-  }
-} */
-
-
     @media (max-width: 991px) {
 
     .ps-header {
@@ -462,37 +280,40 @@
 /* ===============================
    APS GALLERY SECTION
 =============================== */
+
 .aps-gallery-section{
-  padding: 60px 15px;   /* reduced left-right padding */
+  padding: 60px 15px;
   background: #f5f6f8;
 }
 
 /* CONTAINER */
 .aps-gallery-section .container{
-  max-width: 1400px;   /* wider for 4 cards */
+  max-width: 1400px;
   margin: auto;
 }
 
 /* ===============================
-   GRID - 4 CARDS IN ONE ROW
+   GRID
 =============================== */
+
 .aps-gallery-grid{
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 equal cards */
-  gap: 22px; /* equal gap between all cards */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
 }
 
 /* ===============================
    CARD
 =============================== */
+
 .aps-card{
   position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1;   /* equal height & width */
+  aspect-ratio: 1 / 1;
   border-radius: 18px;
   overflow: hidden;
   cursor: pointer;
-  background: #fff;
+  background: #ffffff;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
@@ -501,48 +322,65 @@
   position: relative;
   width: 100%;
   height: 100%;
+  background: #fff;
 }
 
-/* IMAGES */
+/* ===============================
+   IMAGES
+=============================== */
+
 .aps-switch-img{
   position: absolute;
   inset: 0;
+
   width: 100%;
   height: 100%;
-  object-fit: cover;   /* fills card perfectly */
+
+  /* IMPORTANT */
+  object-fit: contain;
+
+  /* FULL IMAGE VISIBLE */
+  object-position: center;
+
+  background: #fff;
+
   opacity: 0;
   transition: all 0.6s ease;
+  padding: 10px;
 }
 
 .aps-switch-img.active{
   opacity: 1;
 }
 
-/* IMAGE ZOOM */
+/* HOVER ZOOM */
 .aps-card:hover .aps-switch-img.active{
-  transform: scale(1.08);
+  transform: scale(1.03);
 }
 
 /* ===============================
    OVERLAY
 =============================== */
+
 .aps-card-content{
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 50%;   /* only half card overlay */
+  height: 45%;
 
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+
   padding: 18px;
 
   background: linear-gradient(
     to top,
-    rgba(10,40,90,0.95),
-    rgba(10,39,90,0.70)
+    rgba(10,40,90,0.96),
+    rgba(10,40,90,0.65),
+    transparent
   );
 
   transform: translateY(100%);
@@ -550,6 +388,7 @@
 }
 
 /* TEXT */
+
 .aps-card-content h3{
   color: #fff;
   font-size: 18px;
@@ -562,6 +401,7 @@
 }
 
 /* HOVER */
+
 .aps-card:hover .aps-card-content{
   transform: translateY(0);
 }
@@ -571,61 +411,80 @@
   transform: translateY(0);
 }
 
+/* ===============================
+   TABLET
+=============================== */
 
-/* ================= RESPONSIVE ================= */
+@media (max-width: 992px){
 
-/* TABLET */
-@media (max-width: 992px) {
-  .aps-gallery-section {
+  .aps-gallery-section{
     padding: 50px 15px;
   }
 
-  .aps-gallery-grid {
+  .aps-gallery-grid{
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
 
-  .aps-card-content h3 {
-    font-size: 18px;
+  .aps-card{
+    aspect-ratio: 1 / 1;
+  }
+
+  .aps-card-content h3{
+    font-size: 17px;
   }
 }
+/* ===============================
+   MOBILE
+=============================== */
 
-/* MOBILE */
-@media (max-width: 600px) {
-  .aps-gallery-section {
+@media (max-width: 600px){
+
+  .aps-gallery-section{
     padding: 40px 12px;
   }
 
-  .aps-gallery-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
+  /* 2 CARDS IN ONE ROW */
+  .aps-gallery-grid{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
   }
 
-  .aps-card {
-    aspect-ratio: 16 / 10; /* better for mobile */
+  .aps-card{
+    aspect-ratio: 1 / 1;
+    border-radius: 14px;
   }
 
-  .aps-card-content {
-    padding: 15px;
+  .aps-switch-img{
+    padding: 10px;
   }
 
-  .aps-card-content h3 {
-    font-size: 16px;
+  .aps-card-content{
+    height: 42%;
+    padding: 10px;
+  }
+
+  .aps-card-content h3{
+    font-size: 13px;
+    line-height: 1.3;
   }
 }
 
-/* SMALL MOBILE */
-@media (max-width: 400px) {
-  .aps-card-content h3 {
-    font-size: 14px;
+/* ===============================
+   SMALL MOBILE
+=============================== */
+
+@media (max-width: 400px){
+
+  .aps-gallery-grid{
+    gap: 10px;
+  }
+
+  .aps-card-content h3{
+    font-size: 12px;
   }
 }
-
-  </style>
-
-
-
-
+</style>
 <body>
 
 
@@ -1196,6 +1055,10 @@
     </div>
   </div>
 </section>
+
+  <a href="https://wa.me/919822603202" class="whatsapp-float" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
 
 <!-- =============================Footer =================================================== -->
 

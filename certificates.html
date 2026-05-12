@@ -381,229 +381,455 @@
     /* =========================
        CERTIFICATE SHOWCASE
     ========================= */
-    .certificate-showcase-section {
-      padding: 20px 0 20px;
-      background: linear-gradient(135deg, #eef4ff 0%, #edf9f0 45%, #f4f8ff 100%);
-      overflow: hidden;
-    }
-
-    .certificate-showcase-wrap {
-      width: 100%;
-      overflow: hidden;
-      padding: 8px 18px;
-    }
-
-    .certificate-showcase-track {
-      display: flex;
-      gap: 22px;
-      width: max-content;
-      animation: certificateRuntimeScroll 28s linear infinite;
-    }
-
-    .certificate-showcase-wrap:hover .certificate-showcase-track {
-      animation-play-state: paused;
-    }
-
-    @keyframes certificateRuntimeScroll {
-      0% {
-        transform: translateX(0);
-      }
-
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-    .certificate-showcase-card {
-      position: relative;
-      flex: 0 0 430px;
-      height: 430px;
-      background: #ffffff;
-      border: 1px solid #dbe2ea;
-      border-radius: 16px;
-      overflow: hidden;
-      display: block;
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
-      text-decoration: none;
-    }
-
-    .certificate-showcase-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.14);
-    }
-
-    .certificate-showcase-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      transition: transform 0.55s ease, filter 0.45s ease;
-      background: #f7f8fb;
-    }
-
-    .certificate-card-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(19, 32, 58, 0.58);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
-      opacity: 0;
-      visibility: hidden;
-      transition: 0.4s ease;
-    }
-
-    .certificate-overlay-icon {
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      border: 2px solid rgba(255, 255, 255, 0.75);
-      background: rgba(255, 255, 255, 0.10);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 22px;
-      margin-bottom: 18px;
-      transform: translateY(18px) scale(0.9);
-      transition: 0.45s ease;
-    }
-
-    .certificate-card-overlay h3 {
-      font-size: 18px;
-      font-weight: 800;
-      color: #fff;
-      margin: 0 0 8px;
-      transform: translateY(18px);
-      transition: 0.45s ease;
-    }
-
-    .certificate-card-overlay span {
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 1.4px;
-      text-transform: uppercase;
-      color: #57a639;
-      transform: translateY(18px);
-      transition: 0.45s ease;
-    }
-
-    .certificate-showcase-card:hover img {
-      transform: scale(1.05);
-      filter: brightness(0.55);
-    }
-
-    .certificate-showcase-card:hover .certificate-card-overlay {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .certificate-showcase-card:hover .certificate-overlay-icon,
-    .certificate-showcase-card:hover .certificate-card-overlay h3,
-    .certificate-showcase-card:hover .certificate-card-overlay span {
-      transform: translateY(0) scale(1);
-    }
-
     /* =========================
-       LIGHTBOX
-    ========================= */
-    .certificate-lightbox {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.88);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 30px;
-      z-index: 99999;
-      opacity: 0;
-      visibility: hidden;
-      transition: 0.35s ease;
-    }
+   CERTIFICATE SECTION
+========================= */
 
-    .certificate-lightbox.active {
-      opacity: 1;
-      visibility: visible;
-    }
+.certificate-showcase-section{
+  padding: 20px 0 20px;
+  background: linear-gradient(135deg, #eef4ff 0%, #edf9f0 45%, #f4f8ff 100%);
+  overflow: hidden;
+}
 
-    .certificate-lightbox img {
-      max-width: 92%;
-      max-height: 88vh;
-      object-fit: contain;
-      border-radius: 12px;
-      background: #fff;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-      animation: lightboxZoom 0.35s ease;
-    }
+.certificate-showcase-wrap{
+  width: 100%;
+  overflow: hidden;
+  padding: 8px 18px;
+}
 
-    @keyframes lightboxZoom {
-      from {
-        transform: scale(0.9);
-        opacity: 0;
-      }
+/* =========================
+   SCROLL TRACK
+========================= */
 
-      to {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
+.certificate-showcase-track{
+  display: flex;
+  gap: 22px;
+  width: max-content;
+  animation: certificateRuntimeScroll 28s linear infinite;
+}
 
-    #certificateLightboxClose {
-      position: absolute;
-      top: 18px;
-      right: 26px;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.12);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      cursor: pointer;
-      transition: 0.25s ease;
-      backdrop-filter: blur(8px);
-    }
+.certificate-showcase-wrap:hover .certificate-showcase-track{
+  animation-play-state: paused;
+}
 
-    #certificateLightboxClose:hover {
-      background: rgba(255, 255, 255, 0.22);
-      transform: rotate(90deg);
-    }
+@keyframes certificateRuntimeScroll{
+  0%{
+    transform: translateX(0);
+  }
 
-    .lightbox-nav-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.12);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      cursor: pointer;
-      transition: 0.25s ease;
-      backdrop-filter: blur(8px);
-      z-index: 2;
-    }
+  100%{
+    transform: translateX(-50%);
+  }
+}
 
-    .lightbox-nav-btn:hover {
-      background: rgba(255, 255, 255, 0.22);
-    }
+/* =========================
+   CARD
+========================= */
 
-    #certificateLightboxPrev {
-      left: 26px;
-    }
+.certificate-showcase-card{
+  position: relative;
+  flex: 0 0 430px;
+  height: 430px;
 
-    #certificateLightboxNext {
-      right: 26px;
-    }
+  background: #ffffff;
+  border: 1px solid #dbe2ea;
+  border-radius: 16px;
+  overflow: hidden;
+
+  display: block;
+
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+
+  text-decoration: none;
+}
+
+.certificate-showcase-card:hover{
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 18px 40px rgba(15, 23, 42, 0.14);
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.certificate-showcase-card img{
+  width: 100%;
+  height: 100%;
+
+  /* FULL IMAGE VISIBLE */
+  object-fit: contain;
+
+  object-position: center;
+
+  background: #f7f8fb;
+
+  transition:
+    transform 0.55s ease,
+    filter 0.45s ease;
+
+  padding: 10px;
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.certificate-card-overlay{
+  position: absolute;
+  inset: 0;
+
+  background: rgba(19, 32, 58, 0.58);
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 20px;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: 0.4s ease;
+}
+
+.certificate-overlay-icon{
+  width: 58px;
+  height: 58px;
+
+  border-radius: 50%;
+
+  border: 2px solid rgba(255, 255, 255, 0.75);
+
+  background: rgba(255, 255, 255, 0.10);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+
+  font-size: 22px;
+
+  margin-bottom: 18px;
+
+  transform: translateY(18px) scale(0.9);
+
+  transition: 0.45s ease;
+}
+
+.certificate-card-overlay h3{
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+
+  margin: 0 0 8px;
+
+  transform: translateY(18px);
+
+  transition: 0.45s ease;
+}
+
+.certificate-card-overlay span{
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+
+  color: #57a639;
+
+  transform: translateY(18px);
+
+  transition: 0.45s ease;
+}
+
+/* =========================
+   HOVER EFFECT
+========================= */
+
+.certificate-showcase-card:hover img{
+  transform: scale(1.03);
+  filter: brightness(0.55);
+}
+
+.certificate-showcase-card:hover .certificate-card-overlay{
+  opacity: 1;
+  visibility: visible;
+}
+
+.certificate-showcase-card:hover .certificate-overlay-icon,
+.certificate-showcase-card:hover .certificate-card-overlay h3,
+.certificate-showcase-card:hover .certificate-card-overlay span{
+  transform: translateY(0) scale(1);
+}
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+.certificate-lightbox{
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.88);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  z-index: 99999;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: 0.35s ease;
+}
+
+.certificate-lightbox.active{
+  opacity: 1;
+  visibility: visible;
+}
+
+.certificate-lightbox img{
+  max-width: 92%;
+  max-height: 88vh;
+
+  object-fit: contain;
+
+  border-radius: 12px;
+
+  background: #fff;
+
+  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+
+  animation: lightboxZoom 0.35s ease;
+}
+
+@keyframes lightboxZoom{
+
+  from{
+    transform: scale(0.9);
+    opacity: 0;
+  }
+
+  to{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+#certificateLightboxClose{
+  position: absolute;
+  top: 18px;
+  right: 26px;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.12);
+
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 28px;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+
+  backdrop-filter: blur(8px);
+}
+
+#certificateLightboxClose:hover{
+  background: rgba(255,255,255,0.22);
+  transform: rotate(90deg);
+}
+
+/* =========================
+   NAV BUTTONS
+========================= */
+
+.lightbox-nav-btn{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.12);
+
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 24px;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+
+  backdrop-filter: blur(8px);
+
+  z-index: 2;
+}
+
+.lightbox-nav-btn:hover{
+  background: rgba(255,255,255,0.22);
+}
+
+#certificateLightboxPrev{
+  left: 26px;
+}
+
+#certificateLightboxNext{
+  right: 26px;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 992px){
+
+  .certificate-showcase-track{
+    gap: 18px;
+  }
+
+  .certificate-showcase-card{
+    flex: 0 0 320px;
+    height: 320px;
+  }
+
+  .certificate-card-overlay h3{
+    font-size: 16px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px){
+
+  .certificate-showcase-section{
+    padding: 15px 0;
+  }
+
+  .certificate-showcase-wrap{
+    padding: 6px 10px;
+  }
+
+  .certificate-showcase-track{
+    gap: 14px;
+    animation-duration: 22s;
+  }
+
+  .certificate-showcase-card{
+    flex: 0 0 220px;
+    height: 220px;
+
+    border-radius: 14px;
+  }
+
+  .certificate-showcase-card img{
+    padding: 8px;
+  }
+
+  .certificate-overlay-icon{
+    width: 42px;
+    height: 42px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .certificate-card-overlay h3{
+    font-size: 14px;
+  }
+
+  .certificate-card-overlay span{
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  /* LIGHTBOX */
+
+  .certificate-lightbox{
+    padding: 15px;
+  }
+
+  .certificate-lightbox img{
+    max-width: 100%;
+    max-height: 80vh;
+  }
+
+  #certificateLightboxClose{
+    width: 42px;
+    height: 42px;
+    font-size: 22px;
+    top: 12px;
+    right: 12px;
+  }
+
+  .lightbox-nav-btn{
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  #certificateLightboxPrev{
+    left: 10px;
+  }
+
+  #certificateLightboxNext{
+    right: 10px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px){
+
+  .certificate-showcase-card{
+    flex: 0 0 190px;
+    height: 190px;
+  }
+
+  .certificate-card-overlay h3{
+    font-size: 12px;
+  }
+
+  .certificate-card-overlay span{
+    font-size: 9px;
+  }
+}
 
 
     /* ===== RESET ===== */
@@ -1472,6 +1698,8 @@
       </div>
     </div>
   </footer>
+
+  <!-- ================================================================================ -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
