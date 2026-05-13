@@ -102,13 +102,22 @@ document.addEventListener("DOMContentLoaded", function () {
      MOBILE PRODUCT DROPDOWN
   ========================================= */
 
-  if (psToggle && psDropdown) {
-    psToggle.addEventListener("click", function (e) {
-      if (window.innerWidth <= 991) {
-        e.preventDefault();
+  // if (psToggle && psDropdown) {
+  //   psToggle.addEventListener("click", function () {
+  //     // OPEN DROPDOWN
+  //     psDropdown.classList.toggle("open");
 
-        psDropdown.classList.toggle("open");
-      }
+  //     // REDIRECT TO PRODUCT PAGE
+  //     if (window.innerWidth <= 991) {
+  //       window.location.href = "product.html";
+  //     }
+  //   });
+  // }
+
+  if (psToggle && psDropdown) {
+    psToggle.addEventListener("click", function () {
+      // ONLY REDIRECT
+      window.location.href = "product.html";
     });
   }
 
