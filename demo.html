@@ -2448,128 +2448,167 @@
   </section>
 
   <style>
-    /* =========================
-PRODUCT HERO - CLEAN FINAL
-========================= */
-    .product-hero-simple {
-      position: relative;
-      display: flex;
 
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      padding: 10px 0 90px;
-    }
+/* =========================================
+   PRODUCT HERO SECTION
+========================================= */
 
-    .product-hero-simple .container {
-      width: 100%;
-      max-width: 100%;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+.product-hero-simple{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  width:100%;
+  padding:120px 0 90px;
+}
 
-    .product-hero-content {
-      max-width: 980px;
-      margin-bottom: 80px;
-      margin-top: 80px;
-      text-align: center;
-      padding: 0 20px;
-    }
+.product-hero-simple .container{
+  width:100%;
+  max-width:1400px;
+  margin:0 auto;
+  padding:0 20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
 
-    .product-page-tag {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 18px;
-      margin-bottom: 20px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.14);
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      backdrop-filter: blur(8px);
-      color: #ffffff;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 1.4px;
-      text-transform: uppercase;
-    }
+.product-hero-content{
+  width:100%;
+  max-width:980px;
+  text-align:center;
+}
 
-    .product-hero-content h1 {
-      margin: 0 0 18px;
-      font-size: clamp(52px, 8vw, 88px);
-      line-height: 1.05;
-      font-weight: 800;
-      letter-spacing: -2px;
-      font-family: 'Sora', sans-serif;
-    }
+/* =========================================
+   TITLE
+========================================= */
 
-    .text-blue {
-      color: #66A83D;
-    }
+.product-hero-content h1{
+  margin:0 0 20px;
+  font-size:clamp(52px, 8vw, 88px);
+  line-height:1.05;
+  font-weight:800;
+  letter-spacing:-2px;
+  font-family:'Sora', sans-serif;
+}
 
-    .text-green {
-      color: #2E2F78;
-      margin-left: 10px;
-    }
+.text-blue{
+  color:#66A83D;
+}
 
-    .product-hero-content p {
-      margin: 0 auto;
-      max-width: 860px;
-      font-size: clamp(18px, 2.1vw, 30px);
-      line-height: 1.7;
-      color: #000000;
-      font-weight: 500;
-    }
+.text-green{
+  color:#2E2F78;
+  margin-left:10px;
+}
 
-    /* responsive */
-    @media (max-width: 991px) {
-      .product-hero-simple {
-        min-height: 470px;
-        padding: 110px 0 80px;
-      }
+/* =========================================
+   DESCRIPTION
+========================================= */
 
-      .product-hero-content h1 {
-        letter-spacing: -1px;
-      }
+.product-hero-content p{
+  margin:0 auto;
+  width:100%;
+  max-width:850px;
 
-      .product-hero-content p {
-        max-width: 720px;
-      }
-    }
+  font-size:clamp(18px, 2vw, 28px);
+  line-height:1.75;
+  color:#111;
 
-    @media (max-width: 576px) {
-      .product-hero-simple {
-        min-height: 380px;
-        padding: 90px 0 65px;
-      }
+  font-weight:500;
+}
 
-      .product-hero-content {
-        padding: 0 14px;
-      }
+/* =========================================
+   TABLET
+========================================= */
 
-      .product-hero-content h1 {
-        font-size: 42px;
-        line-height: 1.12;
-        margin-bottom: 12px;
-      }
+@media (max-width:991px){
 
-      .text-green {
-        margin-left: 6px;
-      }
+  .product-hero-simple{
+    padding:120px 0 80px;
+    min-height:auto;
+  }
 
-      .product-hero-content p {
-        font-size: 15px;
-        line-height: 1.65;
-        max-width: 100%;
-      }
+  .product-hero-simple .container{
+    padding:0 24px;
+  }
 
-      .product-page-tag {
-        font-size: 11px;
-        padding: 7px 14px;
-        margin-bottom: 14px;
-      }
-    }
+  .product-hero-content{
+    max-width:100%;
+  }
+
+  .product-hero-content h1{
+    font-size:clamp(44px, 8vw, 68px);
+    line-height:1.08;
+    letter-spacing:-1px;
+    margin-bottom:16px;
+  }
+
+  .product-hero-content p{
+    max-width:720px;
+    font-size:18px;
+    line-height:1.75;
+  }
+
+  .text-green{
+    margin-left:6px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width:575px){
+
+  .product-hero-simple{
+    padding:100px 0 60px;
+  }
+
+  .product-hero-simple .container{
+    padding:0 16px;
+  }
+
+  .product-hero-content{
+    width:100%;
+  }
+
+  .product-hero-content h1{
+    font-size:40px;
+    line-height:1.12;
+    margin-bottom:14px;
+    letter-spacing:-1px;
+  }
+
+  .product-hero-content p{
+    max-width:100%;
+    font-size:15px;
+    line-height:1.7;
+  }
+
+  .text-green{
+    margin-left:4px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width:400px){
+
+  .product-hero-simple{
+    padding:90px 0 50px;
+  }
+
+  .product-hero-content h1{
+    font-size:34px;
+  }
+
+  .product-hero-content p{
+    font-size:14px;
+    line-height:1.65;
+  }
+}
   </style>
   <!-- ===============================Hero Section End================================================== -->
    
