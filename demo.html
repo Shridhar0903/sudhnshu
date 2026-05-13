@@ -683,10 +683,228 @@
     font-weight: 800;
   }
 
-  /* ========================================================== */
-  /* =========================
-   BRANDS SECTION
+  /* ==========================================================
+   PRODUCT SECTION RESPONSIVE
+========================================================== */
+
+/* =========================
+   TABLET
 ========================= */
+@media (max-width: 991px){
+
+  .sa-product-detail-card{
+    grid-template-columns:1fr;
+    gap:24px;
+    padding:22px;
+    border-radius:24px;
+  }
+
+  .sa-product-detail-image{
+    height:300px;
+    margin:0;
+    padding:18px;
+    border-radius:20px;
+  }
+
+  .sa-product-detail-content h2{
+    font-size:34px;
+    line-height:1.15;
+  }
+
+  .sa-product-detail-content p{
+    font-size:15px;
+    line-height:1.75;
+  }
+
+  .sa-product-points li{
+    font-size:15px;
+    line-height:1.7;
+  }
+
+  .sa-info-grid{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+
+  .sa-info-box{
+    padding:20px;
+    border-radius:22px;
+  }
+
+  .sa-info-box h3{
+    font-size:22px;
+  }
+
+  .sa-info-box h4{
+    font-size:17px;
+  }
+
+  .sa-table-wrap{
+    overflow-x:auto;
+    padding:20px;
+  }
+
+  .sa-table{
+    min-width:700px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 575px){
+
+  .sa-product-detail-card{
+    grid-template-columns:1fr;
+    gap:18px;
+    padding:16px;
+    border-radius:20px;
+    margin-bottom:18px;
+  }
+
+  .sa-product-detail-image{
+    height:220px;
+    margin:0;
+    padding:14px;
+    border-radius:16px;
+  }
+
+  .sa-product-detail-image img{
+    object-fit:contain;
+  }
+
+  .sa-product-detail-content h2{
+    font-size:24px;
+    line-height:1.2;
+    margin-bottom:12px;
+  }
+
+  .sa-product-detail-label{
+    font-size:12px;
+    padding:7px 12px;
+    margin-bottom:12px;
+  }
+
+  .sa-product-detail-content p{
+    font-size:14px;
+    line-height:1.75;
+    margin-bottom:16px;
+  }
+
+  .sa-product-points{
+    gap:8px;
+    margin-bottom:18px;
+  }
+
+  .sa-product-points li{
+    font-size:14px;
+    line-height:1.7;
+    padding-left:18px;
+  }
+
+  .sa-product-btn{
+    width:100%;
+    padding:13px 18px;
+    font-size:14px;
+    text-align:center;
+  }
+
+  .sa-info-grid{
+    grid-template-columns:1fr;
+    gap:16px;
+    margin-top:18px;
+  }
+
+  .sa-info-box{
+    padding:16px;
+    border-radius:18px;
+  }
+
+  .sa-info-box h3{
+    font-size:20px;
+    margin-bottom:12px;
+  }
+
+  .sa-info-box h4{
+    font-size:16px;
+    margin:14px 0 8px;
+  }
+
+  .sa-info-box p{
+    font-size:14px;
+    line-height:1.7;
+  }
+
+  .sa-grade-list{
+    gap:8px;
+  }
+
+  .sa-grade-pill{
+    font-size:12px;
+    padding:8px 12px;
+  }
+
+  .sa-shielding-list{
+    gap:8px;
+  }
+
+  .sa-shielding-list li{
+    font-size:13px;
+    line-height:1.6;
+    padding:10px 12px;
+    border-radius:14px;
+  }
+
+  .sa-table-wrap{
+    padding:14px;
+    border-radius:18px;
+    overflow-x:auto;
+  }
+
+  .sa-table-title{
+    font-size:20px;
+    margin-bottom:14px;
+  }
+
+  .sa-table{
+    min-width:620px;
+  }
+
+  .sa-table th,
+  .sa-table td{
+    font-size:13px;
+    padding:10px 8px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+@media (max-width: 400px){
+
+  .sa-product-detail-content h2{
+    font-size:21px;
+  }
+
+  .sa-product-detail-image{
+    height:190px;
+  }
+
+  .sa-info-box h3{
+    font-size:18px;
+  }
+
+  .sa-table-title{
+    font-size:18px;
+  }
+
+  .sa-product-btn{
+    font-size:13px;
+  }
+}
+
+  /* ========================================================== */
+
   /* =========================
    BRANDS SECTION
 ========================= */
@@ -787,24 +1005,105 @@
     transform: scale(1.1);
   }
 
-  /* MOBILE */
-  @media(max-width:992px) {
-    .sa-brand-strip {
-      grid-template-columns: repeat(2, 240px);
-    }
+  /* ==========================================================
+   LARGE TABLET
+========================================================== */
+@media (max-width:1200px){
+
+  .sa-brands-section{
+    padding:36px 24px;
   }
 
-  @media(max-width:576px) {
-    .sa-brand-strip {
-      grid-template-columns: 1fr;
-      justify-content: center;
-    }
-
-    .sa-brand-card {
-      width: 90%;
-      margin: auto;
-    }
+  .sa-brand-card{
+    width:170px;
+    height:105px;
   }
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+@media (max-width:992px){
+
+  .sa-brands-section{
+    padding:32px 18px;
+  }
+
+  .sa-brands-container{
+    width:100%;
+  }
+
+  .sa-section-title{
+    font-size:17px;
+    margin-bottom:20px;
+  }
+
+  .sa-brand-strip{
+    gap:14px;
+    padding-bottom:8px;
+  }
+
+  .sa-brand-card{
+    width:150px;
+    height:95px;
+    border-radius:14px;
+    padding:12px;
+  }
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+@media (max-width:576px){
+
+  .sa-brands-section{
+    padding:28px 12px;
+  }
+
+  .sa-section-title{
+    font-size:16px;
+    margin-bottom:18px;
+  }
+
+  .sa-section-title::after{
+    width:45px;
+    height:2px;
+    bottom:-6px;
+  }
+
+  .sa-brand-strip{
+    gap:12px;
+    padding-bottom:6px;
+  }
+
+  .sa-brand-card{
+    width:130px;
+    height:82px;
+    border-radius:12px;
+    padding:10px;
+    box-shadow:0 6px 16px rgba(0,0,0,0.05);
+  }
+
+  .sa-brand-card img{
+    transform:scale(1);
+  }
+}
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+@media (max-width:380px){
+
+  .sa-brand-card{
+    width:118px;
+    height:76px;
+    padding:8px;
+  }
+
+  .sa-brand-strip{
+    gap:10px;
+  }
+}
 
   /* ========================================================== */
 
@@ -864,146 +1163,345 @@
     }
   }
 
+/* ==========================================================
+   LARGE SCREEN
+========================================================== */
+@media (max-width:1200px){
 
-  @media (max-width: 1200px) {
-    .sa-explore-container {
-      padding: 0 20px;
-      gap: 24px;
-    }
-
-    .sa-explore-sidebar {
-      width: 330px;
-      min-width: 330px;
-    }
-
-    .sa-explore-heading {
-      font-size: 62px;
-    }
-
-    .sa-product-detail-card {
-      grid-template-columns: 1fr;
-    }
-
-    .sa-product-detail-image {
-      height: 360px;
-    }
-
-    .sa-info-grid {
-      grid-template-columns: 1fr;
-    }
+  .sa-explore-container{
+    padding:0 20px;
+    gap:24px;
   }
 
-  @media (max-width: 991px) {
-
-    .nav-links,
-    .nav-cta {
-      display: none;
-    }
-
-    .hamburger {
-      display: flex;
-    }
-
-    #navbar {
-      padding: 14px 20px;
-    }
-
-    .sa-explore-container {
-      flex-direction: column;
-    }
-
-    .sa-explore-sidebar {
-      width: 100%;
-      min-width: 100%;
-      position: static;
-    }
-
-    .sa-explore-heading {
-      font-size: 48px;
-    }
-
-    .sa-product-detail-content h2 {
-      font-size: 30px;
-    }
-
-    .sa-brand-strip {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .sa-gallery-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .footer-grid {
-      grid-template-columns: 1fr 1fr;
-    }
+  .sa-explore-sidebar{
+    width:320px;
+    min-width:320px;
   }
 
-  @media (max-width: 575px) {
-    .product-hero-simple {
-      min-height: 52vh;
-      padding: 110px 0 70px;
-    }
-
-    .sa-explore-product {
-      padding: 50px 0;
-    }
-
-    .sa-explore-container {
-      padding: 0 14px;
-    }
-
-    .sa-sidebar-box {
-      border-radius: 24px;
-      padding: 24px 16px;
-    }
-
-    .sa-sidebar-title {
-      font-size: 28px;
-    }
-
-    .sa-dropdown-toggle {
-      font-size: 15px;
-      padding: 16px 14px;
-    }
-
-    .sa-dropdown-menu {
-      padding: 0 14px;
-    }
-
-    .sa-dropdown.active .sa-dropdown-menu {
-      padding: 4px 14px 8px;
-    }
-
-    .sa-explore-heading {
-      font-size: 40px;
-    }
-
-    .sa-product-detail-card,
-    .sa-info-box,
-    .sa-table-wrap {
-      padding: 16px;
-      border-radius: 22px;
-    }
-
-    .sa-product-detail-image {
-      height: 250px;
-      border-radius: 18px;
-    }
-
-    .sa-product-detail-content h2 {
-      font-size: 24px;
-    }
-
-    .sa-brand-strip {
-      grid-template-columns: 1fr;
-    }
-
-    .footer-grid {
-      grid-template-columns: 1fr;
-    }
+  .sa-explore-heading{
+    font-size:62px;
   }
 
+  .sa-product-detail-card{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+
+  .sa-product-detail-image{
+    height:340px;
+    margin:0 auto;
+  }
+
+  .sa-info-grid{
+    grid-template-columns:1fr;
+  }
+
+  .sa-gallery-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+@media (max-width:991px){
+
+  .sa-explore-product{
+    padding:60px 0;
+  }
+
+  .sa-explore-container{
+    flex-direction:column;
+    padding:0 18px;
+    gap:26px;
+  }
+
+  .sa-explore-sidebar{
+    width:100%;
+    min-width:100%;
+    position:static;
+  }
+
+  .sa-sidebar-box{
+    padding:26px 18px;
+    border-radius:24px;
+  }
+
+  .sa-sidebar-title{
+    font-size:30px;
+  }
+
+  .sa-explore-main{
+    width:100%;
+    margin-top:2px;
+  }
+
+  .sa-explore-heading{
+    font-size:48px;
+    line-height:1.05;
+  }
+
+  .sa-product-detail-card{
+    padding:22px;
+    border-radius:24px;
+  }
+
+  .sa-product-detail-image{
+    width:100%;
+    height:300px;
+    margin:0;
+    padding:18px;
+  }
+
+  .sa-product-detail-content h2{
+    font-size:32px;
+  }
+
+  .sa-product-detail-content p{
+    font-size:15px;
+    line-height:1.8;
+  }
+
+  .sa-product-points li{
+    font-size:15px;
+  }
+
+  .sa-table-wrap{
+    overflow-x:auto;
+    padding:20px;
+  }
+
+  .sa-table{
+    min-width:700px;
+  }
+
+  .sa-gallery-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+  }
+
+  .sa-gallery-card img{
+    height:200px;
+  }
+
+  .sa-note-box{
+    padding:20px;
+  }
+
+  .sa-note-box h3{
+    font-size:20px;
+  }
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+@media (max-width:575px){
+
+  .product-hero-simple{
+    min-height:auto;
+    padding:110px 0 70px;
+  }
+
+  .sa-explore-product{
+    padding:50px 0;
+  }
+
+  .sa-explore-container{
+    padding:0 14px;
+    gap:22px;
+  }
+
+  .sa-sidebar-box{
+    border-radius:22px;
+    padding:22px 15px;
+  }
+
+  .sa-sidebar-title{
+    font-size:26px;
+    margin-bottom:20px;
+  }
+
+  .sa-dropdown{
+    border-radius:18px;
+  }
+
+  .sa-dropdown-toggle{
+    font-size:15px;
+    padding:15px 14px;
+  }
+
+  .sa-dropdown-menu{
+    padding:0 14px;
+  }
+
+  .sa-dropdown.active .sa-dropdown-menu{
+    padding:4px 14px 8px;
+  }
+
+  .sa-dropdown-menu a{
+    font-size:14px;
+    padding:11px 0;
+  }
+
+  .sa-explore-heading{
+    font-size:36px;
+    line-height:1.1;
+  }
+
+  .sa-explore-eyebrow{
+    font-size:12px;
+    letter-spacing:2px;
+  }
+
+  .sa-product-detail-card,
+  .sa-info-box,
+  .sa-table-wrap{
+    padding:16px;
+    border-radius:20px;
+  }
+
+  .sa-product-detail-image{
+    height:220px;
+    border-radius:16px;
+    padding:14px;
+  }
+
+  .sa-product-detail-image img{
+    object-fit:contain;
+  }
+
+  .sa-product-detail-content h2{
+    font-size:24px;
+    line-height:1.2;
+  }
+
+  .sa-product-detail-label{
+    font-size:12px;
+    padding:7px 12px;
+  }
+
+  .sa-product-detail-content p{
+    font-size:14px;
+    line-height:1.75;
+  }
+
+  .sa-product-points{
+    gap:8px;
+  }
+
+  .sa-product-points li{
+    font-size:14px;
+    line-height:1.7;
+    padding-left:18px;
+  }
+
+  .sa-product-btn{
+    width:100%;
+    padding:13px 20px;
+    font-size:14px;
+  }
+
+  .sa-info-box h3{
+    font-size:20px;
+  }
+
+  .sa-info-box h4{
+    font-size:16px;
+  }
+
+  .sa-info-box p{
+    font-size:14px;
+    line-height:1.7;
+  }
+
+  .sa-grade-list{
+    gap:8px;
+  }
+
+  .sa-grade-pill{
+    font-size:12px;
+    padding:8px 12px;
+  }
+
+  .sa-shielding-list li{
+    font-size:13px;
+    padding:10px 12px;
+  }
+
+  .sa-table-title{
+    font-size:20px;
+  }
+
+  .sa-table th,
+  .sa-table td{
+    font-size:13px;
+    padding:10px 8px;
+  }
+
+  .sa-gallery-grid{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+
+  .sa-gallery-card{
+    border-radius:18px;
+  }
+
+  .sa-gallery-card img{
+    height:220px;
+    padding:12px;
+  }
+
+  .sa-note-box{
+    border-radius:20px;
+    padding:18px;
+  }
+
+  .sa-note-box h3{
+    font-size:18px;
+    margin-bottom:8px;
+  }
+
+  .sa-note-box p{
+    font-size:14px;
+    line-height:1.7;
+  }
+}
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+@media (max-width:400px){
+
+  .sa-explore-heading{
+    font-size:30px;
+  }
+
+  .sa-sidebar-title{
+    font-size:22px;
+  }
+
+  .sa-product-detail-content h2{
+    font-size:21px;
+  }
+
+  .sa-product-detail-image{
+    height:190px;
+  }
+
+  .sa-gallery-card img{
+    height:190px;
+  }
+
+  .sa-note-box h3{
+    font-size:17px;
+  }
+
+  .sa-note-box p{
+    font-size:13px;
+  }
+}
   /* =========================
    PRODUCT DROPDOWN SKETCH STYLE
 ========================= */
@@ -1416,10 +1914,11 @@
       font-size: 14px !important;
     }
 
-    .sa-explore-main {
-      width: 100%;
-      min-width: 0;
-    }
+  .sa-explore-main {
+  width: 100%;
+  min-width: 0;
+  margin-top: 24px !important;
+}
 
     .sa-explore-head {
       margin-bottom: 18px !important;
@@ -1911,6 +2410,12 @@
           </li>
           <li><a href="gallery.html" class="ps-nav-link">Gallery</a></li>
           <li><a href="certificates.html" class="ps-nav-link">Certificates</a></li>
+          <li class="ps-mobile-contact">
+            <a href="contact.html" class="ps-mobile-contact-btn">
+              <span>Contact</span>
+              <span>→</span>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- CTA -->
@@ -2402,7 +2907,13 @@ PRODUCT HERO - CLEAN FINAL
               <span class="sa-dropdown-icon">▼</span>
             </button>
             <div class="sa-dropdown-menu">
-              <a href="#" class="sa-product-link" data-product="cutting-tools">View Product</a>
+
+              <!-- NEW PRODUCTS -->
+              <a href="#" class="sa-product-link" data-product="Drills">Drills</a>
+              <a href="#" class="sa-product-link" data-product="Carbide Rotary Burr Cutter">Carbide Rotary Burr Cutter</a>
+              <a href="#" class="sa-product-link" data-product="Blade-Band Saw Blade">Blade / Band Saw Blade</a>
+              <a href="#" class="sa-product-link" data-product="Deburring Tool">Deburring Tool</a>
+         
             </div>
           </div>
           <!-- =========================================================================== -->
@@ -6577,7 +7088,7 @@ PRODUCT HERO - CLEAN FINAL
 
           <!-- =========================
      DEVELOPER / CONTRAST BACKGROUND COATING
-========================= -->
+          ========================= -->
           <div class="sa-product-section" id="developer-contrast-coating">
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
@@ -8700,27 +9211,125 @@ PRODUCT HERO - CLEAN FINAL
           </div>
           <!-- ===============================PRODUCT 15============================================================================== -->
 
-          <div class="sa-product-section" id="cutting-tools">
-            <section class="sa-brands-section">
-              <h2 class="sa-section-title">Trusted Brands We Deal In</h2>
-              <div class="sa-brand-strip">
-                <div class="sa-brand-card"><img src="img/it_logo.jpg" alt="Venus"></div>
-                <div class="sa-brand-card"><img src="img/addison_logo.jpg" alt="Anand Arc"></div>
-
+     <!-- DRILLS -->
+        <div class="sa-product-section" id="Drills">
+          <section class="sa-brands-section">
+            <h2 class="sa-section-title">Trusted Brands We Deal In</h2>
+            <div class="sa-brand-strip">
+              <div class="sa-brand-card">
+                <img src="img/it_logo.jpg" alt="IT">
               </div>
-            </section>
-            <div class="sa-product-detail-card">
-              <div class="sa-product-detail-image">
-                <img src="img/Cutting Tools.webp" alt="Cutting Tools">
-              </div>
-              <div class="sa-product-detail-content">
-                <span class="sa-product-detail-label">Tools</span>
-                <h2>Cutting Tools</h2>
-                <p>Heavy-duty cutting tools designed for efficiency, accuracy and extended performance.</p>
-                <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+              <div class="sa-brand-card">
+                <img src="img/addison_logo.jpg" alt="Addison">
               </div>
             </div>
-          </div>
+          </section>
+
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/drills.webp" alt="Drills">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Cutting Tools</span>
+      <h2>Drills</h2>
+
+      <p>
+        High-performance drilling tools designed for precision,
+        durability and efficient industrial operations.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Available in multiple sizes and diameters</li>
+        <li>Suitable for metal and industrial drilling</li>
+        <li>Long-lasting and high-speed performance</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- CARBIDE ROTARY BURR CUTTER -->
+<div class="sa-product-section" id="Carbide Rotary Burr Cutter">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/carbide-rotary-burr-cutter.webp" alt="Carbide Rotary Burr Cutter">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Industrial Tools</span>
+      <h2>Carbide Rotary Burr Cutter</h2>
+
+      <p>
+        Premium quality rotary burr cutters used for grinding,
+        shaping, deburring and finishing applications.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>High cutting efficiency and durability</li>
+        <li>Suitable for metal finishing applications</li>
+        <li>Available in different shapes and sizes</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- BLADE / BAND SAW BLADE -->
+<div class="sa-product-section" id="Blade-Band Saw Blade">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/band-saw-blade.webp" alt="Blade / Band Saw Blade">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Sawing Tools</span>
+      <h2>Blade / Band Saw Blade</h2>
+
+      <p>
+        Heavy-duty band saw blades designed for smooth,
+        accurate and high-speed cutting performance.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Suitable for industrial cutting operations</li>
+        <li>Sharp teeth for precision cutting</li>
+        <li>Available in various blade sizes</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- DEBURRING TOOL -->
+<div class="sa-product-section" id="Deburring Tool">
+  <div class="sa-product-detail-card">
+    <div class="sa-product-detail-image">
+      <img src="img/deburring-tool.webp" alt="Deburring Tool">
+    </div>
+
+    <div class="sa-product-detail-content">
+      <span class="sa-product-detail-label">Finishing Tools</span>
+      <h2>Deburring Tool</h2>
+
+      <p>
+        Professional deburring tools used for removing sharp edges,
+        burrs and surface imperfections from materials.
+      </p>
+
+      <ul class="sa-product-points">
+        <li>Provides smooth and clean finishing</li>
+        <li>Comfortable grip for easy handling</li>
+        <li>Ideal for metal and industrial applications</li>
+      </ul>
+
+      <a href="contact.html" class="sa-product-btn">Enquire Now</a>
+    </div>
+  </div>
+</div>
           <!-- ===============================PRODUCT 16============================================================================== -->
 
           <div class="sa-product-section" id="power-tools">
@@ -8921,19 +9530,33 @@ document.addEventListener("DOMContentLoaded", function () {
       this.classList.add("active");
       targetSection.classList.add("active");
 
-      /* MOBILE AUTO SCROLL */
-      if (window.innerWidth < 992 && productDisplay) {
+      /* =========================
+         AUTO SCROLL TO TOP
+      ========================= */
 
-        setTimeout(() => {
+      setTimeout(() => {
 
+        if (window.innerWidth < 992 && productDisplay) {
+
+          /* MOBILE */
           productDisplay.scrollIntoView({
             behavior: "smooth",
             block: "start"
           });
 
-        }, 120);
+        } else {
 
-      }
+          /* DESKTOP */
+          const topOffset = targetSection.getBoundingClientRect().top + window.pageYOffset - 100;
+
+          window.scrollTo({
+            top: topOffset,
+            behavior: "smooth"
+          });
+
+        }
+
+      }, 100);
 
     });
 
