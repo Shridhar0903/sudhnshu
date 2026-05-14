@@ -455,6 +455,7 @@
   }
 
 /* PRODUCT CARD */
+/* PRODUCT CARD */
 .sa-product-detail-card{
   display:grid;
   grid-template-columns: 320px 1fr;
@@ -468,29 +469,36 @@
   margin-bottom:24px;
 }
 
-  /* IMAGE BOX */
+/* IMAGE BOX */
+/* IMAGE BOX */
 .sa-product-detail-image{
   width:100%;
-  height:350px;
-  border-radius:22px;
-  overflow:hidden;
-  background:#f7f7f7;
   display:flex;
+  flex-direction:column;
+  gap:25px;
+
   align-items:center;
   justify-content:center;
-  padding:20px ;
-  margin-top: 30%;
-  margin-bottom: 30%;
 
+  background:#f7f7f7;
+  border-radius:22px;
+
+  padding:25px; /* equal spacing from all sides */
 }
 
- /* IMAGE */
+/* IMAGE */
 .sa-product-detail-image img{
   width:100%;
-  height:100%;
-  object-fit:contain;
+  height:240px; /* increased height */
 
+  object-fit:contain;
   display:block;
+
+  background:#fff;
+  border-radius:18px;
+
+  padding:15px; /* equal inner spacing */
+  border:1px solid #e8e8e8;
 }
 
   .sa-product-detail-content h2 {
@@ -687,27 +695,45 @@
    PRODUCT SECTION RESPONSIVE
 ========================================================== */
 
-/* =========================
+/* ==========================================================
    TABLET
-========================= */
+========================================================== */
+
 @media (max-width: 991px){
 
   .sa-product-detail-card{
     grid-template-columns:1fr;
     gap:24px;
-    padding:22px;
+    margin-top: 70px;
+    margin-bottom:50px;
+       padding:16px 20px 16px;
     border-radius:24px;
   }
 
   .sa-product-detail-image{
-    height:300px;
-    margin:0;
-    padding:18px;
+    gap:20px;
+    padding:20px;
     border-radius:20px;
+    margin:0;
+  }
+
+  .sa-product-detail-image img{
+    max-height:220px;
+    padding:12px;
+    border-radius:16px;
+  }
+
+  /* single image larger */
+  .sa-product-detail-image img:only-child{
+    max-height:300px;
+  }
+   .sa-product-detail-content{
+    margin-top: 100px;
   }
 
   .sa-product-detail-content h2{
     font-size:34px;
+
     line-height:1.15;
   }
 
@@ -749,34 +775,54 @@
   }
 }
 
-/* =========================
+/* ==========================================================
    MOBILE
-========================= */
+========================================================== */
+
 @media (max-width: 575px){
 
   .sa-product-detail-card{
     grid-template-columns:1fr;
     gap:18px;
-    padding:16px;
+    margin-top:5px;
+    padding:16px 20px 16px;
     border-radius:20px;
-    margin-bottom:18px;
+    margin-bottom:80px;
   }
 
   .sa-product-detail-image{
-    height:220px;
-    margin:0;
-    padding:14px;
+    gap:16px;
+    padding:16px;
     border-radius:16px;
+    margin:0;
   }
 
   .sa-product-detail-image img{
+    width:100%;
+
+    height:auto;
+    max-height:180px;
+    min-height:120px;
+
     object-fit:contain;
+
+    padding:10px;
+    border-radius:14px;
+  }
+
+  /* ONLY ONE IMAGE */
+  .sa-product-detail-image img:only-child{
+    max-height:240px;
+  }
+   .sa-product-detail-content{
+    margin-top: 50px;
   }
 
   .sa-product-detail-content h2{
     font-size:24px;
     line-height:1.2;
     margin-bottom:12px;
+   
   }
 
   .sa-product-detail-label{
@@ -877,9 +923,10 @@
   }
 }
 
-/* =========================
+/* ==========================================================
    SMALL MOBILE
-========================= */
+========================================================== */
+
 @media (max-width: 400px){
 
   .sa-product-detail-content h2{
@@ -887,7 +934,21 @@
   }
 
   .sa-product-detail-image{
-    height:190px;
+    gap:12px;
+    padding:12px;
+  }
+
+  .sa-product-detail-image img{
+    max-height:150px;
+    min-height:100px;
+
+    padding:8px;
+    border-radius:12px;
+  }
+
+  /* single image larger */
+  .sa-product-detail-image img:only-child{
+    max-height:200px;
   }
 
   .sa-info-box h3{
@@ -902,7 +963,6 @@
     font-size:13px;
   }
 }
-
   /* ========================================================== */
 
   /* =========================
@@ -3027,6 +3087,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/wel2.webp " alt="Stainless Steel TIG Welding Wire">
+                  <img src="img/tig-wire2.jfif " alt="Stainless Steel TIG Welding Wire">
               </div>
               <div class="sa-product-detail-content">
                 <span class="sa-product-detail-label">TIG Welding Filler Wires</span>
@@ -3378,6 +3439,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/tig.webp" alt="Mild Steel TIG Welding Wires">
+                 <img src="img/Mig-wire.jfif" alt="Mild Steel TIG Welding Wires">
               </div>
 
               <div class="sa-product-detail-content">
@@ -3538,6 +3600,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/aluminium-tig-main.jpg" alt="Aluminium TIG Welding Wires">
+                <img src="img/aluminium-wire.webp" alt="Aluminium TIG Welding Wires">
               </div>
 
               <div class="sa-product-detail-content">
@@ -3665,8 +3728,7 @@
             </div>
           </div>
 
-
-          <!-- =========================
+<!-- =========================
      SILVER BRAZING
 ========================= -->
           <div class="sa-product-section" id="silver-brazing">
@@ -3675,6 +3737,8 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/silver-brazing-main.jpg" alt="Silver Brazing Alloys">
+                <img src="img/silver-wire.jpg" alt="Silver Brazing Alloys">
+          
               </div>
 
               <div class="sa-product-detail-content">
@@ -3819,6 +3883,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/hard-facing-electrodes-main.jpg" alt="Hard Facing Electrodes">
+                  <img src="img/HF2.webp" alt="Hard Facing Electrodes">
               </div>
 
               <div class="sa-product-detail-content">
@@ -3888,6 +3953,7 @@
 
               <div class="sa-product-detail-image">
                 <img src="img/ms-electrodes-main.jpg" alt="M S Electrodes">
+                 <img src="img/MS-2.png" alt="M S Electrodes">
               </div>
 
               <div class="sa-product-detail-content">
@@ -4004,7 +4070,8 @@
             <div class="sa-product-detail-card">
 
               <div class="sa-product-detail-image">
-                <img src="img/electrodes.jpg" alt="S S Electrodes">
+                <img src="img/elctrode.jpg" alt="S S Electrodes">
+                <img src="img/ss2.jpg" alt="S S Electrodes">
               </div>
 
               <div class="sa-product-detail-content">
@@ -4137,6 +4204,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/apron-chrome-leather.jpeg" alt="Apron Chrome Leather">
+                <img src="img/apron-2.png" alt="Apron Chrome Leather">
               </div>
               <div class="sa-product-detail-content">
                 <span class="sa-product-detail-label">Safety Accessory</span>
@@ -4159,6 +4227,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/wire-brush.jpeg" alt="Wire Brush">
+                
               </div>
               <div class="sa-product-detail-content">
                 <span class="sa-product-detail-label">Welding Accessories</span>
@@ -4181,6 +4250,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/cable-lugs.jpeg" alt="Cable Lugs">
+        
               </div>
               <div class="sa-product-detail-content">
                 <span class="sa-product-detail-label">Welding Accessories</span>
@@ -4313,6 +4383,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/welding-glass.jpeg" alt="Welding Black and White Glass">
+                <img src="img/welding-glass2.jpeg" alt="Welding Black and White Glass">
               </div>
               <div class="sa-product-detail-content">
                 <span class="sa-product-detail-label">Safety Glass</span>
@@ -4577,7 +4648,7 @@
           <div class="sa-product-section" id="spot-welding-electrode">
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
-                <img src="img/electrodes.jpg" alt="Spot Welding Electrode">
+                <img src="img/spot-welding-electrode.webp" alt="Spot Welding Electrode">
               </div>
               <div class="sa-product-detail-content">
                 <span class="sa-product-detail-label">Welding Electrode</span>
@@ -4697,6 +4768,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/Goggles.jpg" alt="Safety Goggles">
+                 <img src="img/welding-goggals2.jpg" alt="Safety Goggles">
               </div>
               <div class="sa-product-detail-content">
                 <span class="sa-product-detail-label">Eye Protection</span>
@@ -4857,6 +4929,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/Barrication Tape.jpg" alt="Barrication Tape">
+                   <img src="img/tape2.jpg" alt="Barrication Tape">
               </div>
               <div class="sa-product-detail-content">
                 <span class="sa-product-detail-label">Safety Equipment</span>
@@ -4896,6 +4969,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/tig-water.webp" alt="TIG Water Circulator">
+                  <img src="img/water-circulator.jfif" alt="TIG Water Circulator">
               </div>
 
               <div class="sa-product-detail-content">
@@ -5035,6 +5109,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/WCD-600.webp" alt="Argon Arc Welding Torch WCD 600">
+                 <img src="img/torch1.jfif" alt="Argon Arc Welding Torch WCD 600">
               </div>
 
               <div class="sa-product-detail-content">
@@ -6448,6 +6523,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/CO2.webp" alt="CO2 Torch">
+              
               </div>
 
               <div class="sa-product-detail-content">
@@ -6892,6 +6968,8 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/Gas.jpg" alt="Gas Cutting Nozzle">
+                <img src="img/glass-cutting2.jpg" alt="Gas Cutting Nozzle">
+              
               </div>
               <div class="sa-product-detail-content">
                 <span class="sa-product-detail-label">Gas Cutting</span>
@@ -7049,6 +7127,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/Dyeglo -1.jfif" alt="Red Dye Penetrant Material">
+                 <img src="img/dyeglo_2.jpg" alt="Red Dye Penetrant Material">
               </div>
 
               <div class="sa-product-detail-content">
@@ -7101,6 +7180,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/fluorent.jfif" alt="Fluorescent Dye Penetrant Material">
+                 <img src="img/fluorent-2.jpg" alt="Fluorescent Dye Penetrant Material">
               </div>
 
               <div class="sa-product-detail-content">
@@ -7161,6 +7241,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/dp3.webp" alt="Developer Contrast Background Coating">
+                <img src="img/Developer-Contrast.webp" alt="Developer Contrast Background Coating">
               </div>
 
               <div class="sa-product-detail-content">
@@ -7412,7 +7493,7 @@
             <div class="sa-product-detail-card">
 
               <div class="sa-product-detail-image">
-                <img src="img/m-series-flowmeter.jpg" alt="M Series Flowmeter Regulator">
+                <img src="img/MF-Series-Single-Stage.webp" alt="M Series Flowmeter Regulator">
               </div>
 
               <div class="sa-product-detail-content">
@@ -7580,6 +7661,7 @@
 
               <div class="sa-product-detail-image">
                 <img src="img/product11.webp" alt="Master Valve For Manifold">
+                <img src="img/valve.jpg" alt="Master Valve For Manifold">
               </div>
 
               <div class="sa-product-detail-content">
@@ -8242,6 +8324,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/corrosion-1.jpg" alt="Corrosion Resistance Aerosols">
+                <img src="img/air-drying-paint2.webp" alt="Corrosion Resistance Aerosols">
               </div>
 
               <div class="sa-product-detail-content">
@@ -8392,6 +8475,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/nd-testing.jpg" alt="NDT Testing Aerosol Sprays">
+                <img src="img/NDT-2.webp" alt="NDT Testing Aerosol Sprays">
               </div>
 
               <div class="sa-product-detail-content">
@@ -8458,6 +8542,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/electrical-maintenance.jpg" alt="Electrical Maintenance Aerosols">
+                 <img src="img/EM2.jfif" alt="Electrical Maintenance Aerosols">
               </div>
 
               <div class="sa-product-detail-content">
@@ -8540,6 +8625,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/lubricants.jpg" alt="Lubricant Aerosols">
+                  <img src="img/LA2.jpg" alt="Lubricant Aerosols">
               </div>
 
               <div class="sa-product-detail-content">
@@ -8641,6 +8727,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/cleaner.jpg" alt="Cleaner Aerosols">
+                 <img src="img/CA2.png" alt="Cleaner Aerosols">
               </div>
 
               <div class="sa-product-detail-content">
@@ -8725,6 +8812,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/automobile.jpg" alt="Aerosols for Automobiles">
+                <img src="img/Automobile2.jfif" alt="Aerosols for Automobiles">
               </div>
 
               <div class="sa-product-detail-content">
@@ -8875,6 +8963,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/Polishing Machine for SS.jpg" alt="Polishing Machine for Stainless Steel">
+                <img src="img/PM-SS.jfif" alt="Polishing Machine for Stainless Steel">
               </div>
 
               <div class="sa-product-detail-content">
@@ -9295,7 +9384,7 @@
 
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
-      <img src="img/drills.webp" alt="Drills">
+      <img src="img/drills.jpg" alt="Drills">
     </div>
 
     <div class="sa-product-detail-content">
@@ -9322,7 +9411,7 @@
 <div class="sa-product-section" id="Carbide Rotary Burr Cutter">
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
-      <img src="img/carbide-rotary-burr-cutter.webp" alt="Carbide Rotary Burr Cutter">
+      <img src="img/carbide-burr-cutter.webp" alt="Carbide Rotary Burr Cutter">
     </div>
 
     <div class="sa-product-detail-content">
@@ -9349,7 +9438,7 @@
 <div class="sa-product-section" id="Blade-Band Saw Blade">
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
-      <img src="img/band-saw-blade.webp" alt="Blade / Band Saw Blade">
+      <img src="img/bandsaw-blade.jpg" alt="Blade / Band Saw Blade">
     </div>
 
     <div class="sa-product-detail-content">
@@ -9376,7 +9465,7 @@
 <div class="sa-product-section" id="Deburring Tool">
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
-      <img src="img/deburring-tool.webp" alt="Deburring Tool">
+      <img src="img/deburring-tools.webp" alt="Deburring Tool">
     </div>
 
     <div class="sa-product-detail-content">
