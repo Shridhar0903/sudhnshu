@@ -1351,19 +1351,10 @@
       color: #ffffff;
     }
 
-
-/* =========================================================
-   HERO SLIDER
-========================================================= */
-
-/* =========================================================
-   HERO SLIDER
-========================================================= */
-
 .hero-slider{
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 90vh; /* reduced height */
   overflow: hidden;
   background: #000;
 }
@@ -1392,12 +1383,20 @@
 }
 
 /* =========================================================
-   COMMON IMAGE
+   IMAGE
 ========================================================= */
 
-.hero-slide img{
+.hero-slide img,
+.desktop-banner{
   width: 100%;
   height: 100%;
+
+  /* full section filled */
+  object-fit: cover;
+
+  /* image full visible from top */
+  object-position: center top;
+
   display: block;
 }
 
@@ -1408,8 +1407,14 @@
 .desktop-banner{
   position: absolute;
   inset: 0;
-  object-fit: cover;
+
+  width: 100%;
+  height: 100%;
+
+  /* full image visible */
+  object-fit: contain;
   object-position: center;
+
   display: block;
 }
 
