@@ -2082,6 +2082,20 @@
     }
   }
 
+
+ /* =========================
+   PRODUCT SHOW / HIDE
+========================= */
+
+#saProductDisplay > .sa-product-section{
+  display: none;
+}
+
+#saProductDisplay > .sa-product-section.active{
+  display: block;
+}
+
+
   /* =========================
    FOOTER
 ========================= */
@@ -2159,10 +2173,10 @@
       <!-- Nav -->
       <nav class="ps-nav" id="psNav">
         <ul class="ps-nav-list">
-          <li><a href="index.html" class="ps-nav-link active">Home</a></li>
+          <li><a href="index.html" class="ps-nav-link">Home</a></li>
           <li><a href="about.html" class="ps-nav-link">About</a></li>
           <li class="ps-dropdown ps-dropdown-mega" id="psProductsDropdown">
-            <a href="product.html" class="ps-nav-link ps-dropdown-toggle" id="psProductsToggle">
+            <a href="product.html" class="ps-nav-link ps-dropdown-toggle active" id="psProductsToggle">
               Product <span class="ps-drop-caret">▼</span>
             </a>
 
@@ -2984,6 +2998,7 @@
 
 
       <!-- ========================Product 1============================================ -->
+
 
       <div class="sa-explore-main">
         <div class="sa-explore-head">
@@ -9520,8 +9535,8 @@
     </div>
   </footer>
 
-  <script>
-document.addEventListener("DOMContentLoaded", function () {
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
 
   /* =========================
      SIDEBAR DROPDOWN
@@ -9556,8 +9571,69 @@ document.addEventListener("DOMContentLoaded", function () {
   ========================= */
 
   const saProductLinks = document.querySelectorAll(".sa-product-link");
-  const saProductSections = document.querySelectorAll(".sa-product-section");
+
+  /* FIXED SELECTOR */
+  const saProductSections = document.querySelectorAll(
+    "#saProductDisplay > .sa-product-section"
+  );
+
   const productDisplay = document.getElementById("saProductDisplay");
+
+  /* =========================
+     OPEN PRODUCT FROM URL HASH
+  ========================= */
+
+  const hash = window.location.hash;
+
+  if (hash) {
+
+    const targetSection = document.querySelector(hash);
+
+    if (targetSection) {
+
+      /* REMOVE ACTIVE FROM ALL */
+      saProductSections.forEach((section) => {
+        section.classList.remove("active");
+      });
+
+      /* SHOW TARGET PRODUCT */
+      targetSection.classList.add("active");
+
+      /* ACTIVE SIDEBAR LINK */
+      saProductLinks.forEach((link) => {
+
+        link.classList.remove("active");
+
+        if (
+          link.getAttribute("data-product") === hash.substring(1)
+        ) {
+          link.classList.add("active");
+        }
+
+      });
+
+      /* AUTO SCROLL */
+      setTimeout(() => {
+
+        const topOffset =
+          targetSection.getBoundingClientRect().top +
+          window.pageYOffset -
+          100;
+
+        window.scrollTo({
+          top: topOffset,
+          behavior: "smooth"
+        });
+
+      }, 200);
+
+    }
+
+  }
+
+  /* =========================
+     SIDEBAR PRODUCT CLICK
+  ========================= */
 
   saProductLinks.forEach((link) => {
 
@@ -9566,6 +9642,7 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault();
 
       const productId = this.getAttribute("data-product");
+
       const targetSection = document.getElementById(productId);
 
       if (!targetSection) return;
@@ -9583,10 +9660,14 @@ document.addEventListener("DOMContentLoaded", function () {
       this.classList.add("active");
       targetSection.classList.add("active");
 
-      /* =========================
-         AUTO SCROLL TO TOP
-      ========================= */
+      /* UPDATE URL HASH */
+      history.replaceState(
+        null,
+        null,
+        "#" + productId
+      );
 
+      /* AUTO SCROLL */
       setTimeout(() => {
 
         if (window.innerWidth < 992 && productDisplay) {
@@ -9600,7 +9681,10 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
 
           /* DESKTOP */
-          const topOffset = targetSection.getBoundingClientRect().top + window.pageYOffset - 100;
+          const topOffset =
+            targetSection.getBoundingClientRect().top +
+            window.pageYOffset -
+            100;
 
           window.scrollTo({
             top: topOffset,
@@ -9620,7 +9704,10 @@ document.addEventListener("DOMContentLoaded", function () {
   ========================= */
 
   const accessoriesBtn = document.getElementById("saViewMoreAccessories");
-  const accessoriesMore = document.getElementById("saWeldingAccessoriesMore");
+
+  const accessoriesMore = document.getElementById(
+    "saWeldingAccessoriesMore"
+  );
 
   if (accessoriesBtn && accessoriesMore) {
 
@@ -9642,7 +9729,10 @@ document.addEventListener("DOMContentLoaded", function () {
   ========================= */
 
   const pressureBtn = document.getElementById("saViewMorePressure");
-  const pressureMore = document.getElementById("sapressureRegulatorsMore");
+
+  const pressureMore = document.getElementById(
+    "sapressureRegulatorsMore"
+  );
 
   if (pressureBtn && pressureMore) {
 
@@ -9661,6 +9751,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
+    
 
 <script src="script.js"></script>
 

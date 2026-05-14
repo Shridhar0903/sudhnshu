@@ -2987,14 +2987,14 @@
               clean and high-strength welding performance across stainless steel,
               mild steel, aluminium and alloy-based fabrication applications.
             </p>
-            <a href="product.html" class="sa-product-btn">Explore</a>
+            <a href="product.html#stainless-steel-tig" class="sa-product-btn">Explore</a>
           </div>
         </article>
 
         <!-- Card 2 -->
         <article class="sa-product-card">
           <div class="sa-product-media">
-            <img src="img/el1.jpg" alt="Electrodes" class="sa-product-image">
+            <img src="img/elctrode.jpg" alt="Electrodes" class="sa-product-image">
             <div class="sa-product-overlay"></div>
             <div class="sa-product-badge">02</div>
           </div>
@@ -3007,14 +3007,14 @@
               fabrication work, offering smooth arc performance, deeper penetration
               and durable weld quality for industrial applications.
             </p>
-            <a href="product.html" class="sa-product-btn">Explore</a>
+            <a href="product.html#ms-electrodes" class="sa-product-btn">Explore</a>
           </div>
         </article>
 
         <!-- Card 3 -->
         <article class="sa-product-card">
           <div class="sa-product-media">
-            <img src="img/welsora.webp" alt="Welding Accessories" class="sa-product-image">
+            <img src="img/wel-09.png" alt="Welding Accessories" class="sa-product-image">
             <div class="sa-product-overlay"></div>
             <div class="sa-product-badge">03</div>
           </div>
@@ -3027,14 +3027,14 @@
               efficient and uninterrupted welding operations, helping improve
               productivity and connection reliability on-site and in workshops.
             </p>
-            <a href="product.html" class="sa-product-btn">Explore</a>
+            <a href="product.html#apron-chrome-leather" class="sa-product-btn">Explore</a>
           </div>
         </article>
 
         <!-- Card 4 -->
         <article class="sa-product-card">
           <div class="sa-product-media">
-            <img src="img/Safety Equipments.webp" alt="Safety Equipments" class="sa-product-image">
+            <img src="img/saftey-1.jpg" alt="Safety Equipments" class="sa-product-image">
             <div class="sa-product-overlay"></div>
             <div class="sa-product-badge">04</div>
           </div>
@@ -3047,14 +3047,14 @@
               fabrication, construction and maintenance environments, ensuring
               comfort, compliance and dependable protection during operations.
             </p>
-            <a href="product.html" class="sa-product-btn">Explore</a>
+            <a href="product.html#safety-apron-chrome-leather" class="sa-product-btn">Explore</a>
           </div>
         </article>
 
         <!-- Card 5 -->
         <article class="sa-product-card">
           <div class="sa-product-media">
-            <img src="img/ti.webp" alt="TIG Welding Torch and Spares" class="sa-product-image">
+            <img src="img/tig-torch.jpg" alt="TIG Welding Torch and Spares" class="sa-product-image">
             <div class="sa-product-overlay"></div>
             <div class="sa-product-badge">05</div>
           </div>
@@ -3067,7 +3067,7 @@
               accuracy, heat resistance and long service life, suitable for
               precision welding jobs across fabrication and industrial sectors.
             </p>
-            <a href="product.html" class="sa-product-btn">Explore</a>
+            <a href="product.html#tig-water-circulator" class="sa-product-btn">Explore</a>
           </div>
         </article>
 
@@ -3078,6 +3078,7 @@
   <!-- AOS CSS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 
+<!-- ============================================================================================ -->
   <!-- OUR CUSTOMERS / WHO WE SERVE -->
   <section class="clients-serve-section" id="customers">
     <div class="container">
@@ -3570,6 +3571,69 @@ document.addEventListener("DOMContentLoaded", function () {
 
   });
 
+  /* =========================
+     OPEN PRODUCT FROM URL HASH
+  ========================= */
+
+  const productSections = document.querySelectorAll(
+    "#saProductDisplay > .sa-product-section"
+  );
+
+  const productLinks = document.querySelectorAll(".sa-product-link");
+
+  const hash = window.location.hash;
+
+  /* REMOVE ACTIVE FROM ALL */
+  productSections.forEach(section => {
+    section.classList.remove("active");
+  });
+
+  /* IF URL HASH EXISTS */
+  if (hash) {
+
+    const targetSection = document.querySelector(hash);
+
+    if (targetSection) {
+
+      targetSection.classList.add("active");
+
+      /* ACTIVE SIDEBAR LINK */
+      productLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if (
+          link.getAttribute("data-product") === hash.substring(1)
+        ) {
+          link.classList.add("active");
+        }
+
+      });
+
+      /* SCROLL TO PRODUCT */
+      setTimeout(() => {
+
+        targetSection.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+      }, 200);
+
+    } else {
+
+      /* DEFAULT FIRST PRODUCT */
+      productSections[0].classList.add("active");
+
+    }
+
+  } else {
+
+    /* DEFAULT FIRST PRODUCT */
+    productSections[0].classList.add("active");
+
+  }
+
 });
 
 /* =========================
@@ -3599,6 +3663,7 @@ window.addEventListener("load", function () {
 
 });
 </script>
+
     
 
 
