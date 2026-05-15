@@ -83,6 +83,39 @@
     --transition-slow: all 0.6s cubic-bezier(.4, 0, .2, 1);
   }
 
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+.reveal-left,
+.reveal-up{
+  opacity: 0;
+  transition: .9s ease;
+}
+
+.reveal-left{
+  transform: translateX(-50px);
+}
+
+.reveal-up{
+  transform: translateY(50px);
+}
+
+.reveal-left.active,
+.reveal-up.active{
+  opacity: 1;
+  transform: none;
+}
+
+.delay-1{
+  transition-delay: .15s;
+}
+
+.delay-2{
+  transition-delay: .3s;
+}
+
 </style>
 <body>
   <!-- ==============================navbar================================= -->
@@ -863,7 +896,7 @@
   </style>
 
 
-  <section class="about-hero-simple">
+  <section class="about-hero-simple reveal-up">
     <!-- <div class="about-hero-bg"></div> -->
     <div class="container">
       <div class="about-hero-content">
@@ -1083,7 +1116,7 @@
 
  </style>
 
-  <section class="about-intro">
+  <section class="about-intro reveal-up">
     <div class="container">
       <div class="about-intro-grid">
         <div class="about-intro-content reveal-left">
@@ -1499,8 +1532,8 @@
 
   </style>
 
-  <section class="timeline-pro">
-    <div class="container reveal-left">
+  <section class="timeline-pro reveal-up">
+    <div class="container ">
 
       <div class="section-header">
         <span class="section-eyebrow">Our Journey</span>
@@ -1513,10 +1546,10 @@
         <div class="timeline-line"></div>
 
         <!-- ITEM 1 -->
-        <div class="timeline-row left">
-          <div class="year-big reveal-left">1974</div>
+        <div class="timeline-row left reveal-up">
+          <div class="year-big ">1974</div>
 
-          <div class="timeline-content reveal-right">
+          <div class="timeline-content ">
             <span>FOUNDATION</span>
             <p>
               Our story began in 1974, in a small 150 sq. ft. space in Kasarwadi, with just 50 valued clients and a
@@ -1528,10 +1561,10 @@
         </div>
 
         <!-- ITEM 2 -->
-        <div class="timeline-row right">
-          <div class="year-big reveal-right">1999</div>
+        <div class="timeline-row right reveal-up">
+          <div class="year-big ">1999</div>
 
-          <div class="timeline-content reveal-left">
+          <div class="timeline-content ">
             <span>RESTRUCTURED</span>
             <p>
               A major turning point came in 1999, when we restructured and expanded into a 1500 sq. ft. space in
@@ -1544,10 +1577,10 @@
         </div>
 
         <!-- ITEM 3 -->
-        <div class="timeline-row left reveal-left">
+        <div class="timeline-row left reveal-up">
           <div class="year-big">Today</div>
 
-          <div class="timeline-content reveal-">
+          <div class="timeline-content ">
             <span>CURRENT</span>
             <p>
               Today, we operate from a 6000 sq. ft. facility in Bhosari, serving 1000+ clients with continued growth and
@@ -2051,7 +2084,7 @@
 }
   </style>
 
-  <section class="application-horizontal" id="application-horizontal">
+  <section class="application-horizontal reveal-up" id="application-horizontal">
     <div class="container">
       <div class="application-horizontal-head reveal-up">
         <!-- <span class="section-eyebrow">Areas Of Application</span> -->
@@ -2177,6 +2210,7 @@
       </div>
     </div>
   </section>
+
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const appScrollWrap = document.getElementById("appScrollWrap");
@@ -2410,37 +2444,6 @@
   color: var(--body-text);
 }
 
-/* =========================================================
-   REVEAL ANIMATION
-========================================================= */
-
-.reveal-left,
-.reveal-up{
-  opacity: 0;
-  transition: .9s ease;
-}
-
-.reveal-left{
-  transform: translateX(-50px);
-}
-
-.reveal-up{
-  transform: translateY(50px);
-}
-
-.reveal-left.active,
-.reveal-up.active{
-  opacity: 1;
-  transform: none;
-}
-
-.delay-1{
-  transition-delay: .15s;
-}
-
-.delay-2{
-  transition-delay: .3s;
-}
 
 /* =========================================================
    SECOND CUSTOMERS SECTION
@@ -2827,7 +2830,7 @@
   }
 }
      </style>
-    <section class="customers-section ">
+    <section class="customers-section reveal-up">
       <div class="customers-container">
 
         <!-- LEFT CONTENT -->
@@ -3337,12 +3340,12 @@
   
     </style>
 
-    <section class="why-choose-about section-space" id="why-choose">
+    <section class="why-choose-about section-space reveal-up" id="why-choose">
       <div class="container">
         <div class="why-choose-split">
 
           <!-- Left Panel -->
-          <div class="why-left-panel reveal-left">
+          <div class="why-left-panel reveal-up">
             <span class="section-eyebrow">Why Choose Us</span>
             <h2 class="why-main-title">
               Why Choose <span>Us?</span>
@@ -3879,7 +3882,7 @@
       
   </style>
 
-    <section class="store-gallery-section">
+    <section class="store-gallery-section reveal-up">
       <div class="container">
         <div class="store-gallery-head">
           <span class="section-eyebrow">Our Store / Gallery</span>
@@ -3889,7 +3892,7 @@
           </p>
         </div>
 
-        <div class="store-gallery-box">
+        <div class="store-gallery-box reveal-up">
 
           <!-- Left Thumbnails -->
           <div class="gallery-thumbs" id="galleryThumbs">

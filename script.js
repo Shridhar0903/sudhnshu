@@ -159,3 +159,33 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+/* =========================================
+     Scroll animation
+  ========================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+  const revealElements = document.querySelectorAll(".reveal-left, .reveal-up");
+
+  function revealOnScroll() {
+    const windowHeight = window.innerHeight;
+
+    revealElements.forEach((element) => {
+      const elementTop = element.getBoundingClientRect().top;
+
+      const revealPoint = 120;
+
+      if (elementTop < windowHeight - revealPoint) {
+        element.classList.add("active");
+      } else {
+        element.classList.remove("active");
+      }
+    });
+  }
+
+  /* RUN ON SCROLL */
+  window.addEventListener("scroll", revealOnScroll);
+
+  /* RUN ON PAGE LOAD */
+  revealOnScroll();
+});
