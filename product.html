@@ -2477,9 +2477,9 @@
 
                 <div class="ps-submenu-panel" id="ps-submenu-15">
                   <a href="product.html#Drills">Drills</a>
-                  <a href="product.html#Carbide Rotary Burr Cutter">Carbide Rotary Burr Cutter</a>
-                  <a href="product.html#Blade-Band Saw Blade">Blade / Band Saw Blade</a>
-                  <a href="product.html#Deburring Tool">Deburring Tool</a>
+                  <a href="product.html#Carbide-Rotary-Burr-Cutter">Carbide Rotary Burr Cutter</a>
+                  <a href="product.html#Blade-Band-Saw-Blade">Blade / Band Saw Blade</a>
+                  <a href="product.html#Deburring-Tool">Deburring Tool</a>
                 </div>
 
 
@@ -3034,9 +3034,9 @@
 
               <!-- NEW PRODUCTS -->
               <a href="#" class="sa-product-link" data-product="Drills">Drills</a>
-              <a href="#" class="sa-product-link" data-product="Carbide Rotary Burr Cutter">Carbide Rotary Burr Cutter</a>
-              <a href="#" class="sa-product-link" data-product="Blade-Band Saw Blade">Blade / Band Saw Blade</a>
-              <a href="#" class="sa-product-link" data-product="Deburring Tool">Deburring Tool</a>
+              <a href="#" class="sa-product-link" data-product="Carbide-Rotary-Burr-Cutter">Carbide Rotary Burr Cutter</a>
+              <a href="#" class="sa-product-link" data-product="Blade-Band-Saw-Blade">Blade / Band Saw Blade</a>
+              <a href="#" class="sa-product-link" data-product="Deburring-Tool">Deburring Tool</a>
          
             </div>
           </div>
@@ -9405,7 +9405,7 @@
 </div>
 
 <!-- CARBIDE ROTARY BURR CUTTER -->
-<div class="sa-product-section" id="Carbide Rotary Burr Cutter">
+<div class="sa-product-section" id="Carbide-Rotary-Burr-Cutter">
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
       <img src="img/carbide-burr-cutter.webp" alt="Carbide Rotary Burr Cutter">
@@ -9432,7 +9432,7 @@
 </div>
 
 <!-- BLADE / BAND SAW BLADE -->
-<div class="sa-product-section" id="Blade-Band Saw Blade">
+<div class="sa-product-section" id="Blade-Band-Saw-Blade">
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
       <img src="img/bandsaw-blade.jpg" alt="Blade / Band Saw Blade">
@@ -9459,7 +9459,7 @@
 </div>
 
 <!-- DEBURRING TOOL -->
-<div class="sa-product-section" id="Deburring Tool">
+<div class="sa-product-section" id="Deburring-Tool">
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
       <img src="img/deburring-tools.webp" alt="Deburring Tool">
@@ -9716,6 +9716,59 @@
     }
 
   }
+  /* =========================
+   NAVBAR HASH PRODUCT SUPPORT
+========================= */
+
+window.addEventListener("hashchange", function () {
+
+  const hash = window.location.hash;
+
+  if (!hash) return;
+
+  const targetSection = document.querySelector(hash);
+
+  if (!targetSection) return;
+
+  /* REMOVE ACTIVE */
+  saProductSections.forEach((section) => {
+    section.classList.remove("active");
+  });
+
+  saProductLinks.forEach((link) => {
+    link.classList.remove("active");
+  });
+
+  /* SHOW TARGET */
+  targetSection.classList.add("active");
+
+  /* ACTIVE SIDEBAR LINK */
+  saProductLinks.forEach((link) => {
+
+    if (
+      link.getAttribute("data-product") === hash.substring(1)
+    ) {
+      link.classList.add("active");
+    }
+
+  });
+
+  /* SCROLL */
+  setTimeout(() => {
+
+    const topOffset =
+      targetSection.getBoundingClientRect().top +
+      window.pageYOffset -
+      100;
+
+    window.scrollTo({
+      top: topOffset,
+      behavior: "smooth"
+    });
+
+  }, 100);
+
+});
 
   /* =========================
      SIDEBAR PRODUCT CLICK
