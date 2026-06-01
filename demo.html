@@ -289,24 +289,40 @@
     background: #f5f4f2;
   }
 
-  .sa-explore-container {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    padding: 0 40px 0 20px;
+.sa-explore-container {
     display: flex;
-    align-items: flex-start;
-    gap: 40px;
-  }
+    gap: 35px;
+    max-width: 1650px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    
+    /* INCREASED HEIGHT: Changed from calc(100vh - 120px) to calc(100vh - 40px) to make both sections taller */
+    height: calc(100vh - 40px); /* This will extend both columns closer to the bottom of the screen */
+    overflow: hidden; 
+}
 
-  .sa-explore-sidebar {
-    width: 390px;
-    min-width: 390px;
+/* --- LEFT SIDEBAR (DROPDOWN SIDEBAR) --- */
+.sa-explore-sidebar {
+    width: 380px;
     flex-shrink: 0;
-    position: sticky;
-    top: 95px;
-  }
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid #eaeaea;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
 
+    /* Takes 100% of the new taller container height */
+    height: 100%;
+    overflow-y: auto; 
+    
+    /* Hides scrollbar for a cleaner look in WebKit browsers (Chrome, Safari) */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+.sa-explore-sidebar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
   .sa-sidebar-box {
     background: #fff;
     border: 1px solid #e5e5e5;
@@ -411,12 +427,15 @@
   }
 
   /* ================================================================== */
-  .sa-explore-main {
+/* --- RIGHT CONTENT (PRODUCT CONTENT) --- */
+.sa-explore-main {
     flex: 1;
-    min-width: 0;
-    margin-top: -60px;
-  }
-
+    
+    /* Takes 100% of the new taller container height */
+    height: 100%;
+    overflow-y: auto;
+    padding-right: 8px; /* Prevents layout shifting when scrollbar appears */
+}
   .sa-explore-head {
     margin-bottom: 24px;
   }
@@ -455,6 +474,7 @@
   }
 
 /* PRODUCT CARD */
+/* PRODUCT CARD */
 .sa-product-detail-card{
   display:grid;
   grid-template-columns: 320px 1fr;
@@ -468,29 +488,36 @@
   margin-bottom:24px;
 }
 
-  /* IMAGE BOX */
+/* IMAGE BOX */
+/* IMAGE BOX */
 .sa-product-detail-image{
   width:100%;
-  height:350px;
-  border-radius:22px;
-  overflow:hidden;
-  background:#f7f7f7;
   display:flex;
+  flex-direction:column;
+  gap:25px;
+
   align-items:center;
   justify-content:center;
-  padding:20px ;
-  margin-top: 30%;
-  margin-bottom: 30%;
 
+  background:#f7f7f7;
+  border-radius:22px;
+
+  padding:25px; /* equal spacing from all sides */
 }
 
- /* IMAGE */
+/* IMAGE */
 .sa-product-detail-image img{
   width:100%;
-  height:100%;
-  object-fit:contain;
+  height:240px; /* increased height */
 
+  object-fit:contain;
   display:block;
+
+  background:#fff;
+  border-radius:18px;
+
+  padding:15px; /* equal inner spacing */
+  border:1px solid #e8e8e8;
 }
 
   .sa-product-detail-content h2 {
@@ -683,31 +710,47 @@
     font-weight: 800;
   }
 
-  /* ==========================================================
-   PRODUCT SECTION RESPONSIVE
+  
+
+/* ==========================================================
+   TABLET
 ========================================================== */
 
-/* =========================
-   TABLET
-========================= */
 @media (max-width: 991px){
 
   .sa-product-detail-card{
     grid-template-columns:1fr;
     gap:24px;
-    padding:22px;
+    margin-top: 70px;
+    margin-bottom:50px;
+       padding:16px 20px 16px;
     border-radius:24px;
   }
 
   .sa-product-detail-image{
-    height:300px;
-    margin:0;
-    padding:18px;
+    gap:20px;
+    padding:20px;
     border-radius:20px;
+    margin:0;
+  }
+
+  .sa-product-detail-image img{
+    max-height:220px;
+    padding:12px;
+    border-radius:16px;
+  }
+
+  /* single image larger */
+  .sa-product-detail-image img:only-child{
+    max-height:300px;
+  }
+   .sa-product-detail-content{
+    margin-top: 100px;
   }
 
   .sa-product-detail-content h2{
     font-size:34px;
+
     line-height:1.15;
   }
 
@@ -749,34 +792,54 @@
   }
 }
 
-/* =========================
+/* ==========================================================
    MOBILE
-========================= */
+========================================================== */
+
 @media (max-width: 575px){
 
   .sa-product-detail-card{
     grid-template-columns:1fr;
     gap:18px;
-    padding:16px;
+    margin-top:5px;
+    padding:16px 20px 16px;
     border-radius:20px;
-    margin-bottom:18px;
+    margin-bottom:5px;
   }
 
   .sa-product-detail-image{
-    height:220px;
-    margin:0;
-    padding:14px;
+    gap:16px;
+    padding:16px;
     border-radius:16px;
+    margin:0;
   }
 
   .sa-product-detail-image img{
+    width:100%;
+
+    height:auto;
+    max-height:180px;
+    min-height:120px;
+
     object-fit:contain;
+
+    padding:10px;
+    border-radius:14px;
+  }
+
+  /* ONLY ONE IMAGE */
+  .sa-product-detail-image img:only-child{
+    max-height:240px;
+  }
+   .sa-product-detail-content{
+    margin-top: 50px;
   }
 
   .sa-product-detail-content h2{
     font-size:24px;
     line-height:1.2;
     margin-bottom:12px;
+   
   }
 
   .sa-product-detail-label{
@@ -877,9 +940,10 @@
   }
 }
 
-/* =========================
+/* ==========================================================
    SMALL MOBILE
-========================= */
+========================================================== */
+
 @media (max-width: 400px){
 
   .sa-product-detail-content h2{
@@ -887,7 +951,21 @@
   }
 
   .sa-product-detail-image{
-    height:190px;
+    gap:12px;
+    padding:12px;
+  }
+
+  .sa-product-detail-image img{
+    max-height:150px;
+    min-height:100px;
+
+    padding:8px;
+    border-radius:12px;
+  }
+
+  /* single image larger */
+  .sa-product-detail-image img:only-child{
+    max-height:200px;
   }
 
   .sa-info-box h3{
@@ -902,7 +980,6 @@
     font-size:13px;
   }
 }
-
   /* ========================================================== */
 
   /* =========================
@@ -2082,6 +2159,20 @@
     }
   }
 
+
+ /* =========================
+   PRODUCT SHOW / HIDE
+========================= */
+
+#saProductDisplay > .sa-product-section{
+  display: none;
+}
+
+#saProductDisplay > .sa-product-section.active{
+  display: block;
+}
+
+
   /* =========================
    FOOTER
 ========================= */
@@ -2123,17 +2214,31 @@
 
 <body>
 
-  <!-- =====================================Navbar===================================== -->
+  <!-- =========================
+     NEW PREMIUM HEADER
+========================= -->
   <header class="ps-header">
     <div class="ps-header-inner">
 
-      <!-- LOGO -->
-      <a href="index.html" class="ps-logo-wrap">
-        <div class="ps-logo-vertical">
-          <img src="img/logobg.png" class="ps-logo-big">
-          <div class="ps-logo-text-new">SUDHANSHU <span>ASSOCIATES</span></div>
+      <!-- Logo -->
+      <!-- <a href="index.html" class="ps-logo-wrap">
+        <div class="ps-logo-box">
+          <img src="img/logobg.png" alt="Sudhanshu Associates Logo" class="ps-logo-img">
         </div>
-      </a>
+
+        <div class="ps-logo-text">
+          <span class="ps-logo-title">SUDHANSHU </span>
+          <span class="ps-logo-sub">ASSOCIATES</span>
+        </div>
+      </a> -->
+
+          <!-- LOGO -->
+    <a href="index.html" class="ps-logo-wrap">
+      <div class="ps-logo-vertical">
+        <img src="img/logobg.png" class="ps-logo-big">
+        <div class="ps-logo-text-new">SUDHANSHU <span>ASSOCIATES</span></div>
+      </div>
+    </a>
 
       <!-- Menu Toggle -->
       <button class="ps-menu-toggle" id="psMenuToggle" type="button" aria-label="Open Menu">
@@ -2145,10 +2250,10 @@
       <!-- Nav -->
       <nav class="ps-nav" id="psNav">
         <ul class="ps-nav-list">
-          <li><a href="index.html" class="ps-nav-link ">Home</a></li>
+          <li><a href="index.html" class="ps-nav-link">Home</a></li>
           <li><a href="about.html" class="ps-nav-link">About</a></li>
           <li class="ps-dropdown ps-dropdown-mega" id="psProductsDropdown">
-            <a href="product.html" class="ps-nav-link active ps-dropdown-toggle" id="psProductsToggle">
+            <a href="product.html" class="ps-nav-link ps-dropdown-toggle active" id="psProductsToggle">
               Product <span class="ps-drop-caret">▼</span>
             </a>
 
@@ -2158,7 +2263,7 @@
               <div class="ps-main-dropdown-box">
                 <div class="ps-main-products-scroll">
 
-                  <button class="ps-main-product-item " data-target="ps-submenu-1" type="button">
+                  <button class="ps-main-product-item active" data-target="ps-submenu-1" type="button">
                     <span>TIG Welding Filler Wires</span>
                     <span class="ps-item-arrow">›</span>
                   </button>
@@ -2241,19 +2346,19 @@
                 </div>
               </div>
 
-              <!-- RIGHT SUBMENU -->
+                                               <!-- RIGHT SUBMENU -->
               <div class="ps-sub-floating-box">
-                <div class="ps-submenu-panel " id="ps-submenu-1">
-                  <a href="product.html#tig-filler-wires">Stainless Steel Tig Welding Wires</a>
-                  <a href="product.html#tig-filler-wires">Mild Steel Tig Welding Wires</a>
-                  <a href="product.html#tig-filler-wires">Aluminium Tig Welding Wires</a>
-                  <a href="product.html#tig-filler-wires">Silver Brazing</a>
+                <div class="ps-submenu-panel active" id="ps-submenu-1">
+                  <a href="product.html#stainless-steel-tig">Stainless Steel Tig Welding Wires</a>
+                  <a href="product.html#mild-steel-tig">Mild Steel Tig Welding Wires</a>
+                  <a href="product.html#aluminium-tig">Aluminium Tig Welding Wires</a>
+                  <a href="product.html#silver-brazing">Silver Brazing</a>
                 </div>
 
                 <div class="ps-submenu-panel" id="ps-submenu-2">
-                  <a href="product.html#electrodes">M S Electrodes</a>
-                  <a href="product.html#electrodes">S S Electrodes</a>
-                  <a href="product.html#electrodes">Hard Facing Electrodes</a>
+                  <a href="product.html#ms-electrodes">M  S Electrodes</a>
+                  <a href="product.html#ss-electrodes">S S Electrodes</a>
+                  <a href="product.html#hard-facing-electrodes">Hard Facing Electrodes</a>
                 </div>
 
                 <div class="ps-submenu-panel" id="ps-submenu-3">
@@ -2281,128 +2386,125 @@
                   <a href="product.html#purging-paper">Purging Paper / Back Purging Tape</a> -->
                 </div>
 
-                <div class="ps-submenu-panel" id="ps-submenu-4">
+               <div class="ps-submenu-panel" id="ps-submenu-4">
                   <a href="product.html#safety-apron-chrome-leather"> Apron - Chrome Leathe </a>
-                  <a href="product.html#ear-plug"> Ear Plug </a>
-                  <a href="product.html#face-shield"> Face Shield </a>
-                  <a href="product.html#safety-goggles"> Goggles (White / Black / Grey) </a>
-                  <a href="product.html#safety-hand-gloves"> Handgloves </a>
-                  <a href="product.html#safety-hand-sleeves"> Handsleeves </a>
-                  <a href="product.html#safety-helmet"> Safety Helmet </a>
-                  <a href="product.html#safety-leg-guard"> Leg Guard </a>
-                  <a href="product.html#safety-belt"> Safety Belt </a>
-                  <a href="product.html#safety-jacket"> Safety Jacket </a>
-                  <a href="product.html#barrication-tape"> Barrication Tape </a>
+                  <a href="product.html#ear-plug">    Ear Plug  </a>
+                  <a href="product.html#face-shield">    Face Shield  </a>
+                  <a href="product.html#safety-goggles">    Goggles (White / Black / Grey)  </a>
+                  <a href="product.html#safety-hand-gloves">    Handgloves  </a>
+                  <a href="product.html#safety-hand-sleeves">    Handsleeves  </a>
+                  <a href="product.html#safety-helmet">    Safety Helmet  </a>
+                  <a href="product.html#safety-leg-guard">    Leg Guard  </a>
+                  <a href="product.html#safety-belt">    Safety Belt  </a>
+                  <a href="product.html#safety-jacket">    Safety Jacket  </a>
+                  <a href="product.html#barrication-tape">    Barrication Tape  </a>
                 </div>
 
-                <div class="ps-submenu-panel" id="ps-submenu-5">
-                  <a href="product.html#tig-water-circulator">TIG Water Circulator </a>
-                  <a href="product.html#argon-torch-wcd-600">Argon Torch Wcd-600 Torch</a>
-                  <a href="product.html#argon-torch-wcd-400">Argon Torch Wcd-400 Torch</a>
-                  <a href="product.html#argon-torch-wcd-220">Argon Torch Wcd-220 Torch</a>
-                  <a href="product.html#argon-torch-acd-300">Argon ACD-300 Torch</a>
-                  <a href="product.html#argon-torch-acd-200">Argon ACD-200 Torch</a>
-                  <a href="product.html#argon-torch-acd-110">Argon ACD-110 Torch</a>
-                </div>
+              <div class="ps-submenu-panel" id="ps-submenu-5">
+                <a href="product.html#tig-water-circulator">TIG Water Circulator </a>
+                <a href="product.html#argon-torch-wcd-600">Argon Torch Wcd-600 Torch</a>
+                <a href="product.html#argon-torch-wcd-400">Argon Torch Wcd-400 Torch</a>
+                <a href="product.html#argon-torch-wcd-220">Argon Torch Wcd-220 Torch</a>
+                <a href="product.html#argon-torch-acd-300">Argon ACD-300 Torch</a>
+                <a href="product.html#argon-torch-acd-200">Argon ACD-200 Torch</a>
+                <a href="product.html#argon-torch-acd-110">Argon ACD-110 Torch</a>
+              </div>
 
 
-                <div class="ps-submenu-panel" id="ps-submenu-6">
-                  <a href="product.html#co2-torch">CO2 Torch</a>
-                  <a href="product.html#contact-tips">Contact Tips</a>
-                  <a href="product.html#anti-spatter-spray">Anti Spatter Spray</a>
-                  <a href="product.html#nozzle-gel">Nozzle Gel</a>
-                  <a href="product.html#pickling-gel">Pickling Gel</a>
-                  <a href="product.html#preheater">Pre Heater</a>
-                </div>
+              <div class="ps-submenu-panel" id="ps-submenu-6">
+                <a href="product.html#co2-torch">CO2 Torch</a>
+                <a href="product.html#contact-tips">Contact Tips</a>
+                <a href="product.html#anti-spatter-spray">Anti Spatter Spray</a>
+                <a href="product.html#nozzle-gel">Nozzle Gel</a>
+                <a href="product.html#pickling-gel">Pickling Gel</a>
+                <a href="product.html#preheater">Pre Heater</a>
+              </div>
 
 
-                <div class="ps-submenu-panel" id="ps-submenu-7">
-                  <a href="product.html#blowpipes-brazing-torch">Blow Pipes / Brazing Torch</a>
-                  <a href="product.html#brass-brazing-rod">Brass Brazing Rod</a>
-                  <a href="product.html#copper-phosphorous-brazing-rod">Copper Phosphorous Brazing Rod</a>
-                  <a href="product.html#gas-cutter">Gas Cutter</a>
-                  <a href="product.html#cylinder-hand-trolley">Cylinder Hand Trolley with Wheels</a>
-                  <a href="product.html#brazing-flux">Brazing Flux</a>
-                  <a href="product.html#gouging-torch">Gouging Torch</a>
-                  <a href="product.html#hose-pipe">Hose Pipe</a>
-                  <a href="product.html#hose-clips">Hose Clips</a>
-                  <a href="product.html#heating-torch">Heating Torch</a>
-                  <a href="product.html#gas-lighter">Gas Lighter</a>
-                  <a href="product.html#gas-cutting-nozzle">Gas Cutting Nozzle</a>
-                  <a href="product.html#gas-nozzle-cleaner">Gas Nozzle Cleaner</a>
-                  <a href="product.html#flashback-arrestors">Flash Back Arrestors</a>
-                  <a href="product.html#cylinder-key">Cylinder Key</a>
-                  <a href="product.html#pug-cutting-machine">PUG Cutting Machine</a>
-                </div>
+               <div class="ps-submenu-panel" id="ps-submenu-7">
+                <a href="product.html#blowpipes-brazing-torch">Blow Pipes / Brazing Torch</a>
+                <a href="product.html#brass-brazing-rod">Brass Brazing Rod</a>
+                <a href="product.html#copper-phosphorous-brazing-rod">Copper Phosphorous Brazing Rod</a>
+                <a href="product.html#gas-cutter">Gas Cutter</a>
+                <a href="product.html#cylinder-hand-trolley">Cylinder Hand Trolley with Wheels</a>
+                <a href="product.html#brazing-flux">Brazing Flux</a>
+                <a href="product.html#gouging-torch">Gouging Torch</a>
+                <a href="product.html#hose-pipe">Hose Pipe</a>
+                <a href="product.html#hose-clips">Hose Clips</a>
+                <a href="product.html#heating-torch">Heating Torch</a>
+                <a href="product.html#gas-lighter">Gas Lighter</a>
+                <a href="product.html#gas-cutting-nozzle">Gas Cutting Nozzle</a>
+                <a href="product.html#gas-nozzle-cleaner">Gas Nozzle Cleaner</a>
+                <a href="product.html#flashback-arrestors">Flash Back Arrestors</a>
+                <a href="product.html#cylinder-key">Cylinder Key</a>
+                <a href="product.html#pug-cutting-machine">PUG Cutting Machine</a>
+              </div>
 
-                <div class="ps-submenu-panel" id="ps-submenu-8">
-                  <a href="product.html#red-dye-penetrant-material">Daylight Visible Red Dye Penetrant Material</a>
-                  <a href="product.html#fluorescent-dye-penetrant-material">Fluorescent Dye Penetrant Material</a>
-                  <a href="product.html#developer-contrast-coating">Developer / Contrast Background Coating</a>
-                </div>
+              <div class="ps-submenu-panel" id="ps-submenu-8">
+                <a href="product.html#red-dye-penetrant-material">Daylight Visible Red Dye Penetrant Material</a>
+                <a href="product.html#fluorescent-dye-penetrant-material">Fluorescent Dye Penetrant Material</a>
+                <a href="product.html#developer-contrast-coating">Developer / Contrast Background Coating</a>
+              </div>
 
-                <div class="ps-submenu-panel" id="ps-submenu-9">
-                  <a href="product.html#regulator-for-cnc-application">Regulator for CNC Application</a>
-                  <a href="product.html#gas-cylinder-manifold">Cylinder Manifold for Gas Filling</a>
-                  <a href="product.html#cylinder-manifold-cnc">Cylinder Manifold for CNC Machine</a>
-                  <a href="product.html#stainless-steel-manifold">Stainless Steel Manifold</a>
-                  <a href="product.html#cryogenic-economizer">Cryogenic Economizers</a>
-                  <a href="product.html#cryogenic-cylinder-regulator">Cryogenic Cylinder Regulator</a>
-                  <a href="product.html#m-series-flowmeter">M Series Flowmeter Regulator</a>
-                  <a href="product.html#hd-double-stage">HD Series Double Stage Regulator</a>
-                  <a href="product.html#m-high-pressure">M Series High Pressure Regulator</a>
-                  <a href="product.html#economic-manifold">Economic Manifold (4 Cylinder)</a>
-                  <a href="product.html#master-valve-manifold">Master Valve for Manifold</a>
-                  <a href="product.html#co2-gas-preheater">CO2 Gas Preheater</a>
-                </div>
+               <div class="ps-submenu-panel" id="ps-submenu-9">
+                 <a href="product.html#regulator-for-cnc-application">Regulator for CNC Application</a>
+                 <a href="product.html#gas-cylinder-manifold">Cylinder Manifold for Gas Filling</a>
+                 <a href="product.html#cylinder-manifold-cnc">Cylinder Manifold for CNC Machine</a>
+                 <a href="product.html#stainless-steel-manifold">Stainless Steel Manifold</a>
+                 <a href="product.html#cryogenic-economizer">Cryogenic Economizers</a>
+                 <a href="product.html#cryogenic-cylinder-regulator">Cryogenic Cylinder Regulator</a>
+                 <a href="product.html#m-series-flowmeter">M Series Flowmeter Regulator</a>
+                 <a href="product.html#hd-double-stage">HD Series Double Stage Regulator</a>
+                 <a href="product.html#m-high-pressure">M Series High Pressure Regulator</a>
+                 <a href="product.html#economic-manifold">Economic Manifold (4 Cylinder)</a>
+                 <a href="product.html#master-valve-manifold">Master Valve for Manifold</a>
+                 <a href="product.html#co2-gas-preheater">CO2 Gas Preheater</a>
+               </div>
 
 
                 <div class="ps-submenu-panel" id="ps-submenu-10">
-                  <a href="product.html#arc-welding">Arc Welding</a>
-                  <a href="product.html#tig-welding">TIG Welding</a>
-                  <a href="product.html#mig-welding">MIG Welding</a>
-                  <a href="product.html#cut-welding">Cut Welding</a>
-                  <a href="product.html#saw-welding">SAW Welding</a>
-                </div>
+                   <a href="product.html#arc-welding">Arc Welding</a>
+                   <a href="product.html#tig-welding">TIG Welding</a>
+                   <a href="product.html#mig-welding">MIG Welding</a>
+                   <a href="product.html#cut-welding">Cut Welding</a>
+                   <a href="product.html#saw-welding">SAW Welding</a>
+                 </div>
 
-                <div class="ps-submenu-panel" id="ps-submenu-11">
-                  <a href="product.html#air-drying-paint">Air Drying Paint</a>
-                  <a href="product.html#anti-corrosion">Anti Corrosion</a>
-                  <a href="product.html#ndt-testing-aerosols">ND Testing</a>
-                  <a href="product.html#electrical-maintenance">Electrical Maintenance</a>
-                  <a href="product.html#lubricant">Lubricants</a>
-                  <a href="product.html#cleaner">Cleaner</a>
-                  <a href="product.html#automobile">Automobile</a>
-                </div>
+               <div class="ps-submenu-panel" id="ps-submenu-11">
+                <a href="product.html#air-drying-paint">Air Drying Paint</a>
+                <a href="product.html#anti-corrosion">Anti Corrosion</a>
+                <a href="product.html#ndt-testing-aerosols">ND Testing</a>
+                <a href="product.html#electrical-maintenance">Electrical Maintenance</a>
+                <a href="product.html#lubricant">Lubricants</a>
+                <a href="product.html#cleaner">Cleaner</a>
+                <a href="product.html#automobile">Automobile</a>
+              </div>
 
-                <div class="ps-submenu-panel" id="ps-submenu-12">
-                  <a href="product.html#ss-polishing-machine">Polishing Machine for SS</a>
-                  <a href="product.html#flexible-shaft-machine">Flexible Shaft for Polishing Machine</a>
-                </div>
+               <div class="ps-submenu-panel" id="ps-submenu-12">
+                 <a href="product.html#ss-polishing-machine">Polishing Machine for SS</a>
+                 <a href="product.html#flexible-shaft-machine">Flexible Shaft for Polishing Machine</a>
+               </div>
 
                 <div class="ps-submenu-panel" id="ps-submenu-13">
-                  <a href="product.html#hand-tools">View Product</a>
+                 <a href="product.html#hand-tools">View Product</a>
                 </div>
 
                 <div class="ps-submenu-panel" id="ps-submenu-14">
-                  <a href="product.html#abrasives">Cutting Wheels</a>
-                  <a href="product.html#abrasives">Grinding Wheels</a>
-                  <a href="product.html#abrasives">Flap Discs</a>
-                  <a href="product.html#abrasives">Sanding Discs</a>
+                  <a href="product.html#abrasives">View Product</a>
+                
                 </div>
 
                 <div class="ps-submenu-panel" id="ps-submenu-15">
-                  <a href="product.html#cutting-tools">Drill Bits</a>
-                  <a href="product.html#cutting-tools">Hole Saws</a>
-                  <a href="product.html#cutting-tools">Reamers</a>
-                  <a href="product.html#cutting-tools">Industrial Cutters</a>
+                  <a href="product.html#Drills">Drills</a>
+                  <a href="product.html#Carbide-Rotary-Burr-Cutter">Carbide Rotary Burr Cutter</a>
+                  <a href="product.html#Blade-Band-Saw-Blade">Blade / Band Saw Blade</a>
+                  <a href="product.html#Deburring-Tool">Deburring Tool</a>
                 </div>
 
+
                 <div class="ps-submenu-panel" id="ps-submenu-16">
-                  <a href="product.html#power-tools">Drilling Machines</a>
-                  <a href="product.html#power-tools">Angle Grinders</a>
-                  <a href="product.html#power-tools">Impact Tools</a>
-                  <a href="product.html#power-tools">Heavy Duty Tools</a>
+                  <a href="product.html#power-tools">View Product</a>
+                 
                 </div>
               </div>
 
@@ -2418,6 +2520,7 @@
           </li>
         </ul>
       </nav>
+
       <!-- CTA -->
       <a href="contact.html" class="ps-contact-btn">
         <span>Contact</span>
@@ -2425,10 +2528,11 @@
       </a>
     </div>
   </header>
+  <div class="ps-mobile-overlay" id="psMobileOverlay"></div>
 
   <!-- ===============================Hero Section================================================== -->
 
-  <section class="product-hero-simple">
+  <section class="product-hero-simple reveal-up">
     <div class="product-hero-bg"></div>
     <div class="container">
       <div class="product-hero-content">
@@ -2612,7 +2716,7 @@
   </style>
   <!-- ===============================Hero Section End================================================== -->
    
-  <section class="sa-explore-product">
+  <section class="sa-explore-product reveal-up">
     <div class="sa-explore-container">
 
       <aside class="sa-explore-sidebar">
@@ -2628,7 +2732,7 @@
             <div class="sa-dropdown-menu">
               <a href="#" class="sa-product-link active" data-product="stainless-steel-tig">STAINLESS STEEL TIG WELDING
                 WIRE</a>
-              <a href="#" class="sa-product-link" data-product="mild-steel-tig">MILD STEEL TIG WELDING WIRES</a>
+              <a href="" class="sa-product-link" data-product="mild-steel-tig">MILD STEEL TIG WELDING WIRES</a>
               <a href="#" class="sa-product-link" data-product="aluminium-tig">ALUMINIUM TIG WELDING WIRES</a>
               <a href="#" class="sa-product-link" data-product="silver-brazing">SILVER BRAZING</a>
             </div>
@@ -2655,7 +2759,7 @@
             </button>
 
             <div class="sa-dropdown-menu">
-              <!-- <a href="#" class="sa-product-link" data-product="industrial-welding-cables">INDUSTRIAL WELDING CABLES</a> -->
+    
               <a href="#" class="sa-product-link" data-product="apron-chrome-leather">Apron - Chrome Leather</a>
               <a href="#" class="sa-product-link" data-product="wire-brush">Wire Brush</a>
 
@@ -2949,9 +3053,9 @@
 
               <!-- NEW PRODUCTS -->
               <a href="#" class="sa-product-link" data-product="Drills">Drills</a>
-              <a href="#" class="sa-product-link" data-product="Carbide Rotary Burr Cutter">Carbide Rotary Burr Cutter</a>
-              <a href="#" class="sa-product-link" data-product="Blade-Band Saw Blade">Blade / Band Saw Blade</a>
-              <a href="#" class="sa-product-link" data-product="Deburring Tool">Deburring Tool</a>
+              <a href="#" class="sa-product-link" data-product="Carbide-Rotary-Burr-Cutter">Carbide Rotary Burr Cutter</a>
+              <a href="#" class="sa-product-link" data-product="Blade-Band-Saw-Blade">Blade / Band Saw Blade</a>
+              <a href="#" class="sa-product-link" data-product="Deburring-Tool">Deburring Tool</a>
          
             </div>
           </div>
@@ -2971,7 +3075,8 @@
 
       <!-- ========================Product 1============================================ -->
 
-      <div class="sa-explore-main">
+
+      <div class="sa-explore-main reveal-up">
         <div class="sa-explore-head">
           <span class="sa-explore-eyebrow">Explore</span>
           <h2 class="sa-explore-heading">Product</h2>
@@ -2998,6 +3103,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/wel2.webp " alt="Stainless Steel TIG Welding Wire">
+                  <img src="img/tig-wire2.jfif " alt="Stainless Steel TIG Welding Wire">
               </div>
               <div class="sa-product-detail-content">
                 <span class="sa-product-detail-label">TIG Welding Filler Wires</span>
@@ -3349,6 +3455,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/tig.webp" alt="Mild Steel TIG Welding Wires">
+                 <img src="img/Mig-wire.jfif" alt="Mild Steel TIG Welding Wires">
               </div>
 
               <div class="sa-product-detail-content">
@@ -3500,7 +3607,7 @@
 
 
 
-          <!-- =========================
+<!-- =========================
      ALUMINIUM TIG WELDING WIRES
 ========================= -->
           <div class="sa-product-section" id="aluminium-tig">
@@ -3509,6 +3616,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/aluminium-tig-main.jpg" alt="Aluminium TIG Welding Wires">
+                <img src="img/aluminium-wire.webp" alt="Aluminium TIG Welding Wires">
               </div>
 
               <div class="sa-product-detail-content">
@@ -3636,8 +3744,7 @@
             </div>
           </div>
 
-
-          <!-- =========================
+<!-- =========================
      SILVER BRAZING
 ========================= -->
           <div class="sa-product-section" id="silver-brazing">
@@ -3646,6 +3753,8 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/silver-brazing-main.jpg" alt="Silver Brazing Alloys">
+                <img src="img/silver-wire.jpg" alt="Silver Brazing Alloys">
+          
               </div>
 
               <div class="sa-product-detail-content">
@@ -3790,6 +3899,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/hard-facing-electrodes-main.jpg" alt="Hard Facing Electrodes">
+                  <img src="img/HF2.webp" alt="Hard Facing Electrodes">
               </div>
 
               <div class="sa-product-detail-content">
@@ -3859,6 +3969,7 @@
 
               <div class="sa-product-detail-image">
                 <img src="img/ms-electrodes-main.jpg" alt="M S Electrodes">
+                 <img src="img/MS-2.png" alt="M S Electrodes">
               </div>
 
               <div class="sa-product-detail-content">
@@ -3975,7 +4086,8 @@
             <div class="sa-product-detail-card">
 
               <div class="sa-product-detail-image">
-                <img src="img/electrodes.jpg" alt="S S Electrodes">
+                <img src="img/elctrode.jpg" alt="S S Electrodes">
+                <img src="img/ss2.jpg" alt="S S Electrodes">
               </div>
 
               <div class="sa-product-detail-content">
@@ -4108,6 +4220,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/apron-chrome-leather.jpeg" alt="Apron Chrome Leather">
+                <img src="img/apron-2.png" alt="Apron Chrome Leather">
               </div>
               <div class="sa-product-detail-content">
                 <span class="sa-product-detail-label">Safety Accessory</span>
@@ -4130,6 +4243,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/wire-brush.jpeg" alt="Wire Brush">
+                
               </div>
               <div class="sa-product-detail-content">
                 <span class="sa-product-detail-label">Welding Accessories</span>
@@ -4152,6 +4266,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/cable-lugs.jpeg" alt="Cable Lugs">
+        
               </div>
               <div class="sa-product-detail-content">
                 <span class="sa-product-detail-label">Welding Accessories</span>
@@ -4284,6 +4399,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/welding-glass.jpeg" alt="Welding Black and White Glass">
+                <img src="img/welding-glass2.jpeg" alt="Welding Black and White Glass">
               </div>
               <div class="sa-product-detail-content">
                 <span class="sa-product-detail-label">Safety Glass</span>
@@ -4548,7 +4664,7 @@
           <div class="sa-product-section" id="spot-welding-electrode">
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
-                <img src="img/electrodes.jpg" alt="Spot Welding Electrode">
+                <img src="img/spot-welding-electrode.webp" alt="Spot Welding Electrode">
               </div>
               <div class="sa-product-detail-content">
                 <span class="sa-product-detail-label">Welding Electrode</span>
@@ -4668,6 +4784,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/Goggles.jpg" alt="Safety Goggles">
+                 <img src="img/welding-goggals2.jpg" alt="Safety Goggles">
               </div>
               <div class="sa-product-detail-content">
                 <span class="sa-product-detail-label">Eye Protection</span>
@@ -4828,6 +4945,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/Barrication Tape.jpg" alt="Barrication Tape">
+                   <img src="img/tape2.jpg" alt="Barrication Tape">
               </div>
               <div class="sa-product-detail-content">
                 <span class="sa-product-detail-label">Safety Equipment</span>
@@ -4867,6 +4985,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/tig-water.webp" alt="TIG Water Circulator">
+                  <img src="img/water-circulator.jfif" alt="TIG Water Circulator">
               </div>
 
               <div class="sa-product-detail-content">
@@ -5006,6 +5125,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/WCD-600.webp" alt="Argon Arc Welding Torch WCD 600">
+                 <img src="img/torch1.jfif" alt="Argon Arc Welding Torch WCD 600">
               </div>
 
               <div class="sa-product-detail-content">
@@ -6419,6 +6539,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/CO2.webp" alt="CO2 Torch">
+              
               </div>
 
               <div class="sa-product-detail-content">
@@ -6863,6 +6984,8 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/Gas.jpg" alt="Gas Cutting Nozzle">
+                <img src="img/glass-cutting2.jpg" alt="Gas Cutting Nozzle">
+              
               </div>
               <div class="sa-product-detail-content">
                 <span class="sa-product-detail-label">Gas Cutting</span>
@@ -7020,6 +7143,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/Dyeglo -1.jfif" alt="Red Dye Penetrant Material">
+                 <img src="img/dyeglo_2.jpg" alt="Red Dye Penetrant Material">
               </div>
 
               <div class="sa-product-detail-content">
@@ -7072,6 +7196,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/fluorent.jfif" alt="Fluorescent Dye Penetrant Material">
+                 <img src="img/fluorent-2.jpg" alt="Fluorescent Dye Penetrant Material">
               </div>
 
               <div class="sa-product-detail-content">
@@ -7132,6 +7257,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/dp3.webp" alt="Developer Contrast Background Coating">
+                <img src="img/Developer-Contrast.webp" alt="Developer Contrast Background Coating">
               </div>
 
               <div class="sa-product-detail-content">
@@ -7383,7 +7509,7 @@
             <div class="sa-product-detail-card">
 
               <div class="sa-product-detail-image">
-                <img src="img/m-series-flowmeter.jpg" alt="M Series Flowmeter Regulator">
+                <img src="img/MF-Series-Single-Stage.webp" alt="M Series Flowmeter Regulator">
               </div>
 
               <div class="sa-product-detail-content">
@@ -7551,6 +7677,7 @@
 
               <div class="sa-product-detail-image">
                 <img src="img/product11.webp" alt="Master Valve For Manifold">
+                <img src="img/valve.jpg" alt="Master Valve For Manifold">
               </div>
 
               <div class="sa-product-detail-content">
@@ -8213,6 +8340,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/corrosion-1.jpg" alt="Corrosion Resistance Aerosols">
+                <img src="img/air-drying-paint2.webp" alt="Corrosion Resistance Aerosols">
               </div>
 
               <div class="sa-product-detail-content">
@@ -8363,6 +8491,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/nd-testing.jpg" alt="NDT Testing Aerosol Sprays">
+                <img src="img/NDT-2.webp" alt="NDT Testing Aerosol Sprays">
               </div>
 
               <div class="sa-product-detail-content">
@@ -8429,6 +8558,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/electrical-maintenance.jpg" alt="Electrical Maintenance Aerosols">
+                 <img src="img/EM2.jfif" alt="Electrical Maintenance Aerosols">
               </div>
 
               <div class="sa-product-detail-content">
@@ -8511,6 +8641,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/lubricants.jpg" alt="Lubricant Aerosols">
+                  <img src="img/LA2.jpg" alt="Lubricant Aerosols">
               </div>
 
               <div class="sa-product-detail-content">
@@ -8612,6 +8743,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/cleaner.jpg" alt="Cleaner Aerosols">
+                 <img src="img/CA2.png" alt="Cleaner Aerosols">
               </div>
 
               <div class="sa-product-detail-content">
@@ -8696,6 +8828,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/automobile.jpg" alt="Aerosols for Automobiles">
+                <img src="img/Automobile2.jfif" alt="Aerosols for Automobiles">
               </div>
 
               <div class="sa-product-detail-content">
@@ -8846,6 +8979,7 @@
             <div class="sa-product-detail-card">
               <div class="sa-product-detail-image">
                 <img src="img/Polishing Machine for SS.jpg" alt="Polishing Machine for Stainless Steel">
+                <img src="img/PM-SS.jfif" alt="Polishing Machine for Stainless Steel">
               </div>
 
               <div class="sa-product-detail-content">
@@ -9266,7 +9400,7 @@
 
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
-      <img src="img/drills.webp" alt="Drills">
+      <img src="img/drills.jpg" alt="Drills">
     </div>
 
     <div class="sa-product-detail-content">
@@ -9290,10 +9424,10 @@
 </div>
 
 <!-- CARBIDE ROTARY BURR CUTTER -->
-<div class="sa-product-section" id="Carbide Rotary Burr Cutter">
+<div class="sa-product-section" id="Carbide-Rotary-Burr-Cutter">
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
-      <img src="img/carbide-rotary-burr-cutter.webp" alt="Carbide Rotary Burr Cutter">
+      <img src="img/carbide-burr-cutter.webp" alt="Carbide Rotary Burr Cutter">
     </div>
 
     <div class="sa-product-detail-content">
@@ -9317,10 +9451,10 @@
 </div>
 
 <!-- BLADE / BAND SAW BLADE -->
-<div class="sa-product-section" id="Blade-Band Saw Blade">
+<div class="sa-product-section" id="Blade-Band-Saw-Blade">
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
-      <img src="img/band-saw-blade.webp" alt="Blade / Band Saw Blade">
+      <img src="img/bandsaw-blade.jpg" alt="Blade / Band Saw Blade">
     </div>
 
     <div class="sa-product-detail-content">
@@ -9344,10 +9478,10 @@
 </div>
 
 <!-- DEBURRING TOOL -->
-<div class="sa-product-section" id="Deburring Tool">
+<div class="sa-product-section" id="Deburring-Tool">
   <div class="sa-product-detail-card">
     <div class="sa-product-detail-image">
-      <img src="img/deburring-tool.webp" alt="Deburring Tool">
+      <img src="img/deburring-tools.webp" alt="Deburring Tool">
     </div>
 
     <div class="sa-product-detail-content">
@@ -9506,8 +9640,8 @@
     </div>
   </footer>
 
-  <script>
-document.addEventListener("DOMContentLoaded", function () {
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
 
   /* =========================
      SIDEBAR DROPDOWN
@@ -9542,8 +9676,122 @@ document.addEventListener("DOMContentLoaded", function () {
   ========================= */
 
   const saProductLinks = document.querySelectorAll(".sa-product-link");
-  const saProductSections = document.querySelectorAll(".sa-product-section");
+
+  /* FIXED SELECTOR */
+  const saProductSections = document.querySelectorAll(
+    "#saProductDisplay > .sa-product-section"
+  );
+
   const productDisplay = document.getElementById("saProductDisplay");
+
+  /* =========================
+     OPEN PRODUCT FROM URL HASH
+  ========================= */
+
+  const hash = window.location.hash;
+
+  if (hash) {
+
+    const targetSection = document.querySelector(hash);
+
+    if (targetSection) {
+
+      /* REMOVE ACTIVE FROM ALL */
+      saProductSections.forEach((section) => {
+        section.classList.remove("active");
+      });
+
+      /* SHOW TARGET PRODUCT */
+      targetSection.classList.add("active");
+
+      /* ACTIVE SIDEBAR LINK */
+      saProductLinks.forEach((link) => {
+
+        link.classList.remove("active");
+
+        if (
+          link.getAttribute("data-product") === hash.substring(1)
+        ) {
+          link.classList.add("active");
+        }
+
+      });
+
+      /* AUTO SCROLL */
+      setTimeout(() => {
+
+        const topOffset =
+          targetSection.getBoundingClientRect().top +
+          window.pageYOffset -
+          100;
+
+        window.scrollTo({
+          top: topOffset,
+          behavior: "smooth"
+        });
+
+      }, 200);
+
+    }
+
+  }
+  /* =========================
+   NAVBAR HASH PRODUCT SUPPORT
+========================= */
+
+window.addEventListener("hashchange", function () {
+
+  const hash = window.location.hash;
+
+  if (!hash) return;
+
+  const targetSection = document.querySelector(hash);
+
+  if (!targetSection) return;
+
+  /* REMOVE ACTIVE */
+  saProductSections.forEach((section) => {
+    section.classList.remove("active");
+  });
+
+  saProductLinks.forEach((link) => {
+    link.classList.remove("active");
+  });
+
+  /* SHOW TARGET */
+  targetSection.classList.add("active");
+
+  /* ACTIVE SIDEBAR LINK */
+  saProductLinks.forEach((link) => {
+
+    if (
+      link.getAttribute("data-product") === hash.substring(1)
+    ) {
+      link.classList.add("active");
+    }
+
+  });
+
+  /* SCROLL */
+  setTimeout(() => {
+
+    const topOffset =
+      targetSection.getBoundingClientRect().top +
+      window.pageYOffset -
+      100;
+
+    window.scrollTo({
+      top: topOffset,
+      behavior: "smooth"
+    });
+
+  }, 100);
+
+});
+
+  /* =========================
+     SIDEBAR PRODUCT CLICK
+  ========================= */
 
   saProductLinks.forEach((link) => {
 
@@ -9552,6 +9800,7 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault();
 
       const productId = this.getAttribute("data-product");
+
       const targetSection = document.getElementById(productId);
 
       if (!targetSection) return;
@@ -9569,10 +9818,14 @@ document.addEventListener("DOMContentLoaded", function () {
       this.classList.add("active");
       targetSection.classList.add("active");
 
-      /* =========================
-         AUTO SCROLL TO TOP
-      ========================= */
+      /* UPDATE URL HASH */
+      history.replaceState(
+        null,
+        null,
+        "#" + productId
+      );
 
+      /* AUTO SCROLL */
       setTimeout(() => {
 
         if (window.innerWidth < 992 && productDisplay) {
@@ -9586,7 +9839,10 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
 
           /* DESKTOP */
-          const topOffset = targetSection.getBoundingClientRect().top + window.pageYOffset - 100;
+          const topOffset =
+            targetSection.getBoundingClientRect().top +
+            window.pageYOffset -
+            100;
 
           window.scrollTo({
             top: topOffset,
@@ -9606,7 +9862,10 @@ document.addEventListener("DOMContentLoaded", function () {
   ========================= */
 
   const accessoriesBtn = document.getElementById("saViewMoreAccessories");
-  const accessoriesMore = document.getElementById("saWeldingAccessoriesMore");
+
+  const accessoriesMore = document.getElementById(
+    "saWeldingAccessoriesMore"
+  );
 
   if (accessoriesBtn && accessoriesMore) {
 
@@ -9628,7 +9887,10 @@ document.addEventListener("DOMContentLoaded", function () {
   ========================= */
 
   const pressureBtn = document.getElementById("saViewMorePressure");
-  const pressureMore = document.getElementById("sapressureRegulatorsMore");
+
+  const pressureMore = document.getElementById(
+    "sapressureRegulatorsMore"
+  );
 
   if (pressureBtn && pressureMore) {
 
@@ -9646,7 +9908,28 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    // 1. Select all the product links/buttons in the left sidebar
+    // NOTE: Change '.sa-explore-sidebar a' to your actual product item selector if it is a button or li
+    const productLinks = document.querySelectorAll('.sa-explore-sidebar a, .sa-explore-sidebar .product-item');
+    
+    // 2. Select the right side main content container (which has the overflow-y: auto)
+    const rightMainContent = document.querySelector('.sa-explore-main');
+
+    if (rightMainContent) {
+        productLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                // Optional: e.preventDefault(); // Uncomment if you don't want the default URL anchor behavior
+                
+                // 3. Reset the scroll position of the right container to the very top
+                rightMainContent.scrollTop = 0;
+            });
+        });
+    }
+});
 </script>
+    
 
 <script src="script.js"></script>
 
