@@ -1263,6 +1263,9 @@
     grid-template-columns:1fr;
     gap:28px;
   }
+  .sa-product-detail-content {
+    margin-top: 50px; /* Fixed: Changed from 50px for better spacing */
+  }
 
   .sa-product-detail-image{
     height:340px;
@@ -1939,18 +1942,18 @@
     }
 
     .sa-explore-container {
-      display: flex;
-      flex-direction: column;
-      gap: 20px !important;
-      padding: 0 14px !important;
-    }
+    display: flex !important;
+    flex-direction: column !important; /* Stacks sidebar on top, content below */
+    height: auto !important;           /* Removes fixed height completely */
+    max-height: none !important;
+    overflow: visible !important;      /* Makes hidden content visible */
+  }
 
-    .sa-explore-sidebar {
-      width: 100% !important;
-      min-width: 100% !important;
-      position: static !important;
-      top: auto !important;
-    }
+   .sa-explore-sidebar {
+    width: 100% !important;            /* Full width on mobile */
+    height: auto !important;           /* Removes fixed height */
+    overflow-y: visible !important;    /* Disables independent scroll */
+  }
 
     .sa-sidebar-box {
       padding: 22px 16px !important;
@@ -1991,12 +1994,12 @@
       font-size: 14px !important;
     }
 
-  .sa-explore-main {
-  width: 100%;
-  min-width: 0;
-  margin-top: 24px !important;
-}
-
+.sa-explore-main {
+    width: 100% !important;
+    height: auto !important;           /* Removes fixed height */
+    overflow-y: visible !important;    /* Disables independent scroll so content shows fully */
+    padding-right: 0 !important;
+  }
     .sa-explore-head {
       margin-bottom: 18px !important;
     }
@@ -2011,17 +2014,39 @@
       line-height: 1 !important;
     }
 
-    .sa-product-detail-card {
-      grid-template-columns: 1fr !important;
-      gap: 18px !important;
-      padding: 16px !important;
-      border-radius: 22px !important;
-    }
-
+.sa-product-detail-card {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    padding: 16px 20px 16px;
+    border-radius: 24px;
+  }
     .sa-product-detail-image {
-      height: 260px !important;
-      border-radius: 18px !important;
-    }
+    gap: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 0;
+  }
+
+  .sa-product-detail-image img {
+    width: 100%;
+    height: auto;
+    max-height: 180px;
+    min-height: 120px;
+    object-fit: contain;
+    padding: 10px;
+    border-radius: 14px;
+  }
+
+  /* ONLY ONE IMAGE */
+  .sa-product-detail-image img:only-child {
+    max-height: 240px;
+  }
+
+  .sa-product-detail-content {
+    margin-top: 20px; /* Fixed: Changed from 50px for better spacing */
+  }
 
     .sa-product-detail-content h2 {
       font-size: 24px !important;
@@ -2029,38 +2054,46 @@
       margin-bottom: 12px !important;
     }
 
-    .sa-product-detail-content p {
-      font-size: 14px !important;
-      line-height: 1.7 !important;
-    }
+ .sa-product-detail-label {
+    font-size: 12px;
+    padding: 7px 12px;
+    margin-bottom: 12px;
+  }
 
-    .sa-product-detail-label {
-      font-size: 11px !important;
-      padding: 7px 12px !important;
-    }
+  .sa-product-detail-content p {
+    font-size: 14px;
+    line-height: 1.75;
+    margin-bottom: 16px;
+  }
 
-    .sa-product-points {
-      gap: 8px !important;
-      margin: 0 0 18px !important;
-    }
+.sa-product-points {
+    gap: 8px;
+    margin-bottom: 18px;
+  }
 
-    .sa-product-points li {
-      font-size: 14px !important;
-      line-height: 1.65 !important;
-      padding-left: 20px !important;
-    }
+  .sa-product-points li {
+    font-size: 14px;
+    line-height: 1.7;
+    padding-left: 18px;
+  }
 
-    .sa-product-btn {
-      width: 100%;
-      text-align: center;
-      padding: 13px 18px !important;
-    }
+  .sa-product-btn {
+    width: 100%;
+    padding: 13px 18px;
+    font-size: 14px;
+    text-align: center;
+  }
 
-    .sa-info-grid {
-      grid-template-columns: 1fr !important;
-      gap: 16px !important;
-      margin-top: 16px !important;
-    }
+   .sa-info-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 18px;
+  }
+
+  .sa-info-box {
+    padding: 16px;
+    border-radius: 18px;
+  }
 
     .sa-info-box,
     .sa-table-wrap,
